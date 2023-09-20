@@ -95,18 +95,14 @@
 									<ul class="dropdown-menu">
 										<li><a class="dropdown-item" href="javascript:;">Action</a>
 										</li>
-										<li><a class="dropdown-item" href="javascript:;">Another action</a>
+										<li><a class="dropdown-item" href="javascript:;">Action</a>
 										</li>
-										<li>
-											<hr class="dropdown-divider">
-										</li>
-										<li><a class="dropdown-item" href="javascript:;">Something else here</a>
-										</li>
+										
 									</ul>
 								</div>
 							</div>
 							<div class="d-flex align-items-center ms-auto font-13 gap-2 my-3">
-								<span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-info"></i>Initilas</span>
+								<span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-info"></i>Initials</span>
 								<span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-danger"></i>Finals</span>
 							</div>
 							<div class="chart-container-1">
