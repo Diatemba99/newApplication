@@ -87,7 +87,7 @@
 						  <div class="card-body">
 							<div class="d-flex align-items-center">
 								<div>
-									<h6 class="mb-0">Sales Overview</h6>
+									<h6 class="mb-0">Surveys Overview</h6>
 								</div>
 								<div class="dropdown ms-auto">
 									<a class="dropdown-toggle dropdown-toggle-nocaret" href="#" data-bs-toggle="dropdown"><i class='bx bx-dots-horizontal-rounded font-22 text-option'></i>
@@ -106,8 +106,8 @@
 								</div>
 							</div>
 							<div class="d-flex align-items-center ms-auto font-13 gap-2 my-3">
-								<span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-info"></i>Downloads</span>
-								<span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-danger"></i>Earnings</span>
+								<span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-info"></i>Initilas</span>
+								<span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-danger"></i>Finals</span>
 							</div>
 							<div class="chart-container-1">
 								<canvas id="chart5"></canvas>
