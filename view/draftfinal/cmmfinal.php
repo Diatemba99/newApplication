@@ -56,211 +56,231 @@ require_once './model/tpcfinal.php';
 								<input type="number" hidden name="truetrim" value="<?=$truetrim?>" class="form-control border-start-0" id="truetrim" placeholder="" />
 								<input type="number" hidden name="l" value="<?=$L?>" class="form-control border-start-0" id="l" placeholder="" />
 							<div class="row">
-								<div class="col-4">
-								<label for="inputLastName1" class="form-label">x1</label>
-								<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
-                                    
-										<input type="number" required step="any" name="x1" class="form-control border-start-0" id="x1" placeholder="TEavbd" />
-									</div>
-							</div>
-							<div class="col-4">
-								<label for="inputLastName1" class="form-label">x2</label>
-								<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
-										<input type="number" required  step="any" name="x2" class="form-control border-start-0" id="x2" placeholder="TEavtb" />
-									</div>
-							</div>
-							<div class="col-4">
-								<label for="inputLastName1" class="form-label">MAD</label>
-								<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
-										<input type="number" readonly  step="any" name="mad" value="<?=$MAD?>"  class="form-control border-start-0" id="mad" placeholder="" />
-									</div>
-							</div>
-							</div>
-							<div class="row">
-								<h5 class="mb-0 text-primary">Calcul déplacement correspndant à D=0</h5>
-								<div class="col-4">
-								<label for="inputLastName1" class="form-label">y1</label>
-								<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
-                                    
-										<input type="number" required step="any" name="y1" class="form-control border-start-0" id="y1" placeholder="TEarbd" />
-									</div>
-							</div>
-							<div class="col-4">
-								<label for="inputLastName1" class="form-label">y2</label>
-								<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
-										<input type="number" required onkeyup="calculerdeplacementMAD();" step="any" name="y2" class="form-control border-start-0" id="y2" placeholder="TEartb" />
-									</div>
-							</div>
-							<div class="col-4">
-								<label for="inputLastName1" class="form-label">Déplacement MAD</label>
-								<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
-										<input type="number" readonly step="any" name="deplacementMad" class="form-control border-start-0" id="deplacementMad" placeholder="" />
-									</div>
-							</div>
-							</div>
-							<div class="row">
-								<h5 class="mb-0 text-primary">Calcul des MAD + 0,5 et MAD - 0,5</h5>
-								<div class="col-4">
-								
-								</div>
-								<div class="col-4">
-								
-								</div>
-								<div class="col-4">
-								<label for="inputLastName1" class="form-label">t1</label>
-								<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
-										<input type="number" readonly step="any" value="<?=$t1?>" name="t1" class="form-control border-start-0" id="t1" placeholder="TEMbd" />
-									</div>
-									<label for="inputLastName1" class="form-label">t2</label>
-								<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
-										<input type="number" readonly step="any" value="<?=$t2?>" name="t2" class="form-control border-start-0" id="t2" placeholder="TEMtb"/>
-									</div>
-							</div>
-							<div class="col-4">
-								
-							</div>
-							</div>
-							<div class="row">
-								<h5 class="mb-0 text-primary">Calcul du LCF</h5>
-								<div class="col-4">
-									<label for="inputLastName1" class="form-label">y1</label>
-										<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
-                                    
-										<input type="number" required step="any" name="y1LCF" class="form-control border-start-0" id="y1LCF" placeholder="" />
-									</div>
-									<label for="inputLastName1" class="form-label">y2</label>
-										<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
-                                    
-										<input type="number" required step="any" name="y2LCF" class="form-control border-start-0" id="y2LCF" placeholder="" />
-									</div>
-								</div>
-								<div class="col-4">
-									<div >
-										<div class="row">
-											<input class="form-check-input" onclick="calculeLCF();" type="radio" name="lcf" id="lcftoap" value="LCF to AP">
-											<label class="form-check-label" for="lcf1">LCF to AP</label>
-										</div>
-										<div class="row">
-											<input class="form-check-input" onclick="calculeLCF();" type="radio" name="lcf" id="lcftofp" value="LCF to FP" >
-											<label class="form-check-label" for="lcf2">LCF to FP</label>
-										</div>
-										<div class="row">
-											<input class="form-check-input" onclick="calculeLCF();" type="radio" name="lcf" id="lcftomidship" value="LCF to midship" >
-											<label class="form-check-label" for="lcf3">LCF to midship</label>
-										</div>
-									</div>
-									
-								</div>
-								
-								<div class="col-4">
-									<label for="inputLastName1" class="form-label">LCF to </label>
-										<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
-                                    
-										<input type="number" readonly step="any" name="lcfto" class="form-control border-start-0" id="lcfto" placeholder="" />
-									</div>
-								</div>
-							</div>
-							<h5 class="mb-0 text-primary">Calcul du TPC pour MAD</h5>
-							<div class="row">
-								<div class="col-4">
-								<label for="inputLastName1" class="form-label">y1</label>
-								<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
-                                    
-										<input type="number" required step="any" name="y1tpcmad" class="form-control border-start-0" id="y1tpcmad" placeholder="" />
-									</div>
-								</div>
-							<div class="col-4">
-								<label for="inputLastName1" class="form-label">y2</label>
-								<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
-										<input type="number" required onkeyup="calculeTPCMAD();calculefirsttrimcorr();"  step="any" name="y2tpcmad" class="form-control border-start-0" id="y2tpcmad" placeholder="" />
-									</div>
-							</div>
-							<div class="col-4">
-								<label for="inputLastName1" class="form-label">TPC</label>
-								<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
-										<input type="number" readonly step="any" name="tpcmad" class="form-control border-start-0" id="tpcmad" placeholder="" />
-									</div>
-							</div>
-							</div>
-							<h5 class="mb-0 text-primary">Calcul First Trim Correction</h5>
-							<div class="row">
-								<div class="col-8">
-								
-							</div>
-							<div class="col-4">
-								<label for="inputLastName1" class="form-label">First Trim Correction</label>
-								<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
-										<input type="number" readonly step="any" name="firstTrimCorrection" class="form-control border-start-0" id="firstTrimCorrection" placeholder="" />
-									</div>
-							</div>
-							</div>
-							<h5 class="mb-0 text-primary">Calcul Second Trim Correction</h5>
+					<div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x1</font></font></span>
+							<input type="number" step="any" name="x1" class="form-control border-start-0" id="x1" placeholder="TEavbd" />
+						</div>
+					</div>
+					<div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x2</font></font></span>
+							<input type="number" step="any" name="x2" class="form-control border-start-0" id="x2" placeholder="TEavtb" />
+						</div>
+					</div>
+					<div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MAD</font></font></span>
+							<input type="number" readonly step="any" name="mad" value="<?= $MAD ?>" class="form-control border-start-0" id="mad" placeholder="" />
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<h5 class="mb-0 text-primary">Calcul déplacement correspndant à D=0</h5>
+					<div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y1</font></font></span>
+							<input type="number" step="any" name="y1" class="form-control border-start-0" id="y1" placeholder="TEarbd" />
+						</div>
+					</div>
+					<div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y2</font></font></span>
+							<input type="number" onkeyup="calculerdeplacementMAD();" step="any" name="y2" class="form-control border-start-0" id="y2" placeholder="TEartb" />
+						</div>
+					</div>
+					<div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Déplacement MAD</font></font></span>
+							<input type="number" readonly step="any" name="deplacementMad" class="form-control border-start-0" id="deplacementMad" placeholder="" />
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<h5 class="mb-0 text-primary">Calcul des MAD + 0,5 et MAD - 0,5</h5>
+					<div class="col-4">
 
-							<div class="row">
-								<div class="col-4">
-									<label for="inputLastName1" class="form-label">x1</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
-										<input type="number" required step="any" name="x1secondtrim" class="form-control border-start-0" id="x1secondtrim" placeholder="" />
-									</div>
-									<label for="inputLastName1" class="form-label">x2</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
-										<input type="number" required step="any" name="x2secondtrim" class="form-control border-start-0" id="x2secondtrim" placeholder="" />
-									</div>
-									<label for="inputLastName1" class="form-label">y1</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
-										<input type="number" required step="any" name="y1secondtrim" class="form-control border-start-0" id="y1secondtrim" placeholder="" />
-									</div>
-									<label for="inputLastName1" class="form-label">y2</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
-										<input type="number" required step="any" onkeyup="calculeMTC1();" name="y2secondtrim" class="form-control border-start-0" id="y2secondtrim" placeholder="" />
-									</div>
-								</div>
-								<div class="col-4">
-									<label for="inputLastName1" class="form-label">MTC1</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
-										<input type="number" readonly step="any" name="mtc1" class="form-control border-start-0" id="mtc1" placeholder="" />
-									</div>
-								</div>
-							</div>
+					</div>
+					<div class="col-4">
 
-							<div class="row">
-								<div class="col-4">
-									<label for="inputLastName1" class="form-label">x1</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
-										<input type="number" required step="any" name="x1secondtrim2" class="form-control border-start-0" id="x1secondtrim2" placeholder="" />
-									</div>
-									<label for="inputLastName1" class="form-label">x2</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
-										<input type="number" required step="any" name="x2secondtrim2" class="form-control border-start-0" id="x2secondtrim2" placeholder="" />
-									</div>
-									<label for="inputLastName1" class="form-label">y1</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
-										<input type="number" required step="any" name="y1secondtrim2" class="form-control border-start-0" id="y1secondtrim2" placeholder="" />
-									</div>
-									<label for="inputLastName1" class="form-label">y2</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
-										<input type="number" required step="any" onkeyup="calculeMTC2();" name="y2secondtrim2" class="form-control border-start-0" id="y2secondtrim2" placeholder="" />
-									</div>
-								</div>
-								<div class="col-4">
-									<label for="inputLastName1" class="form-label">MTC2</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
-										<input type="number" readonly step="any" name="mtc2" class="form-control border-start-0" id="mtc2" placeholder="" />
-									</div>
-									
-								</div>
+					</div>
+					<div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">t1</font></font></span>
+							<input type="number" readonly step="any" value="<?= $t1 ?>" name="t1" class="form-control border-start-0" id="t1" placeholder="" />
+						</div>
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">t2</font></font></span>
+							<input type="number" readonly step="any" value="<?= $t2 ?>" name="t2" class="form-control border-start-0" id="t2" placeholder="" />
+						</div>
+					</div>
+					<div class="col-4">
+
+					</div>
+				</div>
+				<div class="row">
+					<h5 class="mb-0 text-primary">Calcul du LCF</h5>
+					<div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y1</font></font></span>
+							<input type="number" step="any" name="y1LCF" class="form-control border-start-0" id="y1LCF" placeholder="" />
+						</div>
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y2</font></font></span>
+							<input type="number" step="any" name="y2LCF" class="form-control border-start-0" id="y2LCF" placeholder="" />
+						</div>
+					</div>
+					<div class="col-4 mt-3">
+						<div>
+							<div class="form-check">
+								<input class="form-check-input" onclick="calculeLCF();" type="radio" name="lcf" id="lcftoap" value="LCF to AP">
+								<label class="form-check-label" for="lcf1">LCF to AP</label>
 							</div>
-							<div class="row">
-								<div class="col-8">
-								
+							<div class="form-check">
+								<input class="form-check-input" onclick="calculeLCF();" type="radio" name="lcf" id="lcftofp" value="LCF to FP">
+								<label class="form-check-label" for="lcf2">LCF to FP</label>
 							</div>
-							<div class="col-4">
-								<label for="inputLastName1" class="form-label">Second Trim Correction</label>
-								<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
-										<input type="number" readonly step="any" name="secondTrimCorrection" class="form-control border-start-0" id="secondTrimCorrection" placeholder=""/>
-									</div>
+							<div class="form-check">
+								<input class="form-check-input" onclick="calculeLCF();" type="radio" name="lcf" id="lcftomidship" value="LCF to midship">
+								<label class="form-check-label" for="lcf3">LCF to midship</label>
 							</div>
-							</div>
+						</div>
+						
+					</div>
+
+					<div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LCF to</font></font></span>
+							<input type="number" readonly step="any" name="lcfto" class="form-control border-start-0" id="lcfto" placeholder="" />
+						</div>
+					</div>
+				</div>
+				<h5 class="mb-0 text-primary">Calcul du TPC pour MAD</h5>
+				<div class="row">
+					<div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y1</font></font></span>
+							<input type="number" required step="any" name="y1tpcmad" class="form-control border-start-0" id="y1tpcmad" placeholder="" />
+						</div>
+					</div>
+					<div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y2</font></font></span>
+							<input type="number" required onkeyup="calculeTPCMAD();calculefirsttrimcorr();" step="any" name="y2tpcmad" class="form-control border-start-0" id="y2tpcmad" placeholder="" />
+						</div>
+					</div>
+					<div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TPC</font></font></span>
+							<input type="number" readonly step="any" name="tpcmad" class="form-control border-start-0" id="tpcmad" placeholder="" />
+						</div>
+					</div>
+				</div>
+				<h5 class="mb-0 text-primary">Calcul First Trim Correction</h5>
+				<div class="row">
+					<div class="col-8">
+
+					</div>
+					<div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">First Trim Correction</font></font></span>
+							<input type="number" readonly step="any" name="firstTrimCorrection" class="form-control border-start-0" id="firstTrimCorrection" placeholder="" />
+						</div>
+					</div>
+				</div>
+				<h5 class="mb-0 text-primary">Calcul Second Trim Correction</h5>
+
+				<div class="row">
+					<div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x1</font></font></span>
+							<input type="number" required step="any" name="x1secondtrim" class="form-control border-start-0" id="x1secondtrim" placeholder="" />
+						</div>
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x2</font></font></span>
+							<input type="number" required step="any" name="x2secondtrim" class="form-control border-start-0" id="x2secondtrim" placeholder="" />
+						</div>
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y1</font></font></span>
+							<input type="number" required step="any" name="y1secondtrim" class="form-control border-start-0" id="y1secondtrim" placeholder="" />
+						</div>
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y2</font></font></span>
+							<input type="number" step="any" onkeyup="calculeMTC1();" name="y2secondtrim" class="form-control border-start-0" id="y2secondtrim" placeholder="" />
+						</div>
+					</div>
+					<div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MTC1</font></font></span>
+							<input type="number" required readonly step="any" name="mtc1" class="form-control border-start-0" id="mtc1" placeholder="" />
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x1</font></font></span>
+							<input type="number" required step="any" name="x1secondtrim2" class="form-control border-start-0" id="x1secondtrim2" placeholder="" />
+						</div>
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x2</font></font></span>
+							<input type="number" required step="any" name="x2secondtrim2" class="form-control border-start-0" id="x2secondtrim2" placeholder="" />
+						</div>
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y1</font></font></span>
+							<input type="number" required step="any" name="y1secondtrim2" class="form-control border-start-0" id="y1secondtrim2" placeholder="" />
+						</div>
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y2</font></font></span>
+							<input type="number" required step="any" onkeyup="calculeMTC2();" name="y2secondtrim2" class="form-control border-start-0" id="y2secondtrim2" placeholder="" />
+						</div>
+					</div>
+					<div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MTC2</font></font></span>
+							<input type="number" required readonly step="any" name="mtc2" class="form-control border-start-0" id="mtc2" placeholder="" />
+						</div>
+
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-8">
+
+					</div>
+					<div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Second Trim Correction</font></font></span>
+							<input type="number" readonly step="any" name="secondTrimCorrection" class="form-control border-start-0" id="secondTrimCorrection" placeholder="" />
+						</div>
+					</div>
+				</div>
 
 								<div >
 									<button name="btn_ajout_etape4" type="submit" class="btn btn-primary px-5">Valider</button>

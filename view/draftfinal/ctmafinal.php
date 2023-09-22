@@ -39,106 +39,118 @@ require_once './model/tpcfinal.php';
 										<script>
 											var d = new Date();
 											var hours = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
-											// console.log(hours);
+											
                                 			document.getElementById("heureSurveyFinal").value = hours;
                                 		</script>
 							<div class="row">
 								<div class="col-4">
-								<label for="inputLastName1" class="form-label">TEavbd</label>
-								<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
-                                    
+								
+								<div class="input-group mt-3">
+                                    <span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEavbd</font></font></span>
 										<input type="number" required step="any" name="teavbd" class="form-control border-start-0" id="teavbd" placeholder="TEavbd" />
 									</div>
 							</div>
 							<div class="col-4">
-								<label for="inputLastName1" class="form-label">TEavtb</label>
-								<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
+								
+								<div class="input-group mt-3">
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEavtb</font></font></span>
 										<input type="number" required onkeyup="calculerTEav();" step="any" name="teavtb" class="form-control border-start-0" id="teavtb" placeholder="TEavtb" />
 									</div>
 							</div>
 							<div class="col-4">
-								<label for="inputLastName1" class="form-label">TEav</label>
-								<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
+								
+								<div class="input-group mt-3">
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEav</font></font></span>
 										<input type="number" readonly step="any" name="teav" class="form-control border-start-0" id="teav" placeholder="" />
 									</div>
 							</div>
 							</div>
 							<div class="row">
 								<div class="col-4">
-								<label for="inputLastName1" class="form-label">TEarbd</label>
-								<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
-                                    
+								
+								<div class="input-group mt-3">
+				<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEarbd</font></font></span>
 										<input type="number" required step="any" name="tearbd" class="form-control border-start-0" id="tearbd" placeholder="TEarbd" />
 									</div>
 							</div>
 							<div class="col-4">
-								<label for="inputLastName1" class="form-label">TEartb</label>
-								<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
+								
+								<div class="input-group mt-3">
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEartb</font></font></span>
 										<input type="number" required onkeyup="calculerTEar();" step="any" name="teartb" class="form-control border-start-0" id="teartb" placeholder="TEartb" />
 									</div>
 							</div>
 							<div class="col-4">
-								<label for="inputLastName1" class="form-label">TEar</label>
-								<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
+								
+								<div class="input-group mt-3">
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEar</font></font></span>
 										<input type="number" readonly step="any" name="tear" class="form-control border-start-0" id="tear" placeholder="" />
 									</div>
 							</div>
 							</div>
 							<div class="row">
 								<div class="col-4">
-								<label for="inputLastName1" class="form-label">TEMbd</label>
-								<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
-                                    
+								
+								<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEMbd</font></font></span>
 										<input type="number" required step="any" name="tembd" class="form-control border-start-0" id="tembd" placeholder="TEMbd" />
 									</div>
 							</div>
 							<div class="col-4">
-								<label for="inputLastName1" class="form-label">TEMtb</label>
-								<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
+								
+								<div class="input-group mt-3">
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEMtb</font></font></span>
 										<input type="number" required onkeyup="calculerTEM();" step="any" name="temtb" class="form-control border-start-0" id="temtb" placeholder="TEMtb" />
 									</div>
 							</div>
 							<div class="col-4">
-								<label for="inputLastName1" class="form-label">TEM</label>
-								<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
+								
+								<div class="input-group mt-3">
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEM</font></font></span>
 										<input type="number" readonly step="any" name="tem" class="form-control border-start-0" id="tem" placeholder="" />
 									</div>
 							</div>
 							</div>
 							<h5 class="mb-0 text-primary">Calcul de l'Assiette Apparente ou (Apparent Trim)</h5>
 							<div class="col-4">
-								<label for="inputLastName1" class="form-label">Apparent Trim</label>
-								<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
+								
+								<div class="input-group mt-3">
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Apparent Trim</font></font></span>
 										<input type="number" readonly step="any" name="apparentTrim" class="form-control border-start-0" id="apparentTrim" placeholder="" />
 									</div>
 							</div>
 							<h5 class="mb-0 text-primary">Calcul de la distance entre les marques avant et arriéres</h5>
 							<div class="row">
 								<div class="col-6">
-									<label for="inputLastName1" class="form-label">L</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">L</font></font></span>
 										<input type="number" required step="any" name="L" class="form-control border-start-0" id="L" placeholder="" />
 									</div>
 								</div>
 
 								<div class="col-6">
-									<label for="inputLastName1" class="form-label">l1</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">l1</font></font></span>
 										<input type="number" required step="any" name="l1" class="form-control border-start-0" id="l1" placeholder="" />
 									</div>
 
-									<label for="inputLastName1" class="form-label">l2</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">l2</font></font></span>
 										<input type="number" required step="any" name="l2" class="form-control border-start-0" id="l2" placeholder="" />
 									</div>
 
-									<label for="inputLastName1" class="form-label">l3</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">l3</font></font></span>
 										<input type="number" required step="any" onkeyup="calculerl();calculerCorrection();calculerCorrectionTirants();" name="l3" class="form-control border-start-0" id="l3" placeholder="" />
 									</div>
 
-									<label for="inputLastName1" class="form-label">l</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">l</font></font></span>
 										<input type="number" required step="any" readonly name="lL" class="form-control border-start-0" id="lL" placeholder="" />
 									</div>
 								</div>
@@ -151,18 +163,21 @@ require_once './model/tpcfinal.php';
 								</div>
 
 								<div class="col-6">
-									<label for="inputLastName1" class="form-label">Corr.avant</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Corr.avant</font></font></span>
 										<input type="number" readonly step="any" name="corrAv" class="form-control border-start-0" id="corrAv" placeholder="" />
 									</div>
 
-									<label for="inputLastName1" class="form-label">Corr.arr</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Corr.arr</font></font></span>
 										<input type="number" readonly step="any" name="corrAr" class="form-control border-start-0" id="corrAr" placeholder="" />
 									</div>
 
-									<label for="inputLastName1" class="form-label">Corr.mil</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Corr.mil</font></font></span>
 										<input type="number" readonly step="any" name="corrM" class="form-control border-start-0" id="corrM" placeholder="" />
 									</div>
 								</div>
@@ -175,32 +190,36 @@ require_once './model/tpcfinal.php';
 								</div>
 
 								<div class="col-6">
-									<label for="inputLastName1" class="form-label">Tav</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tav</font></font></span>
 										<input type="number" readonly step="any" name="tAv" class="form-control border-start-0" id="tAv" placeholder="" />
 									</div>
 
-									<label for="inputLastName1" class="form-label">Tar</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tar</font></font></span>
 										<input type="number" readonly step="any" name="tAr" class="form-control border-start-0" id="tAr" placeholder="" />
 									</div>
 
-									<label for="inputLastName1" class="form-label">TM</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TM</font></font></span>
 										<input type="number" readonly step="any" name="tM" class="form-control border-start-0" id="tM" placeholder="" />
 									</div>
 								</div>
 							</div>
 
 							<h5 class="mb-0 text-primary">Calcul de l'Assiette réelle ou True Trim</h5>
-							<div class="row">
+							<div class="row mt-3">
 								<div class="col-6">
 									
 								</div>
 
 								<div class="col-6">
-									<label for="inputLastName1" class="form-label">True Trim</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
+									
+									<div class="input-group">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">True Trim</font></font></span>
 										<input type="number" readonly step="any" name="trueTrim" class="form-control border-start-0" id="trueTrim" placeholder="" />
 									</div>
 								</div>

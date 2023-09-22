@@ -41,19 +41,22 @@ require_once './model/deplacementfinal.php';
 								<input type="number" hidden name="dCorr" value="<?=@$dCorr?>" class="form-control border-start-0" id="dCorr" placeholder="" />
 							<div class="row">
 								<h5 class="mb-0 text-primary">Densité eau de mer</h5>
-								<div class="col-4">
-									<label for="inputLastName1" class="form-label">Densité table hydrostatique</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
+								<div class="col-6">
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Densité table hydrostatique</font></font></span>
 										<input type="number" required step="any" name="densiteTable" class="form-control border-start-0" id="densiteTable" placeholder="" />
 									</div>
-									<label for="inputLastName1" class="form-label">Densité mesuré</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Densité mesuré</font></font></span>
 										<input type="number" required onkeyup="calculDeplamentInitial();" step="any" name="densiteMesure" class="form-control border-start-0" id="densiteMesure" placeholder="" />
 									</div>
 								</div>
-								<div class="col-4">
-									<label for="inputLastName1" class="form-label">Déplacement Initial</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
+								<div class="col-6">
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Déplacement Initial</font></font></span>
 										<input type="number" readonly step="any" name="deplacementInitial" class="form-control border-start-0" id="deplacementInitial" placeholder="" />
 									</div>
 								</div>
@@ -62,38 +65,46 @@ require_once './model/deplacementfinal.php';
 							<div class="row">
 								<h5 class="mb-0 text-primary">Calcul des déductibles et des constantes</h5>
 								<div class="col-6">
-									<label for="inputLastName1" class="form-label">Fuel Oil</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Fuel Oil</font></font></span>
 										<input type="number" required step="any" name="fuelOil" class="form-control border-start-0" id="fuelOil" placeholder="" />
 									</div>
-									<label for="inputLastName1" class="form-label">Diesel Oil</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Diesel Oil</font></font></span>
 										<input type="number" required step="any" name="dieselOil" class="form-control border-start-0" id="dieselOil" placeholder="" />
 									</div>
-									<label for="inputLastName1" class="form-label">Lubrifiant Oil</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Lubrifiant Oil</font></font></span>
 										<input type="number" required step="any" name="lubrifiantOil" class="form-control border-start-0" id="lubrifiantOil" placeholder="" />
 									</div>
-									<label for="inputLastName1" class="form-label">Fresh Water</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Fresh Water</font></font></span>
 										<input type="number" required step="any" name="freshWater" class="form-control border-start-0" id="freshWater" placeholder="" />
 									</div>
-									<label for="inputLastName1" class="form-label">Ballast Water</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ballast Water</font></font></span>
 										<input type="number" required step="any" name="ballastWater" class="form-control border-start-0" id="ballastWater" placeholder="" />
 									</div>
-									<label for="inputLastName1" class="form-label">LS (LightShip)</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LS (LightShip)</font></font></span>
 										<input type="number" required step="any" onkeyup="calculConstantes();" name="lsLightship" class="form-control border-start-0" id="lsLightship" placeholder="" />
 									</div>
-									<label for="inputLastName1" class="form-label">OTHERS</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">OTHERS</font></font></span>
 										<input type="number" required onkeyup="calculConstantes();" step="any" name="others" class="form-control border-start-0" id="others" placeholder="" />
 									</div>
 								</div>
 								<div class="col-6">
-									<label for="inputLastName1" class="form-label">Constantes</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Constantes</font></font></span>
 										<input type="number" readonly step="any" name="constantes" class="form-control border-start-0" id="constantes" placeholder="" />
 									</div>
 								</div>

@@ -59,27 +59,31 @@ require_once './model/cargaison.php';
                                 <input type="number" hidden name="ballastWater" value="<?=$ballastWater?>" class="form-control border-start-0" id="ballastWater" placeholder=""/>
                                 <input type="number" hidden name="ls" value="<?=$ls?>" class="form-control border-start-0" id="ls" placeholder="" />
                                 <input type="number" hidden name="constantes" value="<?=$constantes?>" class="form-control border-start-0" id="constantes" placeholder="" />
-							<div class="row">
+							<div class="row mt-3">
 								
 								<div class="col-4">
-									<label for="inputLastName1" class="form-label">Poids Cargaison</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Poids Cargaison</font></font></span>
 										<input type="number" required step="any" name="pcargaison" class="form-control border-start-0" id="pcargaison" placeholder="" />
 									</div>
 									
-                                    <label for="inputLastName1" class="form-label">Poids Cargaison adopté</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
+                                    
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Poids Cargaison adopté</font></font></span>
 										<input type="number" required onkeyup="calculpCargaisonMMG();"  step="any" name="pcargaisonA" class="form-control border-start-0" id="pcargaisonA" placeholder="" />
 									</div>
 								</div>
                                 <div class="col-4"></div>
 								<div class="col-4">
-									<label for="inputLastName1" class="form-label">Poids Cargaison MMG</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Poids Cargaison MMG</font></font></span>
 										<input type="number" readonly step="any" name="pcargaisonMMG" class="form-control border-start-0" id="pcargaisonMMG" placeholder="" />
 									</div>
-                                    <label for="inputLastName1" class="form-label">Intervalle de confiance</label>
-									<div class="input-group"> <span class="input-group-text bg-transparent"><i class='bx bxs-user'></i></span>
+                                    
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Intervalle de confiance</font></font></span>
 										<input type="number" readonly step="any" name="intervalleC" class="form-control border-start-0" id="intervalleC" placeholder="" />
 									</div>
 								</div>
