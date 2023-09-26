@@ -1,12 +1,12 @@
 <?php
  class Connexion{
         private $host="127.0.0.1";
-        private $dbname="draft_survey_nimba";
-        private $user="root";
-        private $mdp="";
-       //  private $dbname="sc1ktcz3652_nimbaapp";
-       //  private $user="sc1ktcz3652_nimbaapp";
-       //  private $mdp="hEV+mk_U&jxv";
+       //  private $dbname="draft_survey_nimba";
+       //  private $user="root";
+       //  private $mdp="";
+        private $dbname="sc1ktcz3652_nimbaapp";
+        private $user="sc1ktcz3652_nimbaapp";
+        private $mdp="hEV+mk_U&jxv";
         private $db;
         
        public function getDB()
