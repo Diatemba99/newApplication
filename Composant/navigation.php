@@ -164,7 +164,7 @@ $profile=$_SESSION["CURRENT_user"]['first_name'].' '.$_SESSION["CURRENT_user"]['
 			 
 			</ul>
 			<?php
-			}elseif($_SESSION["CURRENT_user"]["type"]==='Enquêteur'){
+			}else{
 			?>
 			<ul class="metismenu" id="menu">
 					<a href="javascript:;" class="has-arrow">
