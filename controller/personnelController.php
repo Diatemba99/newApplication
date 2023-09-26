@@ -65,7 +65,7 @@ if(isset($_POST['btn_ajout'])){
         //    header("location:../?page=dashboard");
         if ($_SESSION["CURRENT_user"]["type"]==='Administrateur' or $_SESSION["CURRENT_user"]["type"]==='Superviseur'){
             header("location:../?page=dashboard");
-        }elseif ($_SESSION["CURRENT_user"]["type"]==='Enquêteur'){
+        }else{
             header('location:../?page=listessurveyinitial');
         }
        }else{
