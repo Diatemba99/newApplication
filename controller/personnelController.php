@@ -62,7 +62,12 @@ if(isset($_POST['btn_ajout'])){
         $email=$_POST['email'];
         $mot_de_passe=$_POST['mot_de_passe'];
        if(Utilisateur::verifieUtilisateur($email,$mot_de_passe)){
-           header("location:../?page=dashboard");
+        //    header("location:../?page=dashboard");
+        if ($_SESSION["CURRENT_user"]["type"]==='Administrateur' or $_SESSION["CURRENT_user"]["type"]==='Superviseur'){
+            header("location:../?page=dashboard");
+        }elseif ($_SESSION["CURRENT_user"]["type"]==='Enquêteur'){
+            header('location:../?page=listessurveyinitial');
+        }
        }else{
            header("location:../?erreur=connexion");
        }
@@ -86,15 +91,15 @@ if(isset($_POST['btn_modif_utilisateur'])){
 }
 
 // traitement connexion
-    if(isset($_POST['btn_connexion'])){
-        $email=$_POST['email'];
-        $mot_de_passe=$_POST['mot_de_passe'];
-       if(Utilisateur::verifieUtilisateur($email,$mot_de_passe)){
-           header("location:../?page=dashboard");
-       }else{
-           header("location:../?erreur=connexion");
-       }
-    }
+    // if(isset($_POST['btn_connexion'])){
+    //     $email=$_POST['email'];
+    //     $mot_de_passe=$_POST['mot_de_passe'];
+    //    if(Utilisateur::verifieUtilisateur($email,$mot_de_passe)){
+    //        header("location:../?page=dashboard");
+    //    }else{
+    //        header("location:../?erreur=connexion");
+    //    }
+    // }
 
 // Activer ou désactiver un utilisateur
 if (isset($_GET['idUser']) && isset($_GET['activated'])) {

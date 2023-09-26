@@ -39,11 +39,14 @@ $profile=$_SESSION["CURRENT_user"]['first_name'].' '.$_SESSION["CURRENT_user"]['
 	<link rel="stylesheet" href="./page/assets/css/dark-theme.css" />
 	<link rel="stylesheet" href="./page/assets/css/semi-dark.css" />
 	<link rel="stylesheet" href="./page/assets/css/header-colors.css" />
+	
 	 <!-- jQuery -->
 	 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
    
    <!-- jQuery -->
    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+   
    
 	<title>NIMBA DRAFT SURVEY</title>
 </head>
@@ -121,8 +124,8 @@ $profile=$_SESSION["CURRENT_user"]['first_name'].' '.$_SESSION["CURRENT_user"]['
 			 
 			</ul>
 			<?php
-			}else{
-			// ?>
+			}elseif ($_SESSION["CURRENT_user"]["type"]==='Superviseur'){
+			 ?>
 			<ul class="metismenu" id="menu">
 				<li>
 					<a href="?page=dashboard" class="has-arrow">
@@ -133,6 +136,37 @@ $profile=$_SESSION["CURRENT_user"]['first_name'].' '.$_SESSION["CURRENT_user"]['
 					 
 				
 				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class="fa-regular fa-building"></i>
+						</div>
+						<div class="menu-title">DRAFT INITIAL</div>
+					</a>
+					<ul>
+						
+						<li> <a href="?page=listessurveyinitial"><i class="bx bx-right-arrow-alt"></i>Liste Draft Initial</a>
+						</li>
+						
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class="fa-regular fa-building"></i>
+						</div>
+						<div class="menu-title">DRAFT FINAL</div>
+					</a>
+					<ul>
+						
+						<li> <a href="?page=draftfinal"><i class="bx bx-right-arrow-alt"></i>Liste Draft Final</a>
+						</li>
+						
+					</ul>
+				</li>
+			 
+			</ul>
+			<?php
+			}elseif($_SESSION["CURRENT_user"]["type"]==='Enquêteur'){
+			?>
+			<ul class="metismenu" id="menu">
 					<a href="javascript:;" class="has-arrow">
 						<div class="parent-icon"><i class="fa-regular fa-building"></i>
 						</div>

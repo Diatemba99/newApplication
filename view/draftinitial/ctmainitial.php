@@ -327,7 +327,7 @@ require_once './model/tpcinitial.php';
 				<button type="button" onclick="precedent()" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Précédent</font></font></button>
 				<div class="card-body">
 								<h6 class="mb-5 text-uppercase">Informations Etape 3</h6>
-	<div class="table-responsive">
+	<!-- <div class="table-responsive">
 		<table id="example2" class="table table-striped table-bordered">
 			<thead>
 				<tr>
@@ -339,13 +339,13 @@ require_once './model/tpcinitial.php';
 					
 				</tr>
 			</thead>
-			<tbody>
+			<tbody> -->
 				<?php
 				$cmma = new Ctmainitial($idNavire);
 				$result1 = $cmma->getCtmaInitialByID($idNavire);
 				foreach ($result1 as $result) {
 				?>
-					<tr>
+					<!-- <tr>
 						<td><?= $result['tEavbd'] ?></td>
 						<td><?= $result['tEavtb'] ?></td>
 						<td><?= $result['tEav'] ?></td>
@@ -353,12 +353,197 @@ require_once './model/tpcinitial.php';
 						<td><?= $result['tEartb'] ?></td>
 						
 						
-					</tr>
+					</tr> -->
 				<?php
-				}
+				// }
 				?>
-			</tbody>
-		</table>
+			<!-- </tbody>
+		</table> -->
+		<div class="row">
+								<div class="col-4">
+								
+								<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEavbd</font></font></span>
+										<input type="number" readonly step="any" name="teavbd" value="<?= $result['tEavbd'] ?>" class="form-control border-start-0" id="teavbd" placeholder="TEavbd" />
+									</div>
+							</div>
+							<div class="col-4">
+								
+								<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEavtb</font></font></span>
+										<input type="number" readonly  step="any" name="teavtb" value="<?= $result['tEavtb'] ?>" class="form-control border-start-0" id="teavtb" placeholder="TEavtb" />
+									</div>
+							</div>
+							<div class="col-4">
+								
+								<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEav</font></font></span>
+										<input type="number" readonly step="any" name="teav" value="<?= $result['tEav'] ?>" class="form-control border-start-0" id="teav" placeholder="" />
+									</div>
+							</div>
+							</div>
+							<div class="row">
+								<div class="col-4">
+								
+								<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEarbd</font></font></span>
+										<input type="number" required step="any" name="tearbd" value="<?= $result['tEarbd'] ?>" class="form-control border-start-0" id="tearbd" placeholder="TEarbd" />
+									</div>
+							</div>
+							<div class="col-4">
+								
+								<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEartb</font></font></span>
+										<input type="number" readonly  step="any" name="teartb" value="<?= $result['tEartb'] ?>" class="form-control border-start-0" id="teartb" placeholder="TEartb" />
+									</div>
+							</div>
+							<div class="col-4">
+								
+								<div class="input-group mt-3">
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEar</font></font></span>
+										<input type="number" readonly step="any" name="tear" value="<?= $result['tEar'] ?>" class="form-control border-start-0" id="tear" placeholder="" />
+									</div>
+							</div>
+							</div>
+							<div class="row mt-3">
+								<div class="col-4">
+								
+								<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEMbd</font></font></span>
+										<input type="number" readonly step="any" name="tembd" value="<?= $result['tEmbd'] ?>" class="form-control border-start-0" id="tembd" placeholder="TEMbd" />
+									</div>
+							</div>
+							<div class="col-4">
+								
+								<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEMtb</font></font></span>
+										<input type="number" readonly  step="any" name="temtb" value="<?= $result['tEmtb'] ?>" class="form-control border-start-0" id="temtb" placeholder="TEMtb" />
+									</div>
+							</div>
+							<div class="col-4">
+								
+								<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEM</font></font></span>
+										<input type="number" readonly step="any" name="tem" value="<?= $result['tEm'] ?>" class="form-control border-start-0" id="tem" placeholder="" />
+									</div>
+							</div>
+							</div>
+							<h5 class="mb-0 text-primary mt-3">Calcul de l'Assiette Apparente ou (Apparent Trim)</h5>
+							<div class="col-4">
+								
+								<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Apparent Trim</font></font></span>
+										<input type="number" readonly step="any" name="apparentTrim" value="<?= $result['apparentTrim'] ?>" class="form-control border-start-0" id="apparentTrim" placeholder="" />
+									</div>
+							</div>
+							<h5 class="mb-0 text-primary mt-3">Calcul de la distance entre les marques avant et arriéres</h5>
+							<div class="row">
+								<div class="col-6">
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">L</font></font></span>
+										<input type="number" readonly step="any" name="L" value="<?= $result['l'] ?>" class="form-control border-start-0" id="L" placeholder="" />
+									</div>
+								</div>
+
+								<div class="col-6">
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">l1</font></font></span>
+										<input type="number" readonly step="any" name="l1" value="<?= $result['l1'] ?>" class="form-control border-start-0" id="l1" placeholder="" />
+									</div>
+
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">l2</font></font></span>
+										<input type="number" readonly step="any" name="l2" value="<?= $result['l2'] ?>" class="form-control border-start-0" id="l2" placeholder="" />
+									</div>
+
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">l3</font></font></span>
+										<input type="number" readonly step="any"  name="l3" value="<?= $result['l3'] ?>" class="form-control border-start-0" id="l3" placeholder="" />
+									</div>
+
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">l</font></font></span>
+										<input type="number" step="any" readonly name="lL" value="<?= $result['lL'] ?>" class="form-control border-start-0" id="lL" placeholder="" />
+									</div>
+								</div>
+							</div>
+
+							<h5 class="mb-0 text-primary">Correction à apporter aux tirants apparents</h5>
+							<div class="row">
+								<div class="col-6">
+									
+								</div>
+
+								<div class="col-6">
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Corr.avant</font></font></span>
+										<input type="number" readonly step="any" name="corrAv" value="<?= $result['corrAvant'] ?>" class="form-control border-start-0" id="corrAv" placeholder="" />
+									</div>
+
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Corr.arr</font></font></span>
+										<input type="number" readonly step="any" name="corrAr" value="<?= $result['corrArr'] ?>" class="form-control border-start-0" id="corrAr" placeholder="" />
+									</div>
+
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Corr.mil</font></font></span>
+										<input type="number" readonly step="any" name="corrM" value="<?= $result['corrMil'] ?>" class="form-control border-start-0" id="corrM" placeholder="" />
+									</div>
+								</div>
+							</div>
+
+							<h5 class="mb-0 text-primary">Correction des Tirants réels</h5>
+							<div class="row">
+								<div class="col-6">
+									
+								</div>
+
+								<div class="col-6">
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tav</font></font></span>
+										<input type="number" readonly step="any" name="tAv" value="<?= $result['tav'] ?>" class="form-control border-start-0" id="tAv" placeholder="" />
+									</div>
+
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tar</font></font></span>
+										<input type="number" readonly step="any" name="tAr" value="<?= $result['tar'] ?>" class="form-control border-start-0" id="tAr" placeholder="" />
+									</div>
+
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TM</font></font></span>
+										<input type="number" readonly step="any" name="tM" value="<?= $result['tM'] ?>" class="form-control border-start-0" id="tM" placeholder="" />
+									</div>
+								</div>
+							</div>
+
+							<h5 class="mb-0 text-primary">Calcul de l'Assiette réelle ou True Trim</h5>
+							<div class="row">
+								<div class="col-6">
+									
+								</div>
+
+								<div class="col-6">
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">True Trim</font></font></span>
+										<input type="number" readonly step="any" name="trueTrim" value="<?= $result['trueTrim'] ?>" class="form-control border-start-0" id="trueTrim" placeholder="" />
+									</div>
+								</div>
+							</div>
+							<?php
+						}
+				?>
 	</div>
 </div>
 				<?php
