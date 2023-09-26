@@ -105,7 +105,7 @@ if(isset($_GET['erreur_insersionmdp'])){
 									<select required name="typeUser" id="type_utilisateur" class="form-select">
 										<option value="" disabled="disabled" selected="selected">- - Selectionner le type- -</option>
 										<option value="Administrateur">Administrateur</option>
-										<option value="Enquêteur">Enquêteur</option>
+										<option value="Enqueteur">Enquêteur</option>
 										<option value="Superviseur">Superviseur</option>
 									</select>
 								</div>
