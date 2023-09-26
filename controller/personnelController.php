@@ -66,7 +66,7 @@ if(isset($_POST['btn_ajout'])){
         if ($_SESSION["CURRENT_user"]["type"]==='Administrateur' or $_SESSION["CURRENT_user"]["type"]==='Superviseur'){
             header("location:../?page=dashboard");
         }else{
-            header('location:../?page=listessurveyinitial');
+            header("location:../?page=listessurveyinitial");
         }
        }else{
            header("location:../?erreur=connexion");
