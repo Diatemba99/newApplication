@@ -19,6 +19,7 @@ class  Infodraftinitial {
  public $destinataireEchantillons;
  public $nombreCales;
  public $infoComplementaires;
+ public $inspecteur;
 
  // function de recuperation du navire en fonction de l'ID
 
@@ -46,6 +47,22 @@ class  Infodraftinitial {
         if (!is_null($db))
          {  
             $sql="SELECT * from info_navire_survey where idUser = $inspecteur";
+            $result=$db->query($sql);
+            $alldraft=$result->fetchAll(PDO::FETCH_ASSOC);
+         }
+      return $alldraft;
+    }
+
+    // function de recuperation de tous les Draft valide en fonction de l'inspecteur
+
+    function getDraftInitialValidebyInspecteur($inspecteur)
+    {
+        $ob_connexion=new Connexion();
+        $db=$ob_connexion->getDB();
+        $alldraft=null;
+        if (!is_null($db))
+         {  
+            $sql="SELECT * from info_navire_survey where idUser = $inspecteur and valide=1";
             $result=$db->query($sql);
             $alldraft=$result->fetchAll(PDO::FETCH_ASSOC);
          }

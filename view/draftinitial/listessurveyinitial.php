@@ -8,7 +8,7 @@ $profile=$_SESSION["CURRENT_user"]['id'];
  
 <!-- Button trigger modal -->
 <?php
-if ($_SESSION["CURRENT_user"]['type']=='Administrateur' or $_SESSION["CURRENT_user"]['type']=='Enqueteur'){
+if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_user"]['type']==='Enqueteur'){
 	?>
 	<button type="button" class="btn btn-primary radius-30" data-bs-toggle="modal" data-bs-target="#AjouterUtilisateur"><i class="fa-duotone fa-plus"></i>AJOUTER NOUVEAU DRAFT</button>
 	<?php
@@ -19,7 +19,7 @@ if ($_SESSION["CURRENT_user"]['type']=='Administrateur' or $_SESSION["CURRENT_us
 <h6 class="mb-0 text-uppercase">Liste des Draft</h6>
 	<hr/>
 	<!-- <?php echo $profile?> -->
-	<?php 
+	<?php
 	if($_SESSION["CURRENT_user"]['type'] =='Administrateur'){
 		?>
 		<div class="card-body">
