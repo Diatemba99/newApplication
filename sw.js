@@ -9,7 +9,7 @@ self.addEventListener("fetch", (event) => {
                 }
                 return await fetch(event.request);
             }catch (e) {
-            return new Response("Bonjour les gens");
+            return new Response("Bonjour, Vous êtes hors ligne...");
             }
         })()
         );
