@@ -32,6 +32,7 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 					<th>Official N°</th>
 					<th>Ship Management</th>
 					<th>Opérators</th>
+					<th>Statut</th>
 					<th>Actions</th>
 				</tr>
 			</thead>
@@ -47,6 +48,18 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 						<td><?= $draft['officialNo'] ?></td>
 						<td><?= $draft['shipManagement'] ?></td>
 						<td><?= $draft['operators'] ?></td>
+						<?php
+						if ($draft['valide'] == 0){
+							?>
+								<td><span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-info"></i>En cours</span></td>
+							<?php
+						}elseif ($draft['valide'] == 1){
+							?>
+								<td><span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-success"></i>Terminé</span></td>
+							<?php
+						}
+						?>
+						
 						<td class="d-flex">
 							
 							<button type="button" onclick="window.location.href = '?page=infodraftinitial&id=<?= $draft['id'] ?>';" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Continuer Draft</font></font></button>&nbsp; &nbsp;
@@ -74,6 +87,7 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 					<th>Official N°</th>
 					<th>Ship Management</th>
 					<th>Opérators</th>
+					<th>Statut</th>
 					<th>Actions</th>
 				</tr>
 			</thead>
@@ -89,6 +103,17 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 						<td><?= $draft['officialNo'] ?></td>
 						<td><?= $draft['shipManagement'] ?></td>
 						<td><?= $draft['operators'] ?></td>
+						<?php
+						if ($draft['valide'] == 0){
+							?>
+								<td><span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-info"></i>En cours</span></td>
+							<?php
+						}elseif ($draft['valide'] == 1){
+							?>
+								<td><span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-success"></i>Terminé</span></td>
+							<?php
+						}
+						?>
 						<td class="d-flex">
 							
 							<button type="button" onclick="window.location.href = '?page=infodraftinitial&id=<?= $draft['id'] ?>';" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Continuer Draft</font></font></button>&nbsp; &nbsp;
@@ -116,6 +141,7 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 					<th>Official N°</th>
 					<th>Ship Management</th>
 					<th>Opérators</th>
+					<th>Statut</th>
 					<th>Actions</th>
 				</tr>
 			</thead>
@@ -131,6 +157,17 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 						<td><?= $draft['officialNo'] ?></td>
 						<td><?= $draft['shipManagement'] ?></td>
 						<td><?= $draft['operators'] ?></td>
+						<?php
+						if ($draft['valide'] == 0){
+							?>
+								<td><span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-info"></i>En cours</span></td>
+							<?php
+						}elseif ($draft['valide'] == 1){
+							?>
+								<td><span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-success"></i>Terminé</span></td>
+							<?php
+						}
+						?>
 						<td class="d-flex">
 							
 							<button type="button" onclick="window.location.href = '?page=infodraftinitial&id=<?= $draft['id'] ?>';" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Continuer Draft</font></font></button>&nbsp; &nbsp;

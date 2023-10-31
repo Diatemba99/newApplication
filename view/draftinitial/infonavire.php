@@ -191,25 +191,25 @@ if (isset($_GET['erreur_insersion'])) {
 								<h6 class="mb-5 text-uppercase">Informations Etape 2</h6>
 								
 								<!-- <button type="button" onclick="suivant()" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Suivant</font></font></button>&nbsp; &nbsp; -->
-	<div class="table-responsive">
-		<table id="example2" class="table table-striped table-bordered">
-			<thead>
-				<tr>
-					<th>Type Minerai</th>
-					<th>Teneur en Eau</th>
-					<th>Teneur En Silice</th>
-					<th>Teneur En Alumin</th>
-					<th>Inspecteur Minier</th>
-					
-				</tr>
-			</thead>
-			<tbody>
+					<!-- <div class="table-responsive"> -->
+						<!-- <table id="example2" class="table table-striped table-bordered"> -->
+							<!-- <thead>
+								<tr>
+									<th>Type Minerai</th>
+									<th>Teneur en Eau</th>
+									<th>Teneur En Silice</th>
+									<th>Teneur En Alumin</th>
+									<th>Inspecteur Minier</th>
+									
+								</tr>
+							</thead>
+							<tbody> -->
 				<?php
 				$cmma = new Infodraftinitial($idNavire);
 				$result1 = $cmma->getInfoDraftByID($idNavire);
 				foreach ($result1 as $result) {
 				?>
-					<tr>
+					<!-- <tr>
 						<td><?= $result['typeMinerai'] ?></td>
 						<td><?= $result['teneurEau'] ?></td>
 						<td><?= $result['teneurSilice'] ?></td>
@@ -217,13 +217,148 @@ if (isset($_GET['erreur_insersion'])) {
 						<td><?= $result['inspecteurMinier'] ?></td>
 						
 						
-					</tr>
-				<?php
+					</tr> -->
+				<!-- <?php
+				// }
+				?> -->
+			<!-- </tbody> -->
+		<!-- </table> -->
+	<!-- </div> -->
+					<div class="row ">
+							
+							<hr>
+							
+                                
+							
+								<div class="col-6">
+								
+								<div class="input-group pt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Type de minerai</font></font></span>
+										<input type="text" readonly name="typeMinerai" class="form-control border-start-0" id="typeMinerai" value="<?= $result['typeMinerai'] ?>" />
+									</div>
+							</div>
+							<div class="col-6">
+								
+								<div class="input-group pt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Teneur en eau</font></font></span>
+										<input type="text" readonly name="teneurEau" class="form-control border-start-0" id="teneurEau" value="<?= $result['teneurEau'] ?>" />
+									</div>
+							</div>
+							<div class="col-md-6">
+								
+								<div class="input-group pt-3">
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Teneur en silice (SIO2)</font></font></span>
+										<input type="text" readonly name="teneurSilice" class="form-control border-start-0" id="teneurSilice" value="<?= $result['teneurSilice'] ?>" />
+									</div>
+							</div>
+							<div class="col-md-6">
+								
+								<div class="input-group pt-3">
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Teneur en alumin (AI2O3)</font></font></span>
+										<input type="text" readonly name="teneurAlumin" class="form-control border-start-0" id="teneurAlumin" value="<?= $result['teneurAlumin'] ?>" />
+									</div>
+							</div>
+							<div class="col-md-6">
+								
+								<div class="input-group pt-3">
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Inspecteur Minier</font></font></span>
+										<input type="text" readonly name="inspecteur" class="form-control border-start-0" id="inspecteur" value="<?= $result['inspecteurMinier'] ?>" />
+									</div>
+							</div>
+							<div class="col-md-6">
+								
+								<div class="input-group pt-3">
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nom du port de départ</font></font></span>
+										<input type="text" readonly name="nomPortDepart" class="form-control border-start-0" id="nomPortDepart" value="<?= $result['nomPortDepart'] ?>" />
+									</div>
+							</div>
+							<div class="col-md-6">
+								
+								<div class="input-group pt-3">
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nom du port de déstination</font></font></span>
+										<input type="text" readonly name="nomPortDestination" class="form-control border-start-0" id="nomPortDestination" value="<?= $result['nomPortDestination'] ?>" />
+									</div>
+							</div>
+							<div class="col-md-6">
+								
+								<div class="input-group pt-3">
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nom du Capitaine</font></font></span>
+										<input type="text" readonly name="nomCapitaine" class="form-control border-start-0" id="nomCapitaine" value="<?= $result['nomCapitaine'] ?>" />
+									</div>
+							</div>
+							<div class="col-md-6">
+								
+								<div class="input-group pt-3">
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">IMO Number</font></font></span>
+										<input type="text" readonly name="imo" class="form-control border-start-0" id="imo" value="<?= $result['imoNumber'] ?>" />
+									</div>
+							</div>
+							<div class="col-md-6">
+								
+								<div class="input-group pt-3">
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Date entrée Navire</font></font></span>
+										<input type="date" readonly name="dateEntreNavire" class="form-control border-start-0" id="dateEntreNavire" value="<?= $result['dateEntreNavire'] ?>" />
+									</div>
+							</div>
+							<div class="col-md-6">
+								
+								<div class="input-group pt-3">
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Date Survey Initial</font></font></span>
+										<input type="date" readonly name="dateSurveyInitial" class="form-control border-start-0" id="dateSurveyInitial" value="<?= $result['dateSurveyInitial'] ?>" />
+										
+									</div>
+							</div>
+							<div class="col-md-6">
+								
+								<div class="input-group pt-3">
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Heure Survey Initial</font></font></span>
+										<input type="text" readonly name="heureSurveyInitial" class="form-control border-start-0" id="heureSurveyInitial" value="<?= $result['heureSurveyInitial'] ?>" />
+										
+									</div>
+							</div>
+							<div class="col-md-6">
+								
+								<div class="input-group pt-3">
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Société Miniére</font></font></span>
+										<input type="text" readonly name="societeMiniere" class="form-control border-start-0" id="societeMiniere" value="<?= $result['societeMiniere'] ?>" />
+									</div>
+							</div>
+							<div class="col-md-6">
+								
+								<div class="input-group pt-3">
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Agence Maritime</font></font></span>
+										<input type="text" readonly name="agenceMaritime" class="form-control border-start-0" id="agenceMaritime" value="<?= $result['agenceMaritime'] ?>" />
+									</div>
+							</div>
+							<div class="col-md-6">
+							
+								<div class="input-group pt-3">
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Destinataire des échantillons</font></font></span>
+										<input type="text" readonly name="destinataireEchantillons" class="form-control border-start-0" id="destinataireEchantillons" value="<?= $result['destinataireEchantillons'] ?>" />
+									</div>
+							</div>
+							<div class="col-md-6">
+								
+								<div class="input-group pt-3">
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nombre de Cale</font></font></span>
+										<input type="number" readonly name="nombreCale" class="form-control border-start-0" id="nombreCale" value="<?= $result['nombreCales'] ?>" />
+									</div>
+							</div>
+							<div class="col-md-6">
+								<div class="input-group pt-3">
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Informations Complémentaire</font></font></span>
+										<input type="text" readonly name="infoComplémentaire" class="form-control border-start-0" id="infoComplémentaire" value="<?= $result['infoComplementaires'] ?>" />
+									</div>
+							</div>
+						<!-- </div> -->
+							
+								
+							
+					</div>
+							<?php
 				}
 				?>
-			</tbody>
-		</table>
-	</div>
+
 </div>
 							<?php
 						}

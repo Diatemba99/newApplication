@@ -387,7 +387,7 @@ require_once './model/tpcinitial.php';
 								
 								<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEarbd</font></font></span>
-										<input type="number" required step="any" name="tearbd" value="<?= $result['tEarbd'] ?>" class="form-control border-start-0" id="tearbd" placeholder="TEarbd" />
+										<input type="number" readonly step="any" name="tearbd" value="<?= $result['tEarbd'] ?>" class="form-control border-start-0" id="tearbd" placeholder="TEarbd" />
 									</div>
 							</div>
 							<div class="col-4">

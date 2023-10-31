@@ -85,7 +85,7 @@ $profile=$_SESSION["CURRENT_user"]['first_name'].' '.$_SESSION["CURRENT_user"]['
 					<a href="?page=dashboard" class="has-arrow">
 						<div class="parent-icon"><i class='bx bx-home-circle'></i>
 						</div>
-						<div class="menu-title">Tableau de bord</div>
+						<div class="menu-title">Tableau de Bord</div>
 					</a>
 					 
 				
@@ -93,7 +93,7 @@ $profile=$_SESSION["CURRENT_user"]['first_name'].' '.$_SESSION["CURRENT_user"]['
 					<a href="javascript:;" class="has-arrow">
 						<div class="parent-icon"><i class="fa-regular fa-building"></i>
 						</div>
-						<div class="menu-title">DRAFT INITIAL</div>
+						<div class="menu-title">Draft Initial</div>
 					</a>
 					<ul>
 						
@@ -106,7 +106,7 @@ $profile=$_SESSION["CURRENT_user"]['first_name'].' '.$_SESSION["CURRENT_user"]['
 					<a href="javascript:;" class="has-arrow">
 						<div class="parent-icon"><i class="fa-regular fa-building"></i>
 						</div>
-						<div class="menu-title">DRAFT FINAL</div>
+						<div class="menu-title">Draft Final</div>
 					</a>
 					<ul>
 						
@@ -140,7 +140,7 @@ $profile=$_SESSION["CURRENT_user"]['first_name'].' '.$_SESSION["CURRENT_user"]['
 					<a href="?page=dashboard" class="has-arrow">
 						<div class="parent-icon"><i class='bx bx-home-circle'></i>
 						</div>
-						<div class="menu-title">Tableau de bord</div>
+						<div class="menu-title">Tableau de Bord</div>
 					</a>
 					 
 				
@@ -148,7 +148,7 @@ $profile=$_SESSION["CURRENT_user"]['first_name'].' '.$_SESSION["CURRENT_user"]['
 					<a href="javascript:;" class="has-arrow">
 						<div class="parent-icon"><i class="fa-regular fa-building"></i>
 						</div>
-						<div class="menu-title">DRAFT INITIAL</div>
+						<div class="menu-title">Draft Initial</div>
 					</a>
 					<ul>
 						
@@ -161,7 +161,7 @@ $profile=$_SESSION["CURRENT_user"]['first_name'].' '.$_SESSION["CURRENT_user"]['
 					<a href="javascript:;" class="has-arrow">
 						<div class="parent-icon"><i class="fa-regular fa-building"></i>
 						</div>
-						<div class="menu-title">DRAFT FINAL</div>
+						<div class="menu-title">Draft Final</div>
 					</a>
 					<ul>
 						
@@ -179,7 +179,7 @@ $profile=$_SESSION["CURRENT_user"]['first_name'].' '.$_SESSION["CURRENT_user"]['
 					<a href="javascript:;" class="has-arrow">
 						<div class="parent-icon"><i class="fa-regular fa-building"></i>
 						</div>
-						<div class="menu-title">DRAFT INITIAL</div>
+						<div class="menu-title">Draft Initial</div>
 					</a>
 					<ul>
 						
@@ -192,7 +192,7 @@ $profile=$_SESSION["CURRENT_user"]['first_name'].' '.$_SESSION["CURRENT_user"]['
 					<a href="javascript:;" class="has-arrow">
 						<div class="parent-icon"><i class="fa-regular fa-building"></i>
 						</div>
-						<div class="menu-title">DRAFT FINAL</div>
+						<div class="menu-title">Draft Final</div>
 					</a>
 					<ul>
 						
