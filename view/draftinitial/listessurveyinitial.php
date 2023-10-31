@@ -197,7 +197,7 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 					<h5 class="modal-title">Survey Initial - Etape 1/6</h5>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
-				<div class="modal-body">	
+				<div class="modal-body">
 				<h6 class="mb-0 text-uppercase">Information Du Navire</h6>
 					<div class="card border-top border-0 border-4 border-primary">
 						<div class="card-body p-5">
