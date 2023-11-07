@@ -75,7 +75,7 @@ class  Utilisateur {
            ));
            $result=$element->fetchAll(PDO::FETCH_ASSOC);
            $nb_ligne=$element->rowCount();
-           if($nb_ligne==1 ) 
+           if($nb_ligne==1 )
            {
            session_start();
            $_SESSION["CURRENT_user"]=$result[0];

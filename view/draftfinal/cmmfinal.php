@@ -401,25 +401,13 @@ require_once './model/tpcfinal.php';
 	<button type="button" onclick="precedent()" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Précédent</font></font></button>
 	<div class="card-body">
 								<h6 class="mb-5 text-uppercase">Informations Etape 3</h6>
-	<div class="table-responsive">
-		<table id="example2" class="table table-striped table-bordered">
-			<thead>
-				<tr>
-					<th>x1Mmoyenne</th>
-					<th>x2Mmoyenne</th>
-					<th>MAD</th>
-					<th>y1Deplacement</th>
-					<th>y2Deplacement</th>
-					<th>Déplacement MAD</th>
-				</tr>
-			</thead>
-			<tbody>
+	
 				<?php
 				$cmma = new Cmmfinal($idNavire);
 				$result1 = $cmma->getCmmInitialByID($idNavire);
 				foreach ($result1 as $result) {
 				?>
-					<tr>
+					<!-- <tr>
 						<td><?= $result['x1Mmoyenne'] ?></td>
 						<td><?= $result['x2Mmoyenne'] ?></td>
 						<td><?= $result['mad'] ?></td>
@@ -427,14 +415,247 @@ require_once './model/tpcfinal.php';
 						<td><?= $result['y2Deplacement'] ?></td>
 						<td><?= $result['deplacementMad'] ?></td>
 						
-					</tr>
+					</tr> -->
+				<div class="row">
+					<div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x1</font></font></span>
+							<input type="number" readonly step="any" name="x1" class="form-control border-start-0" id="x1" value="<?= $result['x1Mmoyenne'] ?>" />
+						</div>
+					</div>
+					<div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x2</font></font></span>
+							<input type="number" readonly step="any" name="x2" class="form-control border-start-0" id="x2" value=<?= $result['x2Mmoyenne'] ?> />
+						</div>
+					</div>
+					<div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MAD</font></font></span>
+							<input type="number" readonly step="any" name="mad" class="form-control border-start-0" id="mad" value=<?= $result['mad'] ?> />
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<h5 class="mb-0 text-primary">Calcul déplacement correspndant à D=0</h5>
+					<div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y1</font></font></span>
+							<input type="number" readonly step="any" name="y1" class="form-control border-start-0" id="y1" value=<?= $result['y1Deplacement'] ?> />
+						</div>
+					</div>
+					<div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y2</font></font></span>
+							<input type="number" readonly step="any" name="y2" class="form-control border-start-0" id="y2" value=<?= $result['y2Deplacement'] ?> />
+						</div>
+					</div>
+					<div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Déplacement MAD</font></font></span>
+							<input type="number" readonly step="any" name="deplacementMad" class="form-control border-start-0" id="deplacementMad" value=<?= $result['deplacementMad'] ?> />
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<h5 class="mb-0 text-primary">Calcul des MAD + 0,5 et MAD - 0,5</h5>
+					<div class="col-4">
+
+					</div>
+					<div class="col-4">
+
+					</div>
+					<div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">t1</font></font></span>
+							<input type="number" readonly step="any"  name="t1" class="form-control border-start-0" id="t1" value=<?= $result['t1'] ?> />
+						</div>
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">t2</font></font></span>
+							<input type="number" readonly step="any"  name="t2" class="form-control border-start-0" id="t2" value=<?= $result['t2'] ?> />
+						</div>
+					</div>
+					<div class="col-4">
+
+					</div>
+				</div>
+				<div class="row">
+					<h5 class="mb-0 text-primary">Calcul du LCF</h5>
+					<div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y1</font></font></span>
+							<input type="number" readonly step="any" name="y1LCF" class="form-control border-start-0" id="y1LCF" value=<?= $result['y1LCF'] ?> />
+						</div>
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y2</font></font></span>
+							<input type="number" readonly step="any" name="y2LCF" class="form-control border-start-0" id="y2LCF" value=<?= $result['y2LCF'] ?> />
+						</div>
+					</div>
+					<!-- <div class="col-4 mt-3">
+						<div>
+							<div class="form-check">
+								<input class="form-check-input" onclick="calculeLCF();" type="radio" name="lcf" id="lcftoap" value="LCF to AP">
+								<label class="form-check-label" for="lcf1">LCF to AP</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" onclick="calculeLCF();" type="radio" name="lcf" id="lcftofp" value="LCF to FP">
+								<label class="form-check-label" for="lcf2">LCF to FP</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" onclick="calculeLCF();" type="radio" name="lcf" id="lcftomidship" value="LCF to midship">
+								<label class="form-check-label" for="lcf3">LCF to midship</label>
+							</div>
+						</div>
+						
+					</div> -->
+						<div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><?= $result['choixFinal'] ?></font></font></span>
+							<!-- <input type="number" readonly step="any" name="lcfto" class="form-control border-start-0" id="choix" value=<?= $result['choixFinal'] ?> /> -->
+						</div>
+					</div>
+					<div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LCF to</font></font></span>
+							<input type="number" readonly step="any" name="lcfto" class="form-control border-start-0" id="lcfto" value=<?= $result['lcf'] ?> />
+						</div>
+					</div>
+				</div>
+				<h5 class="mb-0 text-primary">Calcul du TPC pour MAD</h5>
+				<div class="row">
+					<div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y1</font></font></span>
+							<input type="number" readonly step="any" name="y1tpcmad" class="form-control border-start-0" id="y1tpcmad" value=<?= $result['y1TPCmad'] ?> />
+						</div>
+					</div>
+					<div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y2</font></font></span>
+							<input type="number" readonly step="any" name="y2tpcmad" class="form-control border-start-0" id="y2tpcmad" value=<?= $result['y2TPCmad'] ?> />
+						</div>
+					</div>
+					<div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TPC</font></font></span>
+							<input type="number" readonly step="any" name="tpcmad" class="form-control border-start-0" id="tpcmad" value=<?= $result['TPC'] ?> />
+						</div>
+					</div>
+				</div>
+				<h5 class="mb-0 text-primary">Calcul First Trim Correction</h5>
+				<div class="row">
+					<div class="col-8">
+
+					</div>
+					<div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">First Trim Correction</font></font></span>
+							<input type="number" readonly step="any" name="firstTrimCorrection" class="form-control border-start-0" id="firstTrimCorrection" value=<?= $result['firstTrimCorrection'] ?> />
+						</div>
+					</div>
+				</div>
+				<h5 class="mb-0 text-primary">Calcul Second Trim Correction</h5>
+
+				<div class="row">
+					<div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x1</font></font></span>
+							<input type="number" readonly step="any" name="x1secondtrim" class="form-control border-start-0" id="x1secondtrim" value=<?= $result['x1MCTC1'] ?> />
+						</div>
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x2</font></font></span>
+							<input type="number" readonly step="any" name="x2secondtrim" class="form-control border-start-0" id="x2secondtrim" value=<?= $result['x2MCTC1'] ?> />
+						</div>
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y1</font></font></span>
+							<input type="number" readonly step="any" name="y1secondtrim" class="form-control border-start-0" id="y1secondtrim" value=<?= $result['y1MCTC1'] ?> />
+						</div>
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y2</font></font></span>
+							<input type="number" step="any" readonly name="y2secondtrim" class="form-control border-start-0" id="y2secondtrim" value=<?= $result['y2MCTC1'] ?> />
+						</div>
+					</div>
+					<div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MTC1</font></font></span>
+							<input type="number" readonly step="any" name="mtc1" class="form-control border-start-0" id="mtc1" value=<?= $result['MCTC1'] ?> />
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x1</font></font></span>
+							<input type="number" readonly step="any" name="x1secondtrim2" class="form-control border-start-0" id="x1secondtrim2" value=<?= $result['x1MCTC2'] ?> />
+						</div>
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x2</font></font></span>
+							<input type="number" readonly step="any" name="x2secondtrim2" class="form-control border-start-0" id="x2secondtrim2" value=<?= $result['x2MCTC2'] ?> />
+						</div>
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y1</font></font></span>
+							<input type="number" readonly step="any" name="y1secondtrim2" class="form-control border-start-0" id="y1secondtrim2" value=<?= $result['y1MCTC2'] ?> />
+						</div>
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y2</font></font></span>
+							<input type="number" readonly step="any" name="y2secondtrim2" class="form-control border-start-0" id="y2secondtrim2" value=<?= $result['y2MCTC2'] ?> />
+						</div>
+					</div>
+					<div class="col-4">
+						
+						<div class="input-group mt-3">
+						<div class="input-group ">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MTC2</font></font></span>
+							<input type="number"  readonly step="any" name="mtc2" class="form-control border-start-0" id="mtc2" value=<?= $result['MCTC2'] ?> />
+						</div>
+
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-6">
+
+					</div>
+					<div class="col-6">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Second Trim Correction</font></font></span>
+							<input type="number" readonly step="any" name="secondTrimCorrection" class="form-control border-start-0" id="secondTrimCorrection" value=<?= $result['secondTrimCorrection'] ?> />
+						</div>
+					</div>
+				</div>
+				
+			</div>
 				<?php
-				}
-				?>
-			</tbody>
-		</table>
+					}
+					?>		
+		<!-- </div> -->
 	</div>
-</div>
 <?php
 }
 ?>

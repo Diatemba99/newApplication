@@ -218,25 +218,13 @@ require_once './model/tpcfinal.php';
 		<button type="button" onclick="precedent()" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Précédent</font></font></button>
 		<div class="card-body">
 								<h6 class="mb-5 text-uppercase">Informations Etape 4</h6>
-	<div class="table-responsive">
-		<table id="example2" class="table table-striped table-bordered">
-			<thead>
-				<tr>
-					<th>x1</th>
-					<th>x2</th>
-					<th>y1</th>
-					<th>y2</th>
-					<th>TPCMbd</th>
-					
-				</tr>
-			</thead>
-			<tbody>
+	
 				<?php
 				$cmma = new Tcpfinal($idNavire);
 				$result1 = $cmma->getTpcnitialByID($idNavire);
 				foreach ($result1 as $result) {
 				?>
-					<tr>
+					<!-- <tr>
 						<td><?= $result['x1TPCMbd'] ?></td>
 						<td><?= $result['x2TPCMbd'] ?></td>
 						<td><?= $result['y1TPCMbd'] ?></td>
@@ -244,13 +232,93 @@ require_once './model/tpcfinal.php';
 						<td><?= $result['TPCMbd'] ?></td>
 						
 						
-					</tr>
+					</tr> -->
+					<div class="row mt-3">
+								<div class="col-4">
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x1</font></font></span>
+										<input type="number" readonly step="any" name="x1MTC1" class="form-control border-start-0" id="x1MTC1" value="<?= $result['x1TPCMbd'] ?>" />
+									</div>
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x2</font></font></span>
+										<input type="number" readonly step="any" name="x2MTC1" class="form-control border-start-0" id="x2MTC1" value="<?= $result['x2TPCMbd'] ?>" />
+									</div>
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y1</font></font></span>
+										<input type="number" readonly step="any" name="y1MTC1" class="form-control border-start-0" id="y1MTC1" value="<?= $result['y1TPCMbd'] ?>" />
+									</div>
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y2</font></font></span>
+										<input type="number" readonly step="any" name="y2MTC1" class="form-control border-start-0" id="y2MTC1" value="<?= $result['y2TPCMbd'] ?>" />
+									</div>
+								</div>
+								<div class="col-4">
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TPCMbd</font></font></span>
+										<input type="number" readonly readonly  step="any" name="mtc1" class="form-control border-start-0" id="mtc1" value="<?= $result['TPCMbd'] ?>" />
+									</div>
+								</div>
+							</div>
+							<hr/>
+							<div class="row">
+								<div class="col-4">
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x1</font></font></span>
+										<input type="number" readonly step="any" name="x1MTC2" class="form-control border-start-0" id="x1MTC2" value="<?= $result['x1TPCMtd'] ?>" />
+									</div>
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x2</font></font></span>
+										<input type="number" readonly step="any" name="x2MTC2" class="form-control border-start-0" id="x2MTC2" value="<?= $result['x2TPCMtd'] ?>" />
+									</div>
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y1</font></font></span>
+										<input type="number" readonly step="any" name="y1MTC2" class="form-control border-start-0" id="y1MTC2" value="<?= $result['y1TPCMtd'] ?>" />
+									</div>
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y2</font></font></span>
+										<input type="number" readonly step="any" name="y2MTC2" class="form-control border-start-0" id="y2MTC2" value="<?= $result['y2TPCMtd'] ?>" />
+									</div>
+								</div>
+								<div class="col-4">
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TPCMtd</font></font></span>
+										<input type="number" readonly readonly step="any" name="mtc2" class="form-control border-start-0" id="mtc2" value="<?= $result['TPCMtd'] ?>" />
+									</div>
+								</div>
+							</div>
+							<h5 class="mb-0 text-primary">Déplacement Corrigé</h5>
+							<div class="row">
+								<div class="col-8"></div>
+								<div class="col-4">
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Hell Correction</font></font></span>
+										<input type="number" readonly step="any" name="hellCorrection" class="form-control border-start-0" id="hellCorrection" value="<?= $result['hellCorrection'] ?>" />
+									</div>
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dépl.Corrigé</font></font></span>
+										<input type="number" readonly step="any" name="deplCorrige" class="form-control border-start-0" id="deplCorrige" value="<?= $result['deplCorrige'] ?>" />
+									</div>
+								</div>
+							</div>
+
 				<?php
 				}
 				?>
-			</tbody>
+			<!-- </tbody>
 		</table>
-	</div>
+	</div> -->
 </div>
 <?php
 }

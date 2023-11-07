@@ -140,40 +140,57 @@ require_once './model/cargaison.php';
 			<button type="button" onclick="precedent()" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Précédent</font></font></button>
 			<div class="card-body">
 								<h6 class="mb-5 text-uppercase">Informations Etape 6</h6>
-	<div class="table-responsive">
-		<table id="example2" class="table table-striped table-bordered">
-			<thead>
-				<tr>
-					<th>Poids Cargaison</th>
-					<th>Poids Cargaison Adopté</th>
-					<th>Poids Cargaison MMG</th>
-					<th>Intervalle de Confiance</th>
-					<!-- <th>Diesel Oil</th> -->
-					
-				</tr>
-			</thead>
-			<tbody>
+	
 				<?php
 				$dpla = new Cargaison($idNavire);
 				$result1 = $dpla->getCargaisonlByID($idNavire);
 				foreach ($result1 as $result) {
 				?>
-					<tr>
+					<!-- <tr>
 						<td><?= $result['poidsCargaison'] ?></td>
 						<td><?= $result['poidsCargaisonAdopte'] ?></td>
 						<td><?= $result['poidsCargaisonMMG'] ?></td>
 						<td><?= $result['intervalleConfiance'] ?></td>
-						<!-- <td><?= $result['dieselOil'] ?></td> -->
 						
 						
-					</tr>
+						
+					</tr> -->
+
+					<div class="row mt-3">
+								
+								<div class="col-4">
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Poids Cargaison</font></font></span>
+										<input type="number" required step="any" name="pcargaison" class="form-control border-start-0" id="pcargaison" readonly value="<?= $result['poidsCargaison'] ?>" />
+									</div>
+									
+                                    
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Poids Cargaison adopté</font></font></span>
+										<input type="number" required   step="any" name="pcargaisonA" class="form-control border-start-0" id="pcargaisonA" readonly value="<?= $result['poidsCargaisonAdopte'] ?>" />
+									</div>
+								</div>
+                                <div class="col-4"></div>
+								<div class="col-4">
+									
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Poids Cargaison MMG</font></font></span>
+										<input type="number" readonly step="any" name="pcargaisonMMG" class="form-control border-start-0" id="pcargaisonMMG" readonly value="<?= $result['poidsCargaisonMMG'] ?>" />
+									</div>
+                                    
+									<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Intervalle de confiance</font></font></span>
+										<input type="number" readonly step="any" name="intervalleC" class="form-control border-start-0" id="intervalleC" readonly value="<?= $result['intervalleConfiance'] ?>" />
+									</div>
+								</div>
+							</div>
+				</div>
 				<?php
-				}
-				?>
-			</tbody>
-		</table>
+					}
+					?>		
+		<!-- </div> -->
 	</div>
-</div>
 <?php
 }
 ?>
