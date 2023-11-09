@@ -45,7 +45,7 @@ class  Infodraftinitial {
         $db=$ob_connexion->getDB();
         $alldraft=null;
         if (!is_null($db))
-         {  
+         {
             $sql="SELECT * from info_navire_survey where idUser = $inspecteur";
             $result=$db->query($sql);
             $alldraft=$result->fetchAll(PDO::FETCH_ASSOC);

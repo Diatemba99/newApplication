@@ -43,18 +43,18 @@ $profile=$_SESSION["CURRENT_user"]['id'];
 						<?php
 						if ($draft['valide'] == 1 && $draft['valide2'] == 0){
 							?>
-								<td><span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-info"></i>En cours</span></td>
+								<td><span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-warning"></i></span></td>
 							<?php
 						}elseif ($draft['valide'] == 1 && $draft['valide2'] == 1){
 							?>
-								<td><span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-success"></i>Terminé</span></td>
+								<td><span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-success"></i></span></td>
 							<?php
 						}
 						?>
 						<td class="d-flex">
 							
 							<button type="button" onclick="window.location.href = '?page=infodraftfinal&id=<?= $draft['id'] ?>';" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Suivant</font></font></button>&nbsp; &nbsp;
-							<button type="button" onclick="recupererValeur(<?= $user['id'] ?>,'<?= $user['type'] ?>','<?= $user['first_name'] ?>','<?= $user['last_name'] ?>','<?= $user['email'] ?>')" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModifierUtilisateur"><i class="bx bxs-edit"></i></button>&nbsp; &nbsp;
+							<button type="button" onclick="recupererValeur(<?= $user['id'] ?>,'<?= $user['type'] ?>','<?= $user['first_name'] ?>','<?= $user['last_name'] ?>','<?= $user['email'] ?>')" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#ModifierUtilisateur"><i class="bx bxs-edit"></i></button>&nbsp; &nbsp;
 							<button type="button" class="btn btn-danger" onclick="showSwal('warning-message-and-cancel')"><i class="bx bxs-trash-alt"></i></button>
 						</td>
 					</tr>
@@ -97,18 +97,18 @@ $profile=$_SESSION["CURRENT_user"]['id'];
 						<?php
 						if ($draft['valide'] == 1 && $draft['valide2'] == 0){
 							?>
-								<td><span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-info"></i>En cours</span></td>
+								<td><span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-warning"></i></span></td>
 							<?php
 						}elseif ($draft['valide'] == 1 && $draft['valide2'] == 1){
 							?>
-								<td><span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-success"></i>Terminé</span></td>
+								<td><span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-success"></i></span></td>
 							<?php
 						}
 						?>
 						<td class="d-flex">
 							
 							<button type="button" onclick="window.location.href = '?page=infodraftfinal&id=<?= $draft['id'] ?>';" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Suivant</font></font></button>&nbsp; &nbsp;
-							<button type="button" onclick="recupererValeur(<?= $user['id'] ?>,'<?= $user['type'] ?>','<?= $user['first_name'] ?>','<?= $user['last_name'] ?>','<?= $user['email'] ?>')" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModifierUtilisateur"><i class="bx bxs-edit"></i></button>&nbsp; &nbsp;
+							<button type="button" onclick="recupererValeur(<?= $user['id'] ?>,'<?= $user['type'] ?>','<?= $user['first_name'] ?>','<?= $user['last_name'] ?>','<?= $user['email'] ?>')" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#ModifierUtilisateur"><i class="bx bxs-edit"></i></button>&nbsp; &nbsp;
 							<button type="button" class="btn btn-danger" onclick="showSwal('warning-message-and-cancel')"><i class="bx bxs-trash-alt"></i></button>
 						</td>
 					</tr>
@@ -151,11 +151,11 @@ $profile=$_SESSION["CURRENT_user"]['id'];
 						<?php
 						if ($draft['valide'] == 1 && $draft['valide2'] == 0){
 							?>
-								<td><span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-info"></i>En cours</span></td>
+								<td><span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-warning"></i></span></td>
 							<?php
 						}elseif ($draft['valide'] == 1 && $draft['valide2'] == 1){
 							?>
-								<td><span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-success"></i>Terminé</span></td>
+								<td class="text-center"><span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-success"></i></span></td>
 							<?php
 						}
 						?>

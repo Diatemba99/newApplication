@@ -1,31 +1,19 @@
 <?php
-// use PHPMailer\PHPMailer\PHPMailer;
-// use PHPMailer\PHPMailer\Exception;
-// use PHPMailer\PHPMailer\SMTP;
+
+require '../PHPMailer/src/Exception.php';
+require '../PHPMailer/src/PHPMAiler.php';
+require '../PHPMailer/src/SMTP.php';
 
 
-// require './PHPMailer/src/Exception.php';
-// require './PHPMailer/src/PHPMAiler.php';
-// require './PHPMailer/src/SMTP.php';
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
+
+
+
 require_once '../model/utilisateur.php';
 
-// $mail = new PHPMailer(true);
 
-// $mail->isSMTP(); //Specifier que PHPMailer utilise le protocole SMTP
-// $mail->Host='smtp.gmail.com'; // Specifier le serveur gmail
-// $mail->SMTPAuth=true; // Pour activer l'authentification
-// $mail->Username='aliouneg2d@gmail.com';
-// $mail->Password='Rick@19667'; //
-// $mail->SMTPSecure='tls';
-// $mail->Port=587;
-// $mail->CharSet='utf-8';
-// $mail->setFrom('aliouneg2d@gmail.com', 'NIMBA');
-// $mail->addAddress('ndiayealioune25@gmail.com', 'NIMBA');
-// $mail->isHTML(true);
-
-// $mail->Subject='Identifiants de connexion';
-// $mail->Body="Voici vos informations d'identification!";
-// $mail->SMTPDebug=0;
 
 
 
@@ -37,14 +25,50 @@ if(isset($_POST['btn_ajout'])){
     $email=$_POST['email'];
     $mot_de_passe=$_POST['mot_de_passe'];
     $Cmot_de_passe=$_POST['Cmot_de_passe'];
+
+        
+        $mail = new PHPMailer(true);
+
+        
+
     if ($mot_de_passe==$Cmot_de_passe){
         $ob_utilisateur=new Utilisateur();
     if($ob_utilisateur->saveUtilisateur($typeUser,$nom,$prenom,$email,$mot_de_passe)){
-        // if($mail->send()){
-        //     header("location:../?page=liste_personnel&success_insersion");
-        // }else{
-        //     echo 'Erreurs:' .$mail->ErrorInfo;
-        // }
+
+        try {
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';  // Remplacez par le serveur SMTP de votre fournisseur d'e-mail
+        $mail->SMTPAuth = true;
+        $mail->Username = 'aliouneg2d@gmail.com'; // Remplacez par votre adresse e-mail
+        $mail->Password = 'fmckxpgqzijcuomk'; // Remplacez par le mot de passe de votre adresse e-mail
+        $mail->SMTPSecure = 'tls';
+        $mail->Port = 587; // Le port SMTP de votre fournisseur d'e-mail
+
+        $mail->setFrom('aliouneg2d@gmail.com', 'NIMBA');
+        $mail->addAddress($email, $nom);
+
+        $mail->isHTML(true);
+        $mail->Subject = 'Informations d\'inscription';
+        $mail->Body = 'Cher utilisateur,
+
+        Vous avez été enregistré avec succès sur notre application. <br> 
+        Voici vos identifiants : <br>
+        Nom d\'utilisateur : ' . $email . ' <br>
+        Mot de passe : ' . $mot_de_passe . ' <br>
+        <br>    
+        Vous pouvez vous connecter en utilisant ces informations. <br>
+        <br>    
+        Cordialement,<br>
+        Administration NIMBA DRAFT SURVEY';
+
+        // Envoyer l'e-mail
+            $mail->send();
+            echo 'E-mail envoyé avec succès';
+        } catch (Exception $e) {
+            echo 'Erreur lors de l\'envoi de l\'e-mail : ' . $e->getMessage();
+        }
+        
+
         header("location:../?page=liste_personnel&success_insersion");
     }else{
         header("location:../?page=liste_personnel&erreur_insersion");

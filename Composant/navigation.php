@@ -262,7 +262,7 @@ $profile=$_SESSION["CURRENT_user"]['first_name'].' '.$_SESSION["CURRENT_user"]['
 
 					<div class="user-box dropdown">
 						<a class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							<img src="./page/assets/images/NIMBA.png" class="user-img" alt="user avatar">
+							<img src="./page/assets/images/avatar.png" class="user-img" alt="user avatar">
 							<div class="user-info ps-3">
 								<p class="user-name mb-0"><?=$nomAgent?></p>
 								

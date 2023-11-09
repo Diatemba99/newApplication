@@ -51,19 +51,31 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 						<?php
 						if ($draft['valide'] == 0){
 							?>
-								<td><span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-info"></i>En cours</span></td>
+								<td><span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-warning"></i></span></td>
 							<?php
 						}elseif ($draft['valide'] == 1){
 							?>
-								<td><span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-success"></i>Terminé</span></td>
+								<td><span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-success"></i></span></td>
 							<?php
 						}
 						?>
 						
 						<td class="d-flex">
+
+							<?php
+						if ($draft['valide'] == 0){
+							?>
+								<button type="button" onclick="window.location.href = '?page=infodraftinitial&id=<?= $draft['id'] ?>';" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Suivant</font></font></button>&nbsp; &nbsp;
+							<?php
+						}elseif ($draft['valide'] == 1){
+							?>
+								<button type="button" onclick="window.location.href = '?page=infodraftinitial&id=<?= $draft['id'] ?>';" class="btn btn-secondary px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Suivant</font></font></button>&nbsp; &nbsp;
+							<?php
+						}
+						?>
 							
-							<button type="button" onclick="window.location.href = '?page=infodraftinitial&id=<?= $draft['id'] ?>';" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Continuer Draft</font></font></button>&nbsp; &nbsp;
-							<button type="button" onclick="recupererValeur(<?= $user['id'] ?>,'<?= $user['type'] ?>','<?= $user['first_name'] ?>','<?= $user['last_name'] ?>','<?= $user['email'] ?>')" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModifierUtilisateur"><i class="bx bxs-edit"></i></button>&nbsp; &nbsp;
+							<!-- <button type="button" onclick="window.location.href = '?page=infodraftinitial&id=<?= $draft['id'] ?>';" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Continuer Draft</font></font></button>&nbsp; &nbsp; -->
+							<button type="button" onclick="recupererValeur(<?= $user['id'] ?>,'<?= $user['type'] ?>','<?= $user['first_name'] ?>','<?= $user['last_name'] ?>','<?= $user['email'] ?>')" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#ModifierUtilisateur"><i class="bx bxs-edit"></i></button>&nbsp; &nbsp;
 							<a href="./controller/draftinitial.php?idsup=<?= $draft['id'] ?>" class="btn btn-danger" onclick="return confirm('Voulez vous vraiment supprimer ce Draft?')"><i class="bx bxs-trash-alt"></i></a>
 						</td>
 					</tr>
@@ -106,18 +118,18 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 						<?php
 						if ($draft['valide'] == 0){
 							?>
-								<td><span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-info"></i>En cours</span></td>
+								<td><span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-warning"></i></span></td>
 							<?php
 						}elseif ($draft['valide'] == 1){
 							?>
-								<td><span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-success"></i>Terminé</span></td>
+								<td><span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-success"></i></span></td>
 							<?php
 						}
 						?>
 						<td class="d-flex">
 							
-							<button type="button" onclick="window.location.href = '?page=infodraftinitial&id=<?= $draft['id'] ?>';" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Continuer Draft</font></font></button>&nbsp; &nbsp;
-							<button type="button" onclick="recupererValeur(<?= $user['id'] ?>,'<?= $user['type'] ?>','<?= $user['first_name'] ?>','<?= $user['last_name'] ?>','<?= $user['email'] ?>')" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModifierUtilisateur"><i class="bx bxs-edit"></i></button>&nbsp; &nbsp;
+							<button type="button" onclick="window.location.href = '?page=infodraftinitial&id=<?= $draft['id'] ?>';" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Suivant</font></font></button>&nbsp; &nbsp;
+							<button type="button" onclick="recupererValeur(<?= $user['id'] ?>,'<?= $user['type'] ?>','<?= $user['first_name'] ?>','<?= $user['last_name'] ?>','<?= $user['email'] ?>')" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#ModifierUtilisateur"><i class="bx bxs-edit"></i></button>&nbsp; &nbsp;
 							<a href="./controller/draftinitial.php?idsup=<?= $draft['id'] ?>" class="btn btn-danger" onclick="return confirm('Voulez vous vraiment supprimer ce Draft?')"><i class="bx bxs-trash-alt"></i></a>
 						</td>
 					</tr>
@@ -160,17 +172,17 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 						<?php
 						if ($draft['valide'] == 0){
 							?>
-								<td><span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-info"></i>En cours</span></td>
+								<td><span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-warning"></i></span></td>
 							<?php
 						}elseif ($draft['valide'] == 1){
 							?>
-								<td><span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-success"></i>Terminé</span></td>
+								<td><span class="border px-1 rounded cursor-pointer"><i class="bx bxs-circle me-1 text-success"></i></span></td>
 							<?php
 						}
 						?>
 						<td class="d-flex">
 							
-							<button type="button" onclick="window.location.href = '?page=infodraftinitial&id=<?= $draft['id'] ?>';" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Continuer Draft</font></font></button>&nbsp; &nbsp;
+							<button type="button" onclick="window.location.href = '?page=infodraftinitial&id=<?= $draft['id'] ?>';" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Suivant</font></font></button>&nbsp; &nbsp;
 							<!-- <button type="button" onclick="recupererValeur(<?= $user['id'] ?>,'<?= $user['type'] ?>','<?= $user['first_name'] ?>','<?= $user['last_name'] ?>','<?= $user['email'] ?>')" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModifierUtilisateur"><i class="bx bxs-edit"></i></button>&nbsp; &nbsp;
 							<a href="./controller/draftinitial.php?idsup=<?= $draft['id'] ?>" class="btn btn-danger" onclick="return confirm('Voulez vous vraiment supprimer ce Draft?')"><i class="bx bxs-trash-alt"></i></a> -->
 						</td>
@@ -219,105 +231,105 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 							<div class="col-md-6">
 								
 								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CALL SIGN</font></font></span>
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Call Sign</font></font></span>
 										<input type="text" required name="callSign" class="form-control border-start-0" id="callSign" placeholder="Call Sign" />
 									</div>
 							</div>
 							<div class="col-md-6">
 								
 								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">OFFICIAL N°</font></font></span>
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Official N°</font></font></span>
 										<input type="text" required name="officialN" class="form-control border-start-0" id="officialN" placeholder="Official N°" />
 									</div>
 							</div>
 							<div class="col-md-6">
 								
 								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SHIP MANAGEMENT</font></font></span>
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ship Management</font></font></span>
 										<input type="text" required name="shipManagement" class="form-control border-start-0" id="shipManagement" placeholder="Ship Management" />
 									</div>
 							</div>
 							<div class="col-md-6">
 								
 								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">OPERATORS</font></font></span>
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Operators</font></font></span>
 										<input type="text" required name="operators" class="form-control border-start-0" id="operators" placeholder="Operators" />
 									</div>
 							</div>
 							<div class="col-md-6">
 								
 								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">REGISTERED OWNERS</font></font></span>
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Registered Owners</font></font></span>
 										<input type="text" required name="registeredOwners" class="form-control border-start-0" id="registeredOwners" placeholder="Registered Owners" />
 									</div>
 							</div>
 							<div class="col-md-6">
 								
 								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">VSA/CSO</font></font></span>
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Vsa/Cso</font></font></span>
 										<input type="text" required name="vsa" class="form-control border-start-0" id="vsa" placeholder="VSA/CCSO" />
 									</div>
 							</div>
 							<div class="col-md-6">
 								
 								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SEO</font></font></span>
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Seo</font></font></span>
 										<input type="text" required name="seo" class="form-control border-start-0" id="seo" placeholder="SEO" />
 									</div>
 							</div>
 							<div class="col-md-6">
 								
 								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">FLAG</font></font></span>
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Flag</font></font></span>
 										<input type="text" required name="flag" class="form-control border-start-0" id="flag" placeholder="Flag" />
 									</div>
 							</div>
 							<div class="col-md-6">
 								
 								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">PORT OF REG</font></font></span>
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Port Of Reg</font></font></span>
 										<input type="text" required name="portOfReg" class="form-control border-start-0" id="portOfReg" placeholder="Port Of Reg" />
 									</div>
 							</div>
 							<div class="col-md-6">
 								
 								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">BUILDERS</font></font></span>
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Builders</font></font></span>
 										<input type="text" required name="builders" class="form-control border-start-0" id="builders" placeholder="Builders" />
 									</div>
 							</div>
 							<div class="col-md-6">
 								
 								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">HULL N°</font></font></span>
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Hull N°</font></font></span>
 										<input type="number" required name="hull" class="form-control border-start-0" id="hull" placeholder="Hull N°" />
 									</div>
 							</div>
 							<div class="col-md-6">
 								
 								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TYPE</font></font></span>
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Type</font></font></span>
 										<input type="text" required name="type" class="form-control border-start-0" id="type" placeholder="Type" />
 									</div>
 							</div>
 							<div class="col-md-6">
 								
 								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">KEEL LAID</font></font></span>
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Keel Laid</font></font></span>
 										<input type="text" required name="keelLaid" class="form-control border-start-0" id="keelLaid" placeholder="Keel Laid" />
 									</div>
 							</div>
 							<div class="col-md-6">
 								
 								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DELIVERED</font></font></span>
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Delivered</font></font></span>
 										<input type="text" required name="delivered" class="form-control border-start-0" id="delivered" placeholder="Delivered" />
 									</div>
 							</div>
 							<div class="col-md-6">
 								
 								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CLASS SOCIETY</font></font></span>
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Class Society</font></font></span>
 										<input type="text" required name="class" class="form-control border-start-0" id="class" placeholder="Class Society" />
 									</div>
 							</div>
@@ -331,21 +343,21 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 							<div class="col-md-6">
 								
 								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">P&I CLUB</font></font></span>
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">P&I Club</font></font></span>
 										<input type="text" required name="piclub" class="form-control border-start-0" id="piclub" placeholder="P&I Club" />
 									</div>
 							</div>
 							<div class="col-md-6">
 								
 								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LOA</font></font></span>
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Loa</font></font></span>
 										<input type="number" required name="loa" class="form-control border-start-0" id="loa" placeholder="LOA" />
 									</div>
 							</div>
 							<div class="col-md-6">
 								
 								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LBP</font></font></span>
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Lbp</font></font></span>
 										<input type="number" required name="lbp" class="form-control border-start-0" id="lbp" placeholder="LBP" />
 									</div>
 							</div>
@@ -380,63 +392,63 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 							<div class="col-md-6">
 								
 								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DWT</font></font></span>
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dwt</font></font></span>
 										<input type="number" required name="dwt" class="form-control border-start-0" id="dwt" placeholder="DWT" />
 									</div>
 							</div>
 							<div class="col-md-6">
 								
 								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DISP</font></font></span>
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Disp</font></font></span>
 										<input type="number" required name="disp" class="form-control border-start-0" id="disp" placeholder="DISP" />
 									</div>
 							</div>
 							<div class="col-md-6">
 								
 								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LIGHTSHIP</font></font></span>
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Lightship</font></font></span>
 										<input type="number" required name="lightship" class="form-control border-start-0" id="lightship" placeholder="LIGHTSHIP" />
 									</div>
 							</div>
 							<div class="col-md-6">
 								
 								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DRAFT (MOULDED)</font></font></span>
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Draft (MOULDED)</font></font></span>
 										<input type="number" required name="draftMoulded" class="form-control border-start-0" id="draftMoulded" placeholder="DRAFT (MOULDED)" />
 									</div>
 							</div>
 							<div class="col-md-6">
 								
 								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DRAFT (EXTREME)</font></font></span>
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Draft (EXTREME)</font></font></span>
 										<input type="number" required name="draftExtreme" class="form-control border-start-0" id="draftExtreme" placeholder="DRAFT (EXTREME)" />
 									</div>
 							</div>
 							<div class="col-md-6">
 								
 								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">FP TO FORE DRAFT MARK</font></font></span>
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">FP To Fore Draft Mark</font></font></span>
 										<input type="number" required name="fp" class="form-control border-start-0" id="fp" placeholder="FP TO FORE DRAFT MARK" />
 									</div>
 							</div>
 							<div class="col-md-6">
 								
 								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">AP TO AFT DRAFT MARK</font></font></span>
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">AP To Aft Draft Mark</font></font></span>
 										<input type="number" required name="ap" class="form-control border-start-0" id="ap" placeholder="AP TO AFT DRAFT MARK" />
 									</div>
 							</div>
 							<div class="col-md-6">
 								
 								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MIDSHIP TO MID DRAFT MARK</font></font></span>
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Midship To Mid Draft Mark</font></font></span>
 										<input type="number" required name="midship" class="form-control border-start-0" id="midship" placeholder="MIDSHIP TO MID DRAFT MARK" />
 									</div>
 							</div>
 							<div class="col-md-6">
 								
 								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">BETWEEN DRAFT MARKS</font></font></span>
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Between Draft Marks</font></font></span>
 										<input type="number" required name="between" class="form-control border-start-0" id="between" placeholder="BETWEEN DRAFT MARKS" />
 									</div>
 							</div>

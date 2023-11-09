@@ -56,7 +56,7 @@ require_once './model/deplacementfinal.php';
 								<div class="col-6">
 									
 									<div class="input-group mt-3">
-										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Déplacement Initial</font></font></span>
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Déplacement Final</font></font></span>
 										<input type="number" readonly step="any" name="deplacementInitial" class="form-control border-start-0" id="deplacementInitial" placeholder="" />
 									</div>
 								</div>
@@ -186,8 +186,8 @@ require_once './model/deplacementfinal.php';
 								<div class="col-6">
 									
 									<div class="input-group mt-3">
-										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Déplacement Initial</font></font></span>
-										<input type="number" readonly step="any" name="deplacementInitial" class="form-control border-start-0" id="deplacementInitial" value="<?= $result['deplacementInitial'] ?>" />
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Déplacement Final</font></font></span>
+										<input type="number" readonly step="any" name="deplacementInitial" class="form-control border-start-0" id="deplacementInitial" value="<?= $result['deplacementFinal'] ?>" />
 									</div>
 								</div>
 							</div>
