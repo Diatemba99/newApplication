@@ -1,13 +1,13 @@
 <?php
 
-require './PHPMailer/src/Exception.php';
-require './PHPMailer/src/PHPMAiler.php';
-require './PHPMailer/src/SMTP.php';
+// require './PHPMailer/src/Exception.php';
+// require './PHPMailer/src/PHPMAiler.php';
+// require './PHPMailer/src/SMTP.php';
 
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-use PHPMailer\PHPMailer\SMTP;
+// use PHPMailer\PHPMailer\PHPMailer;
+// use PHPMailer\PHPMailer\Exception;
+// use PHPMailer\PHPMailer\SMTP;
 
 
 
