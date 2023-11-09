@@ -27,76 +27,15 @@ if(isset($_POST['btn_ajout'])){
     $Cmot_de_passe=$_POST['Cmot_de_passe'];
 
         
-        $mail = new PHPMailer(true);
+        // $mail = new PHPMailer(true);
 
-        // try {
-        // $mail->isSMTP();
-        // $mail->Host = 'smtp.gmail.com';  // Remplacez par le serveur SMTP de votre fournisseur d'e-mail
-        // $mail->SMTPAuth = true;
-        // $mail->Username = 'aliouneg2d@gmail.com'; // Remplacez par votre adresse e-mail
-        // $mail->Password = 'fmckxpgqzijcuomk'; // Remplacez par le mot de passe de votre adresse e-mail
-        // $mail->SMTPSecure = 'tls';
-        // $mail->Port = 587; // Le port SMTP de votre fournisseur d'e-mail
-
-        // $mail->setFrom('aliouneg2d@gmail.com', 'NIMBA');
-        // $mail->addAddress($email, $nom);
-
-        // $mail->isHTML(true);
-        // $mail->Subject = 'Informations d\'inscription';
-        // $mail->Body = 'Cher utilisateur,
-
-        // Vous avez été enregistré avec succès sur notre site. Voici vos identifiants :
-        // Nom d\'utilisateur : ' . $email . '
-        // Mot de passe : ' . $mot_de_passe . '
-
-        // Vous pouvez vous connecter en utilisant ces informations.
-
-        // Cordialement,
-        // Votre nom';
-
-        // // Envoyer l'e-mail
-        //     $mail->send();
-        //     echo 'E-mail envoyé avec succès';
-        // } catch (Exception $e) {
-        //     echo 'Erreur lors de l\'envoi de l\'e-mail : ' . $e->getMessage();
-        // }
+        
 
     if ($mot_de_passe==$Cmot_de_passe){
         $ob_utilisateur=new Utilisateur();
     if($ob_utilisateur->saveUtilisateur($typeUser,$nom,$prenom,$email,$mot_de_passe)){
 
-        try {
-        $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com';  // Remplacez par le serveur SMTP de votre fournisseur d'e-mail
-        $mail->SMTPAuth = true;
-        $mail->Username = 'aliouneg2d@gmail.com'; // Remplacez par votre adresse e-mail
-        $mail->Password = 'fmckxpgqzijcuomk'; // Remplacez par le mot de passe de votre adresse e-mail
-        $mail->SMTPSecure = 'tls';
-        $mail->Port = 587; // Le port SMTP de votre fournisseur d'e-mail
-
-        $mail->setFrom('aliouneg2d@gmail.com', 'NIMBA');
-        $mail->addAddress($email, $nom);
-
-        $mail->isHTML(true);
-        $mail->Subject = 'Informations d\'inscription';
-        $mail->Body = 'Cher utilisateur,
-
-        Vous avez été enregistré avec succès sur notre application. <br> 
-        Voici vos identifiants : <br>
-        Nom d\'utilisateur : ' . $email . ' <br>
-        Mot de passe : ' . $mot_de_passe . ' <br>
-        <br>    
-        Vous pouvez vous connecter en utilisant ces informations. <br>
-        <br>    
-        Cordialement,<br>
-        Administration NIMBA DRAFT SURVEY';
-
-        // Envoyer l'e-mail
-            $mail->send();
-            echo 'E-mail envoyé avec succès';
-        } catch (Exception $e) {
-            echo 'Erreur lors de l\'envoi de l\'e-mail : ' . $e->getMessage();
-        }
+        
         
 
         header("location:../?page=liste_personnel&success_insersion");
