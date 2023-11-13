@@ -18,55 +18,55 @@ require_once './model/cargaison.php';
 									$result1 = $ctma->getCtmaInitialByID($idNavire);
 									if(count($result1)==0){
 										?>
-										<button type="button" onclick="window.location.href = '?page=ctmafinal&id=<?= $idNavire ?>';" class="btn btn-danger px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Etape 2</font></font></button>
+										<button type="button" onclick="window.location.href = '?page=ctmafinal&id=<?= $idNavire ?>';" class="btn btn-danger px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Etape 1</font></font></button>
 										<?php
 									}else{
 										?>
-										<button type="button" onclick="window.location.href = '?page=ctmafinal&id=<?= $idNavire ?>';" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Etape 2</font></font></button>
+										<button type="button" onclick="window.location.href = '?page=ctmafinal&id=<?= $idNavire ?>';" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Etape 1</font></font></button>
 										<?php
 									}
 									$cmm = new Cmmfinal($idNavire);
 									$result2 = $cmm->getCmmInitialByID($idNavire);
 									if(count($result2)==0){
 										?>
-										<button type="button" onclick="window.location.href = '?page=cmmfinal&id=<?= $idNavire ?>';" class="btn btn-danger px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Etape 3</font></font></button>
+										<button type="button" onclick="window.location.href = '?page=cmmfinal&id=<?= $idNavire ?>';" class="btn btn-danger px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Etape 2</font></font></button>
 										<?php
 									}else{
 										?>
-										<button type="button" onclick="window.location.href = '?page=cmmfinal&id=<?= $idNavire ?>';" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Etape 3</font></font></button>
+										<button type="button" onclick="window.location.href = '?page=cmmfinal&id=<?= $idNavire ?>';" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Etape 2</font></font></button>
 										<?php
 									}
 									$tpc = new Tcpfinal($idNavire);
 									$result3 = $tpc->getTpcnitialByID($idNavire);
 									if(count($result3)==0){
 										?>
-										<button type="button" onclick="window.location.href = '?page=tpcfinal&id=<?= $idNavire ?>';" class="btn btn-danger px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Etape 4</font></font></button>
+										<button type="button" onclick="window.location.href = '?page=tpcfinal&id=<?= $idNavire ?>';" class="btn btn-danger px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Etape 3</font></font></button>
 										<?php
 									}else{
 										?>
-										<button type="button" onclick="window.location.href = '?page=tpcfinal&id=<?= $idNavire ?>';" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Etape 4</font></font></button>
+										<button type="button" onclick="window.location.href = '?page=tpcfinal&id=<?= $idNavire ?>';" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Etape 3</font></font></button>
 										<?php
 									}
 									$dpl = new Deplacementfinal($idNavire);
 									$result4 = $dpl->getDeplacementitialByID($idNavire);
 									if(count($result4)==0){
 										?>
-										<button type="button" onclick="window.location.href = '?page=deplacementfinal&id=<?= $idNavire ?>';" class="btn btn-danger px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Etape 5</font></font></button>
+										<button type="button" onclick="window.location.href = '?page=deplacementfinal&id=<?= $idNavire ?>';" class="btn btn-danger px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Etape 4</font></font></button>
 										<?php
 									}else{
 										?>
-										<button type="button" onclick="window.location.href = '?page=deplacementfinal&id=<?= $idNavire ?>';" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Etape 5</font></font></button>
+										<button type="button" onclick="window.location.href = '?page=deplacementfinal&id=<?= $idNavire ?>';" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Etape 4</font></font></button>
 										<?php
 									}
 									$dpl = new Cargaison($idNavire);
 									$result5 = $dpl->getCargaisonlByID($idNavire);
 									if(count($result5)==0){
 										?>
-										<button type="button" onclick="window.location.href = '?page=cargaison&id=<?= $idNavire ?>';" class="btn btn-danger px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Etape 6</font></font></button>
+										<button type="button" onclick="window.location.href = '?page=cargaison&id=<?= $idNavire ?>';" class="btn btn-danger px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Etape 5</font></font></button>
 										<?php
 									}else{
 										?>
-										<button type="button" onclick="window.location.href = '?page=cargaison&id=<?= $idNavire ?>';" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Etape 6</font></font></button>
+										<button type="button" onclick="window.location.href = '?page=cargaison&id=<?= $idNavire ?>';" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Etape 5</font></font></button>
 										<?php
 									}
 									
@@ -106,6 +106,7 @@ require_once './model/cargaison.php';
 						<td><?= $draft['shipManagement'] ?></td>
 						<td><?= $draft['operators'] ?></td>
 						<td>
+							<button type="button" onclick="window.location.href ='?page=overviewfinal&id=<?= $idNavire ?>';" class="btn btn-primary px-3 radius-30"><i class="lni lni-eye"></i></button>
 							<?php
 							
 							if (count($result1)!=0 && count($result2)!=0 && count($result3)!=0 && count($result4)!=0 && count($result5)!=0 && $draft['valide2']==0){

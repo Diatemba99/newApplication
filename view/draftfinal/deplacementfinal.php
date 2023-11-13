@@ -24,7 +24,7 @@ require_once './model/deplacementfinal.php';
 			if(count($result1)==0){
 ?>
 			<button type="button" onclick="precedent()" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Précédent</font></font></button>
-			<h6 class="mb-0 mt-3 text-uppercase">Etape 5</h6>
+			<h6 class="mb-0 mt-3 text-uppercase">Etape 4</h6>
 	<hr/>
 
     <h6 class="mb-0 text-uppercase">Information Draft Final</h6>
@@ -153,22 +153,14 @@ require_once './model/deplacementfinal.php';
 ?>
 			<button type="button" onclick="precedent()" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Précédent</font></font></button>
 			<div class="card-body">
-								<h6 class="mb-5 text-uppercase">Informations Etape 5</h6>
+								<h6 class="mb-5 text-uppercase">Informations Etape 4</h6>
 	
 				<?php
 				$dpla = new Deplacementfinal($idNavire);
 				$result1 = $dpla->getDeplacementitialByID($idNavire);
 				foreach ($result1 as $result) {
 				?>
-					<!-- <tr>
-						<td><?= $result['densiteTableHydrostatique'] ?></td>
-						<td><?= $result['densitemesure'] ?></td>
-						<td><?= $result['deplacementFinal'] ?></td>
-						<td><?= $result['fuelOil'] ?></td>
-						<td><?= $result['dieselOil'] ?></td>
-						
-						
-					</tr> -->
+					
 					<div class="row">
 								<h5 class="mb-0 text-primary">Densité eau de mer</h5>
 								<div class="col-6">

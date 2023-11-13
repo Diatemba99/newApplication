@@ -270,10 +270,7 @@ require_once './model/deplacementinitial.php';
    window.history.back();
 }
 
-// 	function suivant() {
-//    window.history.go();
-// }
-</script>					
+</script>
 
         <?php
     require_once './Composant/footer.php';

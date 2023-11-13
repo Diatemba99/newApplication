@@ -15,6 +15,10 @@ if(isset($_GET['page'])){
             require_once './view/draftinitial/infonavire.php';
         break;
 
+        case 'draftinitial':
+                require_once './view/draftinitial/draftinitial.php';
+            break;
+
         case 'ctmainitial':
             require_once './view/draftinitial/ctmainitial.php';
         break;
@@ -70,6 +74,14 @@ if(isset($_GET['page'])){
 
         case 'draftfinal':
                 require_once './view/draftfinal/listessurveyinitial.php';
+            break;
+
+        case 'overviewinitial':
+                require_once './view/draftinitial/overviewinitial.php';
+            break;
+        
+        case 'overviewfinal':
+                require_once './view/draftfinal/overviewfinal.php';
             break;
         
         case 'connexion':

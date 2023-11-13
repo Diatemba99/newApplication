@@ -9,10 +9,21 @@ require_once './model/ctmainitial.php';
 require_once './model/cmminitial.php';
 require_once './model/tpcinitial.php';
 require_once './model/deplacementinitial.php';
+require_once './model/draftinitial.php';
 ?>
  
 <!-- Button trigger modal -->
-<?php
+<?php								$etape1 = new Draft($idNavire);
+									$result0 = $etape1->getDraftByID($idNavire);
+									if(count($result0)==0){
+										?>
+										<button type="button" onclick="window.location.href = '?page=draftinitial&id=<?= $idNavire ?>';" class="btn btn-danger px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Etape 1</font></font></button>
+										<?php
+									}else{
+										?>
+										<button type="button" onclick="window.location.href = '?page=draftinitial&id=<?= $idNavire ?>';" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Etape 1</font></font></button>
+										<?php
+									}
 									$cmma = new Infodraftinitial($idNavire);
 									$result1 = $cmma->getInfoDraftByID($idNavire);
 									if(count($result1)==0){
@@ -105,6 +116,7 @@ require_once './model/deplacementinitial.php';
 						<td><?= $draft['shipManagement'] ?></td>
 						<td><?= $draft['operators'] ?></td>
 						<td>
+							<button type="button" onclick="window.location.href ='?page=overviewinitial&id=<?= $idNavire ?>';" class="btn btn-primary px-3 radius-30"><i class="lni lni-eye"></i></button>
 							<?php
 							
 							if (count($result1)!=0 && count($result2)!=0 && count($result3)!=0 && count($result4)!=0 && count($result5)!=0 && $draft['valide']==0){
