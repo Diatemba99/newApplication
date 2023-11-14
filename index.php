@@ -15,6 +15,10 @@ if(isset($_GET['page'])){
             require_once './view/draftinitial/infonavire.php';
         break;
 
+        case 'navire':
+            require_once './view/draftinitial/navire.php';
+        break;
+
         case 'draftinitial':
                 require_once './view/draftinitial/draftinitial.php';
             break;

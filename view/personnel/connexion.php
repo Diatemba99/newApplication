@@ -19,7 +19,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&amp;display=swap" rel="stylesheet">
 	<link href="./page/assets/css/app.css" rel="stylesheet">
 	<link href="./page/assets/css/icons.css" rel="stylesheet">
-	<title>NIMBA APPLICATION</title>
+	<title>NIMBA APP</title>
 </head>
 
 <body class="bg-login">
@@ -37,12 +37,12 @@
 								<div class="border p-4 rounded">
 									<div class="text-center">
 										<h3 class="">Connexion</h3>
-										<p>
+										<!-- <p>
                                        Vous n'avez pas encore de compte? 
-										</p>
+										</p> -->
 									</div>
 									
-									<div class="login-separater text-center mb-4"> <span>OU CONNECTEZ-VOUS AVEC EMAIL</span>
+									<div class="login-separater text-center mb-4"> <span>CONNECTEZ-VOUS AVEC VOTRE EMAIL</span>
 										<hr/>
 									</div>
 									<!-- Message d'erreur -->
@@ -74,7 +74,7 @@
 													<input type="password" name="mot_de_passe" class="form-control border-end-0" id="mot_de_passe" placeholder="Enter votre Mot de Passe"> <a href="javascript:;" class="input-group-text bg-transparent"><i class='bx bx-hide'></i></a>
 												</div>
 											</div>
-											<div class="col-md-6">
+											<!-- <div class="col-md-6">
 												<div class="form-check form-switch">
 													<input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
 													<label class="form-check-label" for="flexSwitchCheckChecked">Souviens-toi de moi</label>
@@ -82,7 +82,7 @@
 											</div>
 											<div class="col-md-6 text-end">	<a href="authentication-forgot-password.php">
                                                                                Mot de passe oublié ?</a>
-											</div>
+											</div> -->
 											<div class="col-12">
 												<div class="d-grid">
 													<button type="submit" name="btn_connexion" class="btn btn-primary"><i class="bx bxs-lock-open"> Connecter</i></button>

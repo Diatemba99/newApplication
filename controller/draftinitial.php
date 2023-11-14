@@ -2,6 +2,7 @@
 require_once '../model/draftinitial.php';
 
 // Ajout Info Navire
+
 if(isset($_POST['btn_ajout'])){
    $nomNavire=$_POST['nomNavire'];
    $callSign=$_POST['callSign'];

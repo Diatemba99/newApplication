@@ -176,6 +176,20 @@ $profile=$_SESSION["CURRENT_user"]['first_name'].' '.$_SESSION["CURRENT_user"]['
 			}else{
 			?>
 			<ul class="metismenu" id="menu">
+				<!-- <li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class="fa-regular fa-building"></i>
+						</div>
+						<div class="menu-title">Ships</div>
+					</a>
+					<ul>
+						
+						<li> <a href="?page=navire"><i class="bx bx-right-arrow-alt"></i>Ships</a>
+						</li>
+						
+					</ul>
+				</li> -->
+				<li>
 					<a href="javascript:;" class="has-arrow">
 						<div class="parent-icon"><i class="fa-regular fa-building"></i>
 						</div>

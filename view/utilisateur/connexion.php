@@ -36,16 +36,16 @@
 							<div class="card-body">
 								<div class="border p-4 rounded">
 									<div class="text-center">
-										<h3 class="">Sign in</h3>
-										<p>Don't have an account yet? <a href="authentication-signup.php">Sign up here</a>
+										<h3 class="">Connexion</h3>
+										<!-- <p>Don't have an account yet? <a href="authentication-signup.php">Sign up here</a> -->
 										</p>
 									</div>
 									<div class="d-grid">
 										<a class="btn my-4 shadow-sm btn-white" href="javascript:;"> <span class="d-flex justify-content-center align-items-center">
                           <img class="me-2" src="./page/assets/images/icons/search.svg" width="16" alt="Image Description">
-                          <span>Sign in with Google</span>
+                          <!-- <span>Sign in with Google</span> -->
 											</span>
-										</a> <a href="javascript:;" class="btn btn-facebook"><i class="bx bxl-facebook"></i>Sign in with Facebook</a>
+										<!-- </a> <a href="javascript:;" class="btn btn-facebook"><i class="bx bxl-facebook"></i>Sign in with Facebook</a> -->
 									</div>
 									<div class="login-separater text-center mb-4"> <span>OR SIGN IN WITH EMAIL</span>
 										<hr/>

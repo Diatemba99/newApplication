@@ -55,7 +55,7 @@ require_once './model/tpcinitial.php';
 							<div class="card-title d-flex align-items-center">
 								<div><i class="lni lni-plus me-1 font-22 text-primary"></i>
 								</div>
-								<h5 class="mb-0 text-primary">Calcul des TPC pour TEMdb et TEMtd</h5>
+								<h5 class="mb-0 text-primary">Calcul des TPC pour TEMdb</h5>
 							</div>
 							<hr>
 							<form class="row g-3" method="POST" action="./controller/tpcinitial.php">
@@ -65,80 +65,85 @@ require_once './model/tpcinitial.php';
 								<input type="number" hidden  name="dmad" value="<?=@$dMAD?>" class="form-control border-start-0" id="dmad" placeholder="" />
 								<input type="number" hidden  name="firstTrimCorrection" value="<?=@$firstTrimCorrection?>" class="form-control border-start-0" id="firstTrimCorrection" placeholder="" />
 								<input type="number" hidden  name="secondTrimCorrection" value="<?=@$secondTrimCorrection?>" class="form-control border-start-0" id="secondTrimCorrection" placeholder="" />
-							<div class="row mt-3">
+							<div class="card-body border">
+								<div class="row mt-3">
 								<div class="col-4">
 									
-									<div class="input-group">
+									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x1</font></font></span>
 										<input type="number" required step="any" name="x1MTC1" class="form-control border-start-0" id="x1MTC1" placeholder="" />
 									</div>
 									
-									<div class="input-group">
+									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x2</font></font></span>
 										<input type="number" required step="any" name="x2MTC1" class="form-control border-start-0" id="x2MTC1" placeholder="" />
 									</div>
 									
-									<div class="input-group">
+									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y1</font></font></span>
 										<input type="number" required step="any" name="y1MTC1" class="form-control border-start-0" id="y1MTC1" placeholder="" />
 									</div>
 									
-									<div class="input-group">
+									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y2</font></font></span>
 										<input type="number" required step="any" onkeyup="calculeMTC1();" name="y2MTC1" class="form-control border-start-0" id="y2MTC1" placeholder="" />
 									</div>
 								</div>
 								<div class="col-4">
 									
-									<div class="input-group">
+									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TPCMbd</font></font></span>
 										<input type="number" required readonly  step="any" name="mtc1" class="form-control border-start-0" id="mtc1" placeholder="" />
 									</div>
 								</div>
 							</div>
+							</div>
+							<h5 class="mb-0 text-primary">Calcul des TPC pour TEMtd</h5>
 							<hr/>
-							<div class="row">
+							<div class="card-body border">
+								<div class="row">
 								<div class="col-4">
 									
-									<div class="input-group">
+									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x1</font></font></span>
 										<input type="number" required step="any" name="x1MTC2" class="form-control border-start-0" id="x1MTC2" placeholder="" />
 									</div>
 									
-									<div class="input-group">
+									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x2</font></font></span>
 										<input type="number" required step="any" name="x2MTC2" class="form-control border-start-0" id="x2MTC2" placeholder="" />
 									</div>
 									
-									<div class="input-group">
+									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y1</font></font></span>
 										<input type="number" required step="any" name="y1MTC2" class="form-control border-start-0" id="y1MTC2" placeholder="" />
 									</div>
 									
-									<div class="input-group">
+									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y2</font></font></span>
 										<input type="number" required step="any" onkeyup="calculeMTC2();" name="y2MTC2" class="form-control border-start-0" id="y2MTC2" placeholder="" />
 									</div>
 								</div>
 								<div class="col-4">
 									
-									<div class="input-group">
+									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TPCMtd</font></font></span>
 										<input type="number" required readonly step="any" name="mtc2" class="form-control border-start-0" id="mtc2" placeholder="" />
 									</div>
 								</div>
+							</div>
 							</div>
 							<h5 class="mb-0 text-primary">Déplacement Corrigé</h5>
 							<div class="row">
 								<div class="col-8"></div>
 								<div class="col-4">
 									
-									<div class="input-group">
+									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Hell Correction</font></font></span>
 										<input type="number" readonly step="any" name="hellCorrection" class="form-control border-start-0" id="hellCorrection" placeholder="" />
 									</div>
 									
-									<div class="input-group">
+									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dépl.Corrigé</font></font></span>
 										<input type="number" readonly step="any" name="deplCorrige" class="form-control border-start-0" id="deplCorrige" placeholder="" />
 									</div>
