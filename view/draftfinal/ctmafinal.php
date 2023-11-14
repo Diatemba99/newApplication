@@ -42,7 +42,8 @@ require_once './model/tpcfinal.php';
 											
                                 			document.getElementById("heureSurveyFinal").value = hours;
                                 		</script>
-							<div class="row">
+							<div class="card-body border">
+								<div class="row">
 								<div class="col-4">
 								
 								<div class="input-group mt-3">
@@ -111,16 +112,22 @@ require_once './model/tpcfinal.php';
 									</div>
 							</div>
 							</div>
+							</div>
 							<h5 class="mb-0 text-primary">Calcul de l'Assiette Apparente ou (Apparent Trim)</h5>
-							<div class="col-4">
+							<div class="card-body border">
+								<div class="row">
+									<div class="col-4">
 								
 								<div class="input-group mt-3">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Apparent Trim</font></font></span>
 										<input type="number" readonly step="any" name="apparentTrim" class="form-control border-start-0" id="apparentTrim" placeholder="" />
 									</div>
 							</div>
+								</div>
+							</div>
 							<h5 class="mb-0 text-primary">Calcul de la distance entre les marques avant et arriéres</h5>
-							<div class="row">
+							<div class="card-body border">
+								<div class="row">
 								<div class="col-6">
 									
 									<div class="input-group mt-3">
@@ -155,9 +162,11 @@ require_once './model/tpcfinal.php';
 									</div>
 								</div>
 							</div>
+							</div>
 
 							<h5 class="mb-0 text-primary">Correction à apporter aux tirants apparents</h5>
-							<div class="row">
+							<div class="card-body border">
+								<div class="row">
 								<div class="col-6">
 									
 								</div>
@@ -182,9 +191,11 @@ require_once './model/tpcfinal.php';
 									</div>
 								</div>
 							</div>
+							</div>
 
 							<h5 class="mb-0 text-primary">Correction des Tirants réels</h5>
-							<div class="row">
+							<div class="card-body border">
+								<div class="row">
 								<div class="col-6">
 									
 								</div>
@@ -209,9 +220,11 @@ require_once './model/tpcfinal.php';
 									</div>
 								</div>
 							</div>
+							</div>
 
 							<h5 class="mb-0 text-primary">Calcul de l'Assiette réelle ou True Trim</h5>
-							<div class="row mt-3">
+							<div class="card-body border">
+								<div class="row mt-3">
 								<div class="col-6">
 									
 								</div>
@@ -223,6 +236,7 @@ require_once './model/tpcfinal.php';
 										<input type="number" readonly step="any" name="trueTrim" class="form-control border-start-0" id="trueTrim" placeholder="" />
 									</div>
 								</div>
+							</div>
 							</div>
 												
 							

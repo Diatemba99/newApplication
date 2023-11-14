@@ -55,7 +55,8 @@ require_once './model/tpcfinal.php';
                                 <input type="number" hidden name="idNavire" value="<?=$idNavire?>" class="form-control border-start-0" id="idNavire" placeholder="" />
 								<input type="number" hidden name="truetrim" value="<?=$truetrim?>" class="form-control border-start-0" id="truetrim" placeholder="" />
 								<input type="number" hidden name="l" value="<?=$L?>" class="form-control border-start-0" id="l" placeholder="" />
-							<div class="row">
+							<div class="card-body border">
+								<div class="row">
 					<div class="col-4">
 						
 						<div class="input-group mt-3">
@@ -78,9 +79,12 @@ require_once './model/tpcfinal.php';
 						</div>
 					</div>
 				</div>
-				<div class="row">
+							</div>
+				<div class="row mt-3">
 					<h5 class="mb-0 text-primary">Calcul déplacement correspndant à D=0</h5>
-					<div class="col-4">
+					<div class="card-body border">
+						<div class="row">
+							<div class="col-4">
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y1</font></font></span>
@@ -101,10 +105,14 @@ require_once './model/tpcfinal.php';
 							<input type="number" readonly step="any" name="deplacementMad" class="form-control border-start-0" id="deplacementMad" placeholder="" />
 						</div>
 					</div>
+						</div>
+					</div>
 				</div>
-				<div class="row">
+				<div class="row mt-3">
 					<h5 class="mb-0 text-primary">Calcul des MAD + 0,5 et MAD - 0,5</h5>
-					<div class="col-4">
+					<div class="card-body border">
+						<div class="row">
+							<div class="col-4">
 
 					</div>
 					<div class="col-4">
@@ -122,13 +130,17 @@ require_once './model/tpcfinal.php';
 							<input type="number" readonly step="any" value="<?= $t2 ?>" name="t2" class="form-control border-start-0" id="t2" placeholder="" />
 						</div>
 					</div>
+						</div>
+					</div>
 					<div class="col-4">
 
 					</div>
 				</div>
-				<div class="row">
+				<div class="row mt-3">
 					<h5 class="mb-0 text-primary">Calcul du LCF</h5>
-					<div class="col-4">
+					<div class="card-body border">
+						<div class="row">
+							<div class="col-4">
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y1</font></font></span>
@@ -165,9 +177,12 @@ require_once './model/tpcfinal.php';
 							<input type="number" readonly step="any" name="lcfto" class="form-control border-start-0" id="lcfto" placeholder="" />
 						</div>
 					</div>
+						</div>
+					</div>
 				</div>
 				<h5 class="mb-0 text-primary">Calcul du TPC pour MAD</h5>
-				<div class="row">
+				<div class="card-body border">
+						<div class="row">
 					<div class="col-4">
 						
 						<div class="input-group mt-3">
@@ -190,8 +205,10 @@ require_once './model/tpcfinal.php';
 						</div>
 					</div>
 				</div>
+				</div>
 				<h5 class="mb-0 text-primary">Calcul First Trim Correction</h5>
-				<div class="row">
+				<div class="card-body border">
+					<div class="row">
 					<div class="col-8">
 
 					</div>
@@ -203,9 +220,11 @@ require_once './model/tpcfinal.php';
 						</div>
 					</div>
 				</div>
+				</div>
 				<h5 class="mb-0 text-primary">Calcul Second Trim Correction</h5>
 
-				<div class="row">
+				<div class="card-body border">
+					<div class="row">
 					<div class="col-4">
 						
 						<div class="input-group mt-3">
@@ -236,8 +255,10 @@ require_once './model/tpcfinal.php';
 						</div>
 					</div>
 				</div>
+				</div>
 
-				<div class="row">
+				<div class="card-body border">
+					<div class="row">
 					<div class="col-4">
 						
 						<div class="input-group mt-3">
@@ -269,7 +290,9 @@ require_once './model/tpcfinal.php';
 
 					</div>
 				</div>
-				<div class="row">
+				</div>
+				<div class="card-body border">
+					<div class="row">
 					<div class="col-8">
 
 					</div>
@@ -280,6 +303,7 @@ require_once './model/tpcfinal.php';
 							<input type="number" readonly step="any" name="secondTrimCorrection" class="form-control border-start-0" id="secondTrimCorrection" placeholder="" />
 						</div>
 					</div>
+				</div>
 				</div>
 
 								<div >

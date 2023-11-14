@@ -91,7 +91,7 @@ $profile=$_SESSION["CURRENT_user"]['first_name'].' '.$_SESSION["CURRENT_user"]['
 				
 				<li>
 					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class="fa-regular fa-building"></i>
+						<div class="parent-icon"><i class="lni lni-empty-file"></i>
 						</div>
 						<div class="menu-title">Draft Initial</div>
 					</a>
@@ -104,7 +104,7 @@ $profile=$_SESSION["CURRENT_user"]['first_name'].' '.$_SESSION["CURRENT_user"]['
 				</li>
 				<li>
 					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class="fa-regular fa-building"></i>
+						<div class="parent-icon"><i class="lni lni-library"></i>
 						</div>
 						<div class="menu-title">Draft Final</div>
 					</a>
@@ -146,7 +146,7 @@ $profile=$_SESSION["CURRENT_user"]['first_name'].' '.$_SESSION["CURRENT_user"]['
 				
 				<li>
 					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class="fa-regular fa-building"></i>
+						<div class="parent-icon"><i class="lni lni-empty-file"></i>
 						</div>
 						<div class="menu-title">Draft Initial</div>
 					</a>
@@ -159,7 +159,7 @@ $profile=$_SESSION["CURRENT_user"]['first_name'].' '.$_SESSION["CURRENT_user"]['
 				</li>
 				<li>
 					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class="fa-regular fa-building"></i>
+						<div class="parent-icon"><i class="lni lni-library"></i>
 						</div>
 						<div class="menu-title">Draft Final</div>
 					</a>
@@ -191,7 +191,20 @@ $profile=$_SESSION["CURRENT_user"]['first_name'].' '.$_SESSION["CURRENT_user"]['
 				</li> -->
 				<li>
 					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class="fa-regular fa-building"></i>
+						<div class="parent-icon"><i class="lni lni-ship"></i>
+						</div>
+						<div class="menu-title">Ships</div>
+					</a>
+					<ul>
+						
+						<li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Ships</a>
+						</li>
+						
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class="lni lni-empty-file"></i>
 						</div>
 						<div class="menu-title">Draft Initial</div>
 					</a>
@@ -204,7 +217,7 @@ $profile=$_SESSION["CURRENT_user"]['first_name'].' '.$_SESSION["CURRENT_user"]['
 				</li>
 				<li>
 					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class="fa-regular fa-building"></i>
+						<div class="parent-icon"><i class="lni lni-library"></i>
 						</div>
 						<div class="menu-title">Draft Final</div>
 					</a>
@@ -215,7 +228,32 @@ $profile=$_SESSION["CURRENT_user"]['first_name'].' '.$_SESSION["CURRENT_user"]['
 						
 					</ul>
 				</li>
-			 
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class="lni lni-popup"></i>
+						</div>
+						<div class="menu-title">Wiki</div>
+					</a>
+					<ul>
+						
+						<li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Wiki</a>
+						</li>
+						
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class="lni lni-whatsapp"></i>
+						</div>
+						<div class="menu-title">Help</div>
+					</a>
+					<ul>
+						
+						<li> <a href="https://wa.me/+224624629395" target="_blank"><i class="bx bx-right-arrow-alt"></i>Help</a>
+						</li>
+						
+					</ul>
+				</li>
 			</ul>
 			<?php
 			}

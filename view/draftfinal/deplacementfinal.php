@@ -39,7 +39,8 @@ require_once './model/deplacementfinal.php';
 							<form class="row g-3" method="POST" action="./controller/deplacementfinal.php">
                                 <input type="number" hidden name="idNavire" value="<?=$idNavire?>" class="form-control border-start-0" id="idNavire" placeholder="" />
 								<input type="number" hidden name="dCorr" value="<?=@$dCorr?>" class="form-control border-start-0" id="dCorr" placeholder="" />
-							<div class="row">
+							<div class="card-body border">
+								<div class="row">
 								<h5 class="mb-0 text-primary">Densité eau de mer</h5>
 								<div class="col-6">
 									
@@ -61,9 +62,11 @@ require_once './model/deplacementfinal.php';
 									</div>
 								</div>
 							</div>
-
-							<div class="row">
-								<h5 class="mb-0 text-primary">Calcul des déductibles et des constantes</h5>
+							</div>
+							<h5 class="mb-0 text-primary">Calcul des déductibles et des constantes</h5>
+							<div class="card-body border">
+								<div class="row">
+								
 								<div class="col-6">
 									
 									<div class="input-group mt-3">
@@ -108,6 +111,7 @@ require_once './model/deplacementfinal.php';
 										<input type="number" readonly step="any" name="constantes" class="form-control border-start-0" id="constantes" placeholder="" />
 									</div>
 								</div>
+							</div>
 							</div>
 							
 							

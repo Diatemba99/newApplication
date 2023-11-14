@@ -59,7 +59,8 @@ require_once './model/cargaison.php';
                                 <input type="number" hidden name="ballastWater" value="<?=$ballastWater?>" class="form-control border-start-0" id="ballastWater" placeholder=""/>
                                 <input type="number" hidden name="ls" value="<?=$ls?>" class="form-control border-start-0" id="ls" placeholder="" />
                                 <input type="number" hidden name="constantes" value="<?=$constantes?>" class="form-control border-start-0" id="constantes" placeholder="" />
-							<div class="row mt-3">
+							<div class="card-body border">
+								<div class="row mt-3">
 								
 								<div class="col-4">
 									
@@ -87,6 +88,7 @@ require_once './model/cargaison.php';
 										<input type="number" readonly step="any" name="intervalleC" class="form-control border-start-0" id="intervalleC" placeholder="" />
 									</div>
 								</div>
+							</div>
 							</div>
 
 							
