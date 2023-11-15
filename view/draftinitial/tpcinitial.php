@@ -45,7 +45,7 @@ require_once './model/tpcinitial.php';
 			$result1 = $tpc->getTpcnitialByID($idNavire);
 			if(count($result1)==0){
 ?>
-<button type="button" onclick="precedent()" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Précédent</font></font></button>
+<button type="button" onclick="precedent()" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Retour</font></font></button>
 <h6 class="mb-0 mt-3 text-uppercase">Etape 5</h6>
 	<hr/>
 
@@ -220,7 +220,7 @@ require_once './model/tpcinitial.php';
 <?php
 }else{
 ?>
-<button type="button" onclick="precedent()" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Précédent</font></font></button>
+<button type="button" onclick="precedent()" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Retour</font></font></button>
 <div class="card-body">
 								<h6 class="mb-5 text-uppercase">Informations Etape 5</h6>
 	<!-- <div class="table-responsive">

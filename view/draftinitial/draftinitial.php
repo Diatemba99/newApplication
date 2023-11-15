@@ -11,7 +11,7 @@ require_once './model/tpcinitial.php';
 require_once './model/deplacementinitial.php';
 require_once './model/draftinitial.php';
 ?>
-<button type="button" onclick="precedent()" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Précédent</font></font></button>
+<button type="button" onclick="precedent()" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Retour</font></font></button>
 	
 	
     <h6 class="mb-0 mt-3 text-uppercase text-center">Etape 1</h6>

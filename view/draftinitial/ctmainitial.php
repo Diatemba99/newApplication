@@ -15,7 +15,7 @@ require_once './model/tpcinitial.php';
 			$result1 = $ctma->getCtmaInitialByID($idNavire);
 			if(count($result1)==0){
 ?>
-				<button type="button" onclick="precedent()" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Précédent</font></font></button>
+				<button type="button" onclick="precedent()" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Retour</font></font></button>
 				
 			<h6 class="mb-0 mt-3 text-uppercase">Etape 3</h6>
 	<hr/>
@@ -38,7 +38,7 @@ require_once './model/tpcinitial.php';
 								
 								<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEavbd</font></font></span>
-										<input type="number" required step="any" name="teavbd" class="form-control border-start-0" id="teavbd" placeholder="TEavbd" />
+										<input type="number" required onkeyup="calculerTEav();" step="any" name="teavbd" class="form-control border-start-0" id="teavbd" placeholder="TEavbd" />
 									</div>
 							</div>
 							<div class="col-4">
@@ -61,7 +61,7 @@ require_once './model/tpcinitial.php';
 								
 								<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEarbd</font></font></span>
-										<input type="number" required step="any" name="tearbd" class="form-control border-start-0" id="tearbd" placeholder="TEarbd" />
+										<input type="number" required onkeyup="calculerTEar();" step="any" name="tearbd" class="form-control border-start-0" id="tearbd" placeholder="TEarbd" />
 									</div>
 							</div>
 							<div class="col-4">
@@ -84,7 +84,7 @@ require_once './model/tpcinitial.php';
 								
 								<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEMbd</font></font></span>
-										<input type="number" required step="any" name="tembd" class="form-control border-start-0" id="tembd" placeholder="TEMbd" />
+										<input type="number" required onkeyup="calculerTEM();" step="any" name="tembd" class="form-control border-start-0" id="tembd" placeholder="TEMbd" />
 									</div>
 							</div>
 							<div class="col-4">
@@ -118,9 +118,31 @@ require_once './model/tpcinitial.php';
 								<div class="col-6">
 									
 									<div class="input-group mt-3">
-										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">L</font></font></span>
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LBP</font></font></span>
 										<input type="number" required step="any" name="L" class="form-control border-start-0" id="L" placeholder="" />
 									</div>
+
+									<div class="col-4 mt-5">
+										<div>
+											<div class="form-check">
+												<input class="form-check-input" onclick="calculerLBM();calculerCorrection();calculerCorrectionTirants();" type="radio" name="mark" id="fwdtofwd" value="LCF to AP">
+												<label class="form-check-label" for="lcf1">Mark FWD/P to FWD</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" onclick="calculerLBM();calculerCorrection();calculerCorrectionTirants();" type="radio" name="mark" id="fwdtoaft" value="LCF to FP">
+												<label class="form-check-label" for="lcf2">Mark FWD/P to AFT</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" onclick="calculerLBM();calculerCorrection();calculerCorrectionTirants();" type="radio" name="mark" id="afttofwd" value="LCF to midship">
+												<label class="form-check-label" for="lcf3">Mark AFT/P to FWD</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" onclick="calculerLBM();calculerCorrection();calculerCorrectionTirants();" type="radio" name="mark" id="afttoaft" value="LCF to midship">
+												<label class="form-check-label" for="lcf3">Mark AFT/P to AFT</label>
+											</div>
+						</div>
+						
+					</div>
 								</div>
 
 								<div class="col-6">
@@ -139,12 +161,12 @@ require_once './model/tpcinitial.php';
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">l3</font></font></span>
-										<input type="number" required step="any" onkeyup="calculerl();calculerCorrection();calculerCorrectionTirants();" name="l3" class="form-control border-start-0" id="l3" placeholder="" />
+										<input type="number" required step="any" onkeyup="calculerCorrection();calculerCorrectionTirants();" name="l3" class="form-control border-start-0" id="l3" placeholder="" />
 									</div>
 
 									
 									<div class="input-group mt-3">
-										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">l</font></font></span>
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LBM</font></font></span>
 										<input type="number" step="any" readonly name="lL" class="form-control border-start-0" id="lL" placeholder="" />
 									</div>
 								</div>
@@ -279,16 +301,30 @@ require_once './model/tpcinitial.php';
 							document.getElementById("tem").value = tEM;
 							document.getElementById("apparentTrim").value = apparentTrim;
 						};
-						// Fonction pour calculer l
-						function calculerl(){
+						// Fonction pour calculer lBM
+						function calculerLBM(){
 							var L =Number(document.getElementById('L').value);
 							var l1 =Number(document.getElementById('l1').value);
+							var l2 =Number(document.getElementById('l2').value);
 							var l3 =Number(document.getElementById('l3').value);
 							var lL =Number(document.getElementById('lL').value);
 						
-							var lL =Number(L-(l1 + l3));
+							// var lL =Number(L-(l1 + l3));
 						
-							document.getElementById("lL").value = lL;
+							// document.getElementById("lL").value = lL;
+							if (document.getElementById('fwdtofwd').checked){
+								var lL = Number(L-(l1 + l2));
+								document.getElementById('lL').value = lL;
+							} else if (document.getElementById('fwdtoaft').checked){
+								var lL = Number(L-(l1 - l2));
+								document.getElementById('lL').value = lL;
+							}else if (document.getElementById('afttofwd').checked){
+								var lL = Number(L-(l2 - l1));
+								document.getElementById('lL').value = lL;
+							}else if (document.getElementById('afttoaft').checked){
+								var lL = Number(L+(l2 + l1));
+								document.getElementById('lL').value = lL;
+							}
 						
 						};
 						// Fonction pour calculer correction
@@ -334,7 +370,7 @@ require_once './model/tpcinitial.php';
 				<?php
 				}else{
 				?>
-				<button type="button" onclick="precedent()" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Précédent</font></font></button>
+				<button type="button" onclick="precedent()" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Retour</font></font></button>
 				<div class="card-body">
 								<h6 class="mb-5 text-uppercase">Informations Etape 3</h6>
 	<!-- <div class="table-responsive">
