@@ -48,7 +48,7 @@ require_once './model/tpcfinal.php';
 								
 								<div class="input-group mt-3">
                                     <span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEavbd</font></font></span>
-										<input type="number" required step="any" name="teavbd" class="form-control border-start-0" id="teavbd" placeholder="TEavbd" />
+										<input type="number" required onkeyup="calculerTEav();" step="any" name="teavbd" class="form-control border-start-0" id="teavbd" placeholder="TEavbd" />
 									</div>
 							</div>
 							<div class="col-4">
@@ -71,7 +71,7 @@ require_once './model/tpcfinal.php';
 								
 								<div class="input-group mt-3">
 				<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEarbd</font></font></span>
-										<input type="number" required step="any" name="tearbd" class="form-control border-start-0" id="tearbd" placeholder="TEarbd" />
+										<input type="number" required onkeyup="calculerTEar();" step="any" name="tearbd" class="form-control border-start-0" id="tearbd" placeholder="TEarbd" />
 									</div>
 							</div>
 							<div class="col-4">
@@ -94,7 +94,7 @@ require_once './model/tpcfinal.php';
 								
 								<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEMbd</font></font></span>
-										<input type="number" required step="any" name="tembd" class="form-control border-start-0" id="tembd" placeholder="TEMbd" />
+										<input type="number" onkeyup="calculerTEM();" required step="any" name="tembd" class="form-control border-start-0" id="tembd" placeholder="TEMbd" />
 									</div>
 							</div>
 							<div class="col-4">
@@ -116,6 +116,16 @@ require_once './model/tpcfinal.php';
 							<h5 class="mb-0 text-primary">Calcul de l'Assiette Apparente ou (Apparent Trim)</h5>
 							<div class="card-body border">
 								<div class="row">
+									<div class="col-6">
+										<div class="form-check">
+														<input class="form-check-input" onclick="calculerTEM()" type="radio" name="markAP" id="fwdp" >
+														<label class="form-check-label" for="ap1">Mark FWD/P</label>
+													</div>
+													<div class="form-check">
+														<input class="form-check-input" onclick="calculerTEM()" type="radio" name="markAP" id="aftp" >
+														<label class="form-check-label" for="ap2">Mark AFT/P</label>
+													</div>
+									</div>
 									<div class="col-4">
 								
 								<div class="input-group mt-3">
@@ -131,11 +141,31 @@ require_once './model/tpcfinal.php';
 								<div class="col-6">
 									
 									<div class="input-group mt-3">
-										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">L</font></font></span>
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LBP</font></font></span>
 										<input type="number" required step="any" name="L" class="form-control border-start-0" id="L" placeholder="" />
 									</div>
-								</div>
 
+									<div class="col-4 mt-5">
+										<div>
+											<div class="form-check">
+												<input class="form-check-input" onclick="calculerLBM();calculerCorrection();calculerCorrectionTirants();" type="radio" name="mark" id="fwdtofwd" value="LCF to AP">
+												<label class="form-check-label" for="lcf1">Mark FWD/P to FWD</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" onclick="calculerLBM();calculerCorrection();calculerCorrectionTirants();" type="radio" name="mark" id="fwdtoaft" value="LCF to FP">
+												<label class="form-check-label" for="lcf2">Mark FWD/P to AFT</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" onclick="calculerLBM();calculerCorrection();calculerCorrectionTirants();" type="radio" name="mark" id="afttofwd" value="LCF to midship">
+												<label class="form-check-label" for="lcf3">Mark AFT/P to FWD</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" onclick="calculerLBM();calculerCorrection();calculerCorrectionTirants();" type="radio" name="mark" id="afttoaft" value="LCF to midship">
+												<label class="form-check-label" for="lcf3">Mark AFT/P to AFT</label>
+											</div>
+									</div>
+								</div>
+								</div>
 								<div class="col-6">
 									
 									<div class="input-group mt-3">
@@ -157,7 +187,7 @@ require_once './model/tpcfinal.php';
 
 									
 									<div class="input-group mt-3">
-										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">l</font></font></span>
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LBM</font></font></span>
 										<input type="number" required step="any" readonly name="lL" class="form-control border-start-0" id="lL" placeholder="" />
 									</div>
 								</div>
@@ -272,14 +302,14 @@ require_once './model/tpcfinal.php';
 						function calculerTEav(){
 							var teavbd =Number(document.getElementById('teavbd').value);
 							var teavtb =Number(document.getElementById('teavtb').value);
-							var tEav =Number((teavbd + teavtb)/2);
+							var tEav =Math.round(Number((teavbd + teavtb)/2)*1000)/1000;
 							document.getElementById("teav").value = tEav;
 						};
 						// Fonction pour calculer TEar
 						function calculerTEar(){
 							var tearbd =Number(document.getElementById('tearbd').value);
 							var teartb =Number(document.getElementById('teartb').value);
-							var tEar =Number((tearbd + teartb)/2);
+							var tEar =Math.round(Number((tearbd + teartb)/2)*1000)/1000;
 							document.getElementById("tear").value = tEar;
 						};
 						// Fonction pour calculer TEM et apparent trim
@@ -288,21 +318,40 @@ require_once './model/tpcfinal.php';
 							var tEar=Number(document.getElementById('tear').value);
 							var tembd =Number(document.getElementById('tembd').value);
 							var temtb =Number(document.getElementById('temtb').value);
-							var tEM =Number((tembd + temtb)/2);
-							var apparentTrim = Number(tEar-tEav);
+							var tEM =Math.round(Number((tembd + temtb)/2)*1000)/1000;
 							document.getElementById("tem").value = tEM;
-							document.getElementById("apparentTrim").value = apparentTrim;
+							if (document.getElementById('fwdp').checked){
+								var apparentTrim = Number(tEar-tEav);
+								document.getElementById("apparentTrim").value = apparentTrim;
+							}else if (document.getElementById('aftp').checked){
+								var apparentTrim = Number(-(tEar-tEav));
+								document.getElementById("apparentTrim").value = apparentTrim;
+							}
 						};
 						// Fonction pour calculer l
-						function calculerl(){
+						function calculerLBM(){
 							var L =Number(document.getElementById('L').value);
 							var l1 =Number(document.getElementById('l1').value);
+							var l2 =Number(document.getElementById('l2').value);
 							var l3 =Number(document.getElementById('l3').value);
 							var lL =Number(document.getElementById('lL').value);
 						
-							var lL =Number(L-(l1 + l3));
+							// var lL =Math.round(Number(L-(l1 + l3))*1000)/1000;
 						
-							document.getElementById("lL").value = lL;
+							// document.getElementById("lL").value = lL;
+							if (document.getElementById('fwdtofwd').checked){
+								var lL = Math.round(Number(L-(l1 + l3))*1000)/1000;
+								document.getElementById('lL').value = lL;
+							} else if (document.getElementById('fwdtoaft').checked){
+								var lL = Math.round(Number(L-(l1 - l3))*1000)/1000;
+								document.getElementById('lL').value = lL;
+							}else if (document.getElementById('afttofwd').checked){
+								var lL = Math.round(Number(L-(l3 - l1))*1000)/1000;
+								document.getElementById('lL').value = lL;
+							}else if (document.getElementById('afttoaft').checked){
+								var lL = Math.round(Number(L+(l3 + l1))*1000)/1000;
+								document.getElementById('lL').value = lL;
+							}
 						
 						};
 						// Fonction pour calculer correction
@@ -317,9 +366,9 @@ require_once './model/tpcfinal.php';
 							var tEar=Number(document.getElementById('tear').value);
 							var tEM=Number(document.getElementById('tem').value);
 						
-							var corrAv =Number((apparentTrim*l1)/lL);
-							var corrAr =Number((apparentTrim*l3)/lL);
-							var corrM =Number((apparentTrim*l2)/lL);
+							var corrAv =Math.round(Number((apparentTrim*l1)/lL)*1000)/1000;
+							var corrAr =Math.round(Number((apparentTrim*l3)/lL)*1000)/1000;
+							var corrM =Math.round(Number((apparentTrim*l2)/lL)*1000)/1000;
 						
 							document.getElementById("corrAv").value = corrAv;
 							document.getElementById("corrAr").value = corrAr;
@@ -334,10 +383,10 @@ require_once './model/tpcfinal.php';
 							var corrAr=Number(document.getElementById('corrAr').value);
 							var corrM=Number(document.getElementById('corrM').value);
 						
-							var tAv =Number(tEav+corrAv);
-							var tAr =Number(tEar+corrAr);
-							var tM =Number(tEM+corrM);
-							var trueTrim =Number(tAr-tAv);
+							var tAv =Math.round(Number(tEav+corrAv)*1000)/1000;
+							var tAr =Math.round(Number(tEar+corrAr)*1000)/1000;
+							var tM =Math.round(Number(tEM+corrM)*1000)/1000;
+							var trueTrim =Math.round(Number(tAr-tAv)*1000)/1000;
 						
 							document.getElementById("tAv").value = tAv;
 							document.getElementById("tAr").value = tAr;

@@ -177,7 +177,7 @@ require_once './model/tpcinitial.php';
 							var x2MTC1 = Number(document.getElementById('x2MTC1').value);
 							var y1MTC1 = Number(document.getElementById('y1MTC1').value);
 							var y2MTC1 = Number(document.getElementById('y2MTC1').value);
-							var TPCMbd = Number((TEMbd-x1MTC1)/(x2MTC1-x1MTC1)*(y2MTC1-y1MTC1)+y1MTC1);
+							var TPCMbd = Math.round(Number((TEMbd-x1MTC1)/(x2MTC1-x1MTC1)*(y2MTC1-y1MTC1)+y1MTC1)*1000)/1000;
 							document.getElementById('mtc1').value=TPCMbd;
 						}
 
@@ -189,13 +189,13 @@ require_once './model/tpcinitial.php';
 							var x2MTC2 = Number(document.getElementById('x2MTC2').value);
 							var y1MTC2 = Number(document.getElementById('y1MTC2').value);
 							var y2MTC2 = Number(document.getElementById('y2MTC2').value);
-							var TPCMtd = Number((TEMtd-x1MTC2)/(x2MTC2-x1MTC2)*(y2MTC2-y1MTC2)+y1MTC2);
+							var TPCMtd = Math.round(Number((TEMtd-x1MTC2)/(x2MTC2-x1MTC2)*(y2MTC2-y1MTC2)+y1MTC2)*1000)/1000;
 							document.getElementById('mtc2').value=TPCMtd;
 
 							var TPCMbd=Number(document.getElementById('mtc1').value);
 							var TPCMtd=Number(document.getElementById('mtc2').value);
 							var TEMbd=Number(document.getElementById('tEmbd').value);
-							var HellCorr=Number((TEMbd-TEMtd)*(TPCMbd-TPCMtd)*6);
+							var HellCorr=Math.round(Number((TEMbd-TEMtd)*(TPCMbd-TPCMtd)*6)*1000)/1000;
 							document.getElementById('hellCorrection').value=HellCorr;
 
 							var dplMAD=Number(document.getElementById('dmad').value);

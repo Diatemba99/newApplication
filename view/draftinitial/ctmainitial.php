@@ -104,6 +104,16 @@ require_once './model/tpcinitial.php';
 							</div>
 							</div>
 							<h5 class="mb-0 text-primary">Calcul de l'Assiette Apparente ou (Apparent Trim)</h5>
+							<div class="col-6">
+								<div class="form-check">
+												<input class="form-check-input" onclick="calculerTEM()" type="radio" name="markAP" id="fwdp" >
+												<label class="form-check-label" for="ap1">Mark FWD/P</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" onclick="calculerTEM()" type="radio" name="markAP" id="aftp" >
+												<label class="form-check-label" for="ap2">Mark AFT/P</label>
+											</div>
+							</div>
 							<div class="col-4">
 								
 								<div class="input-group mt-3">
@@ -140,9 +150,9 @@ require_once './model/tpcinitial.php';
 												<input class="form-check-input" onclick="calculerLBM();calculerCorrection();calculerCorrectionTirants();" type="radio" name="mark" id="afttoaft" value="LCF to midship">
 												<label class="form-check-label" for="lcf3">Mark AFT/P to AFT</label>
 											</div>
-						</div>
+									</div>
 						
-					</div>
+								</div>
 								</div>
 
 								<div class="col-6">
@@ -280,7 +290,7 @@ require_once './model/tpcinitial.php';
 						function calculerTEav(){
 							var teavbd =Number(document.getElementById('teavbd').value);
 							var teavtb =Number(document.getElementById('teavtb').value);
-							var tEav =Number((teavbd + teavtb)/2);
+							var tEav =Math.round(Number((teavbd + teavtb)/2)*1000)/1000;
 							document.getElementById("teav").value = tEav;
 						};
 						// Fonction pour calculer TEar
@@ -296,10 +306,19 @@ require_once './model/tpcinitial.php';
 							var tEar=Number(document.getElementById('tear').value);
 							var tembd =Number(document.getElementById('tembd').value);
 							var temtb =Number(document.getElementById('temtb').value);
+							
+							
 							var tEM =Number((tembd + temtb)/2);
-							var apparentTrim = Number(tEar-tEav);
 							document.getElementById("tem").value = tEM;
-							document.getElementById("apparentTrim").value = apparentTrim;
+							if (document.getElementById('fwdp').checked){
+								var apparentTrim = Number(tEar-tEav);
+								document.getElementById("apparentTrim").value = apparentTrim;
+							}else if (document.getElementById('aftp').checked){
+								var apparentTrim = Number(-(tEar-tEav));
+								document.getElementById("apparentTrim").value = apparentTrim;
+							}
+							// var apparentTrim = Number(tEar-tEav);
+							// document.getElementById("apparentTrim").value = apparentTrim;
 						};
 						// Fonction pour calculer lBM
 						function calculerLBM(){
@@ -313,16 +332,16 @@ require_once './model/tpcinitial.php';
 						
 							// document.getElementById("lL").value = lL;
 							if (document.getElementById('fwdtofwd').checked){
-								var lL = Number(L-(l1 + l2));
+								var lL = Math.round(Number(L-(l1 + l3))*1000)/1000;
 								document.getElementById('lL').value = lL;
 							} else if (document.getElementById('fwdtoaft').checked){
-								var lL = Number(L-(l1 - l2));
+								var lL = Math.round(Number(L-(l1 - l3))*1000)/1000;
 								document.getElementById('lL').value = lL;
 							}else if (document.getElementById('afttofwd').checked){
-								var lL = Number(L-(l2 - l1));
+								var lL = Math.round(Number(L-(l3 - l1))*1000)/1000;
 								document.getElementById('lL').value = lL;
 							}else if (document.getElementById('afttoaft').checked){
-								var lL = Number(L+(l2 + l1));
+								var lL = Math.round(Number(L+(l3 + l1))*1000)/1000;
 								document.getElementById('lL').value = lL;
 							}
 						
@@ -339,9 +358,9 @@ require_once './model/tpcinitial.php';
 							var tEar=Number(document.getElementById('tear').value);
 							var tEM=Number(document.getElementById('tem').value);
 						
-							var corrAv =Number((apparentTrim*l1)/lL);
-							var corrAr =Number((apparentTrim*l3)/lL);
-							var corrM =Number((apparentTrim*l2)/lL);
+							var corrAv =Math.round(Number((apparentTrim*l1)/lL)*1000)/1000;
+							var corrAr =Math.round(Number((apparentTrim*l3)/lL)*1000)/1000;
+							var corrM =Math.round(Number((apparentTrim*l2)/lL)*1000)/1000;
 						
 							document.getElementById("corrAv").value = corrAv;
 							document.getElementById("corrAr").value = corrAr;
@@ -356,10 +375,10 @@ require_once './model/tpcinitial.php';
 							var corrAr=Number(document.getElementById('corrAr').value);
 							var corrM=Number(document.getElementById('corrM').value);
 						
-							var tAv =Number(tEav+corrAv);
-							var tAr =Number(tEar+corrAr);
-							var tM =Number(tEM+corrM);
-							var trueTrim =Number(tAr-tAv);
+							var tAv =Math.round(Number(tEav+corrAv)*1000)/1000;
+							var tAr =Math.round(Number(tEar+corrAr)*1000)/1000;
+							var tM =Math.round(Number(tEM+corrM)*1000)/1000;
+							var trueTrim =Math.round(Number(tAr-tAv)*1000)/1000;
 						
 							document.getElementById("tAv").value = tAv;
 							document.getElementById("tAr").value = tAr;

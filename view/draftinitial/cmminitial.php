@@ -336,7 +336,7 @@ if (count($result1) == 0) {
 			var x2 = Number(document.getElementById('x2').value);
 			var y1 = Number(document.getElementById('y1').value);
 			var y2 = Number(document.getElementById('y2').value);
-			var deplacementMAD = Number((MAD - x1) / (x2 - x1) * (y2 - y1) + y1);
+			var deplacementMAD = Math.round(Number((MAD - x1) / (x2 - x1) * (y2 - y1) + y1)*1000)/1000;
 			document.getElementById('deplacementMad').value = deplacementMAD;
 		};
 		// Fonction pour calcule LCF
@@ -349,13 +349,13 @@ if (count($result1) == 0) {
 			var y2LCF = Number(document.getElementById('y2LCF').value);
 			var L = Number(document.getElementById('l').value);
 			if (document.getElementById('lcftoap').checked) {
-				var LCF = Number((L / 2) - (MAD - x1) / (x2 - x1) * (y2LCF - y1LCF) + y1);
+				var LCF = Math.round(Number((L / 2) - (MAD - x1) / (x2 - x1) * (y2LCF - y1LCF) + y1)*1000)/1000;
 				document.getElementById('lcfto').value = LCF;
 			} else if (document.getElementById('lcftofp').checked) {
-				var LCF = Number(((MAD - x1) / (x2 - x1) * (y2LCF - y1LCF) + y1) - L / 2);
+				var LCF = Math.round(Number(((MAD - x1) / (x2 - x1) * (y2LCF - y1LCF) + y1) - L / 2)*1000)/1000;
 				document.getElementById('lcfto').value = LCF;
 			} else if (document.getElementById('lcftomidship').checked) {
-				var LCF = Number(((MAD - x1) / (x2 - x1) * (y2LCF - y1LCF) + y1) - L / 2);
+				var LCF = (Math.round(((MAD - x1) / (x2 - x1) * (y2LCF - y1LCF) + y1) - L / 2)*1000)/1000;
 				document.getElementById('lcfto').value = LCF;
 			}
 		}
@@ -367,7 +367,7 @@ if (count($result1) == 0) {
 			var y1tpcmad = Number(document.getElementById('y1tpcmad').value);
 			var y2tpcmad = Number(document.getElementById('y2tpcmad').value);
 			var y1 = Number(document.getElementById('y1').value);
-			var TPCMAD = Number(((MAD - x1) / (x2 - x1)) * (y2tpcmad - y1tpcmad) + y1);
+			var TPCMAD = Math.round(Number(((MAD - x1) / (x2 - x1)) * (y2tpcmad - y1tpcmad) + y1)*1000)/1000;
 			document.getElementById('tpcmad').value = TPCMAD;
 		}
 		// Fonction pour calcule First Trim Correction
@@ -377,7 +377,7 @@ if (count($result1) == 0) {
 			var truetrim = Number(document.getElementById('truetrim').value);
 			var L = Number(document.getElementById('l').value);
 			var TPCMAD = Number(document.getElementById('tpcmad').value);
-			var FirstTrimCorr = Number((LCF * TPCMAD * truetrim * 100) / L);
+			var FirstTrimCorr = Math.round(Number((LCF * TPCMAD * truetrim * 100) / L)*1000)/1000;
 			document.getElementById('firstTrimCorrection').value = FirstTrimCorr;
 		}
 		// Fonction calcule MTC1
@@ -389,7 +389,7 @@ if (count($result1) == 0) {
 			var y1 = Number(document.getElementById('y1').value);
 			var t1 = Number(document.getElementById('t1').value);
 			var t2 = Number(document.getElementById('t2').value);
-			var MTC1 = Number(((t1 - x1Mtc1) / (x2Mtc1 - x1Mtc1)) * (y2Mtc1 - y1Mtc1) + y1);
+			var MTC1 = Math.round(Number(((t1 - x1Mtc1) / (x2Mtc1 - x1Mtc1)) * (y2Mtc1 - y1Mtc1) + y1)*1000)/1000;
 			document.getElementById('mtc1').value = MTC1;
 		}
 		// Fonction calcule MTC2
@@ -401,13 +401,13 @@ if (count($result1) == 0) {
 			var y1 = Number(document.getElementById('y1').value);
 			var t1 = Number(document.getElementById('t1').value);
 			var t2 = Number(document.getElementById('t2').value);
-			var MTC2 = Number(((t2 - x1Mtc2) / (x2Mtc2 - x1Mtc2)) * (y2Mtc2 - y1Mtc2) + y1);
+			var MTC2 = (Math.round(((t2 - x1Mtc2) / (x2Mtc2 - x1Mtc2)) * (y2Mtc2 - y1Mtc2) + y1)*1000)/1000;
 			document.getElementById('mtc2').value = MTC2;
 
 			var truetrim = Number(document.getElementById('truetrim').value);
 			var L = Number(document.getElementById('l').value);
 			var MTC1 = Number(document.getElementById('mtc1').value);
-			var secondTrimCorr = Number(((truetrim * truetrim) * (MTC2 - MTC1) * 50) / L);
+			var secondTrimCorr = Math.round(Number(((truetrim * truetrim) * (MTC2 - MTC1) * 50) / L)*1000)/1000;
 			document.getElementById('secondTrimCorrection').value = secondTrimCorr;
 		}
 	</script>
