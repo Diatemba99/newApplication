@@ -188,15 +188,16 @@ require_once './model/tpcinitial.php';
 							
 							<div class="card-body border">
 								<div class="row border">
-									<div class="col-2"></div>
-									<div class="col-4">
+									<!-- <fieldset id="avant"> -->
+										<div class="col-2"></div>
+									<div class="col-4 ">
 										<div class="form-check mt-3">
-												<input class="form-check-input" onclick="calculerCorrection();calculerCorrectionTirants();" type="radio" name="markAP" id="fwdcorrav" >
-												<label class="form-check-label" for="ap1">Mark FWD/P</label>
+												<input class="form-check-input" onclick="calculerCorrection();calculerCorrectionTirants();" type="radio" name="avant" id="fwdcorrav" >
+												<label class="form-check-label" for="avant">Mark FWD/P</label>
 											</div>
 											<div class="form-check">
-												<input class="form-check-input" onclick="calculerCorrection();calculerCorrectionTirants();" type="radio" name="markAP" id="aftcorrav" >
-												<label class="form-check-label" for="ap2">Mark AFT/P</label>
+												<input class="form-check-input" onclick="calculerCorrection();calculerCorrectionTirants();" type="radio" name="avant" id="aftcorrav" >
+												<label class="form-check-label" for="avantf">Mark AFT/P</label>
 											</div>
 									</div>
 									<div class="col-6">
@@ -205,17 +206,19 @@ require_once './model/tpcinitial.php';
 										<input type="number" readonly step="any" name="corrAv" class="form-control border-start-0" id="corrAv" placeholder="" />
 									</div>
 									</div>
+									<!-- </fieldset> -->
 								</div>
 								<div class="row border">
-									<div class="col-2"></div>
+									<!-- <fieldset id="millieu"> -->
+										<div class="col-2"></div>
 									<div class="col-4">
-										<div class="form-check mt-3">
-												<input class="form-check-input" onclick="calculerCorrection();calculerCorrectionTirants();" type="radio" name="markAP" id="fwdcorrar" >
-												<label class="form-check-label" for="ap1">Mark FWD/P</label>
+											<div class="form-check mt-3">
+												<input class="form-check-input" onclick="calculerCorrection();calculerCorrectionTirants();" type="radio" name="arriere" id="fwdcorrar" >
+												<label class="form-check-label" for="milieu">Mark FWD/P</label>
 											</div>
 											<div class="form-check">
-												<input class="form-check-input" onclick="calculerCorrection();calculerCorrectionTirants();" type="radio" name="markAP" id="aftcorrar" >
-												<label class="form-check-label" for="ap2">Mark AFT/P</label>
+												<input class="form-check-input" onclick="calculerCorrection();calculerCorrectionTirants();" type="radio" name="arriere" id="aftcorrar" >
+												<label class="form-check-label" for="milieuf">Mark AFT/P</label>
 											</div>
 									</div>
 									<div class="col-6">
@@ -224,17 +227,19 @@ require_once './model/tpcinitial.php';
 										<input type="number" readonly step="any" name="corrAr" class="form-control border-start-0" id="corrAr" placeholder="" />
 									</div>
 									</div>
+									<!-- </fieldset> -->
 								</div>
 								<div class="row border">
-									<div class="col-2"></div>
+									<!-- <fieldset id="arriere"> -->
+										<div class="col-2"></div>
 									<div class="col-4">
 										<div class="form-check mt-3">
-												<input class="form-check-input" onclick="calculerCorrection();calculerCorrectionTirants();" type="radio" name="markAP" id="fwdcorrM" >
-												<label class="form-check-label" for="ap1">Mark FWD/P</label>
+												<input class="form-check-input" onclick="calculerCorrection();calculerCorrectionTirants();" type="radio" name="milieu" id="fwdcorrM" >
+												<label class="form-check-label" for="arriere">Mark FWD/P</label>
 											</div>
 											<div class="form-check">
-												<input class="form-check-input" onclick="calculerCorrection();calculerCorrectionTirants();" type="radio" name="markAP" id="aftcorrM" >
-												<label class="form-check-label" for="ap2">Mark AFT/P</label>
+												<input class="form-check-input" onclick="calculerCorrection();calculerCorrectionTirants();" type="radio" name="milieu" id="aftcorrM" >
+												<label class="form-check-label" for="arrieref">Mark AFT/P</label>
 											</div>
 									</div>
 									<div class="col-6">
@@ -243,6 +248,7 @@ require_once './model/tpcinitial.php';
 										<input type="number" readonly step="any" name="corrM" class="form-control border-start-0" id="corrM" placeholder="" />
 										</div>
 									</div>
+									<!-- </fieldset> -->
 								</div>
 								<div class="row">
 								<!-- <div class="col-6">
