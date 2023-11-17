@@ -114,8 +114,8 @@ require_once './model/tpcfinal.php';
 							</div>
 							</div>
 							<h5 class="mb-0 text-primary">Calcul de l'Assiette Apparente ou (Apparent Trim)</h5>
-							<div class="card-body border">
-								<div class="row">
+							<!-- <div class="card-body border"> -->
+								<!-- <div class="row">
 									<div class="col-6">
 										<div class="form-check">
 														<input class="form-check-input" onclick="calculerTEM()" type="radio" name="markAP" id="fwdp" >
@@ -125,16 +125,17 @@ require_once './model/tpcfinal.php';
 														<input class="form-check-input" onclick="calculerTEM()" type="radio" name="markAP" id="aftp" >
 														<label class="form-check-label" for="ap2">Mark AFT/P</label>
 													</div>
-									</div>
+									</div> -->
+									<div class="col-6"></div>
 									<div class="col-4">
 								
-								<div class="input-group mt-3">
+									<div class="input-group mt-3">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Apparent Trim</font></font></span>
 										<input type="number" readonly step="any" name="apparentTrim" class="form-control border-start-0" id="apparentTrim" placeholder="" />
 									</div>
 							</div>
 								</div>
-							</div>
+							<!-- </div> -->
 							<h5 class="mb-0 text-primary">Calcul de la distance entre les marques avant et arriéres</h5>
 							<div class="card-body border">
 								<div class="row">
@@ -196,30 +197,69 @@ require_once './model/tpcfinal.php';
 
 							<h5 class="mb-0 text-primary">Correction à apporter aux tirants apparents</h5>
 							<div class="card-body border">
-								<div class="row">
-								<div class="col-6">
-									
-								</div>
-
-								<div class="col-6">
-									
-									<div class="input-group mt-3">
+								<div class="row border">
+									<!-- <fieldset id="avant"> -->
+										<div class="col-2"></div>
+									<div class="col-4 ">
+										<div class="form-check mt-3">
+												<input class="form-check-input" onclick="calculerCorrection();calculerCorrectionTirants();" type="radio" name="avant" id="fwdcorrav" >
+												<label class="form-check-label" for="avant">Mark FWD/P</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" onclick="calculerCorrection();calculerCorrectionTirants();" type="radio" name="avant" id="aftcorrav" >
+												<label class="form-check-label" for="avantf">Mark AFT/P</label>
+											</div>
+									</div>
+									<div class="col-6">
+										<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Corr.avant</font></font></span>
 										<input type="number" readonly step="any" name="corrAv" class="form-control border-start-0" id="corrAv" placeholder="" />
 									</div>
-
-									
-									<div class="input-group mt-3">
+									</div>
+									<!-- </fieldset> -->
+								</div>
+								<div class="row border">
+									<!-- <fieldset id="millieu"> -->
+										<div class="col-2"></div>
+									<div class="col-4">
+											<div class="form-check mt-3">
+												<input class="form-check-input" onclick="calculerCorrection();calculerCorrectionTirants();" type="radio" name="arriere" id="fwdcorrar" >
+												<label class="form-check-label" for="milieu">Mark FWD/P</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" onclick="calculerCorrection();calculerCorrectionTirants();" type="radio" name="arriere" id="aftcorrar" >
+												<label class="form-check-label" for="milieuf">Mark AFT/P</label>
+											</div>
+									</div>
+									<div class="col-6">
+										<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Corr.arr</font></font></span>
 										<input type="number" readonly step="any" name="corrAr" class="form-control border-start-0" id="corrAr" placeholder="" />
 									</div>
-
-									
-									<div class="input-group mt-3">
+									</div>
+									<!-- </fieldset> -->
+								</div>
+								<div class="row border">
+									<!-- <fieldset id="arriere"> -->
+										<div class="col-2"></div>
+									<div class="col-4">
+										<div class="form-check mt-3">
+												<input class="form-check-input" onclick="calculerCorrection();calculerCorrectionTirants();" type="radio" name="milieu" id="fwdcorrM" >
+												<label class="form-check-label" for="arriere">Mark FWD/P</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" onclick="calculerCorrection();calculerCorrectionTirants();" type="radio" name="milieu" id="aftcorrM" >
+												<label class="form-check-label" for="arrieref">Mark AFT/P</label>
+											</div>
+									</div>
+									<div class="col-6">
+										<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Corr.mil</font></font></span>
 										<input type="number" readonly step="any" name="corrM" class="form-control border-start-0" id="corrM" placeholder="" />
+										</div>
 									</div>
-								</div>
+									<!-- </fieldset> -->
+								<!-- </div> -->
 							</div>
 							</div>
 
@@ -320,13 +360,16 @@ require_once './model/tpcfinal.php';
 							var temtb =Number(document.getElementById('temtb').value);
 							var tEM =Math.round(Number((tembd + temtb)/2)*1000)/1000;
 							document.getElementById("tem").value = tEM;
-							if (document.getElementById('fwdp').checked){
-								var apparentTrim = Number(tEar-tEav);
-								document.getElementById("apparentTrim").value = apparentTrim;
-							}else if (document.getElementById('aftp').checked){
-								var apparentTrim = Number(-(tEar-tEav));
-								document.getElementById("apparentTrim").value = apparentTrim;
-							}
+							var apparentTrim = Number(tEar-tEav);
+							document.getElementById("apparentTrim").value = apparentTrim;
+							
+							// if (document.getElementById('fwdp').checked){
+							// 	var apparentTrim = Number(tEar-tEav);
+							// 	document.getElementById("apparentTrim").value = apparentTrim;
+							// }else if (document.getElementById('aftp').checked){
+							// 	var apparentTrim = Number(-(tEar-tEav));
+							// 	document.getElementById("apparentTrim").value = apparentTrim;
+							// }
 						};
 						// Fonction pour calculer l
 						function calculerLBM(){
@@ -366,13 +409,59 @@ require_once './model/tpcfinal.php';
 							var tEar=Number(document.getElementById('tear').value);
 							var tEM=Number(document.getElementById('tem').value);
 						
-							var corrAv =Math.round(Number((apparentTrim*l1)/lL)*1000)/1000;
-							var corrAr =Math.round(Number((apparentTrim*l3)/lL)*1000)/1000;
-							var corrM =Math.round(Number((apparentTrim*l2)/lL)*1000)/1000;
+							// var corrAv =Math.round(Number((apparentTrim*l1)/lL)*1000)/1000;
+							// var corrAr =Math.round(Number((apparentTrim*l3)/lL)*1000)/1000;
+							// var corrM =Math.round(Number((apparentTrim*l2)/lL)*1000)/1000;
 						
-							document.getElementById("corrAv").value = corrAv;
-							document.getElementById("corrAr").value = corrAr;
-							document.getElementById("corrM").value = corrM;
+							// document.getElementById("corrAv").value = corrAv;
+							// document.getElementById("corrAr").value = corrAr;
+							// document.getElementById("corrM").value = corrM;
+
+							if (apparentTrim>0) {
+								if (document.getElementById('aftcorrav').checked){
+									var corrAv =Math.round(Number(-(apparentTrim*l1)/lL)*1000)/1000;
+									document.getElementById("corrAv").value = corrAv;
+								}else if (document.getElementById('fwdcorrav').checked){
+									var corrAv =Math.round(Number((apparentTrim*l1)/lL)*1000)/1000;
+									document.getElementById("corrAv").value = corrAv;
+								}
+								if (document.getElementById('aftcorrar').checked){
+									var corrAr =Math.round(Number(-(apparentTrim*l3)/lL)*1000)/1000;
+									document.getElementById("corrAr").value = corrAr;
+								}else if (document.getElementById('fwdcorrar').checked){
+									var corrAr =Math.round(Number((apparentTrim*l3)/lL)*1000)/1000;
+									document.getElementById("corrAr").value = corrAr;
+								}
+								if (document.getElementById('aftcorrM').checked){
+									var corrM =Math.round(Number(-(apparentTrim*l2)/lL)*1000)/1000;
+									document.getElementById("corrM").value = corrM;
+								}else if (document.getElementById('fwdcorrM').checked){
+									var corrM =Math.round(Number((apparentTrim*l2)/lL)*1000)/1000;
+									document.getElementById("corrM").value = corrM;
+								}
+							} else if (apparentTrim<0){
+								if (document.getElementById('aftcorrav').checked){
+									var corrAv =Math.round(Number((apparentTrim*l1)/lL)*1000)/1000;
+									document.getElementById("corrAv").value = corrAv;
+								}else if (document.getElementById('fwdcorrav').checked){
+									var corrAv =Math.round(Number(-(apparentTrim*l1)/lL)*1000)/1000;
+									document.getElementById("corrAv").value = corrAv;
+								}
+								if (document.getElementById('aftcorrar').checked){
+									var corrAr =Math.round(Number((apparentTrim*l3)/lL)*1000)/1000;
+									document.getElementById("corrAr").value = corrAr;
+								}else if (document.getElementById('fwdcorrar').checked){
+									var corrAr =Math.round(Number(-(apparentTrim*l3)/lL)*1000)/1000;
+									document.getElementById("corrAr").value = corrAr;
+								}
+								if (document.getElementById('aftcorrM').checked){
+									var corrM =Math.round(Number((apparentTrim*l2)/lL)*1000)/1000;
+									document.getElementById("corrM").value = corrM;
+								}else if (document.getElementById('fwdcorrM').checked){
+									var corrM =Math.round(Number(-(apparentTrim*l2)/lL)*1000)/1000;
+									document.getElementById("corrM").value = corrM;
+								}                                                                                                                     
+							}
 						};
 						// Fonction pour calculer correction tirants réels et true trim
 						function calculerCorrectionTirants(){
