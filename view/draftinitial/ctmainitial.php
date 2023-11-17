@@ -104,7 +104,7 @@ require_once './model/tpcinitial.php';
 							</div>
 							</div>
 							<h5 class="mb-0 text-primary">Calcul de l'Assiette Apparente ou (Apparent Trim)</h5>
-							<div class="col-6">
+							<!-- <div class="col-6">
 								<div class="form-check">
 												<input class="form-check-input" onclick="calculerTEM()" type="radio" name="markAP" id="fwdp" >
 												<label class="form-check-label" for="ap1">Mark FWD/P</label>
@@ -113,7 +113,8 @@ require_once './model/tpcinitial.php';
 												<input class="form-check-input" onclick="calculerTEM()" type="radio" name="markAP" id="aftp" >
 												<label class="form-check-label" for="ap2">Mark AFT/P</label>
 											</div>
-							</div>
+							</div> -->
+							<div class="col-6"></div>
 							<div class="col-4">
 								
 								<div class="input-group mt-3">
@@ -135,19 +136,19 @@ require_once './model/tpcinitial.php';
 									<div class="col-4 mt-5">
 										<div>
 											<div class="form-check">
-												<input class="form-check-input" onclick="calculerLBM();calculerCorrection();calculerCorrectionTirants();" type="radio" name="mark" id="fwdtofwd" value="LCF to AP">
+												<input class="form-check-input" onclick="calculerLBM();calculerCorrection();" type="radio" name="mark" id="fwdtofwd" value="LCF to AP">
 												<label class="form-check-label" for="lcf1">Mark FWD/P to FWD</label>
 											</div>
 											<div class="form-check">
-												<input class="form-check-input" onclick="calculerLBM();calculerCorrection();calculerCorrectionTirants();" type="radio" name="mark" id="fwdtoaft" value="LCF to FP">
+												<input class="form-check-input" onclick="calculerLBM();calculerCorrection();" type="radio" name="mark" id="fwdtoaft" value="LCF to FP">
 												<label class="form-check-label" for="lcf2">Mark FWD/P to AFT</label>
 											</div>
 											<div class="form-check">
-												<input class="form-check-input" onclick="calculerLBM();calculerCorrection();calculerCorrectionTirants();" type="radio" name="mark" id="afttofwd" value="LCF to midship">
+												<input class="form-check-input" onclick="calculerLBM();calculerCorrection();" type="radio" name="mark" id="afttofwd" value="LCF to midship">
 												<label class="form-check-label" for="lcf3">Mark AFT/P to FWD</label>
 											</div>
 											<div class="form-check">
-												<input class="form-check-input" onclick="calculerLBM();calculerCorrection();calculerCorrectionTirants();" type="radio" name="mark" id="afttoaft" value="LCF to midship">
+												<input class="form-check-input" onclick="calculerLBM();calculerCorrection();" type="radio" name="mark" id="afttoaft" value="LCF to midship">
 												<label class="form-check-label" for="lcf3">Mark AFT/P to AFT</label>
 											</div>
 									</div>
@@ -171,7 +172,7 @@ require_once './model/tpcinitial.php';
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">l3</font></font></span>
-										<input type="number" required step="any" onkeyup="calculerCorrection();calculerCorrectionTirants();" name="l3" class="form-control border-start-0" id="l3" placeholder="" />
+										<input type="number" required step="any" onkeyup="calculerCorrection();" name="l3" class="form-control border-start-0" id="l3" placeholder="" />
 									</div>
 
 									
@@ -186,12 +187,76 @@ require_once './model/tpcinitial.php';
 							<h5 class="mb-0 text-primary">Correction à apporter aux tirants apparents</h5>
 							
 							<div class="card-body border">
-								<div class="row">
-								<div class="col-6">
-									
+								<div class="row border">
+									<div class="col-2"></div>
+									<div class="col-4">
+										<div class="form-check mt-3">
+												<input class="form-check-input" onclick="calculerCorrection();calculerCorrectionTirants();" type="radio" name="markAP" id="fwdcorrav" >
+												<label class="form-check-label" for="ap1">Mark FWD/P</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" onclick="calculerCorrection();calculerCorrectionTirants();" type="radio" name="markAP" id="aftcorrav" >
+												<label class="form-check-label" for="ap2">Mark AFT/P</label>
+											</div>
+									</div>
+									<div class="col-6">
+										<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Corr.avant</font></font></span>
+										<input type="number" readonly step="any" name="corrAv" class="form-control border-start-0" id="corrAv" placeholder="" />
+									</div>
+									</div>
 								</div>
+								<div class="row border">
+									<div class="col-2"></div>
+									<div class="col-4">
+										<div class="form-check mt-3">
+												<input class="form-check-input" onclick="calculerCorrection();calculerCorrectionTirants();" type="radio" name="markAP" id="fwdcorrar" >
+												<label class="form-check-label" for="ap1">Mark FWD/P</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" onclick="calculerCorrection();calculerCorrectionTirants();" type="radio" name="markAP" id="aftcorrar" >
+												<label class="form-check-label" for="ap2">Mark AFT/P</label>
+											</div>
+									</div>
+									<div class="col-6">
+										<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Corr.arr</font></font></span>
+										<input type="number" readonly step="any" name="corrAr" class="form-control border-start-0" id="corrAr" placeholder="" />
+									</div>
+									</div>
+								</div>
+								<div class="row border">
+									<div class="col-2"></div>
+									<div class="col-4">
+										<div class="form-check mt-3">
+												<input class="form-check-input" onclick="calculerCorrection();calculerCorrectionTirants();" type="radio" name="markAP" id="fwdcorrM" >
+												<label class="form-check-label" for="ap1">Mark FWD/P</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" onclick="calculerCorrection();calculerCorrectionTirants();" type="radio" name="markAP" id="aftcorrM" >
+												<label class="form-check-label" for="ap2">Mark AFT/P</label>
+											</div>
+									</div>
+									<div class="col-6">
+										<div class="input-group mt-3">
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Corr.mil</font></font></span>
+										<input type="number" readonly step="any" name="corrM" class="form-control border-start-0" id="corrM" placeholder="" />
+										</div>
+									</div>
+								</div>
+								<div class="row">
+								<!-- <div class="col-6">
+											<div class="form-check">
+												<input class="form-check-input" onclick="calculerTEM()" type="radio" name="markAP" id="fwdp" >
+												<label class="form-check-label" for="ap1">Mark FWD/P</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" onclick="calculerTEM()" type="radio" name="markAP" id="aftp" >
+												<label class="form-check-label" for="ap2">Mark AFT/P</label>
+											</div>
+								</div> -->
 
-								<div class="col-6">
+								<!-- <div class="col-6">
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Corr.avant</font></font></span>
@@ -209,7 +274,7 @@ require_once './model/tpcinitial.php';
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Corr.mil</font></font></span>
 										<input type="number" readonly step="any" name="corrM" class="form-control border-start-0" id="corrM" placeholder="" />
 									</div>
-								</div>
+								</div> -->
 							</div>
 							</div>
 
@@ -310,15 +375,16 @@ require_once './model/tpcinitial.php';
 							
 							var tEM =Number((tembd + temtb)/2);
 							document.getElementById("tem").value = tEM;
-							if (document.getElementById('fwdp').checked){
-								var apparentTrim = Number(tEar-tEav);
-								document.getElementById("apparentTrim").value = apparentTrim;
-							}else if (document.getElementById('aftp').checked){
-								var apparentTrim = Number(-(tEar-tEav));
-								document.getElementById("apparentTrim").value = apparentTrim;
-							}
-							// var apparentTrim = Number(tEar-tEav);
-							// document.getElementById("apparentTrim").value = apparentTrim;
+							var apparentTrim = Number(tEar-tEav);
+							document.getElementById("apparentTrim").value = apparentTrim;
+							// if (document.getElementById('fwdp').checked){
+							// 	var apparentTrim = Number(tEar-tEav);
+							// 	document.getElementById("apparentTrim").value = apparentTrim;
+							// }else if (document.getElementById('aftp').checked){
+							// 	var apparentTrim = Number(-(tEar-tEav));
+							// 	document.getElementById("apparentTrim").value = apparentTrim;
+							// }
+							
 						};
 						// Fonction pour calculer lBM
 						function calculerLBM(){
@@ -358,13 +424,59 @@ require_once './model/tpcinitial.php';
 							var tEar=Number(document.getElementById('tear').value);
 							var tEM=Number(document.getElementById('tem').value);
 						
-							var corrAv =Math.round(Number((apparentTrim*l1)/lL)*1000)/1000;
-							var corrAr =Math.round(Number((apparentTrim*l3)/lL)*1000)/1000;
-							var corrM =Math.round(Number((apparentTrim*l2)/lL)*1000)/1000;
+							// var corrAv =Math.round(Number((apparentTrim*l1)/lL)*1000)/1000;
+							// var corrAr =Math.round(Number((apparentTrim*l3)/lL)*1000)/1000;
+							// var corrM =Math.round(Number((apparentTrim*l2)/lL)*1000)/1000;
 						
-							document.getElementById("corrAv").value = corrAv;
-							document.getElementById("corrAr").value = corrAr;
-							document.getElementById("corrM").value = corrM;
+							// document.getElementById("corrAv").value = corrAv;
+							// document.getElementById("corrAr").value = corrAr;
+							// document.getElementById("corrM").value = corrM;
+
+							if (apparentTrim>0) {
+								if (document.getElementById('aftcorrav').checked){
+									var corrAv =Math.round(Number(-(apparentTrim*l1)/lL)*1000)/1000;
+									document.getElementById("corrAv").value = corrAv;
+								}else if (document.getElementById('fwdcorrav').checked){
+									var corrAv =Math.round(Number((apparentTrim*l1)/lL)*1000)/1000;
+									document.getElementById("corrAv").value = corrAv;
+								}
+								if (document.getElementById('aftcorrar').checked){
+									var corrAr =Math.round(Number(-(apparentTrim*l3)/lL)*1000)/1000;
+									document.getElementById("corrAr").value = corrAr;
+								}else if (document.getElementById('fwdcorrar').checked){
+									var corrAr =Math.round(Number((apparentTrim*l3)/lL)*1000)/1000;
+									document.getElementById("corrAr").value = corrAr;
+								}
+								if (document.getElementById('aftcorrM').checked){
+									var corrM =Math.round(Number(-(apparentTrim*l2)/lL)*1000)/1000;
+									document.getElementById("corrM").value = corrM;
+								}else if (document.getElementById('fwdcorrM').checked){
+									var corrM =Math.round(Number((apparentTrim*l2)/lL)*1000)/1000;
+									document.getElementById("corrM").value = corrM;
+								}
+							} else if (apparentTrim<0){
+								if (document.getElementById('aftcorrav').checked){
+									var corrAv =Math.round(Number((apparentTrim*l1)/lL)*1000)/1000;
+									document.getElementById("corrAv").value = corrAv;
+								}else if (document.getElementById('fwdcorrav').checked){
+									var corrAv =Math.round(Number(-(apparentTrim*l1)/lL)*1000)/1000;
+									document.getElementById("corrAv").value = corrAv;
+								}
+								if (document.getElementById('aftcorrar').checked){
+									var corrAr =Math.round(Number((apparentTrim*l3)/lL)*1000)/1000;
+									document.getElementById("corrAr").value = corrAr;
+								}else if (document.getElementById('fwdcorrar').checked){
+									var corrAr =Math.round(Number(-(apparentTrim*l3)/lL)*1000)/1000;
+									document.getElementById("corrAr").value = corrAr;
+								}
+								if (document.getElementById('aftcorrM').checked){
+									var corrM =Math.round(Number((apparentTrim*l2)/lL)*1000)/1000;
+									document.getElementById("corrM").value = corrM;
+								}else if (document.getElementById('fwdcorrM').checked){
+									var corrM =Math.round(Number(-(apparentTrim*l2)/lL)*1000)/1000;
+									document.getElementById("corrM").value = corrM;
+								}                                                                                                                     
+							}
 						};
 						// Fonction pour calculer correction tirants réels et true trim
 						function calculerCorrectionTirants(){

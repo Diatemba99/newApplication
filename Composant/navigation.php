@@ -236,7 +236,7 @@ $profile=$_SESSION["CURRENT_user"]['first_name'].' '.$_SESSION["CURRENT_user"]['
 					</a>
 					<ul>
 						
-						<li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Wiki</a>
+						<li> <a href="./Guide.pdf"><i class="bx bx-right-arrow-alt"></i>Wiki</a>
 						</li>
 						
 					</ul>

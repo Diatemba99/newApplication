@@ -7,6 +7,10 @@ if(isset($_GET['page'])){
             require_once './view/dashboard/dashboard.php';
         break;
 
+        // case 'wiki':
+        //     require_once './Guide.pdf';
+        // break;
+
         case 'listessurveyinitial':
             require_once './view/draftinitial/listessurveyinitial.php';
         break;
