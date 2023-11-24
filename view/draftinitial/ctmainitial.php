@@ -151,7 +151,7 @@ require_once './model/tpcinitial.php';
 												<input class="form-check-input" onclick="calculerLBM();calculerCorrection();" type="radio" name="mark" id="afttoaft" value="LCF to midship">
 												<label class="form-check-label" for="lcf3">Mark AFT/AFT/P & Mark FWD/AFT/P</label>
 											</div>
-									</div>
+										</div>
 						
 								</div>
 								</div>
