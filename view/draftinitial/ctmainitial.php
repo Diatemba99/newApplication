@@ -368,7 +368,7 @@ require_once './model/tpcinitial.php';
 						function calculerTEar(){
 							var tearbd =Number(document.getElementById('tearbd').value);
 							var teartb =Number(document.getElementById('teartb').value);
-							var tEar =Number((tearbd + teartb)/2);
+							var tEar =Math.round(Number((tearbd + teartb)/2)*1000)/1000;
 							document.getElementById("tear").value = tEar;
 						};
 						// Fonction pour calculer TEM et apparent trim
@@ -381,7 +381,7 @@ require_once './model/tpcinitial.php';
 							
 							var tEM =Number((tembd + temtb)/2);
 							document.getElementById("tem").value = tEM;
-							var apparentTrim = Number(tEar-tEav);
+							var apparentTrim = Math.round(Number(tEar-tEav)*1000)/1000;
 							document.getElementById("apparentTrim").value = apparentTrim;
 							// if (document.getElementById('fwdp').checked){
 							// 	var apparentTrim = Number(tEar-tEav);

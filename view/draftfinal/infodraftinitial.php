@@ -123,7 +123,8 @@ require_once './model/cargaison.php';
 							
 						</td>
 						<td>
-							<button onclick="window.location.href = '?page=rapportfinal&id=<?= $idNavire ?>';" type="button" class="btn btn-outline-dark px-5"><i class="bx bx-cloud-upload mr-1"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Rapport Final</font></font></button>
+							<!-- <button onclick="window.location.href = '?page=rapportfinal&id=<?= $idNavire ?>';" type="button" class="btn btn-outline-dark px-5"><i class="bx bx-cloud-upload mr-1"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Rapport Final</font></font></button> -->
+							<button onclick="window.location.href = './REPORT_BEQQ_Republic_of_Guinea.pdf';" type="button" class="btn btn-outline-dark px-5"><i class="bx bx-cloud-upload mr-1"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Rapport Final</font></font></button>
 						</td>
 						<!-- <td>
 							<?php
