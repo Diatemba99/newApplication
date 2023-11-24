@@ -133,30 +133,30 @@ require_once './model/tpcinitial.php';
 										<input type="number" required step="any" name="L" class="form-control border-start-0" id="L" placeholder="" />
 									</div>
 
-									<div class="col-4 mt-5">
+									<div class="col-8 mt-5">
 										<div>
 											<div class="form-check">
 												<input class="form-check-input" onclick="calculerLBM();calculerCorrection();" type="radio" name="mark" id="fwdtofwd" value="LCF to AP">
-												<label class="form-check-label" for="lcf1">Mark FWD/P to FWD</label>
+												<label class="form-check-label" for="lcf1">Mark AFT/FWD/P to Mark FWD/ FWD/P</label>
 											</div>
 											<div class="form-check">
 												<input class="form-check-input" onclick="calculerLBM();calculerCorrection();" type="radio" name="mark" id="fwdtoaft" value="LCF to FP">
-												<label class="form-check-label" for="lcf2">Mark FWD/P to AFT</label>
+												<label class="form-check-label" for="lcf2">Mark AFT/FWD/P to Mark FWD/AFT/P</label>
 											</div>
 											<div class="form-check">
 												<input class="form-check-input" onclick="calculerLBM();calculerCorrection();" type="radio" name="mark" id="afttofwd" value="LCF to midship">
-												<label class="form-check-label" for="lcf3">Mark AFT/P to FWD</label>
+												<label class="form-check-label" for="lcf3">Mark AFT/AFT/P to Mark FWD/FWD/P</label>
 											</div>
 											<div class="form-check">
 												<input class="form-check-input" onclick="calculerLBM();calculerCorrection();" type="radio" name="mark" id="afttoaft" value="LCF to midship">
-												<label class="form-check-label" for="lcf3">Mark AFT/P to AFT</label>
+												<label class="form-check-label" for="lcf3">Mark AFT/AFT/P to Mark FWD/AFT/P</label>
 											</div>
 									</div>
 						
 								</div>
 								</div>
 
-								<div class="col-6">
+								<div class="col-4">
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">l1</font></font></span>

@@ -220,6 +220,77 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 							</div>
 							<hr>
 							<form class="row g-3" method="POST" action="./controller/draftinitial.php">
+								<!-- <input type="text" hidden name="idUser" value="<?=$profile?>" class="form-control border-start-0" id="idUser" placeholder="" />
+							<div class="col-md-6">
+								
+								<div class="input-group">
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Name of The Ship</font></font></span>
+										<input type="text" required name="nomNavire" class="form-control border-start-0" id="nomNavire" placeholder="Name of The Ship" />
+									</div>
+							</div>
+							<div class="col-md-6">
+								
+								<div class="input-group">
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">IMO Number</font></font></span>
+										<input type="number" required name="imoNumber" class="form-control border-start-0" id="imoNumber" placeholder="IMO Number" />
+									</div>
+							</div>
+							<div class="col-md-6">
+								
+								<div class="input-group">
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">INMC Number</font></font></span>
+										<input type="number" required name="inmcNumber" class="form-control border-start-0" id="inmcNumber" placeholder="INMC Number" />
+									</div>
+							</div>
+							<div class="col-md-6">
+								
+								<div class="input-group">
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Operator</font></font></span>
+										<input type="text"  name="operator" readonly value='<?=$prenomAgent ?>&nbsp;<?=$nomAgent?>' class="form-control border-start-0" id="operator" placeholder="Operator" />
+									</div>
+							</div>
+							<div class="col-md-6">
+								
+								<div class="input-group">
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Keel Plate</font></font></span>
+										<input type="number" required name="keelPlate" class="form-control border-start-0" id="keelPlate" placeholder="Keel Plate" />
+									</div>
+							</div>
+							<div class="col-md-6">
+								
+								<div class="input-group">
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LBP</font></font></span>
+										<input type="number" required name="lbp" class="form-control border-start-0" id="lbp" placeholder="LBP" />
+									</div>
+							</div>
+							<div class="col-md-6">
+								
+								<div class="input-group">
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Distance between Perpendiculars and Marks</font></font></span>
+										<input type="number" required name="dbpm" class="form-control border-start-0" id="dbpm" placeholder="Distance between Perpendiculars and Marks" />
+									</div>
+							</div>
+							<div class="col-md-6">
+								
+								<div class="input-group">
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">lightship</font></font></span>
+										<input type="number" required name="lightship" class="form-control border-start-0" id="lightship" placeholder="lightship" />
+									</div>
+							</div>
+							<div class="col-md-6">
+								
+								<div class="input-group">
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Density (Rho)</font></font></span>
+										<input type="number" required name="densityRho" class="form-control border-start-0" id="densityRho" placeholder="Density (Rho)" />
+									</div>
+							</div>
+							<div class="col-md-6">
+								
+								<div class="input-group">
+									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Number of the wedges</font></font></span>
+										<input type="number" required name="numbWedges" class="form-control border-start-0" id="numbWedges" placeholder="Number of the wedges" />
+									</div>
+							</div> -->
 								<input type="text" hidden name="idUser" value="<?=$profile?>" class="form-control border-start-0" id="idUser" placeholder="" />
 							<div class="col-md-6">
 								
