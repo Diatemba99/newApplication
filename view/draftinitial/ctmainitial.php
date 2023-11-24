@@ -379,7 +379,7 @@ require_once './model/tpcinitial.php';
 							var temtb =Number(document.getElementById('temtb').value);
 							
 							
-							var tEM =Number((tembd + temtb)/2);
+							var tEM =Math.round(Number((tembd + temtb)/2)*1000)/1000;
 							document.getElementById("tem").value = tEM;
 							var apparentTrim = Math.round(Number(tEar-tEav)*1000)/1000;
 							document.getElementById("apparentTrim").value = apparentTrim;
