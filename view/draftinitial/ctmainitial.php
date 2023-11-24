@@ -137,19 +137,19 @@ require_once './model/tpcinitial.php';
 										<div>
 											<div class="form-check">
 												<input class="form-check-input" onclick="calculerLBM();calculerCorrection();" type="radio" name="mark" id="fwdtofwd" value="LCF to AP">
-												<label class="form-check-label" for="lcf1">Mark AFT/FWD/P to Mark FWD/ FWD/P</label>
+												<label class="form-check-label" for="lcf1">Mark AFT/FWD/P & Mark FWD/ FWD/P</label>
 											</div>
 											<div class="form-check">
 												<input class="form-check-input" onclick="calculerLBM();calculerCorrection();" type="radio" name="mark" id="fwdtoaft" value="LCF to FP">
-												<label class="form-check-label" for="lcf2">Mark AFT/FWD/P to Mark FWD/AFT/P</label>
+												<label class="form-check-label" for="lcf2">Mark AFT/FWD/P & Mark FWD/AFT/P</label>
 											</div>
 											<div class="form-check">
 												<input class="form-check-input" onclick="calculerLBM();calculerCorrection();" type="radio" name="mark" id="afttofwd" value="LCF to midship">
-												<label class="form-check-label" for="lcf3">Mark AFT/AFT/P to Mark FWD/FWD/P</label>
+												<label class="form-check-label" for="lcf3">Mark AFT/AFT/P & Mark FWD/FWD/P</label>
 											</div>
 											<div class="form-check">
 												<input class="form-check-input" onclick="calculerLBM();calculerCorrection();" type="radio" name="mark" id="afttoaft" value="LCF to midship">
-												<label class="form-check-label" for="lcf3">Mark AFT/AFT/P to Mark FWD/AFT/P</label>
+												<label class="form-check-label" for="lcf3">Mark AFT/AFT/P & Mark FWD/AFT/P</label>
 											</div>
 									</div>
 						
@@ -159,19 +159,19 @@ require_once './model/tpcinitial.php';
 								<div class="col-4">
 									
 									<div class="input-group mt-3">
-										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">l1</font></font></span>
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">la</font></font></span>
 										<input type="number" required step="any" name="l1" class="form-control border-start-0" id="l1" placeholder="" />
 									</div>
 
 									
 									<div class="input-group mt-3">
-										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">l2</font></font></span>
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">lf</font></font></span>
 										<input type="number" required step="any" name="l2" class="form-control border-start-0" id="l2" placeholder="" />
 									</div>
 
 									
 									<div class="input-group mt-3">
-										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">l3</font></font></span>
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">lm</font></font></span>
 										<input type="number" required step="any" onkeyup="calculerCorrection();" name="l3" class="form-control border-start-0" id="l3" placeholder="" />
 									</div>
 
