@@ -146,7 +146,7 @@ require_once './model/tpcfinal.php';
 										<input type="number" required step="any" name="L" class="form-control border-start-0" id="L" placeholder="" />
 									</div>
 
-									<div class="col-4 mt-5">
+									<div class="col-8 mt-5">
 										<div>
 											<div class="form-check">
 												<input class="form-check-input" onclick="calculerLBM();calculerCorrection();calculerCorrectionTirants();" type="radio" name="mark" id="fwdtofwd" value="LCF to AP">
@@ -167,7 +167,7 @@ require_once './model/tpcfinal.php';
 									</div>
 								</div>
 								</div>
-								<div class="col-6">
+								<div class="col-4">
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">la</font></font></span>
