@@ -154,7 +154,7 @@ if (count($result1) == 0) {
 							<input type="number" step="any" name="y2LCF" class="form-control border-start-0" id="y2LCF" placeholder="" />
 						</div>
 					</div>
-					<div class="col-4 mt-3">
+					<div class="col-4 mt-2">
 						<div>
 							<div class="form-check">
 								<input class="form-check-input" onclick="calculeLCF();" type="radio" name="lcf" id="lcftoap" value="LCF to AP">
@@ -172,7 +172,7 @@ if (count($result1) == 0) {
 						
 										
 					</div>
-					<div class="col-4">
+					<div class="col-3">
 						<div>
 											<div class="form-check">
 												<input class="form-check-input" onclick="calculeLCF();calculerCorrection();" type="radio" name="lcfto" id="lcffrommidship" value="LCF to AP">
@@ -201,7 +201,7 @@ if (count($result1) == 0) {
 										</div>
 					</div>
 
-					<div class="col-2">
+					<div class="col-3">
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LCF</font></font></span>

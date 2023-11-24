@@ -140,7 +140,7 @@ require_once './model/tpcfinal.php';
 					<h5 class="mb-0 text-primary">Calcul du LCF</h5>
 					<div class="card-body border">
 						<div class="row">
-							<div class="col-4">
+							<div class="col-2">
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y1</font></font></span>
@@ -170,7 +170,36 @@ require_once './model/tpcfinal.php';
 						
 					</div>
 
-					<div class="col-4">
+					<div class="col-3">
+						<div>
+											<div class="form-check">
+												<input class="form-check-input" onclick="calculeLCF();calculerCorrection();" type="radio" name="lcfto" id="lcffrommidship" value="LCF to AP">
+												<label class="form-check-label" for="lcf1">LCF from Midship</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" onclick="calculeLCF();calculerCorrection();" type="radio" name="lcfto" id="lcftomidship" value="LCF to FP">
+												<label class="form-check-label" for="lcf2">LCF to Midship</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" onclick="calculeLCF();calculerCorrection();" type="radio" name="lcfto" id="lcffromap" value="LCF to midship">
+												<label class="form-check-label" for="lcf3">LCF from AP</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" onclick="calculeLCF();calculerCorrection();" type="radio" name="lcfto" id="lcftoap" value="LCF to midship">
+												<label class="form-check-label" for="lcf4">LCF to AP</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" onclick="calculeLCF();calculerCorrection();" type="radio" name="lcfto" id="lcffromfp" value="LCF to midship">
+												<label class="form-check-label" for="lcf5">LCF from FP</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" onclick="calculeLCF();calculerCorrection();" type="radio" name="lcfto" id="lcftofp" value="LCF to midship">
+												<label class="form-check-label" for="lcf6">LCF to FP</label>
+											</div>
+										</div>
+					</div>
+
+					<div class="col-3">
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LCF to</font></font></span>
@@ -229,17 +258,17 @@ require_once './model/tpcfinal.php';
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x1</font></font></span>
-							<input type="number" required step="any" name="x1secondtrim" class="form-control border-start-0" id="x1secondtrim" placeholder="" />
+							<input type="number" required step="any" onkeyup="calculeMTC1();" name="x1secondtrim" class="form-control border-start-0" id="x1secondtrim" placeholder="" />
 						</div>
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x2</font></font></span>
-							<input type="number" required step="any" name="x2secondtrim" class="form-control border-start-0" id="x2secondtrim" placeholder="" />
+							<input type="number" required step="any" onkeyup="calculeMTC1();" name="x2secondtrim" class="form-control border-start-0" id="x2secondtrim" placeholder="" />
 						</div>
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y1</font></font></span>
-							<input type="number" required step="any" name="y1secondtrim" class="form-control border-start-0" id="y1secondtrim" placeholder="" />
+							<input type="number" required step="any" onkeyup="calculeMTC1();" name="y1secondtrim" class="form-control border-start-0" id="y1secondtrim" placeholder="" />
 						</div>
 						
 						<div class="input-group mt-3">
@@ -263,17 +292,17 @@ require_once './model/tpcfinal.php';
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x1</font></font></span>
-							<input type="number" required step="any" name="x1secondtrim2" class="form-control border-start-0" id="x1secondtrim2" placeholder="" />
+							<input type="number" required step="any" onkeyup="calculeMTC2();" name="x1secondtrim2" class="form-control border-start-0" id="x1secondtrim2" placeholder="" />
 						</div>
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x2</font></font></span>
-							<input type="number" required step="any" name="x2secondtrim2" class="form-control border-start-0" id="x2secondtrim2" placeholder="" />
+							<input type="number" required step="any" onkeyup="calculeMTC2();" name="x2secondtrim2" class="form-control border-start-0" id="x2secondtrim2" placeholder="" />
 						</div>
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y1</font></font></span>
-							<input type="number" required step="any" name="y1secondtrim2" class="form-control border-start-0" id="y1secondtrim2" placeholder="" />
+							<input type="number" required step="any" onkeyup="calculeMTC2();" name="y1secondtrim2" class="form-control border-start-0" id="y1secondtrim2" placeholder="" />
 						</div>
 						
 						<div class="input-group mt-3">
@@ -356,6 +385,25 @@ require_once './model/tpcfinal.php';
 								}else if(document.getElementById('lcftomidship').checked){
 								var LCF =Math.round(Number(((MAD-x1)/(x2-x1)*(y2LCF-y1LCF)+y1)-L/2)*1000)/1000;
 								document.getElementById('lcfto').value=LCF;
+								}
+								if (document.getElementById('lcffrommidship').checked) {
+									var LCF = Math.round(Number((L / 2) + LCF)*1000)/1000;
+									document.getElementById('lcfto').value = LCF;
+								} else if (document.getElementById('lcftomidship').checked) {
+									var LCF = Math.round(Number((L / 2) - LCF)*1000)/1000;
+									document.getElementById('lcfto').value = LCF;
+								} else if (document.getElementById('lcffromap').checked) {
+									var LCF = Math.round(Number((L / 2) + LCF)*1000)/1000;
+									document.getElementById('lcfto').value = LCF;
+								} else if (document.getElementById('lcftoap').checked) {
+									var LCF = Math.round(Number((L / 2) - LCF)*1000)/1000;
+									document.getElementById('lcfto').value = LCF;
+								} else if (document.getElementById('lcffromfp').checked) {
+									var LCF = Math.round(Number((L / 2) - LCF)*1000)/1000;
+									document.getElementById('lcfto').value = LCF;
+								} else if (document.getElementById('lcftofp').checked) {
+									var LCF = Math.round(Number((L / 2) + LCF)*1000)/1000;
+									document.getElementById('lcfto').value = LCF;
 								}
 						}
 						// Fonction pour calcule du TPC pour MAD
