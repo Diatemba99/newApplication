@@ -220,77 +220,7 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 							</div>
 							<hr>
 							<form class="row g-3" method="POST" action="./controller/draftinitial.php">
-								<!-- <input type="text" hidden name="idUser" value="<?=$profile?>" class="form-control border-start-0" id="idUser" placeholder="" />
-							<div class="col-md-6">
 								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Name of The Ship</font></font></span>
-										<input type="text" required name="nomNavire" class="form-control border-start-0" id="nomNavire" placeholder="Name of The Ship" />
-									</div>
-							</div>
-							<div class="col-md-6">
-								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">IMO Number</font></font></span>
-										<input type="number" required name="imoNumber" class="form-control border-start-0" id="imoNumber" placeholder="IMO Number" />
-									</div>
-							</div>
-							<div class="col-md-6">
-								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">INMC Number</font></font></span>
-										<input type="number" required name="inmcNumber" class="form-control border-start-0" id="inmcNumber" placeholder="INMC Number" />
-									</div>
-							</div>
-							<div class="col-md-6">
-								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Operator</font></font></span>
-										<input type="text"  name="operator" readonly value='<?=$prenomAgent ?>&nbsp;<?=$nomAgent?>' class="form-control border-start-0" id="operator" placeholder="Operator" />
-									</div>
-							</div>
-							<div class="col-md-6">
-								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Keel Plate</font></font></span>
-										<input type="number" required name="keelPlate" class="form-control border-start-0" id="keelPlate" placeholder="Keel Plate" />
-									</div>
-							</div>
-							<div class="col-md-6">
-								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LBP</font></font></span>
-										<input type="number" required name="lbp" class="form-control border-start-0" id="lbp" placeholder="LBP" />
-									</div>
-							</div>
-							<div class="col-md-6">
-								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Distance between Perpendiculars and Marks</font></font></span>
-										<input type="number" required name="dbpm" class="form-control border-start-0" id="dbpm" placeholder="Distance between Perpendiculars and Marks" />
-									</div>
-							</div>
-							<div class="col-md-6">
-								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">lightship</font></font></span>
-										<input type="number" required name="lightship" class="form-control border-start-0" id="lightship" placeholder="lightship" />
-									</div>
-							</div>
-							<div class="col-md-6">
-								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Density (Rho)</font></font></span>
-										<input type="number" required name="densityRho" class="form-control border-start-0" id="densityRho" placeholder="Density (Rho)" />
-									</div>
-							</div>
-							<div class="col-md-6">
-								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Number of the wedges</font></font></span>
-										<input type="number" required name="numbWedges" class="form-control border-start-0" id="numbWedges" placeholder="Number of the wedges" />
-									</div>
-							</div> -->
 								<input type="text" hidden name="idUser" value="<?=$profile?>" class="form-control border-start-0" id="idUser" placeholder="" />
 							<div class="col-md-6">
 								
@@ -313,13 +243,13 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 										<input type="text" required name="officialN" class="form-control border-start-0" id="officialN" placeholder="Official N°" />
 									</div>
 							</div>
-							<div class="col-md-6">
+							<!-- <div class="col-md-6">
 								
 								<div class="input-group">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ship Management</font></font></span>
 										<input type="text" required name="shipManagement" class="form-control border-start-0" id="shipManagement" placeholder="Ship Management" />
 									</div>
-							</div>
+							</div> -->
 							<div class="col-md-6">
 								
 								<div class="input-group">
@@ -327,7 +257,7 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 										<input type="text" required name="operators" class="form-control border-start-0" id="operators" placeholder="Operators" />
 									</div>
 							</div>
-							<div class="col-md-6">
+							<!-- <div class="col-md-6">
 								
 								<div class="input-group">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Registered Owners</font></font></span>
@@ -347,8 +277,8 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Seo</font></font></span>
 										<input type="text" required name="seo" class="form-control border-start-0" id="seo" placeholder="SEO" />
 									</div>
-							</div>
-							<div class="col-md-6">
+							</div> -->
+							<!-- <div class="col-md-6">
 								
 								<div class="input-group">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Flag</font></font></span>
@@ -361,8 +291,8 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Port Of Reg</font></font></span>
 										<input type="text" required name="portOfReg" class="form-control border-start-0" id="portOfReg" placeholder="Port Of Reg" />
 									</div>
-							</div>
-							<div class="col-md-6">
+							</div> -->
+							<!-- <div class="col-md-6">
 								
 								<div class="input-group">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Builders</font></font></span>
@@ -375,22 +305,22 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Hull N°</font></font></span>
 										<input type="number" required name="hull" class="form-control border-start-0" id="hull" placeholder="Hull N°" />
 									</div>
-							</div>
-							<div class="col-md-6">
+							</div> -->
+							<!-- <div class="col-md-6">
 								
 								<div class="input-group">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Type</font></font></span>
 										<input type="text" required name="type" class="form-control border-start-0" id="type" placeholder="Type" />
 									</div>
-							</div>
-							<div class="col-md-6">
+							</div> -->
+							<!-- <div class="col-md-6">
 								
 								<div class="input-group">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Keel Laid</font></font></span>
 										<input type="text" required name="keelLaid" class="form-control border-start-0" id="keelLaid" placeholder="Keel Laid" />
 									</div>
-							</div>
-							<div class="col-md-6">
+							</div> -->
+							<!-- <div class="col-md-6">
 								
 								<div class="input-group">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Delivered</font></font></span>
@@ -403,8 +333,8 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Class Society</font></font></span>
 										<input type="text" required name="class" class="form-control border-start-0" id="class" placeholder="Class Society" />
 									</div>
-							</div>
-							<div class="col-md-6">
+							</div> -->
+							<!-- <div class="col-md-6">
 								
 								<div class="input-group">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">H&M Underwrirers</font></font></span>
@@ -417,14 +347,14 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">P&I Club</font></font></span>
 										<input type="text" required name="piclub" class="form-control border-start-0" id="piclub" placeholder="P&I Club" />
 									</div>
-							</div>
-							<div class="col-md-6">
+							</div> -->
+							<!-- <div class="col-md-6">
 								
 								<div class="input-group">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Loa</font></font></span>
 										<input type="number" required name="loa" class="form-control border-start-0" id="loa" placeholder="LOA" />
 									</div>
-							</div>
+							</div> -->
 							<div class="col-md-6">
 								
 								<div class="input-group">
@@ -446,13 +376,13 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 										<input type="number" required name="depthMoulded" class="form-control border-start-0" id="depthMoulded" placeholder="Depth (moulded)" />
 									</div>
 							</div>
-							<div class="col-md-6">
+							<!-- <div class="col-md-6">
 								
 								<div class="input-group">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Depth (extreme)</font></font></span>
 										<input type="number" required name="depthExterne" class="form-control border-start-0" id="depthExterne" placeholder="Depth (extreme)" />
 									</div>
-							</div>
+							</div> -->
 							<div class="col-md-6">
 								
 								<div class="input-group">
@@ -460,13 +390,13 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 										<input type="number" required name="keelPlate" class="form-control border-start-0" id="keelPlate" placeholder="Keel plate" />
 									</div>
 							</div>
-							<div class="col-md-6">
+							<!-- <div class="col-md-6">
 								
 								<div class="input-group">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dwt</font></font></span>
 										<input type="number" required name="dwt" class="form-control border-start-0" id="dwt" placeholder="DWT" />
 									</div>
-							</div>
+							</div> -->
 							<div class="col-md-6">
 								
 								<div class="input-group">
@@ -474,27 +404,27 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 										<input type="number" required name="disp" class="form-control border-start-0" id="disp" placeholder="DISP" />
 									</div>
 							</div>
-							<div class="col-md-6">
+							<!-- <div class="col-md-6">
 								
 								<div class="input-group">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Lightship</font></font></span>
 										<input type="number" required name="lightship" class="form-control border-start-0" id="lightship" placeholder="LIGHTSHIP" />
 									</div>
-							</div>
-							<div class="col-md-6">
+							</div> -->
+							<!-- <div class="col-md-6">
 								
 								<div class="input-group">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Draft (MOULDED)</font></font></span>
 										<input type="number" required name="draftMoulded" class="form-control border-start-0" id="draftMoulded" placeholder="DRAFT (MOULDED)" />
 									</div>
-							</div>
-							<div class="col-md-6">
+							</div> -->
+							<!-- <div class="col-md-6">
 								
 								<div class="input-group">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Draft (EXTREME)</font></font></span>
 										<input type="number" required name="draftExtreme" class="form-control border-start-0" id="draftExtreme" placeholder="DRAFT (EXTREME)" />
 									</div>
-							</div>
+							</div> -->
 							<div class="col-md-6">
 								
 								<div class="input-group">

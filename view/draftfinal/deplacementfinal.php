@@ -46,7 +46,7 @@ require_once './model/deplacementfinal.php';
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Densité table hydrostatique</font></font></span>
-										<input type="number" required step="any" name="densiteTable" class="form-control border-start-0" id="densiteTable" placeholder="" />
+										<input type="number" required step="any" onkeyup="calculDeplamentInitial();" name="densiteTable" class="form-control border-start-0" id="densiteTable" placeholder="" />
 									</div>
 									
 									<div class="input-group mt-3">
@@ -71,27 +71,27 @@ require_once './model/deplacementfinal.php';
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Fuel Oil</font></font></span>
-										<input type="number" required step="any" name="fuelOil" class="form-control border-start-0" id="fuelOil" placeholder="" />
+										<input type="number" required step="any" onkeyup="calculConstantes();" name="fuelOil" class="form-control border-start-0" id="fuelOil" placeholder="" />
 									</div>
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Diesel Oil</font></font></span>
-										<input type="number" required step="any" name="dieselOil" class="form-control border-start-0" id="dieselOil" placeholder="" />
+										<input type="number" required step="any" onkeyup="calculConstantes();" name="dieselOil" class="form-control border-start-0" id="dieselOil" placeholder="" />
 									</div>
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Lubrifiant Oil</font></font></span>
-										<input type="number" required step="any" name="lubrifiantOil" class="form-control border-start-0" id="lubrifiantOil" placeholder="" />
+										<input type="number" required step="any" onkeyup="calculConstantes();" name="lubrifiantOil" class="form-control border-start-0" id="lubrifiantOil" placeholder="" />
 									</div>
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Fresh Water</font></font></span>
-										<input type="number" required step="any" name="freshWater" class="form-control border-start-0" id="freshWater" placeholder="" />
+										<input type="number" required step="any" onkeyup="calculConstantes();" name="freshWater" class="form-control border-start-0" id="freshWater" placeholder="" />
 									</div>
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ballast Water</font></font></span>
-										<input type="number" required step="any" name="ballastWater" class="form-control border-start-0" id="ballastWater" placeholder="" />
+										<input type="number" required step="any" onkeyup="calculConstantes();" name="ballastWater" class="form-control border-start-0" id="ballastWater" placeholder="" />
 									</div>
 									
 									<div class="input-group mt-3">

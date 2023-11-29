@@ -52,27 +52,27 @@ if (isset($_GET['erreur_insersion'])) {
 										<input type="text" name="typeMinerai" class="form-control border-start-0" id="typeMinerai" placeholder="Type de minerai" />
 									</div>
 							</div>
-							<div class="col-md-6">
+							<!-- <div class="col-md-6"> -->
 								<!-- <label for="inputLastName1" class="form-label">Teneur en eau</label> -->
-								<div class="input-group">
+								<!-- <div class="input-group">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Teneur en eau</font></font></span>
 										<input type="text" name="teneurEau" class="form-control border-start-0" id="teneurEau" placeholder="Teneur en eau" />
-									</div>
-							</div>
-							<div class="col-md-6">
+									</div> -->
+							<!-- </div> -->
+							<!-- <div class="col-md-6">
 								
 								<div class="input-group">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Teneur en silice (SIO2)</font></font></span>
 										<input type="text" name="teneurSilice" class="form-control border-start-0" id="teneurSilice" placeholder="Teneur en silice (SIO2)" />
 									</div>
-							</div>
-							<div class="col-md-6">
+							</div> -->
+							<!-- <div class="col-md-6">
 								
 								<div class="input-group">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Teneur en alumin (AI2O3)</font></font></span>
 										<input type="text" name="teneurAlumin" class="form-control border-start-0" id="teneurAlumin" placeholder="Teneur en alumin (AI2O3)" />
 									</div>
-							</div>
+							</div> -->
 							<div class="col-md-6">
 								
 								<div class="input-group">
@@ -108,13 +108,13 @@ if (isset($_GET['erreur_insersion'])) {
 										<input type="text" name="imo" class="form-control border-start-0" id="imo" placeholder="IMO Number" />
 									</div>
 							</div>
-							<div class="col-md-6">
+							<!-- <div class="col-md-6">
 								
 								<div class="input-group">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Date entrée Navire</font></font></span>
 										<input type="date" name="dateEntreNavire" class="form-control border-start-0" id="dateEntreNavire" placeholder="Date entrée Navire" />
 									</div>
-							</div>
+							</div> -->
 							<div class="col-md-6">
 								
 								<div class="input-group">
@@ -125,7 +125,7 @@ if (isset($_GET['erreur_insersion'])) {
                                 		</script>
 									</div>
 							</div>
-							<div class="col-md-6">
+							<!-- <div class="col-md-6">
 								
 								<div class="input-group">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Heure Survey Initial</font></font></span>
@@ -137,7 +137,7 @@ if (isset($_GET['erreur_insersion'])) {
                                 			document.getElementById("heureSurveyInitial").value = hours;
                                 		</script>
 									</div>
-							</div>
+							</div> -->
 							<div class="col-md-6">
 								
 								<div class="input-group">
@@ -152,13 +152,13 @@ if (isset($_GET['erreur_insersion'])) {
 										<input type="text" name="agenceMaritime" class="form-control border-start-0" id="agenceMaritime" placeholder="Agence Maritime" />
 									</div>
 							</div>
-							<div class="col-md-6">
+							<!-- <div class="col-md-6">
 							
 								<div class="input-group">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Destinataire des échantillons</font></font></span>
 										<input type="text" name="destinataireEchantillons" class="form-control border-start-0" id="destinataireEchantillons" placeholder="Destinataire des échantillons" />
 									</div>
-							</div>
+							</div> -->
 							<div class="col-md-6">
 								
 								<div class="input-group">
@@ -166,12 +166,12 @@ if (isset($_GET['erreur_insersion'])) {
 										<input type="number" name="nombreCale" class="form-control border-start-0" id="nombreCale" placeholder="Nombre de Cale" />
 									</div>
 							</div>
-							<div class="col-md-6">
+							<!-- <div class="col-md-6">
 								<div class="input-group">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Informations Complémentaire</font></font></span>
 										<input type="text" name="infoComplémentaire" class="form-control border-start-0" id="infoComplémentaire" placeholder="Informations Complémentaire" />
 									</div>
-							</div>
+							</div> -->
 												
 							
 								<div >

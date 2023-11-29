@@ -71,17 +71,17 @@ require_once './model/tpcinitial.php';
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x1</font></font></span>
-										<input type="number" required step="any" name="x1MTC1" class="form-control border-start-0" id="x1MTC1" placeholder="" />
+										<input type="number" required step="any" onkeyup="calculeMTC1();" name="x1MTC1" class="form-control border-start-0" id="x1MTC1" placeholder="" />
 									</div>
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x2</font></font></span>
-										<input type="number" required step="any" name="x2MTC1" class="form-control border-start-0" id="x2MTC1" placeholder="" />
+										<input type="number" required step="any" onkeyup="calculeMTC1();" name="x2MTC1" class="form-control border-start-0" id="x2MTC1" placeholder="" />
 									</div>
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y1</font></font></span>
-										<input type="number" required step="any" name="y1MTC1" class="form-control border-start-0" id="y1MTC1" placeholder="" />
+										<input type="number" required step="any" onkeyup="calculeMTC1();" name="y1MTC1" class="form-control border-start-0" id="y1MTC1" placeholder="" />
 									</div>
 									
 									<div class="input-group mt-3">
@@ -106,17 +106,17 @@ require_once './model/tpcinitial.php';
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x1</font></font></span>
-										<input type="number" required step="any" name="x1MTC2" class="form-control border-start-0" id="x1MTC2" placeholder="" />
+										<input type="number" required step="any" onkeyup="calculeMTC2();" name="x1MTC2" class="form-control border-start-0" id="x1MTC2" placeholder="" />
 									</div>
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x2</font></font></span>
-										<input type="number" required step="any" name="x2MTC2" class="form-control border-start-0" id="x2MTC2" placeholder="" />
+										<input type="number" required step="any"onkeyup="calculeMTC2();" name="x2MTC2" class="form-control border-start-0" id="x2MTC2" placeholder="" />
 									</div>
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y1</font></font></span>
-										<input type="number" required step="any" name="y1MTC2" class="form-control border-start-0" id="y1MTC2" placeholder="" />
+										<input type="number" required step="any" onkeyup="calculeMTC2();" name="y1MTC2" class="form-control border-start-0" id="y1MTC2" placeholder="" />
 									</div>
 									
 									<div class="input-group mt-3">
