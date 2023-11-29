@@ -61,14 +61,14 @@ require_once './model/tpcfinal.php';
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x1</font></font></span>
-							<input type="number" step="any" name="x1" class="form-control border-start-0" id="x1" placeholder="TEavbd" />
+							<input type="number" onkeyup="calculerdeplacementMAD();" step="any" name="x1" class="form-control border-start-0" id="x1" placeholder="TEavbd" />
 						</div>
 					</div>
 					<div class="col-4">
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x2</font></font></span>
-							<input type="number" step="any" name="x2" class="form-control border-start-0" id="x2" placeholder="TEavtb" />
+							<input type="number" onkeyup="calculerdeplacementMAD();" step="any" name="x2" class="form-control border-start-0" id="x2" placeholder="TEavtb" />
 						</div>
 					</div>
 					<div class="col-4">
@@ -88,7 +88,7 @@ require_once './model/tpcfinal.php';
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y1</font></font></span>
-							<input type="number" step="any" name="y1" class="form-control border-start-0" id="y1" placeholder="TEarbd" />
+							<input type="number" onkeyup="calculerdeplacementMAD();" step="any" name="y1" class="form-control border-start-0" id="y1" placeholder="TEarbd" />
 						</div>
 					</div>
 					<div class="col-4">
@@ -144,15 +144,15 @@ require_once './model/tpcfinal.php';
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y1</font></font></span>
-							<input type="number" step="any" name="y1LCF" class="form-control border-start-0" id="y1LCF" placeholder="" />
+							<input type="number" step="any" onkeyup="calculeLCF();" name="y1LCF" class="form-control border-start-0" id="y1LCF" placeholder="" />
 						</div>
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y2</font></font></span>
-							<input type="number" step="any" name="y2LCF" class="form-control border-start-0" id="y2LCF" placeholder="" />
+							<input type="number" step="any" onkeyup="calculeLCF();" name="y2LCF" class="form-control border-start-0" id="y2LCF" placeholder="" />
 						</div>
 					</div>
-					<div class="col-4 mt-3">
+					<!-- <div class="col-4 mt-3">
 						<div>
 							<div class="form-check">
 								<input class="form-check-input" onclick="calculeLCF();" type="radio" name="lcf" id="lcftoap" value="LCF to AP">
@@ -168,9 +168,9 @@ require_once './model/tpcfinal.php';
 							</div>
 						</div>
 						
-					</div>
+					</div> -->
 
-					<div class="col-3">
+					<div class="col-6">
 						<div>
 											<div class="form-check">
 												<input class="form-check-input" onclick="calculeLCF();calculerCorrection();" type="radio" name="lcfto" id="lcffrommidship" value="LCF to AP">
@@ -199,7 +199,7 @@ require_once './model/tpcfinal.php';
 										</div>
 					</div>
 
-					<div class="col-3">
+					<div class="col-2">
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LCF to</font></font></span>
@@ -216,7 +216,7 @@ require_once './model/tpcfinal.php';
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y1</font></font></span>
-							<input type="number" required step="any" name="y1tpcmad" class="form-control border-start-0" id="y1tpcmad" placeholder="" />
+							<input type="number" required onkeyup="calculeTPCMAD();calculefirsttrimcorr();" step="any" name="y1tpcmad" class="form-control border-start-0" id="y1tpcmad" placeholder="" />
 						</div>
 					</div>
 					<div class="col-4">
@@ -376,35 +376,43 @@ require_once './model/tpcfinal.php';
 							var y1LCF =Number(document.getElementById('y1LCF').value);
 							var y2LCF =Number(document.getElementById('y2LCF').value);
 							var L =Number(document.getElementById('l').value);
-							if (document.getElementById('lcftoap').checked) {
-								var LCF =Math.round(Number((L/2)-(MAD-x1)/(x2-x1)*(y2LCF-y1LCF)+y1));
-								document.getElementById('lcfto').value=LCF;
-								}else if(document.getElementById('lcftofp').checked){
-								var LCF =Math.round(Number(((MAD-x1)/(x2-x1)*(y2LCF-y1LCF)+y1)-L/2));
-								document.getElementById('lcfto').value=LCF;
-								}else if(document.getElementById('lcftomidship').checked){
-								var LCF =Math.round(Number(((MAD-x1)/(x2-x1)*(y2LCF-y1LCF)+y1)-L/2)*1000)/1000;
-								document.getElementById('lcfto').value=LCF;
-								}
-								if (document.getElementById('lcffrommidship').checked) {
-									var LCF = Math.round(Number((L / 2) + LCF)*1000)/1000;
-									document.getElementById('lcfto').value = LCF;
-								} else if (document.getElementById('lcftomidship').checked) {
-									var LCF = Math.round(Number((L / 2) - LCF)*1000)/1000;
-									document.getElementById('lcfto').value = LCF;
-								} else if (document.getElementById('lcffromap').checked) {
-									var LCF = Math.round(Number((L / 2) + LCF)*1000)/1000;
-									document.getElementById('lcfto').value = LCF;
-								} else if (document.getElementById('lcftoap').checked) {
-									var LCF = Math.round(Number((L / 2) - LCF)*1000)/1000;
-									document.getElementById('lcfto').value = LCF;
-								} else if (document.getElementById('lcffromfp').checked) {
-									var LCF = Math.round(Number((L / 2) - LCF)*1000)/1000;
-									document.getElementById('lcfto').value = LCF;
-								} else if (document.getElementById('lcftofp').checked) {
-									var LCF = Math.round(Number((L / 2) + LCF)*1000)/1000;
-									document.getElementById('lcfto').value = LCF;
-								}
+							// if (document.getElementById('lcftoap').checked) {
+							// 	var LCF =Math.round(Number((L/2)-(MAD-x1)/(x2-x1)*(y2LCF-y1LCF)+y1));
+							// 	document.getElementById('lcfto').value=LCF;
+							// 	}else if(document.getElementById('lcftofp').checked){
+							// 	var LCF =Math.round(Number(((MAD-x1)/(x2-x1)*(y2LCF-y1LCF)+y1)-L/2));
+							// 	document.getElementById('lcfto').value=LCF;
+							// 	}else if(document.getElementById('lcftomidship').checked){
+							// 	var LCF =Math.round(Number(((MAD-x1)/(x2-x1)*(y2LCF-y1LCF)+y1)-L/2)*1000)/1000;
+							// 	document.getElementById('lcfto').value=LCF;
+							// 	}
+								var LCFA = Math.round(Number((MAD - x1) / (x2 - x1) * (y2LCF - y1LCF) + y1)*1000)/1000;
+								// document.getElementById('lcfto').value = LCFA;
+							if (document.getElementById('lcffrommidship').checked) {
+								// var LCF = Math.round(Number((L / 2) + LCF)*1000)/1000;
+								var LCF = LCFA;
+								document.getElementById('lcfto').value = LCF;
+							} else if (document.getElementById('lcftomidship').checked) {
+								// var LCF = Math.round(Number((L / 2) - LCF)*1000)/1000;
+								var LCF = -LCFA;
+								document.getElementById('lcfto').value = LCF;
+							} else if (document.getElementById('lcffromap').checked) {
+								// var LCF = Math.round(Number((L / 2) + LCF)*1000)/1000;
+								var LCF = Math.round(Number((L / 2) - LCFA)*1000)/1000;
+								document.getElementById('lcfto').value = LCF;
+							} else if (document.getElementById('lcftoap').checked) {
+								// var LCF = Math.round(Number((L / 2) - LCF)*1000)/1000;
+								var LCF = Math.round(Number(LCFA-(L / 2))*1000)/1000;
+								document.getElementById('lcfto').value = LCF;
+							} else if (document.getElementById('lcffromfp').checked) {
+								// var LCF = Math.round(Number((L / 2) - LCF)*1000)/1000;
+								var LCF = Math.round(Number(LCFA-(L / 2))*1000)/1000;
+								document.getElementById('lcfto').value = LCF;
+							} else if (document.getElementById('lcftofp').checked) {
+								// var LCF = Math.round(Number((L / 2) + LCF)*1000)/1000;
+								var LCF = Math.round(Number((L / 2) - LCFA)*1000)/1000;
+								document.getElementById('lcfto').value = LCF;
+							}
 						}
 						// Fonction pour calcule du TPC pour MAD
 						function calculeTPCMAD(){
