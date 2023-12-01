@@ -383,16 +383,16 @@ require_once './model/tpcfinal.php';
 						
 							// document.getElementById("lL").value = lL;
 							if (document.getElementById('fwdtofwd').checked){
-								var lL = Math.round(Number(L-(l1 + l3))*1000)/1000;
+								var lL = Math.round(Number(L-(l1 + l2))*1000)/1000;
 								document.getElementById('lL').value = lL;
 							} else if (document.getElementById('fwdtoaft').checked){
-								var lL = Math.round(Number(L-(l1 - l3))*1000)/1000;
+								var lL = Math.round(Number(L-(l1 - l2))*1000)/1000;
 								document.getElementById('lL').value = lL;
 							}else if (document.getElementById('afttofwd').checked){
-								var lL = Math.round(Number(L-(l3 - l1))*1000)/1000;
+								var lL = Math.round(Number(L-(l2 - l1))*1000)/1000;
 								document.getElementById('lL').value = lL;
 							}else if (document.getElementById('afttoaft').checked){
-								var lL = Math.round(Number(L+(l3 + l1))*1000)/1000;
+								var lL = Math.round(Number(L+(l2 + l1))*1000)/1000;
 								document.getElementById('lL').value = lL;
 							}
 						
