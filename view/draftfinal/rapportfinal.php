@@ -178,51 +178,51 @@ function viewTable()
     }
             $this->SetFont('Times','B',12);
             // $this->Cell(70,20,utf8_decode(''));
-            $this->Cell(100,20,utf8_decode('GENERAL DIRECTORATE OF THE OFFICE OF QUANTITY OF MINERALS FOR EXPORTS'));
+            $this->Cell(100,20,('GENERAL DIRECTORATE OF THE OFFICE OF QUANTITY OF MINERALS FOR EXPORTS'));
             $this->ln();
             $this->SetFont('Times','BU',12);
-            $this->Cell(70,20,utf8_decode(''));
-            $this->Cell(100,20,utf8_decode('REPORTING SHEET'));
+            $this->Cell(70,20,(''));
+            $this->Cell(100,20,('REPORTING SHEET'));
             $this->Ln();
 
             $this->SetFont('Times','',12);
-            $this->Cell(90,8,utf8_decode('Initial Draft Date :'.'   '.$dateSurveyInitial),1,0,'C');
+            $this->Cell(90,8,('Initial Draft Date :'.'   '.$dateSurveyInitial),1,0,'C');
             $this->Cell(10, 10, '', 0); // Cellule vide pour l'espace
-            $this->Cell(90,8,utf8_decode('Final Draft Date :'.' '.$dateFinal),1,0,'C');
+            $this->Cell(90,8,('Final Draft Date :'.' '.$dateFinal),1,0,'C');
             $this->ln();
-            $this->Cell(90,8,utf8_decode('Port of Departure :'.'   '.$nomPortDepart),1,0,'C');
+            $this->Cell(90,8,('Port of Departure :'.'   '.$nomPortDepart),1,0,'C');
             $this->Cell(10, 10, '', 0); // Cellule vide pour l'espace
-            $this->Cell(90,8,utf8_decode('Port of Destination :'.'   '.$nomPortDestination),1,0,'C');
+            $this->Cell(90,8,('Port of Destination :'.'   '.$nomPortDestination),1,0,'C');
             $this->Ln();
-            $this->Cell(90,8,utf8_decode('Initial Draft Time :'.'   '.$heureSurveyInitial),1,0,'C');
+            $this->Cell(90,8,('Initial Draft Time :'.'   '.$heureSurveyInitial),1,0,'C');
             $this->Cell(10, 10, '', 0); // Cellule vide pour l'espace
-            $this->Cell(90,8,utf8_decode('Final Draft Time :'.'   '.$heureFinal),1,0,'C');
+            $this->Cell(90,8,('Final Draft Time :'.'   '.$heureFinal),1,0,'C');
             $this->Ln();
-            $this->Cell(90,8,utf8_decode('Company :'.'   '.$societeMiniere),1,0,'C');
+            $this->Cell(90,8,('Company :'.'   '.$societeMiniere),1,0,'C');
             $this->Cell(10, 10, '', 0); // Cellule vide pour l'espace
-            $this->Cell(90,8,utf8_decode('Product :'.' '.$typeMinerai),1,0,'C');
+            $this->Cell(90,8,('Product :'.' '.$typeMinerai),1,0,'C');
             $this->ln();
-            $this->Cell(90,8,utf8_decode('Vessel :'.'   '.$nomNavire),1,0,'C');
+            $this->Cell(90,8,('Vessel :'.'   '.$nomNavire),1,0,'C');
             $this->Cell(10, 10, '', 0); // Cellule vide pour l'espace
-            $this->Cell(90,8,utf8_decode('IMO NUMBER :'.'   '.$imoNumber),1,0,'C');
+            $this->Cell(90,8,('IMO NUMBER :'.'   '.$imoNumber),1,0,'C');
             $this->Ln();
-            $this->Cell(90,8,utf8_decode('Cargo MMG (TM) :'.'   '.$cargo),1,0,'C');
+            $this->Cell(90,8,('Cargo MMG (TM) :'.'   '.$cargo),1,0,'C');
             $this->Cell(10, 10, '', 0); // Cellule vide pour l'espace
-            $this->Cell(90,8,utf8_decode('Cargo Company (MT) :'.'   '.$cargoS),1,0,'C');
+            $this->Cell(90,8,('Cargo Company (MT) :'.'   '.$cargoS),1,0,'C');
             $this->Ln();
-            $this->Cell(90,8,utf8_decode('Name of Captain :'.'   '.$nomCapitaine),1,0,'C');
+            $this->Cell(90,8,('Name of Captain :'.'   '.$nomCapitaine),1,0,'C');
             $this->Cell(10, 10, '', 0); // Cellule vide pour l'espace
-            $this->Cell(90,8,utf8_decode('Maritime Agency :'.'   '.$agenceMaritime),1,0,'C');
+            $this->Cell(90,8,('Maritime Agency :'.'   '.$agenceMaritime),1,0,'C');
             $this->Ln();
 
             $this->SetFont('Times','B',12);
-            $this->Cell(70,20,utf8_decode(''));
-            $this->Cell(100,20,utf8_decode('DETAILS OF OPERATIONS'));
+            $this->Cell(70,20,(''));
+            $this->Cell(100,20,('DETAILS OF OPERATIONS'));
             $this->Ln();
 
             $this->SetFont('Times','BU',12);
-            $this->Cell(90,20,utf8_decode('Draft Initial'),0,0,'C');
-            $this->Cell(90,20,utf8_decode('Draft Final'),0,0,'C');
+            $this->Cell(90,20,('Draft Initial'),0,0,'C');
+            $this->Cell(90,20,('Draft Final'),0,0,'C');
             $this->SetFont('Times','',12);
             $this->Ln();
             $this->Cell(30, 10, 'FWD', 1);
@@ -394,12 +394,12 @@ function viewTable()
             // $this->Cell(90,8,utf8_decode('Cargo :'.'   '.$cargo),1,0,'C');
             // $this->Ln();
             $this->SetFont('Times','BU',12);
-            $this->Cell(90,20,utf8_decode(''));
-            $this->Cell(90,20,utf8_decode('Nom et Signature Inspecteur Minier'));
+            $this->Cell(90,20,(''));
+            $this->Cell(90,20,('Nom et Signature Inspecteur Minier'));
             $this->SetFont('Times','',12);
             $this->Ln();
-            $this->Cell(90,8,utf8_decode(''));
-            $this->Cell(90,8,utf8_decode($inspecteurMinier));
+            $this->Cell(90,8,(''));
+            $this->Cell(90,8,($inspecteurMinier));
 
 
 }
