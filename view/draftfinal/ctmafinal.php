@@ -5,9 +5,15 @@ $nomAgent= $_SESSION["CURRENT_user"]['last_name'];
 $idNavire= $_GET['id'];
 require_once './Composant/navigation.php';
 require_once './model/infodraftinitial.php';
+require_once './model/infonavire.php';
 require_once './model/ctmafinal.php';
 require_once './model/cmmfinal.php';
 require_once './model/tpcfinal.php';
+$vlbp= new InfoNavire();
+$result=$vlbp->getDraftByID($idNavire);
+foreach ($result as $key => $valeur) {
+	$lbp = $valeur['lbp'];
+}
 ?>
 
 <?php
@@ -143,7 +149,7 @@ require_once './model/tpcfinal.php';
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LBP</font></font></span>
-										<input type="number" required step="any" name="L" class="form-control border-start-0" id="L" placeholder="" />
+										<input type="number" readonly step="any" value="<?=$lbp?>" name="L" class="form-control border-start-0" id="L" placeholder="" />
 									</div>
 
 									<div class="col-8 mt-5">
@@ -587,7 +593,7 @@ require_once './model/tpcfinal.php';
 								<div class="col-6">
 									
 									<div class="input-group mt-3">
-										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">L</font></font></span>
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LBP</font></font></span>
 										<input type="number" readonly step="any" name="L" value="<?= $result['l'] ?>" class="form-control border-start-0" id="L" placeholder="" />
 									</div>
 								</div>
@@ -595,25 +601,25 @@ require_once './model/tpcfinal.php';
 								<div class="col-6">
 									
 									<div class="input-group mt-3">
-										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">l1</font></font></span>
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">la</font></font></span>
 										<input type="number" readonly step="any" name="l1" value="<?= $result['l1'] ?>" class="form-control border-start-0" id="l1" placeholder="" />
 									</div>
 
 									
 									<div class="input-group mt-3">
-										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">l2</font></font></span>
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">lf</font></font></span>
 										<input type="number" readonly step="any" name="l2" value="<?= $result['l2'] ?>" class="form-control border-start-0" id="l2" placeholder="" />
 									</div>
 
 									
 									<div class="input-group mt-3">
-										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">l3</font></font></span>
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">lm</font></font></span>
 										<input type="number" readonly step="any"  name="l3" value="<?= $result['l3'] ?>" class="form-control border-start-0" id="l3" placeholder="" />
 									</div>
 
 									
 									<div class="input-group mt-3">
-										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">l</font></font></span>
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LBM</font></font></span>
 										<input type="number" step="any" readonly name="lL" value="<?= $result['lL'] ?>" class="form-control border-start-0" id="lL" placeholder="" />
 									</div>
 								</div>

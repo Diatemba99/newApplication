@@ -174,13 +174,14 @@ if (count($result1) == 0) {
 					</div> -->
 					<div class="col-6">
 						<div>
-											<div class="form-check">
-												<input class="form-check-input" onclick="calculeLCF();calculerCorrection();" type="radio" name="lcfto" id="lcffrommidship" value="LCF to AP">
-												<label class="form-check-label" for="lcf1">LCF from Midship</label>
-											</div>
+											
 											<div class="form-check">
 												<input class="form-check-input" onclick="calculeLCF();calculerCorrection();" type="radio" name="lcfto" id="lcftomidship" value="LCF to FP">
-												<label class="form-check-label" for="lcf2">LCF to Midship</label>
+												<label class="form-check-label" for="lcf1">LCF to Midship</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" onclick="calculeLCF();calculerCorrection();" type="radio" name="lcfto" id="lcffrommidship" value="LCF to AP">
+												<label class="form-check-label" for="lcf2">LCF from Midship</label>
 											</div>
 											<div class="form-check">
 												<input class="form-check-input" onclick="calculeLCF();calculerCorrection();" type="radio" name="lcfto" id="lcffromap" value="LCF to midship">

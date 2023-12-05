@@ -173,28 +173,28 @@ require_once './model/tpcfinal.php';
 					<div class="col-6">
 						<div>
 											<div class="form-check">
-												<input class="form-check-input" onclick="calculeLCF();calculerCorrection();" type="radio" name="lcfto" id="lcffrommidship" value="LCF to AP">
-												<label class="form-check-label" for="lcf1">LCF from Midship</label>
+												<input class="form-check-input" onclick="calculeLCF();calculerCorrection();" type="radio" name="lcfto" id="lcftomidship" value="LCF to FP">
+												<label class="form-check-label" for="lcf1">LCF to Midship</label>
 											</div>
 											<div class="form-check">
-												<input class="form-check-input" onclick="calculeLCF();calculerCorrection();" type="radio" name="lcfto" id="lcftomidship" value="LCF to FP">
-												<label class="form-check-label" for="lcf2">LCF to Midship</label>
+												<input class="form-check-input" onclick="calculeLCF();calculerCorrection();" type="radio" name="lcfto" id="lcffrommidship" value="LCF to AP">
+												<label class="form-check-label" for="lcf2">LCF from Midship</label>
 											</div>
 											<div class="form-check">
 												<input class="form-check-input" onclick="calculeLCF();calculerCorrection();" type="radio" name="lcfto" id="lcffromap" value="LCF to midship">
-												<label class="form-check-label" for="lcf3">LCF from AP</label>
+												<label class="form-check-label" for="lcf3">LCF from AP et LCF < LBP/2</label>
 											</div>
 											<div class="form-check">
 												<input class="form-check-input" onclick="calculeLCF();calculerCorrection();" type="radio" name="lcfto" id="lcftoap" value="LCF to midship">
-												<label class="form-check-label" for="lcf4">LCF to AP</label>
+												<label class="form-check-label" for="lcf4">LCF from AP et LCF > LBP/2</label>
 											</div>
 											<div class="form-check">
 												<input class="form-check-input" onclick="calculeLCF();calculerCorrection();" type="radio" name="lcfto" id="lcffromfp" value="LCF to midship">
-												<label class="form-check-label" for="lcf5">LCF from FP</label>
+												<label class="form-check-label" for="lcf5">LCF from FP et LCF < LBP/2</label>
 											</div>
 											<div class="form-check">
 												<input class="form-check-input" onclick="calculeLCF();calculerCorrection();" type="radio" name="lcfto" id="lcftofp" value="LCF to midship">
-												<label class="form-check-label" for="lcf6">LCF to FP</label>
+												<label class="form-check-label" for="lcf6">LCF from FP et LCF > LBP/2</label>
 											</div>
 										</div>
 					</div>
@@ -202,7 +202,7 @@ require_once './model/tpcfinal.php';
 					<div class="col-2">
 						
 						<div class="input-group mt-3">
-							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LCF to</font></font></span>
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LCF</font></font></span>
 							<input type="number" readonly step="any" name="lcfto" class="form-control border-start-0" id="lcfto" placeholder="" />
 						</div>
 					</div>
