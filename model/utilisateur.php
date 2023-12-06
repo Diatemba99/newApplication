@@ -48,7 +48,7 @@ class  Utilisateur {
           $element->execute(array(
             ':first_name'=>$prenom,
             ':last_name'=>$nom,
-            ':email'=>$email, 
+            ':email'=>$email,
             ':password'=>$mot_de_passe,
             ':type'=>$typeUser,
              ));

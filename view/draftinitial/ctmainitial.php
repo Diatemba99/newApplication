@@ -446,46 +446,46 @@ foreach ($result as $key => $valeur) {
 
 							if (apparentTrim>0) {
 								if (document.getElementById('aftcorrav').checked){
-									var corrAv =Math.round(Number(-(apparentTrim*l1)/lL)*1000)/1000;
+									var corrAv =Math.round(Number(-(apparentTrim*l2)/lL)*1000)/1000;
 									document.getElementById("corrAv").value = corrAv;
 								}else if (document.getElementById('fwdcorrav').checked){
-									var corrAv =Math.round(Number((apparentTrim*l1)/lL)*1000)/1000;
+									var corrAv =Math.round(Number((apparentTrim*l2)/lL)*1000)/1000;
 									document.getElementById("corrAv").value = corrAv;
 								}
 								if (document.getElementById('aftcorrar').checked){
-									var corrAr =Math.round(Number(-(apparentTrim*l3)/lL)*1000)/1000;
+									var corrAr =Math.round(Number(-(apparentTrim*l1)/lL)*1000)/1000;
 									document.getElementById("corrAr").value = corrAr;
 								}else if (document.getElementById('fwdcorrar').checked){
-									var corrAr =Math.round(Number((apparentTrim*l3)/lL)*1000)/1000;
+									var corrAr =Math.round(Number((apparentTrim*l1)/lL)*1000)/1000;
 									document.getElementById("corrAr").value = corrAr;
 								}
 								if (document.getElementById('aftcorrM').checked){
-									var corrM =Math.round(Number(-(apparentTrim*l2)/lL)*1000)/1000;
+									var corrM =Math.round(Number(-(apparentTrim*l3)/lL)*1000)/1000;
 									document.getElementById("corrM").value = corrM;
 								}else if (document.getElementById('fwdcorrM').checked){
-									var corrM =Math.round(Number((apparentTrim*l2)/lL)*1000)/1000;
+									var corrM =Math.round(Number((apparentTrim*l3)/lL)*1000)/1000;
 									document.getElementById("corrM").value = corrM;
 								}
 							} else if (apparentTrim<0){
 								if (document.getElementById('aftcorrav').checked){
-									var corrAv =Math.round(Number((apparentTrim*l1)/lL)*1000)/1000;
+									var corrAv =Math.round(Number((apparentTrim*l2)/lL)*1000)/1000;
 									document.getElementById("corrAv").value = corrAv;
 								}else if (document.getElementById('fwdcorrav').checked){
-									var corrAv =Math.round(Number(-(apparentTrim*l1)/lL)*1000)/1000;
+									var corrAv =Math.round(Number(-(apparentTrim*l2)/lL)*1000)/1000;
 									document.getElementById("corrAv").value = corrAv;
 								}
 								if (document.getElementById('aftcorrar').checked){
-									var corrAr =Math.round(Number((apparentTrim*l3)/lL)*1000)/1000;
+									var corrAr =Math.round(Number((apparentTrim*l1)/lL)*1000)/1000;
 									document.getElementById("corrAr").value = corrAr;
 								}else if (document.getElementById('fwdcorrar').checked){
-									var corrAr =Math.round(Number(-(apparentTrim*l3)/lL)*1000)/1000;
+									var corrAr =Math.round(Number(-(apparentTrim*l1)/lL)*1000)/1000;
 									document.getElementById("corrAr").value = corrAr;
 								}
 								if (document.getElementById('aftcorrM').checked){
-									var corrM =Math.round(Number((apparentTrim*l2)/lL)*1000)/1000;
+									var corrM =Math.round(Number((apparentTrim*l3)/lL)*1000)/1000;
 									document.getElementById("corrM").value = corrM;
 								}else if (document.getElementById('fwdcorrM').checked){
-									var corrM =Math.round(Number(-(apparentTrim*l2)/lL)*1000)/1000;
+									var corrM =Math.round(Number(-(apparentTrim*l3)/lL)*1000)/1000;
 									document.getElementById("corrM").value = corrM;
 								}                                                                                                                     
 							}
