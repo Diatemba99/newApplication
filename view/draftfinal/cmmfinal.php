@@ -98,13 +98,58 @@ require_once './model/tpcfinal.php';
 							<input type="number" onkeyup="calculerdeplacementMAD();" step="any" name="y2" class="form-control border-start-0" id="y2" placeholder="TEartb" />
 						</div>
 					</div>
-					<div class="col-4">
+					<!-- <div class="col-4">
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Déplacement MAD</font></font></span>
 							<input type="number" readonly step="any" name="deplacementMad" class="form-control border-start-0" id="deplacementMad" placeholder="" />
 						</div>
+					</div> -->
+						</div>
 					</div>
+				</div>
+				<div class="row">
+					<div class="col-4"></div>
+					<div class="col-4"></div>
+					<div class="col-4">
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Déplacement MAD</font></font></span>
+							<input type="number" readonly step="any" name="deplacementMad" class="form-control border-start-0" id="deplacementMad" placeholder="" />
+						</div>
+					</div>
+				</div>
+				<div class="row mt-3">
+					<h5 class="mb-0 text-primary">Calcul déplacement correspondant à Keel≠0</h5>
+					<div class="card-body border mt-3">
+						<div class="row">
+							<div class="col-3">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y1</font></font></span>
+							<input type="number" onkeyup="calculerdeplacementMADkeel();" step="any" name="y1" class="form-control border-start-0" id="y1keel" placeholder="" />
+						</div>
+					</div>
+					<div class="col-3">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y2</font></font></span>
+							<input type="number" onkeyup="calculerdeplacementMADkeel();" step="any" name="y2" class="form-control border-start-0" id="y2keel" placeholder="" />
+						</div>
+					</div>
+					<div class="col-2">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Keel</font></font></span>
+							<input type="number" onkeyup="calculerdeplacementMADkeel();" step="any" name="keel" class="form-control border-start-0" id="keel" placeholder="" />
+						</div>
+					</div>
+					<!-- <div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Déplacement MAD</font></font></span>
+							<input type="number" readonly step="any" name="deplacementMad" class="form-control border-start-0" id="deplacementMadkeel" placeholder="" />
+						</div>
+					</div> -->
 						</div>
 					</div>
 				</div>
@@ -204,6 +249,21 @@ require_once './model/tpcfinal.php';
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LCF</font></font></span>
 							<input type="number" readonly step="any" name="lcfto" class="form-control border-start-0" id="lcfto" placeholder="" />
+						</div>
+					</div>
+					<div class="row">
+						<h5 class="mb-0 text-primary">Cas où LCA est données</h5>
+						<div class="col-3">
+							<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LCA 1</font></font></span>
+							<input type="number" step="any" onkeyup="calculey1();" name="lca1" class="form-control border-start-0" id="lca1" placeholder="" />
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LCA 2</font></font></span>
+							<input type="number" step="any" onkeyup="calculey2();" name="lca2" class="form-control border-start-0" id="lca2" placeholder="" />
+							</div>
 						</div>
 					</div>
 						</div>
@@ -367,6 +427,17 @@ require_once './model/tpcfinal.php';
 							var deplacementMAD = Math.round(Number((MAD-x1)/(x2-x1)*(y2-y1)+y1)*1000)/1000;
 							document.getElementById('deplacementMad').value = deplacementMAD;
 						};
+						// Fonction pour calculer déplacement MAD Keel
+						function calculerdeplacementMADkeel() {
+							var MAD = Number(document.getElementById('mad').value);
+							var x1 = Number(document.getElementById('x1').value);
+							var x2 = Number(document.getElementById('x2').value);
+							var y1keel = Number(document.getElementById('y1keel').value);
+							var y2keel = Number(document.getElementById('y2keel').value);
+							var keel = Number(document.getElementById('keel').value);
+							var deplacementMAD = Math.round(Number(((MAD-keel) - x1) / (x2 - x1) * (y2keel - y1keel) + y1keel)*1000)/1000;
+							document.getElementById('deplacementMad').value = deplacementMAD;
+						};
 						// Fonction pour calcule LCF
 						function calculeLCF(){
 							var MAD =Number(document.getElementById('mad').value);
@@ -413,6 +484,20 @@ require_once './model/tpcfinal.php';
 								var LCF = Math.round(Number((L / 2) - LCFA)*1000)/1000;
 								document.getElementById('lcfto').value = LCF;
 							}
+						}
+						//Fonction pour calculer Y1
+						function calculey1(){
+							var L = Number(document.getElementById('l').value);
+							var lca1 = Number(document.getElementById('lca1').value);
+							var y1LCF = Math.round(Number((L / 2) - lca1)*1000)/1000;
+							document.getElementById('y1LCF').value = y1LCF;
+						}
+						//Fonction pour calculer Y2
+						function calculey2(){
+							var L = Number(document.getElementById('l').value);
+							var lca2 = Number(document.getElementById('lca2').value);
+							var y1LCF = Math.round(Number((L / 2) - lca2)*1000)/1000;
+							document.getElementById('y2LCF').value = y1LCF;
 						}
 						// Fonction pour calcule du TPC pour MAD
 						function calculeTPCMAD(){
