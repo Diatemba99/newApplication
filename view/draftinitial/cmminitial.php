@@ -62,14 +62,14 @@ if (count($result1) == 0) {
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x1</font></font></span>
-							<input type="number" onkeyup="calculerdeplacementMAD();" step="any" name="x1" class="form-control border-start-0" id="x1" placeholder="TEavbd" />
+							<input type="number" onkeyup="calculerdeplacementMAD();calculerdeplacementMADkeel();" step="any" name="x1" class="form-control border-start-0" id="x1" placeholder="" />
 						</div>
 					</div>
 					<div class="col-4">
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x2</font></font></span>
-							<input type="number" onkeyup="calculerdeplacementMAD();" step="any" name="x2" class="form-control border-start-0" id="x2" placeholder="TEavtb" />
+							<input type="number" onkeyup="calculerdeplacementMAD();calculerdeplacementMADkeel();" step="any" name="x2" class="form-control border-start-0" id="x2" placeholder="" />
 						</div>
 					</div>
 					<div class="col-4">
@@ -83,30 +83,75 @@ if (count($result1) == 0) {
 				</div>
 
 				<div class="row mt-3">
-					<h5 class="mb-0 text-primary">Calcul déplacement correspndant à D=0</h5>
+					<h5 class="mb-0 text-primary">Calcul déplacement correspondant à Keel=0</h5>
 					<div class="card-body border mt-3">
 						<div class="row">
 							<div class="col-4">
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y1</font></font></span>
-							<input type="number" onkeyup="calculerdeplacementMAD();" step="any" name="y1" class="form-control border-start-0" id="y1" placeholder="TEarbd" />
+							<input type="number" onkeyup="calculerdeplacementMAD();" step="any" name="y1" class="form-control border-start-0" id="y1" placeholder="" />
 						</div>
 					</div>
 					<div class="col-4">
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y2</font></font></span>
-							<input type="number" onkeyup="calculerdeplacementMAD();" step="any" name="y2" class="form-control border-start-0" id="y2" placeholder="TEartb" />
+							<input type="number" onkeyup="calculerdeplacementMAD();" step="any" name="y2" class="form-control border-start-0" id="y2" placeholder="" />
 						</div>
 					</div>
-					<div class="col-4">
+					<!-- <div class="col-4">
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Déplacement MAD</font></font></span>
 							<input type="number" readonly step="any" name="deplacementMad" class="form-control border-start-0" id="deplacementMad" placeholder="" />
 						</div>
+					</div> -->
+						</div>
 					</div>
+				</div>
+				<div class="row">
+					<div class="col-4"></div>
+					<div class="col-4"></div>
+					<div class="col-4">
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Déplacement MAD</font></font></span>
+							<input type="number" readonly step="any" name="deplacementMad" class="form-control border-start-0" id="deplacementMad" placeholder="" />
+						</div>
+					</div>
+				</div>
+				<div class="row mt-3">
+					<h5 class="mb-0 text-primary">Calcul déplacement correspondant à Keel≠0</h5>
+					<div class="card-body border mt-3">
+						<div class="row">
+							<div class="col-3">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y1</font></font></span>
+							<input type="number" onkeyup="calculerdeplacementMADkeel();" step="any" name="y1" class="form-control border-start-0" id="y1keel" placeholder="" />
+						</div>
+					</div>
+					<div class="col-3">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y2</font></font></span>
+							<input type="number" onkeyup="calculerdeplacementMADkeel();" step="any" name="y2" class="form-control border-start-0" id="y2keel" placeholder="" />
+						</div>
+					</div>
+					<div class="col-2">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Keel</font></font></span>
+							<input type="number" onkeyup="calculerdeplacementMADkeel();" step="any" name="keel" class="form-control border-start-0" id="keel" placeholder="" />
+						</div>
+					</div>
+					<!-- <div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Déplacement MAD</font></font></span>
+							<input type="number" readonly step="any" name="deplacementMad" class="form-control border-start-0" id="deplacementMadkeel" placeholder="" />
+						</div>
+					</div> -->
 						</div>
 					</div>
 				</div>
@@ -142,7 +187,7 @@ if (count($result1) == 0) {
 					<h5 class="mb-0 text-primary">Calcul du LCF</h5>
 					<div class="card-body border mt-3">
 						<div class="row">
-							<div class="col-2">
+							<div class="col-3">
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y1</font></font></span>
@@ -172,7 +217,7 @@ if (count($result1) == 0) {
 						
 										
 					</div> -->
-					<div class="col-6">
+					<div class="col-5">
 						<div>
 											
 											<div class="form-check">
@@ -207,6 +252,21 @@ if (count($result1) == 0) {
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LCF</font></font></span>
 							<input type="number" readonly step="any" name="lcfto" class="form-control border-start-0" id="lcfto" placeholder="" />
+						</div>
+					</div>
+					<div class="row">
+						<h5 class="mb-0 text-primary">Cas où LCA est données</h5>
+						<div class="col-3">
+							<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LCA 1</font></font></span>
+							<input type="number" step="any" onkeyup="calculey1();" name="lca1" class="form-control border-start-0" id="lca1" placeholder="" />
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LCA 2</font></font></span>
+							<input type="number" step="any" onkeyup="calculey2();" name="lca2" class="form-control border-start-0" id="lca2" placeholder="" />
+							</div>
 						</div>
 					</div>
 						</div>
@@ -352,12 +412,16 @@ if (count($result1) == 0) {
 	<script type="text/javascript">
 		var L = document.getElementById('l').value;
 		var deplacementMAD = document.getElementById('deplacementMad');
+		var deplacementMADkeel = document.getElementById('deplacementMadkeel');
 		var LCF = document.getElementById('lcfto');
 		var TPCMAD = document.getElementById('tpcmad');
 		var FirstTrimCorr = document.getElementById('firstTrimCorrection');
 		var MTC1 = document.getElementById('mtc1');
 		var MTC2 = document.getElementById('mtc2');
 		var secondTrimCorr = document.getElementById('secondTrimCorrection');
+		var y1keel = document.getElementById('y1keel');
+		var y2keel = document.getElementById('y2keel');
+		var keel = document.getElementById('keel');
 
 		// Fonction pour calculer déplacement MAD
 		function calculerdeplacementMAD() {
@@ -366,7 +430,20 @@ if (count($result1) == 0) {
 			var x2 = Number(document.getElementById('x2').value);
 			var y1 = Number(document.getElementById('y1').value);
 			var y2 = Number(document.getElementById('y2').value);
+			var y1keel = Number(document.getElementById('y1keel').value);
+			var y2keel = Number(document.getElementById('y2keel').value);
 			var deplacementMAD = Math.round(Number((MAD - x1) / (x2 - x1) * (y2 - y1) + y1)*1000)/1000;
+			document.getElementById('deplacementMad').value = deplacementMAD;
+		};
+		// Fonction pour calculer déplacement MAD Keel
+		function calculerdeplacementMADkeel() {
+			var MAD = Number(document.getElementById('mad').value);
+			var x1 = Number(document.getElementById('x1').value);
+			var x2 = Number(document.getElementById('x2').value);
+			var y1keel = Number(document.getElementById('y1keel').value);
+			var y2keel = Number(document.getElementById('y2keel').value);
+			var keel = Number(document.getElementById('keel').value);
+			var deplacementMAD = Math.round(Number(((MAD-keel) - x1) / (x2 - x1) * (y2keel - y1keel) + y1keel)*1000)/1000;
 			document.getElementById('deplacementMad').value = deplacementMAD;
 		};
 		// Fonction pour calcule LCF
@@ -415,6 +492,20 @@ if (count($result1) == 0) {
 				var LCF = Math.round(Number((L / 2) - LCFA)*1000)/1000;
 				document.getElementById('lcfto').value = LCF;
 			}
+		}
+		//Fonction pour calculer Y1
+		function calculey1(){
+			var L = Number(document.getElementById('l').value);
+			var lca1 = Number(document.getElementById('lca1').value);
+			var y1LCF = Math.round(Number((L / 2) - lca1)*1000)/1000;
+			document.getElementById('y1LCF').value = y1LCF;
+		}
+		//Fonction pour calculer Y2
+		function calculey2(){
+			var L = Number(document.getElementById('l').value);
+			var lca2 = Number(document.getElementById('lca2').value);
+			var y1LCF = Math.round(Number((L / 2) - lca2)*1000)/1000;
+			document.getElementById('y2LCF').value = y1LCF;
 		}
 		// Fonction pour calcule du TPC pour MAD
 		function calculeTPCMAD() {

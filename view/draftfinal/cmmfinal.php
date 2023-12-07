@@ -81,7 +81,7 @@ require_once './model/tpcfinal.php';
 				</div>
 							</div>
 				<div class="row mt-3">
-					<h5 class="mb-0 text-primary">Calcul déplacement correspndant à D=0</h5>
+					<h5 class="mb-0 text-primary">Calcul déplacement correspondant à Keel=0</h5>
 					<div class="card-body border">
 						<div class="row">
 							<div class="col-4">
