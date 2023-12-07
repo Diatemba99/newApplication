@@ -507,7 +507,7 @@ require_once './model/tpcfinal.php';
 							var y1tpcmad =Number(document.getElementById('y1tpcmad').value);
 							var y2tpcmad =Number(document.getElementById('y2tpcmad').value);
 							var y1 =Number(document.getElementById('y1').value);
-							var TPCMAD=Math.round(Number(((MAD-x1)/(x2-x1))*(y2tpcmad-y1tpcmad)+y1)*1000)/1000;
+							var TPCMAD=Math.round(Number(((MAD-x1)/(x2-x1))*(y2tpcmad-y1tpcmad)+y1tpcmad)*1000)/1000;
 							document.getElementById('tpcmad').value=TPCMAD;
 						}
 						// Fonction pour calcule First Trim Correction
@@ -529,7 +529,7 @@ require_once './model/tpcfinal.php';
 							var y1 =Number(document.getElementById('y1').value);
 							var t1 =Number(document.getElementById('t1').value);
 							var t2 =Number(document.getElementById('t2').value);
-							var MTC1= Math.round(Number(((t1-x1Mtc1)/(x2Mtc1-x1Mtc1))*(y2Mtc1-y1Mtc1)+y1)*1000)/1000;
+							var MTC1= Math.round(Number(((t1-x1Mtc1)/(x2Mtc1-x1Mtc1))*(y2Mtc1-y1Mtc1)+y1Mtc1)*1000)/1000;
 							document.getElementById('mtc1').value=MTC1;
 						}
 						// Fonction calcule MTC2
@@ -541,7 +541,7 @@ require_once './model/tpcfinal.php';
 							var y1 =Number(document.getElementById('y1').value);
 							var t1 =Number(document.getElementById('t1').value);
 							var t2 =Number(document.getElementById('t2').value);
-							var MTC2= Math.round(Number(((t2-x1Mtc2)/(x2Mtc2-x1Mtc2))*(y2Mtc2-y1Mtc2)+y1)*1000)/1000;
+							var MTC2= Math.round(Number(((t2-x1Mtc2)/(x2Mtc2-x1Mtc2))*(y2Mtc2-y1Mtc2)+y1Mtc2)*1000)/1000;
 							document.getElementById('mtc2').value=MTC2;
 
 							var truetrim=Number(document.getElementById('truetrim').value);
