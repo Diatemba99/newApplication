@@ -465,7 +465,8 @@ if (count($result1) == 0) {
 			// 	var LCF = (Math.round(((MAD - x1) / (x2 - x1) * (y2LCF - y1LCF) + y1) - L / 2)*1000)/1000;
 			// 	document.getElementById('lcfto').value = LCF;
 			// }
-			var LCFA = Math.round(Number((MAD - x1) / (x2 - x1) * (y2LCF - y1LCF) + y1)*1000)/1000;
+			// var LCFA = Math.round(Number((MAD - x1) / (x2 - x1) * (y2LCF - y1LCF) + y1)*1000)/1000;
+			var LCFA = Math.round(Number((MAD - x1) / (x2 - x1) * (y2LCF - y1LCF) + y1LCF)*1000)/1000;
 				// document.getElementById('lcfto').value = LCFA;
 			if (document.getElementById('lcffrommidship').checked) {
 				// var LCF = Math.round(Number((L / 2) + LCF)*1000)/1000;
