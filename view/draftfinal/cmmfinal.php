@@ -126,14 +126,14 @@ require_once './model/tpcfinal.php';
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y1</font></font></span>
-							<input type="number" onkeyup="calculerdeplacementMADkeel();" step="any" name="y1" class="form-control border-start-0" id="y1keel" placeholder="" />
+							<input type="number" onkeyup="calculerdeplacementMADkeel();" step="any" name="y1keel" class="form-control border-start-0" id="y1keel" placeholder="" />
 						</div>
 					</div>
 					<div class="col-3">
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y2</font></font></span>
-							<input type="number" onkeyup="calculerdeplacementMADkeel();" step="any" name="y2" class="form-control border-start-0" id="y2keel" placeholder="" />
+							<input type="number" onkeyup="calculerdeplacementMADkeel();" step="any" name="y2keel" class="form-control border-start-0" id="y2keel" placeholder="" />
 						</div>
 					</div>
 					<div class="col-2">

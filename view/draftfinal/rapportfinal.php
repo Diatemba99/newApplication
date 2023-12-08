@@ -394,12 +394,14 @@ function viewTable()
             // $this->Cell(90,8,utf8_decode('Cargo :'.'   '.$cargo),1,0,'C');
             // $this->Ln();
             $this->SetFont('Times','BU',12);
-            $this->Cell(90,20,(''));
-            $this->Cell(90,20,('Nom et Signature Inspecteur Minier'));
+            
+            $this->Cell(90,20,('Surveyor'));
+            $this->Cell(90,20,('Chief Officer'));
             $this->SetFont('Times','',12);
             $this->Ln();
-            $this->Cell(90,8,(''));
             $this->Cell(90,8,($inspecteurMinier));
+            $this->Cell(90,8,(''));
+            
 
 
 }

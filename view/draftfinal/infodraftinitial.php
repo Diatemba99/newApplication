@@ -111,19 +111,27 @@ require_once './model/cargaison.php';
 							
 							if (count($result1)!=0 && count($result2)!=0 && count($result3)!=0 && count($result4)!=0 && count($result5)!=0 && $draft['valide2']==0){
 								?>
-								<button type="button" onclick="window.location.href = './controller/draftinitial.php?id=<?= $idNavire ?>&activated2=<?= $draft['valide2'] ?>';" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Valider Draft</font></font></button>	
+								<button type="button" onclick="window.location.href = './controller/draftinitial.php?id=<?= $idNavire ?>&activated2=<?= $draft['valide2'] ?>';" class="btn btn-success px-5 radius-30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Valider Draft</font></font></button>
+								<button disabled="disabled" onclick="window.location.href = '?page=rapportfinal&id=<?= $idNavire ?>';" type="button" class="btn btn-outline-dark px-5"><i class="bx bx-cloud-upload mr-1"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Rapport Final</font></font></button>
 								<?php
 								
-							}elseif ($draft['valide']!=0){
+							}elseif ($draft['valide']!=0 && $draft['valide2']==0){
 								echo"<button type='button' disabled='disabled' class='btn btn-success px-5 radius-30'><font style='vertical-align: inherit;'><font style='vertical-align: inherit;'>Valider Draft</font></font></button>";
+								?>
+								<button disabled="disabled" onclick="window.location.href = '?page=rapportfinal&id=<?= $idNavire ?>';" type="button" class="btn btn-outline-dark px-5"><i class="bx bx-cloud-upload mr-1"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Rapport Final</font></font></button>
+								<?php
 							}else{
 								echo"<button type='button' disabled='disabled' class='btn btn-success px-5 radius-30'><font style='vertical-align: inherit;'><font style='vertical-align: inherit;'>Valider Draft</font></font></button>";
+								?>
+								<button onclick="window.location.href = '?page=rapportfinal&id=<?= $idNavire ?>';" type="button" class="btn btn-outline-dark px-5"><i class="bx bx-cloud-upload mr-1"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Rapport Final</font></font></button>
+								<!-- <button onclick="window.location.href = '?page=rapportfinal&id=<?= $idNavire ?>';" type="button" class="btn btn-outline-dark px-5"><i class="bx bx-cloud-upload mr-1"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Rapport Final</font></font></button> -->
+								<?php
 							}
 							 ?>
 							
 						</td>
 						<td>
-							<button onclick="window.location.href = '?page=rapportfinal&id=<?= $idNavire ?>';" type="button" class="btn btn-outline-dark px-5"><i class="bx bx-cloud-upload mr-1"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Rapport Final</font></font></button>
+							<!-- <button onclick="window.location.href = '?page=rapportfinal&id=<?= $idNavire ?>';" type="button" class="btn btn-outline-dark px-5"><i class="bx bx-cloud-upload mr-1"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Rapport Final</font></font></button> -->
 							<!-- <button onclick="window.location.href = './REPORT_BEQQ_Republic_of_Guinea.pdf';" type="button" class="btn btn-outline-dark px-5"><i class="bx bx-cloud-upload mr-1"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Rapport Final</font></font></button> -->
 						</td>
 						<!-- <td>

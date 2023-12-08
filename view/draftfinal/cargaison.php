@@ -9,6 +9,7 @@ require_once './model/ctmafinal.php';
 require_once './model/cmmfinal.php';
 require_once './model/tpcfinal.php';
 require_once './model/deplacementfinal.php';
+require_once './model/deplacementinitial.php';
 require_once './model/cargaison.php';
 
 								$tpc = new Tcpfinal($idNavire);
@@ -27,8 +28,13 @@ require_once './model/cargaison.php';
                                         $freshWater=$valeur['freshWater'];
                                         $ballastWater=$valeur['ballastWater'];
                                         $ls=$valeur['ls'];
-                                        $constantes=$valeur['constantes'];
+                                        // $constantes=$valeur['constantes'];
                                     }
+									$const=new Deplacementinitial($idNavire);
+									$result=$const->getDeplacementinitialByID($idNavire);
+									foreach($result as $key => $valeur){
+										$constantes=$valeur['constantes'];
+									}
 ?>
 
 <?php
@@ -58,7 +64,7 @@ require_once './model/cargaison.php';
                                 <input type="number" hidden name="freshWater" value="<?=$freshWater?>" class="form-control border-start-0" id="freshWater" placeholder=""/>
                                 <input type="number" hidden name="ballastWater" value="<?=$ballastWater?>" class="form-control border-start-0" id="ballastWater" placeholder=""/>
                                 <input type="number" hidden name="ls" value="<?=$ls?>" class="form-control border-start-0" id="ls" placeholder="" />
-                                <input type="number" hidden name="constantes" value="<?=$constantes?>" class="form-control border-start-0" id="constantes" placeholder="" />
+                                <input type="number" hidden  name="constantes" value="<?=$constantes?>" class="form-control border-start-0" id="constantes" placeholder="" />
 							<div class="card-body border">
 								<div class="row mt-3">
 								
@@ -66,7 +72,7 @@ require_once './model/cargaison.php';
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Poids Cargaison</font></font></span>
-										<input type="number" required step="any" name="pcargaison" class="form-control border-start-0" id="pcargaison" placeholder="" />
+										<input type="number" required onkeyup="calculpCargaisonMMG();" step="any" name="pcargaison" class="form-control border-start-0" id="pcargaison" placeholder="" />
 									</div>
 									
                                     
@@ -119,7 +125,7 @@ require_once './model/cargaison.php';
                             var ballastWater=Number(document.getElementById('ballastWater').value);
 							var ls=Number(document.getElementById('ls').value);
                             var constantes=Number(document.getElementById('constantes').value);
-							var pcargaisonMMG=Math.round(Number(deplacementFinal-(fuelOil+dieselOil+lubrifiantOil+freshWater+ballastWater)-ls-constantes)*1000)/1000;
+							var pcargaisonMMG=Math.round(Number(deplacementFinal-(fuelOil+dieselOil+lubrifiantOil+freshWater+ballastWater+ls)-constantes)*1000)/1000;
 							document.getElementById('pcargaisonMMG').value=pcargaisonMMG;
 						}
 
