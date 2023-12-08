@@ -141,6 +141,7 @@ require_once './model/deplacementfinal.php';
 
 						// Fonction calcul des Constantes
 						function calculConstantes(){
+							var deplacementInitial=Number(document.getElementById('deplacementInitial').value);
 							var fuelOil=Number(document.getElementById('fuelOil').value);
 							var dieselOil=Number(document.getElementById('dieselOil').value);
 							var lubrifiantOil=Number(document.getElementById('lubrifiantOil').value);
