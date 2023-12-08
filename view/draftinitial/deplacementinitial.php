@@ -46,19 +46,19 @@ require_once './model/deplacementinitial.php';
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Densité table hydrostatique</font></font></span>
-										<input type="number" required step="any" onkeyup="calculDeplamentInitial();" name="densiteTable" class="form-control border-start-0" id="densiteTable" placeholder="" />
+										<input type="number" required step="any" onkeyup="calculDeplamentInitial();" name="densiteTable" class="form-control border-start-0" id="densiteTable" placeholder="" />&nbsp; kg/m3
 									</div>
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Densité mesuré</font></font></span>
-										<input type="number" required onkeyup="calculDeplamentInitial();" step="any" name="densiteMesure" class="form-control border-start-0" id="densiteMesure" placeholder="" />
+										<input type="number" required onkeyup="calculDeplamentInitial();" step="any" name="densiteMesure" class="form-control border-start-0" id="densiteMesure" placeholder="" />&nbsp; kg/m3
 									</div>
 								</div>
 								<div class="col-6">
 									
 									<div class="input-group mt-3">
-										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Déplacement Initial</font></font></span>
-										<input type="number" readonly step="any" name="deplacementInitial" class="form-control border-start-0" id="deplacementInitial" placeholder="" />
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Déplacement Densité</font></font></span>
+										<input type="number" readonly step="any" name="deplacementInitial" class="form-control border-start-0" id="deplacementInitial" placeholder="" />&nbsp; t
 									</div>
 								</div>
 							</div>
@@ -107,7 +107,7 @@ require_once './model/deplacementinitial.php';
 								<div class="col-6">
 									
 									<div class="input-group mt-3">
-										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Constantes</font></font></span>
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">K</font></font></span>
 										<input type="number" readonly step="any" name="constantes" class="form-control border-start-0" id="constantes" placeholder="" />
 									</div>
 								</div>
@@ -147,7 +147,7 @@ require_once './model/deplacementinitial.php';
 							var freshWater=Number(document.getElementById('freshWater').value);
 							var ballastWater=Number(document.getElementById('ballastWater').value);
 							var lsLightship=Number(document.getElementById('lsLightship').value);
-							var constantes=Math.round(Number(deplacementInitial-(fuelOil+dieselOil+lubrifiantOil+freshWater+ballastWater)-lsLightship)*1000)/1000;
+							var constantes=Math.round(Number(deplacementInitial-(fuelOil+dieselOil+lubrifiantOil+freshWater+ballastWater+lsLightship))*1000)/1000;
 							document.getElementById('constantes').value=constantes;
 						}
 
@@ -192,19 +192,19 @@ require_once './model/deplacementinitial.php';
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Densité table hydrostatique</font></font></span>
-										<input type="number" readonly step="any" name="densiteTable" class="form-control border-start-0" id="densiteTable" value="<?= $result['densiteTableHydrostatique'] ?>" />
+										<input type="number" readonly step="any" name="densiteTable" class="form-control border-start-0" id="densiteTable" value="<?= $result['densiteTableHydrostatique'] ?>" />&nbsp; kg/m3
 									</div>
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Densité mesuré</font></font></span>
-										<input type="number" readonly step="any" name="densiteMesure" class="form-control border-start-0" id="densiteMesure" value="<?= $result['densitemesure'] ?>" />
+										<input type="number" readonly step="any" name="densiteMesure" class="form-control border-start-0" id="densiteMesure" value="<?= $result['densitemesure'] ?>" />&nbsp; kg/m3
 									</div>
 								</div>
 								<div class="col-6">
 									
 									<div class="input-group mt-3">
-										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Déplacement Initial</font></font></span>
-										<input type="number" readonly step="any" name="deplacementInitial" class="form-control border-start-0" id="deplacementInitial" value="<?= $result['deplacementInitial'] ?>" />
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Déplacement Densité</font></font></span>
+										<input type="number" readonly step="any" name="deplacementInitial" class="form-control border-start-0" id="deplacementInitial" value="<?= $result['deplacementInitial'] ?>" /> &nbsp; t
 									</div>
 								</div>
 							</div>
@@ -251,7 +251,7 @@ require_once './model/deplacementinitial.php';
 								<div class="col-6">
 									
 									<div class="input-group mt-3">
-										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Constantes</font></font></span>
+										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">K</font></font></span>
 										<input type="number" readonly step="any" name="constantes" class="form-control border-start-0" id="constantes" value="<?= $result['constantes'] ?>" />
 									</div>
 								</div>

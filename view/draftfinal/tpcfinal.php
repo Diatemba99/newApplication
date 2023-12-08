@@ -94,7 +94,7 @@ require_once './model/tpcfinal.php';
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TPCMbd</font></font></span>
-										<input type="number" required readonly  step="any" name="mtc1" class="form-control border-start-0" id="mtc1" placeholder="" />
+										<input type="number" required readonly  step="any" name="mtc1" class="form-control border-start-0" id="mtc1" placeholder="" />&nbsp; t/cm
 									</div>
 								</div>
 							</div>
@@ -129,7 +129,7 @@ require_once './model/tpcfinal.php';
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TPCMtd</font></font></span>
-										<input type="number" required readonly step="any" name="mtc2" class="form-control border-start-0" id="mtc2" placeholder="" />
+										<input type="number" required readonly step="any" name="mtc2" class="form-control border-start-0" id="mtc2" placeholder="" />&nbsp; t/cm
 									</div>
 								</div>
 							</div>

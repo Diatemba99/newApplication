@@ -116,7 +116,7 @@ if (count($result1) == 0) {
 					<div class="col-4">
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Déplacement MAD</font></font></span>
-							<input type="number" readonly step="any" name="deplacementMad" class="form-control border-start-0" id="deplacementMad" placeholder="" />
+							<input type="number" readonly step="any" name="deplacementMad" class="form-control border-start-0" id="deplacementMad" placeholder="" />&nbsp; m
 						</div>
 					</div>
 				</div>
@@ -155,34 +155,7 @@ if (count($result1) == 0) {
 						</div>
 					</div>
 				</div>
-				<div class="row">
-					<h5 class="mb-0 text-primary">Calcul des MAD + 0,5 et MAD - 0,5</h5>
-					<div class="card-body border mt-3">
-						<div class="row">
-							<div class="col-4">
-
-					</div>
-					<div class="col-4">
-
-					</div>
-					<div class="col-4">
-						
-						<div class="input-group mt-3">
-							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">t1</font></font></span>
-							<input type="number" readonly step="any" value="<?= $t1 ?>" name="t1" class="form-control border-start-0" id="t1" placeholder="" />
-						</div>
-						
-						<div class="input-group mt-3">
-							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">t2</font></font></span>
-							<input type="number" readonly step="any" value="<?= $t2 ?>" name="t2" class="form-control border-start-0" id="t2" placeholder="" />
-						</div>
-					</div>
-					<div class="col-4">
-
-					</div>
-						</div>
-					</div>
-				</div>
+				
 				<div class="row mt-4">
 					<h5 class="mb-0 text-primary">Calcul du LCF</h5>
 					<div class="card-body border mt-3">
@@ -293,7 +266,7 @@ if (count($result1) == 0) {
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TPC</font></font></span>
-							<input type="number" readonly step="any" name="tpcmad" class="form-control border-start-0" id="tpcmad" placeholder="" />
+							<input type="number" readonly step="any" name="tpcmad" class="form-control border-start-0" id="tpcmad" placeholder="" />&nbsp; m
 						</div>
 					</div>
 				</div>
@@ -308,10 +281,38 @@ if (count($result1) == 0) {
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">First Trim Correction</font></font></span>
-							<input type="number" readonly step="any" name="firstTrimCorrection" class="form-control border-start-0" id="firstTrimCorrection" placeholder="" />
+							<input type="number" readonly step="any" name="firstTrimCorrection" class="form-control border-start-0" id="firstTrimCorrection" placeholder="" />&nbsp; m
 						</div>
 					</div>
 				</div>
+				</div>
+				<div class="row">
+					<h5 class="mb-0 text-primary">Calcul des MAD + 0,5 et MAD - 0,5</h5>
+					<div class="card-body border mt-3">
+						<div class="row">
+							<div class="col-4">
+
+					</div>
+					<div class="col-4">
+
+					</div>
+					<div class="col-4">
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">t1</font></font></span>
+							<input type="number" readonly step="any" value="<?= $t1 ?>" name="t1" class="form-control border-start-0" id="t1" placeholder="" />
+						</div>
+						
+						<div class="input-group mt-3">
+							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">t2</font></font></span>
+							<input type="number" readonly step="any" value="<?= $t2 ?>" name="t2" class="form-control border-start-0" id="t2" placeholder="" />
+						</div>
+					</div>
+					<div class="col-4">
+
+					</div>
+						</div>
+					</div>
 				</div>
 				<h5 class="mb-0 text-primary">Calcul Second Trim Correction</h5>
 
@@ -343,7 +344,7 @@ if (count($result1) == 0) {
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MTC1</font></font></span>
-							<input type="number" required readonly step="any" name="mtc1" class="form-control border-start-0" id="mtc1" placeholder="" />
+							<input type="number" required readonly step="any" name="mtc1" class="form-control border-start-0" id="mtc1" placeholder="" />&nbsp; tm/cm
 						</div>
 					</div>
 				</div>
@@ -378,7 +379,7 @@ if (count($result1) == 0) {
 						<div class="input-group mt-3">
 						<div class="input-group ">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MTC2</font></font></span>
-							<input type="number" required readonly step="any" name="mtc2" class="form-control border-start-0" id="mtc2" placeholder="" />
+							<input type="number" required readonly step="any" name="mtc2" class="form-control border-start-0" id="mtc2" placeholder="" />&nbsp; tm/cm
 						</div>
 
 					</div>
@@ -392,7 +393,7 @@ if (count($result1) == 0) {
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Second Trim Correction</font></font></span>
-							<input type="number" readonly step="any" name="secondTrimCorrection" class="form-control border-start-0" id="secondTrimCorrection" placeholder="" />
+							<input type="number" readonly step="any" name="secondTrimCorrection" class="form-control border-start-0" id="secondTrimCorrection" placeholder="" />&nbsp; m
 						</div>
 					</div>
 				</div>

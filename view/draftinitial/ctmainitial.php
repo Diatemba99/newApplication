@@ -44,21 +44,21 @@ foreach ($result as $key => $valeur) {
 								
 								<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEavbd</font></font></span>
-										<input type="number" required onkeyup="calculerTEav();" step="any" name="teavbd" class="form-control border-start-0" id="teavbd" placeholder="TEavbd" />
+										<input type="number" required onkeyup="calculerTEav();" step="any" name="teavbd" class="form-control border-start-0" id="teavbd" placeholder="TEavbd" />&nbsp; m
 									</div>
 							</div>
 							<div class="col-4">
 								
 								<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEavtb</font></font></span>
-										<input type="number" required onkeyup="calculerTEav();" step="any" name="teavtb" class="form-control border-start-0" id="teavtb" placeholder="TEavtb" />
+										<input type="number" required onkeyup="calculerTEav();" step="any" name="teavtb" class="form-control border-start-0" id="teavtb" placeholder="TEavtb" />&nbsp; m
 									</div>
 							</div>
 							<div class="col-4">
 								
 								<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEav</font></font></span>
-										<input type="number" readonly step="any" name="teav" class="form-control border-start-0" id="teav" placeholder="" />
+										<input type="number" readonly step="any" name="teav" class="form-control border-start-0" id="teav" placeholder="" />&nbsp; m
 									</div>
 							</div>
 							</div>
@@ -67,21 +67,21 @@ foreach ($result as $key => $valeur) {
 								
 								<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEarbd</font></font></span>
-										<input type="number" required onkeyup="calculerTEar();" step="any" name="tearbd" class="form-control border-start-0" id="tearbd" placeholder="TEarbd" />
+										<input type="number" required onkeyup="calculerTEar();" step="any" name="tearbd" class="form-control border-start-0" id="tearbd" placeholder="TEarbd" />&nbsp; m
 									</div>
 							</div>
 							<div class="col-4">
 								
 								<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEartb</font></font></span>
-										<input type="number" required onkeyup="calculerTEar();" step="any" name="teartb" class="form-control border-start-0" id="teartb" placeholder="TEartb" />
+										<input type="number" required onkeyup="calculerTEar();" step="any" name="teartb" class="form-control border-start-0" id="teartb" placeholder="TEartb" />&nbsp; m
 									</div>
 							</div>
 							<div class="col-4">
 								
 								<div class="input-group mt-3">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEar</font></font></span>
-										<input type="number" readonly step="any" name="tear" class="form-control border-start-0" id="tear" placeholder="" />
+										<input type="number" readonly step="any" name="tear" class="form-control border-start-0" id="tear" placeholder="" />&nbsp; m
 									</div>
 							</div>
 							</div>
@@ -90,21 +90,21 @@ foreach ($result as $key => $valeur) {
 								
 								<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEMbd</font></font></span>
-										<input type="number" required onkeyup="calculerTEM();" step="any" name="tembd" class="form-control border-start-0" id="tembd" placeholder="TEMbd" />
+										<input type="number" required onkeyup="calculerTEM();" step="any" name="tembd" class="form-control border-start-0" id="tembd" placeholder="TEMbd" />&nbsp; m
 									</div>
 							</div>
 							<div class="col-4">
 								
 								<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEMtb</font></font></span>
-										<input type="number" required onkeyup="calculerTEM();" step="any" name="temtb" class="form-control border-start-0" id="temtb" placeholder="TEMtb" />
+										<input type="number" required onkeyup="calculerTEM();" step="any" name="temtb" class="form-control border-start-0" id="temtb" placeholder="TEMtb" />&nbsp; m
 									</div>
 							</div>
 							<div class="col-4">
 								
 								<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEM</font></font></span>
-										<input type="number" readonly step="any" name="tem" class="form-control border-start-0" id="tem" placeholder="" />
+										<input type="number" readonly step="any" name="tem" class="form-control border-start-0" id="tem" placeholder="" />&nbsp; m
 									</div>
 							</div>
 							</div>
@@ -125,7 +125,7 @@ foreach ($result as $key => $valeur) {
 								
 								<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Apparent Trim</font></font></span>
-										<input type="number" readonly step="any" name="apparentTrim" class="form-control border-start-0" id="apparentTrim" placeholder="" />
+										<input type="number" readonly step="any" name="apparentTrim" class="form-control border-start-0" id="apparentTrim" placeholder="" />&nbsp; m
 									</div>
 							</div>
 							<h5 class="mb-0 text-primary">Calcul de la distance entre les marques avant et arriéres</h5>
@@ -136,7 +136,7 @@ foreach ($result as $key => $valeur) {
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LBP</font></font></span>
-										<input type="number" readonly step="any" name="L" value="<?=$lbp?>" class="form-control border-start-0" id="L" placeholder="" />
+										<input type="number" readonly step="any" name="L" value="<?=$lbp?>" class="form-control border-start-0" id="L" placeholder="" />&nbsp; m
 									</div>
 
 									<div class="col-8 mt-5">
@@ -184,7 +184,7 @@ foreach ($result as $key => $valeur) {
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LBM</font></font></span>
-										<input type="number" step="any" readonly name="lL" class="form-control border-start-0" id="lL" placeholder="" />
+										<input type="number" step="any" readonly name="lL" class="form-control border-start-0" id="lL" placeholder="" />&nbsp; m
 									</div>
 								</div>
 							</div>
@@ -209,7 +209,7 @@ foreach ($result as $key => $valeur) {
 									<div class="col-6">
 										<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Corr.avant</font></font></span>
-										<input type="number" readonly step="any" name="corrAv" class="form-control border-start-0" id="corrAv" placeholder="" />
+										<input type="number" readonly step="any" name="corrAv" class="form-control border-start-0" id="corrAv" placeholder="" />&nbsp; m
 									</div>
 									</div>
 									<!-- </fieldset> -->
@@ -230,7 +230,7 @@ foreach ($result as $key => $valeur) {
 									<div class="col-6">
 										<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Corr.arr</font></font></span>
-										<input type="number" readonly step="any" name="corrAr" class="form-control border-start-0" id="corrAr" placeholder="" />
+										<input type="number" readonly step="any" name="corrAr" class="form-control border-start-0" id="corrAr" placeholder="" />&nbsp; m
 									</div>
 									</div>
 									<!-- </fieldset> -->
@@ -251,7 +251,7 @@ foreach ($result as $key => $valeur) {
 									<div class="col-6">
 										<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Corr.mil</font></font></span>
-										<input type="number" readonly step="any" name="corrM" class="form-control border-start-0" id="corrM" placeholder="" />
+										<input type="number" readonly step="any" name="corrM" class="form-control border-start-0" id="corrM" placeholder="" />&nbsp; m
 										</div>
 									</div>
 									<!-- </fieldset> -->
@@ -301,19 +301,19 @@ foreach ($result as $key => $valeur) {
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tav</font></font></span>
-										<input type="number" readonly step="any" name="tAv" class="form-control border-start-0" id="tAv" placeholder="" />
+										<input type="number" readonly step="any" name="tAv" class="form-control border-start-0" id="tAv" placeholder="" />&nbsp; m
 									</div>
 
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tar</font></font></span>
-										<input type="number" readonly step="any" name="tAr" class="form-control border-start-0" id="tAr" placeholder="" />
+										<input type="number" readonly step="any" name="tAr" class="form-control border-start-0" id="tAr" placeholder="" />&nbsp; m
 									</div>
 
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TM</font></font></span>
-										<input type="number" readonly step="any" name="tM" class="form-control border-start-0" id="tM" placeholder="" />
+										<input type="number" readonly step="any" name="tM" class="form-control border-start-0" id="tM" placeholder="" />&nbsp; m
 									</div>
 								</div>
 							</div>
@@ -329,7 +329,7 @@ foreach ($result as $key => $valeur) {
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">True Trim</font></font></span>
-										<input type="number" readonly step="any" name="trueTrim" class="form-control border-start-0" id="trueTrim" placeholder="" />
+										<input type="number" readonly step="any" name="trueTrim" class="form-control border-start-0" id="trueTrim" placeholder="" />&nbsp; m
 									</div>
 								</div>
 							</div>
