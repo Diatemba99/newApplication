@@ -28,7 +28,7 @@ require_once './model/cargaison.php';
                                         $freshWater=$valeur['freshWater'];
                                         $ballastWater=$valeur['ballastWater'];
                                         $ls=$valeur['ls'];
-                                        // $constantes=$valeur['constantes'];
+                                        $constantesf=$valeur['constantes'];
                                     }
 									$const=new Deplacementinitial($idNavire);
 									$result=$const->getDeplacementinitialByID($idNavire);
@@ -65,6 +65,7 @@ require_once './model/cargaison.php';
                                 <input type="number" hidden name="ballastWater" value="<?=$ballastWater?>" class="form-control border-start-0" id="ballastWater" placeholder=""/>
                                 <input type="number" hidden name="ls" value="<?=$ls?>" class="form-control border-start-0" id="ls" placeholder="" />
                                 <input type="number" hidden  name="constantes" value="<?=$constantes?>" class="form-control border-start-0" id="constantes" placeholder="" />
+								<input type="number" hidden  name="constantesf" value="<?=$constantesf?>" class="form-control border-start-0" id="constantesf" placeholder="" />
 							<div class="card-body border">
 								<div class="row mt-3">
 								
@@ -125,6 +126,7 @@ require_once './model/cargaison.php';
                             var ballastWater=Number(document.getElementById('ballastWater').value);
 							var ls=Number(document.getElementById('ls').value);
                             var constantes=Number(document.getElementById('constantes').value);
+							var constantesf=Number(document.getElementById('constantesf').value);
 							var pcargaisonMMG=Math.round(Number(deplacementFinal-(fuelOil+dieselOil+lubrifiantOil+freshWater+ballastWater+ls)-constantes)*1000)/1000;
 							document.getElementById('pcargaisonMMG').value=pcargaisonMMG;
 						}
