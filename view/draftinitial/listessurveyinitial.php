@@ -359,21 +359,21 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 								
 								<div class="input-group">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Lbp</font></font></span>
-										<input type="number" required name="lbp" class="form-control border-start-0" id="lbp" placeholder="LBP" />
+										<input type="number" step="any" required name="lbp" class="form-control border-start-0" id="lbp" placeholder="LBP" />
 									</div>
 							</div>
 							<div class="col-md-6">
 								
 								<div class="input-group">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Breadth (moulded)</font></font></span>
-										<input type="number" required name="breadth" class="form-control border-start-0" id="breadth" placeholder="Breadth (moulded)" />
+										<input type="number" step="any" required name="breadth" class="form-control border-start-0" id="breadth" placeholder="Breadth (moulded)" />
 									</div>
 							</div>
 							<div class="col-md-6">
 								
 								<div class="input-group">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Depth (moulded)</font></font></span>
-										<input type="number" required name="depthMoulded" class="form-control border-start-0" id="depthMoulded" placeholder="Depth (moulded)" />
+										<input type="number" step="any" required name="depthMoulded" class="form-control border-start-0" id="depthMoulded" placeholder="Depth (moulded)" />
 									</div>
 							</div>
 							<!-- <div class="col-md-6">
@@ -387,7 +387,7 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 								
 								<div class="input-group">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Keel plate</font></font></span>
-										<input type="number" required name="keelPlate" class="form-control border-start-0" id="keelPlate" placeholder="Keel plate" />
+										<input type="number" step="any" required name="keelPlate" class="form-control border-start-0" id="keelPlate" placeholder="Keel plate" />
 									</div>
 							</div>
 							<!-- <div class="col-md-6">
@@ -401,7 +401,7 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 								
 								<div class="input-group">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Disp</font></font></span>
-										<input type="number" required name="disp" class="form-control border-start-0" id="disp" placeholder="DISP" />
+										<input type="number" step="any" required name="disp" class="form-control border-start-0" id="disp" placeholder="DISP" />
 									</div>
 							</div>
 							<!-- <div class="col-md-6">
@@ -429,7 +429,7 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 								
 								<div class="input-group">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">FP To Fore Draft Mark</font></font></span>
-										<input type="number" required name="fp" class="form-control border-start-0" id="fp" placeholder="FP TO FORE DRAFT MARK" />
+										<input type="number" step="any" required name="fp" class="form-control border-start-0" id="fp" placeholder="FP TO FORE DRAFT MARK" />
 									</div>
 							</div>
 							<div class="col-md-6">
@@ -443,14 +443,14 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 								
 								<div class="input-group">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Midship To Mid Draft Mark</font></font></span>
-										<input type="number" required name="midship" class="form-control border-start-0" id="midship" placeholder="MIDSHIP TO MID DRAFT MARK" />
+										<input type="number" step="any" required name="midship" class="form-control border-start-0" id="midship" placeholder="MIDSHIP TO MID DRAFT MARK" />
 									</div>
 							</div>
 							<div class="col-md-6">
 								
 								<div class="input-group">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Between Draft Marks</font></font></span>
-										<input type="number" required name="between" class="form-control border-start-0" id="between" placeholder="BETWEEN DRAFT MARKS" />
+										<input type="number" step="any" required name="between" class="form-control border-start-0" id="between" placeholder="BETWEEN DRAFT MARKS" />
 									</div>
 							</div>
 								
