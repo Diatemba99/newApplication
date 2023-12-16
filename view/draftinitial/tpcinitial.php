@@ -202,7 +202,7 @@ require_once './model/tpcinitial.php';
 							var firstTrimCorrection=Number(document.getElementById('firstTrimCorrection').value);
 							var secondTrimCorrection=Number(document.getElementById('secondTrimCorrection').value);
 							// var HellCorr=Number(document.getElementById('hellCorrection').value);
-							var deplCorr=Number(dplMAD+firstTrimCorrection+secondTrimCorrection+HellCorr);
+							var deplCorr=Math.round(Number(dplMAD+firstTrimCorrection+secondTrimCorrection+HellCorr)*1000)/1000;
 							document.getElementById('deplCorrige').value=deplCorr;
 
 						}

@@ -35,6 +35,7 @@ require_once './model/cargaison.php';
 									foreach($result as $key => $valeur){
 										$constantes=$valeur['constantes'];
 									}
+									$poidMMG=$constantesf-$constantes;
 ?>
 
 <?php
@@ -69,25 +70,25 @@ require_once './model/cargaison.php';
 							<div class="card-body border">
 								<div class="row mt-3">
 								
-								<div class="col-4">
+								<div class="col-6">
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Poids Cargaison</font></font></span>
-										<input type="number" required onkeyup="calculpCargaisonMMG();" step="any" name="pcargaison" class="form-control border-start-0" id="pcargaison" placeholder="" />
+										<input type="number"   step="any" name="pcargaison" class="form-control border-start-0" id="pcargaison" placeholder="" />
 									</div>
 									
                                     
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Poids Cargaison adopté</font></font></span>
-										<input type="number" required onkeyup="calculpCargaisonMMG();"  step="any" name="pcargaisonA" class="form-control border-start-0" id="pcargaisonA" placeholder="" />
+										<input type="number"   step="any" name="pcargaisonA" class="form-control border-start-0" id="pcargaisonA" placeholder="" />
 									</div>
 								</div>
-                                <div class="col-4"></div>
-								<div class="col-4">
+                                <!-- <div class="col-4"></div> -->
+								<div class="col-6">
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Poids Cargaison MMG</font></font></span>
-										<input type="number" readonly step="any" name="pcargaisonMMG" class="form-control border-start-0" id="pcargaisonMMG" placeholder="" />
+										<input type="number" readonly value="<?=$poidMMG?>" step="any" name="pcargaisonMMG" class="form-control border-start-0" id="pcargaisonMMG" placeholder="" />
 									</div>
                                     
 									<div class="input-group mt-3">
@@ -131,6 +132,7 @@ require_once './model/cargaison.php';
 							var pcargaisonMMG=Math.round(Number(constantesf-constantes)*1000)/1000;
 							document.getElementById('pcargaisonMMG').value=pcargaisonMMG;
 						}
+						
 
 						// // Fonction calcul des Constantes
 						// function calculConstantes(){

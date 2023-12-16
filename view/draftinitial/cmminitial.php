@@ -551,7 +551,7 @@ if (count($result1) == 0) {
 			var y1 = Number(document.getElementById('y1').value);
 			var t1 = Number(document.getElementById('t1').value);
 			var t2 = Number(document.getElementById('t2').value);
-			var MTC2 = (Math.round(((t2 - x1Mtc2) / (x2Mtc2 - x1Mtc2)) * (y2Mtc2 - y1Mtc2) + y1Mtc2)*1000)/1000;
+			var MTC2 = Math.round((((t2 - x1Mtc2) / (x2Mtc2 - x1Mtc2)) * (y2Mtc2 - y1Mtc2) + y1Mtc2)*1000)/1000;
 			document.getElementById('mtc2').value = MTC2;
 
 			var truetrim = Number(document.getElementById('truetrim').value);
