@@ -33,14 +33,14 @@ class  Cmminitial {
     // fonction pour enregistrer calcul tirants moyens apparents Draft initial
     
 
-    public function saveCmmInitial($idNavire,$x1,$x2,$mad,$y1,$y2,$deplacementMad,$t1,$t2,$lcf,$y1tpc,$y2tcp,$lcfto,$y1tpcmad,$y2tpcmad,$tpcmad,$firstTrimCorrection,$x1secondtrim,$x2secondtrim,$y1secondtrim,$y2secondtrim,$mtc1,$x1secondtrim2,$x2secondtrim2,$y1secondTrim2,$y2secondTrim2,$mtc2,$secondTrimCorrection): bool
+    public function saveCmmInitial($idNavire,$x1,$x2,$mad,$y1,$y2,$deplacementMad,$t1,$t2,$lcf,$y1tpc,$y2tcp,$lcfto,$y1tpcmad,$y2tpcmad,$tpcmad,$firstTrimCorrection,$x1secondtrim,$x2secondtrim,$y1secondTrim,$y2secondtrim,$mtc1,$x1secondtrim2,$x2secondtrim2,$y1secondTrim2,$y2secondTrim2,$mtc2,$secondTrimCorrection): bool
     {
       $ob_connexion=new Connexion();
       $db=$ob_connexion->getDB();
       $ret=false;
       if (!is_null($db))
        {
-          $sql="INSERT INTO `cmm_initial`(`id`, `x1Mmoyenne`, `x2Mmoyenne`, `mad`, `y1Deplacement`, `y2Deplacement`, `deplacementMad`, `t1`, `t2`, `choixFinal`, `y1LCF`, `y2LCF`, `lcf`, `y1TPCmad`, `y2TPCmad`, `TPC`, `firstTrimCorrection`, `x1MCTC1`, `x2MCTC1`, `y1MCTC1`, `y2MCTC1`, `MCTC1`, `x1MCTC2`, `x2MCTC2`, `y1MCTC2`, `y2MCTC2`, `MCTC2`, `secondTrimCorrection`)values('$idNavire','$x1','$x2','$mad','$y1','$y2','$deplacementMad','$t1','$t2','$lcf','$y1tpc','$y2tcp','$lcfto','$y1tpcmad','$y2tpcmad','$tpcmad','$firstTrimCorrection','$x1secondtrim','$x2secondtrim','$y1secondtrim','$y2secondtrim','$mtc1','$x1secondtrim2','$x2secondtrim2','$y1secondTrim2','$y2secondTrim2','$mtc2','$secondTrimCorrection')";
+          $sql="INSERT INTO `cmm_initial`(`id`, `x1Mmoyenne`, `x2Mmoyenne`, `mad`, `y1Deplacement`, `y2Deplacement`, `deplacementMad`, `t1`, `t2`, `choixFinal`, `y1LCF`, `y2LCF`, `lcf`, `y1TPCmad`, `y2TPCmad`, `TPC`, `firstTrimCorrection`, `x1MCTC1`, `x2MCTC1`, `y1MCTC1`, `y2MCTC1`, `MCTC1`, `x1MCTC2`, `x2MCTC2`, `y1MCTC2`, `y2MCTC2`, `MCTC2`, `secondTrimCorrection`)values('$idNavire','$x1','$x2','$mad','$y1','$y2','$deplacementMad','$t1','$t2','$lcf','$y1tpc','$y2tcp','$lcfto','$y1tpcmad','$y2tpcmad','$tpcmad','$firstTrimCorrection','$x1secondtrim','$x2secondtrim','$y1secondTrim','$y2secondtrim','$mtc1','$x1secondtrim2','$x2secondtrim2','$y1secondTrim2','$y2secondTrim2','$mtc2','$secondTrimCorrection')";
           $ret=$db->query($sql);
             $ret = true;
         }else{

@@ -33,7 +33,7 @@ if(isset($_POST['btn_ajout_etape4'])){
    $secondTrimCorrection=$_POST['secondTrimCorrection'];
 
     $ob_infoNavirer=new Cmminitial();
-    if($ob_infoNavirer->saveCmmInitial($idNavire,$x1,$x2,$mad,$y1,$y2,$deplacementMad,$t1,$t2,$lcf,$y1tpc,$y2tpc,$lcfto,$y1tpcmad,$y2tpcmad,$tpcmad,$firstTrimCorrection,$x1secondtrim,$x2secondtrim,$y1secondtrim,$y2secondtrim,$mtc1,$x1secondtrim2,$x2secondtrim2,$y1secondTrim2,$y2secondTrim2,$mtc2,$secondTrimCorrection)){
+    if($ob_infoNavirer->saveCmmInitial($idNavire,$x1,$x2,$mad,$y1,$y2,$deplacementMad,$t1,$t2,$lcf,$y1tpc,$y2tpc,$lcfto,$y1tpcmad,$y2tpcmad,$tpcmad,$firstTrimCorrection,$x1secondtrim,$x2secondtrim,$y1secondTrim,$y2secondtrim,$mtc1,$x1secondtrim2,$x2secondtrim2,$y1secondTrim2,$y2secondTrim2,$mtc2,$secondTrimCorrection)){
         header("location:../?page=infodraftinitial&id=$idNavire&success_insersion");
     }else{
         header("location:../?page=infodraftinitial&id=$idNavire&erreur_insersion");
