@@ -10,24 +10,26 @@ class  Cargaison {
 
 
     // fonction pour enregistrer calcul tirants moyens apparents Draft initial
-    function saveCargaison($idNavire,$pcargaison,$pcargaisonA,$pcargaisonMMG,$intervalleC): bool
+    public function saveCargaison($idNavire,$pcargaison,$pcargaisonA,$pcargaisonMMG): bool
     {
       $ob_connexion=new Connexion();
       $db=$ob_connexion->getDB();
       $ret=false;
       if (!is_null($db))
        {
-          $sql="INSERT INTO cargaison
-          (id,poidsCargaison,poidsCargaisonAdopte,poidsCargaisonMMG,intervalleConfiance)values
-          (:idNavire,:poidsCargaison,:poidsCargaisonAdopte,:poidsCargaisonMMG,:intervalleConfiance)";
-          $element=$db->prepare($sql);
-          $element->execute(array(
-            ':idNavire'=>$idNavire,
-            ':poidsCargaison'=>$pcargaison,
-            ':poidsCargaisonAdopte'=>$pcargaisonA,
-            ':poidsCargaisonMMG'=>$pcargaisonMMG,
-            ':intervalleConfiance'=>$intervalleC,
-             ));
+          // $sql="INSERT INTO cargaison
+          // (id,poidsCargaison,poidsCargaisonAdopte,poidsCargaisonMMG,intervalleConfiance)values
+          // (:idNavire,:poidsCargaison,:poidsCargaisonAdopte,:poidsCargaisonMMG,:intervalleConfiance)";
+          // $element=$db->prepare($sql);
+          // $element->execute(array(
+          //   ':idNavire'=>$idNavire,
+          //   ':poidsCargaison'=>$pcargaison,
+          //   ':poidsCargaisonAdopte'=>$pcargaisonA,
+          //   ':poidsCargaisonMMG'=>$pcargaisonMMG,
+          //   ':intervalleConfiance'=>$intervalleC,
+          //    ));
+          $sql="INSERT INTO `cargaison`(`id`, `poidsCargaison`, `poidsCargaisonAdopte`, `poidsCargaisonMMG`) VALUES ('$idNavire','$pcargaison','$pcargaisonA','$pcargaisonMMG')";
+          $ret=$db->query($sql);
           $ret=true;
         }else{
           echo "erreur de connexion a la basse";

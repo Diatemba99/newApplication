@@ -35,7 +35,7 @@ require_once './model/cargaison.php';
 									foreach($result as $key => $valeur){
 										$constantes=$valeur['constantes'];
 									}
-									$poidMMG=$constantesf-$constantes;
+									@$poidMMG=$constantesf-$constantes;
 ?>
 
 <?php
