@@ -57,14 +57,14 @@ foreach ($result as $key => $valeur) {
 										<input type="number" required onkeyup="calculerTEav();" step="any" name="teavbd" class="form-control border-start-0" id="teavbd" placeholder="TEavbd" />
 									</div>
 							</div>
-							<div class="col-4">
+							<div class="col-md-4">
 								
 								<div class="input-group mt-3">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEavtb</font></font></span>
 										<input type="number" required onkeyup="calculerTEav();" step="any" name="teavtb" class="form-control border-start-0" id="teavtb" placeholder="TEavtb" />
 									</div>
 							</div>
-							<div class="col-4">
+							<div class="col-md-4">
 								
 								<div class="input-group mt-3">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEav</font></font></span>
@@ -73,21 +73,21 @@ foreach ($result as $key => $valeur) {
 							</div>
 							</div>
 							<div class="row">
-								<div class="col-4">
+								<div class="col-md-4">
 								
 								<div class="input-group mt-3">
 				<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEarbd</font></font></span>
 										<input type="number" required onkeyup="calculerTEar();" step="any" name="tearbd" class="form-control border-start-0" id="tearbd" placeholder="TEarbd" />
 									</div>
 							</div>
-							<div class="col-4">
+							<div class="col-md-4">
 								
 								<div class="input-group mt-3">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEartb</font></font></span>
 										<input type="number" required onkeyup="calculerTEar();" step="any" name="teartb" class="form-control border-start-0" id="teartb" placeholder="TEartb" />
 									</div>
 							</div>
-							<div class="col-4">
+							<div class="col-md-4">
 								
 								<div class="input-group mt-3">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEar</font></font></span>
@@ -96,21 +96,21 @@ foreach ($result as $key => $valeur) {
 							</div>
 							</div>
 							<div class="row">
-								<div class="col-4">
+								<div class="col-md-4">
 								
 								<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEMbd</font></font></span>
 										<input type="number" onkeyup="calculerTEM();" required step="any" name="tembd" class="form-control border-start-0" id="tembd" placeholder="TEMbd" />
 									</div>
 							</div>
-							<div class="col-4">
+							<div class="col-md-4">
 								
 								<div class="input-group mt-3">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEMtb</font></font></span>
 										<input type="number" required onkeyup="calculerTEM();" step="any" name="temtb" class="form-control border-start-0" id="temtb" placeholder="TEMtb" />
 									</div>
 							</div>
-							<div class="col-4">
+							<div class="col-md-4">
 								
 								<div class="input-group mt-3">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEM</font></font></span>
@@ -132,8 +132,8 @@ foreach ($result as $key => $valeur) {
 														<label class="form-check-label" for="ap2">Mark AFT/P</label>
 													</div>
 									</div> -->
-									<div class="col-6"></div>
-									<div class="col-4">
+									<div class="col-md-6"></div>
+									<div class="col-md-4">
 								
 									<div class="input-group mt-3">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Apparent Trim</font></font></span>
@@ -145,14 +145,14 @@ foreach ($result as $key => $valeur) {
 							<h5 class="mb-0 text-primary">Calcul de la distance entre les marques avant et arriéres</h5>
 							<div class="card-body border">
 								<div class="row">
-								<div class="col-6">
+								<div class="col-md-6">
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LBP</font></font></span>
 										<input type="number" readonly step="any" value="<?=$lbp?>" name="L" class="form-control border-start-0" id="L" placeholder="" />
 									</div>
 
-									<div class="col-8 mt-5">
+									<div class="col-md-8 mt-5">
 										<div>
 											<div class="form-check">
 												<input class="form-check-input" onclick="calculerLBM();calculerCorrection();calculerCorrectionTirants();" type="radio" name="mark" id="fwdtofwd" value="LCF to AP">
@@ -173,7 +173,7 @@ foreach ($result as $key => $valeur) {
 									</div>
 								</div>
 								</div>
-								<div class="col-4">
+								<div class="col-md-4">
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">la</font></font></span>
@@ -205,7 +205,7 @@ foreach ($result as $key => $valeur) {
 							<div class="card-body border">
 								<div class="row border">
 									<!-- <fieldset id="avant"> -->
-										<div class="col-2"></div>
+										<div class="col-md-2"></div>
 									<div class="col-4 ">
 										<div class="form-check mt-3">
 												<input class="form-check-input" onclick="calculerCorrection();calculerCorrectionTirants();" type="radio" name="avant" id="fwdcorrav" >
@@ -216,7 +216,7 @@ foreach ($result as $key => $valeur) {
 												<label class="form-check-label" for="avantf">Mark AFT/P</label>
 											</div>
 									</div>
-									<div class="col-6">
+									<div class="col-md-6">
 										<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Corr.avant</font></font></span>
 										<input type="number" readonly step="any" name="corrAv" class="form-control border-start-0" id="corrAv" placeholder="" />
@@ -226,8 +226,8 @@ foreach ($result as $key => $valeur) {
 								</div>
 								<div class="row border">
 									<!-- <fieldset id="millieu"> -->
-										<div class="col-2"></div>
-									<div class="col-4">
+										<div class="col-md-2"></div>
+									<div class="col-md-4">
 											<div class="form-check mt-3">
 												<input class="form-check-input" onclick="calculerCorrection();calculerCorrectionTirants();" type="radio" name="arriere" id="fwdcorrar" >
 												<label class="form-check-label" for="milieu">Mark FWD/P</label>
@@ -237,7 +237,7 @@ foreach ($result as $key => $valeur) {
 												<label class="form-check-label" for="milieuf">Mark AFT/P</label>
 											</div>
 									</div>
-									<div class="col-6">
+									<div class="col-md-6">
 										<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Corr.arr</font></font></span>
 										<input type="number" readonly step="any" name="corrAr" class="form-control border-start-0" id="corrAr" placeholder="" />
@@ -247,8 +247,8 @@ foreach ($result as $key => $valeur) {
 								</div>
 								<div class="row border">
 									<!-- <fieldset id="arriere"> -->
-										<div class="col-2"></div>
-									<div class="col-4">
+										<div class="col-md-2"></div>
+									<div class="col-md-4">
 										<div class="form-check mt-3">
 												<input class="form-check-input" onclick="calculerCorrection();calculerCorrectionTirants();" type="radio" name="milieu" id="fwdcorrM" >
 												<label class="form-check-label" for="arriere">Mark FWD/P</label>
@@ -258,7 +258,7 @@ foreach ($result as $key => $valeur) {
 												<label class="form-check-label" for="arrieref">Mark AFT/P</label>
 											</div>
 									</div>
-									<div class="col-6">
+									<div class="col-md-6">
 										<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Corr.mil</font></font></span>
 										<input type="number" readonly step="any" name="corrM" class="form-control border-start-0" id="corrM" placeholder="" />
@@ -272,11 +272,11 @@ foreach ($result as $key => $valeur) {
 							<h5 class="mb-0 text-primary">Correction des Tirants réels</h5>
 							<div class="card-body border">
 								<div class="row">
-								<div class="col-6">
+								<div class="col-md-6">
 									
 								</div>
 
-								<div class="col-6">
+								<div class="col-md-6">
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tav</font></font></span>
@@ -301,11 +301,11 @@ foreach ($result as $key => $valeur) {
 							<h5 class="mb-0 text-primary">Calcul de l'Assiette réelle ou True Trim</h5>
 							<div class="card-body border">
 								<div class="row mt-3">
-								<div class="col-6">
+								<div class="col-md-6">
 									
 								</div>
 
-								<div class="col-6">
+								<div class="col-md-6">
 									
 									<div class="input-group">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">True Trim</font></font></span>
@@ -425,46 +425,46 @@ foreach ($result as $key => $valeur) {
 
 							if (apparentTrim>0) {
 								if (document.getElementById('aftcorrav').checked){
-									var corrAv =Math.round(Number(-(apparentTrim*l1)/lL)*1000)/1000;
+									var corrAv =Math.round(Number(-(apparentTrim*l2)/lL)*1000)/1000;
 									document.getElementById("corrAv").value = corrAv;
 								}else if (document.getElementById('fwdcorrav').checked){
-									var corrAv =Math.round(Number((apparentTrim*l1)/lL)*1000)/1000;
+									var corrAv =Math.round(Number((apparentTrim*l2)/lL)*1000)/1000;
 									document.getElementById("corrAv").value = corrAv;
 								}
 								if (document.getElementById('aftcorrar').checked){
-									var corrAr =Math.round(Number(-(apparentTrim*l3)/lL)*1000)/1000;
+									var corrAr =Math.round(Number(-(apparentTrim*l1)/lL)*1000)/1000;
 									document.getElementById("corrAr").value = corrAr;
 								}else if (document.getElementById('fwdcorrar').checked){
-									var corrAr =Math.round(Number((apparentTrim*l3)/lL)*1000)/1000;
+									var corrAr =Math.round(Number((apparentTrim*l1)/lL)*1000)/1000;
 									document.getElementById("corrAr").value = corrAr;
 								}
 								if (document.getElementById('aftcorrM').checked){
-									var corrM =Math.round(Number(-(apparentTrim*l2)/lL)*1000)/1000;
+									var corrM =Math.round(Number(-(apparentTrim*l3)/lL)*1000)/1000;
 									document.getElementById("corrM").value = corrM;
 								}else if (document.getElementById('fwdcorrM').checked){
-									var corrM =Math.round(Number((apparentTrim*l2)/lL)*1000)/1000;
+									var corrM =Math.round(Number((apparentTrim*l3)/lL)*1000)/1000;
 									document.getElementById("corrM").value = corrM;
 								}
 							} else if (apparentTrim<0){
 								if (document.getElementById('aftcorrav').checked){
-									var corrAv =Math.round(Number((apparentTrim*l1)/lL)*1000)/1000;
+									var corrAv =Math.round(Number((apparentTrim*l2)/lL)*1000)/1000;
 									document.getElementById("corrAv").value = corrAv;
 								}else if (document.getElementById('fwdcorrav').checked){
-									var corrAv =Math.round(Number(-(apparentTrim*l1)/lL)*1000)/1000;
+									var corrAv =Math.round(Number(-(apparentTrim*l2)/lL)*1000)/1000;
 									document.getElementById("corrAv").value = corrAv;
 								}
 								if (document.getElementById('aftcorrar').checked){
-									var corrAr =Math.round(Number((apparentTrim*l3)/lL)*1000)/1000;
+									var corrAr =Math.round(Number((apparentTrim*l1)/lL)*1000)/1000;
 									document.getElementById("corrAr").value = corrAr;
 								}else if (document.getElementById('fwdcorrar').checked){
-									var corrAr =Math.round(Number(-(apparentTrim*l3)/lL)*1000)/1000;
+									var corrAr =Math.round(Number(-(apparentTrim*l1)/lL)*1000)/1000;
 									document.getElementById("corrAr").value = corrAr;
 								}
 								if (document.getElementById('aftcorrM').checked){
-									var corrM =Math.round(Number((apparentTrim*l2)/lL)*1000)/1000;
+									var corrM =Math.round(Number((apparentTrim*l3)/lL)*1000)/1000;
 									document.getElementById("corrM").value = corrM;
 								}else if (document.getElementById('fwdcorrM').checked){
-									var corrM =Math.round(Number(-(apparentTrim*l2)/lL)*1000)/1000;
+									var corrM =Math.round(Number(-(apparentTrim*l3)/lL)*1000)/1000;
 									document.getElementById("corrM").value = corrM;
 								}                                                                                                                     
 							}

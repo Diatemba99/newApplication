@@ -63,6 +63,10 @@ if(isset($_GET['page'])){
             require_once './view/draftfinal/rapportfinal.php';
         break;
 
+        case 'cargocertificate':
+            require_once './view/draftfinal/cargocertificate.php';
+        break;
+
         case 'infodraftinitial':
             require_once './view/draftinitial/infodraftinitial.php';
         break;

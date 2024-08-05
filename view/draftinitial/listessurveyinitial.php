@@ -362,7 +362,7 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 										<input type="number" step="any" required name="lbp" class="form-control border-start-0" id="lbp" placeholder="LBP" />
 									</div>
 							</div>
-							<div class="col-md-6">
+							<!-- <div class="col-md-6">
 								
 								<div class="input-group">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Breadth (moulded)</font></font></span>
@@ -375,7 +375,7 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Depth (moulded)</font></font></span>
 										<input type="number" step="any" required name="depthMoulded" class="form-control border-start-0" id="depthMoulded" placeholder="Depth (moulded)" />
 									</div>
-							</div>
+							</div> -->
 							<!-- <div class="col-md-6">
 								
 								<div class="input-group">
@@ -425,7 +425,7 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 										<input type="number" required name="draftExtreme" class="form-control border-start-0" id="draftExtreme" placeholder="DRAFT (EXTREME)" />
 									</div>
 							</div> -->
-							<div class="col-md-6">
+							<!-- <div class="col-md-6">
 								
 								<div class="input-group">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">FP To Fore Draft Mark</font></font></span>
@@ -452,7 +452,7 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Between Draft Marks</font></font></span>
 										<input type="number" step="any" required name="between" class="form-control border-start-0" id="between" placeholder="BETWEEN DRAFT MARKS" />
 									</div>
-							</div>
+							</div> -->
 								
 							
 								<div >

@@ -40,21 +40,21 @@ foreach ($result as $key => $valeur) {
                                 <input type="number" hidden name="idNavire" value="<?=$idNavire?>" class="form-control border-start-0" id="idNavire" placeholder="" />
 							<div class="card-body border">
 								<div class="row">
-								<div class="col-4">
+								<div class="col-md-4">
 								
 								<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEavbd</font></font></span>
 										<input type="number" required onkeyup="calculerTEav();" step="any" name="teavbd" class="form-control border-start-0" id="teavbd" placeholder="TEavbd" />&nbsp; m
 									</div>
 							</div>
-							<div class="col-4">
+							<div class="col-md-4">
 								
 								<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEavtb</font></font></span>
 										<input type="number" required onkeyup="calculerTEav();" step="any" name="teavtb" class="form-control border-start-0" id="teavtb" placeholder="TEavtb" />&nbsp; m
 									</div>
 							</div>
-							<div class="col-4">
+							<div class="col-md-4">
 								
 								<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEav</font></font></span>
@@ -63,21 +63,21 @@ foreach ($result as $key => $valeur) {
 							</div>
 							</div>
 							<div class="row">
-								<div class="col-4">
+								<div class="col-md-4">
 								
 								<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEarbd</font></font></span>
 										<input type="number" required onkeyup="calculerTEar();" step="any" name="tearbd" class="form-control border-start-0" id="tearbd" placeholder="TEarbd" />&nbsp; m
 									</div>
 							</div>
-							<div class="col-4">
+							<div class="col-md-4">
 								
 								<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEartb</font></font></span>
 										<input type="number" required onkeyup="calculerTEar();" step="any" name="teartb" class="form-control border-start-0" id="teartb" placeholder="TEartb" />&nbsp; m
 									</div>
 							</div>
-							<div class="col-4">
+							<div class="col-md-4">
 								
 								<div class="input-group mt-3">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEar</font></font></span>
@@ -86,21 +86,21 @@ foreach ($result as $key => $valeur) {
 							</div>
 							</div>
 							<div class="row">
-								<div class="col-4">
+								<div class="col-md-4">
 								
 								<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEMbd</font></font></span>
 										<input type="number" required onkeyup="calculerTEM();" step="any" name="tembd" class="form-control border-start-0" id="tembd" placeholder="TEMbd" />&nbsp; m
 									</div>
 							</div>
-							<div class="col-4">
+							<div class="col-md-4">
 								
 								<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEMtb</font></font></span>
 										<input type="number" required onkeyup="calculerTEM();" step="any" name="temtb" class="form-control border-start-0" id="temtb" placeholder="TEMtb" />&nbsp; m
 									</div>
 							</div>
-							<div class="col-4">
+							<div class="col-md-4">
 								
 								<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TEM</font></font></span>
@@ -120,8 +120,8 @@ foreach ($result as $key => $valeur) {
 												<label class="form-check-label" for="ap2">Mark AFT/P</label>
 											</div>
 							</div> -->
-							<div class="col-6"></div>
-							<div class="col-4">
+							<div class="col-md-6"></div>
+							<div class="col-md-4">
 								
 								<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Apparent Trim</font></font></span>
@@ -132,14 +132,14 @@ foreach ($result as $key => $valeur) {
 							
 							<div class="card-body border">
 								<div class="row">
-								<div class="col-6">
+								<div class="col-md-6">
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LBP</font></font></span>
 										<input type="number" readonly step="any" name="L" value="<?=$lbp?>" class="form-control border-start-0" id="L" placeholder="" />&nbsp; m
 									</div>
 
-									<div class="col-8 mt-5">
+									<div class="col-md-8 mt-5">
 										<div>
 											<div class="form-check">
 												<input class="form-check-input" onclick="calculerLBM();calculerCorrection();" type="radio" name="mark" id="fwdtofwd" value="LCF to AP">
@@ -162,7 +162,7 @@ foreach ($result as $key => $valeur) {
 								</div>
 								</div>
 
-								<div class="col-4">
+								<div class="col-md-4">
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">la</font></font></span>
@@ -195,8 +195,8 @@ foreach ($result as $key => $valeur) {
 							<div class="card-body border">
 								<div class="row border">
 									<!-- <fieldset id="avant"> -->
-										<div class="col-2"></div>
-									<div class="col-4 ">
+										<div class="col-md-2"></div>
+									<div class="col-md-4 ">
 										<div class="form-check mt-3">
 												<input class="form-check-input" onclick="calculerCorrection();calculerCorrectionTirants();" type="radio" name="avant" id="fwdcorrav" >
 												<label class="form-check-label" for="avant">Mark FWD/P</label>
@@ -206,7 +206,7 @@ foreach ($result as $key => $valeur) {
 												<label class="form-check-label" for="avantf">Mark AFT/P</label>
 											</div>
 									</div>
-									<div class="col-6">
+									<div class="col-md-6">
 										<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Corr.avant</font></font></span>
 										<input type="number" readonly step="any" name="corrAv" class="form-control border-start-0" id="corrAv" placeholder="" />&nbsp; m
@@ -216,8 +216,8 @@ foreach ($result as $key => $valeur) {
 								</div>
 								<div class="row border">
 									<!-- <fieldset id="millieu"> -->
-										<div class="col-2"></div>
-									<div class="col-4">
+										<div class="col-md-2"></div>
+									<div class="col-md-4">
 											<div class="form-check mt-3">
 												<input class="form-check-input" onclick="calculerCorrection();calculerCorrectionTirants();" type="radio" name="arriere" id="fwdcorrar" >
 												<label class="form-check-label" for="milieu">Mark FWD/P</label>
@@ -227,7 +227,7 @@ foreach ($result as $key => $valeur) {
 												<label class="form-check-label" for="milieuf">Mark AFT/P</label>
 											</div>
 									</div>
-									<div class="col-6">
+									<div class="col-md-6">
 										<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Corr.arr</font></font></span>
 										<input type="number" readonly step="any" name="corrAr" class="form-control border-start-0" id="corrAr" placeholder="" />&nbsp; m
@@ -237,8 +237,8 @@ foreach ($result as $key => $valeur) {
 								</div>
 								<div class="row border">
 									<!-- <fieldset id="arriere"> -->
-										<div class="col-2"></div>
-									<div class="col-4">
+										<div class="col-md-2"></div>
+									<div class="col-md-4">
 										<div class="form-check mt-3">
 												<input class="form-check-input" onclick="calculerCorrection();calculerCorrectionTirants();" type="radio" name="milieu" id="fwdcorrM" >
 												<label class="form-check-label" for="arriere">Mark FWD/P</label>
@@ -248,7 +248,7 @@ foreach ($result as $key => $valeur) {
 												<label class="form-check-label" for="arrieref">Mark AFT/P</label>
 											</div>
 									</div>
-									<div class="col-6">
+									<div class="col-md-6">
 										<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Corr.mil</font></font></span>
 										<input type="number" readonly step="any" name="corrM" class="form-control border-start-0" id="corrM" placeholder="" />&nbsp; m
@@ -293,11 +293,11 @@ foreach ($result as $key => $valeur) {
 							<h5 class="mb-0 text-primary">Correction des Tirants réels</h5>
 								<div class="card-body border">
 									<div class="row">
-								<div class="col-6">
+								<div class="col-md-6">
 									
 								</div>
 
-								<div class="col-6">
+								<div class="col-md-6">
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tav</font></font></span>
@@ -321,11 +321,11 @@ foreach ($result as $key => $valeur) {
 
 							<h5 class="mb-0 text-primary">Calcul de l'Assiette réelle ou True Trim</h5>
 							<div class="row">
-								<div class="col-6">
+								<div class="col-md-6">
 									
 								</div>
 
-								<div class="col-6">
+								<div class="col-md-6">
 									
 									<div class="input-group mt-3">
 										<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">True Trim</font></font></span>

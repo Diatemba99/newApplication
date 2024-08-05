@@ -119,11 +119,13 @@ require_once './model/cargaison.php';
 								echo"<button type='button' disabled='disabled' class='btn btn-success px-5 radius-30'><font style='vertical-align: inherit;'><font style='vertical-align: inherit;'>Valider Draft</font></font></button>";
 								?>
 								<button disabled="disabled" onclick="window.location.href = '?page=rapportfinal&id=<?= $idNavire ?>';" type="button" class="btn btn-outline-dark px-5"><i class="bx bx-cloud-upload mr-1"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Rapport Final</font></font></button>
+								<button disabled="disabled" onclick="window.location.href = '?page=cargocertificate&id=<?= $idNavire ?>';" type="button" class="btn btn-outline-dark px-5"><i class="bx bx-cloud-upload mr-1"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cargo Certficate</font></font></button>
 								<?php
 							}else{
 								echo"<button type='button' disabled='disabled' class='btn btn-success px-5 radius-30'><font style='vertical-align: inherit;'><font style='vertical-align: inherit;'>Valider Draft</font></font></button>";
 								?>
 								<button onclick="window.location.href = '?page=rapportfinal&id=<?= $idNavire ?>';" type="button" class="btn btn-outline-dark px-5"><i class="bx bx-cloud-upload mr-1"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Rapport Final</font></font></button>
+								<button onclick="window.location.href = '?page=cargocertificate&id=<?= $idNavire ?>';" type="button" class="btn btn-outline-dark px-5"><i class="bx bx-cloud-upload mr-1"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cargo Certficate</font></font></button>
 								<!-- <button onclick="window.location.href = '?page=rapportfinal&id=<?= $idNavire ?>';" type="button" class="btn btn-outline-dark px-5"><i class="bx bx-cloud-upload mr-1"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Rapport Final</font></font></button> -->
 								<?php
 							}

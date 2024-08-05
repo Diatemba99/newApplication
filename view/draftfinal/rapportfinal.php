@@ -37,24 +37,27 @@ function Header()
     if (!$this->headerPrinted) {
     // Texte à gauche
         $this->SetFont('Arial', 'B', 12);
-        $this->Cell(80, 10, 'Ministry of Mine and Geology', 0);
+        $this->Cell(80, 10, 'REPUBLIC OF GUINEA', 0);
 
         // Image au centre
         $this->Image('./page/assets/images/ministary.PNG', 60, 5, 90);
 
         // Texte à droite
         $this->Cell(60);
-        $this->Cell(60, 10, 'Republic of Guinea', 0);
+        $this->Cell(60, 10, 'General Directorate of the', 0);
         $this->Ln(5);
         $this->Cell(135);
-        $this->Cell(60, 10, 'Work-Justice-Solidarity', 0);
+        $this->Cell(60, 10, 'Office of Quantity and Quality', 0);
+        $this->ln(5);
+        $this->Cell(135);
+        $this->Cell(60, 10, '        of Minerals for Export', 0);
         $this->Ln(20); // Saut de ligne
         $this->SetFont('Arial', '', 12);
-        $this->Cell(80, 10, 'General Directorate of the', 0);
+        $this->Cell(80, 10, 'Work - Justice - Solidarity', 0);
         $this->Ln(5);
-        $this->Cell(80, 10, 'Office of Quantity and Quality', 0);
+        $this->Cell(80, 10, 'Ministry of Mine and Geology', 0);
         $this->Ln(5);
-        $this->Cell(80, 10, 'of Minerals for Export', 0);
+        $this->Cell(80, 10, '', 0);
         $this->Ln(10);
 
         // Marque l'en-tête comme imprimé
@@ -67,11 +70,47 @@ function Header()
 function Footer()
 {
     // Positionnement à 1,5 cm du bas
-    $this->SetY(-15);
+    $this->SetY(-25);
     // Police Arial italique 8
-    $this->SetFont('Arial','I',8);
+    $this->SetFont('Arial','B',10);
+
+    // $this->Cell(20, 10, 'Ministry of Mine and Geology', 0);
+    $this->Image('./page/assets/images/Flag.PNG',20,  280, 10);
+
+        // Texte au centre
+        // $this->Image('./page/assets/images/ministary.PNG', 60, 5, 90);
+        $this->Cell(70);
+        $this->Cell(60, 10, 'Conakry Commune de Kaloum', 0);
+        $this->Ln(5);
+        $this->Cell(72);
+        $this->Cell(60, 10,('République de Guinée'), 0);
+        $this->Ln(5);
+        $this->Cell(68);
+        $this->Cell(60, 10,('Immeuble OFAB-CONAKRY-BP :295'), 0);
+        $this->Ln(5);
+        $this->Cell(80);
+        $this->Cell(60, 10, 'www.mines.gov.gn', 0);
+
+
+        $this->Image('./page/assets/images/logonimba.PNG',175,  275, 20);
+
+        // Texte à droite
+        // $this->Cell(135);
+        // $this->Cell(60, 10, 'Republic of Guinea', 0);
+        // $this->Ln(5);
+        // $this->Cell(135);
+        // $this->Cell(60, 10, 'Work-Justice-Solidarity', 0);
+        // $this->Ln(20); // Saut de ligne
+        // $this->SetFont('Arial', '', 12);
+        // $this->Cell(80, 10, 'General Directorate of the', 0);
+        // $this->Ln(5);
+        // $this->Cell(80, 10, 'Office of Quantity and Quality', 0);
+        // $this->Ln(5);
+        // $this->Cell(80, 10, 'of Minerals for Export', 0);
+        // $this->Ln(10);
+
     // Numéro de page
-    $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
+    // $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
 }
 
 function viewTable()
@@ -90,11 +129,11 @@ function viewTable()
     $all_draft = $obj_draft->getDraftByID($idNavire);
     foreach ($all_draft as $draft) {
         $nomNavire=$draft['nomNavire'];
-        $LBP=$draft['lbp'];
-        $LBM=$draft['between_draft_mark'];
-        $La=$draft['ap_to_fore_draft_mark'];
-        $Lm=$draft['midship_to_mid_draft_mark'];
-        $Lf=$draft['fp_to_fore_draft_mark'];
+        // $LBP=$draft['lbp'];
+        // $LBM=$draft['between_draft_mark'];
+        // $La=$draft['ap_to_fore_draft_mark'];
+        // $Lm=$draft['midship_to_mid_draft_mark'];
+        // $Lf=$draft['fp_to_fore_draft_mark'];
         $keel=$draft['keelplate'];
         $disp=$draft['disp'];
     }
@@ -124,6 +163,11 @@ function viewTable()
         $tEarbdf=$ctmafinal['tEarbd'];
         $tEartbf=$ctmafinal['tEartb'];
         $dateFinal=$ctmafinal['dateFinal'];
+        $LBPf=$ctmafinal['l'];
+        $LBMf=$ctmafinal['lL'];
+        $Laf=$ctmafinal['l1'];
+        $Lmf=$ctmafinal['l3'];
+        $Lff=$ctmafinal['l2'];
         $heureFinal=$ctmafinal['heureFinal'];
     }
 
@@ -136,6 +180,11 @@ function viewTable()
         $tEmtd=$ctmainitial['tEmtb'];
         $tEarbd=$ctmainitial['tEarbd'];
         $tEartb=$ctmainitial['tEartb'];
+        $LBP=$ctmainitial['l'];
+        $LBM=$ctmainitial['lL'];
+        $La=$ctmainitial['l1'];
+        $Lm=$ctmainitial['l3'];
+        $Lf=$ctmainitial['l2'];
 
     }
 
@@ -162,6 +211,10 @@ function viewTable()
         $LOl=$deplacementfinal['lubrifiantOil'];
         $FWl=$deplacementfinal['freshWater'];
         $BWl=$deplacementfinal['ballastWater'];
+         $LSl=$deplacementfinal['ls'];
+         $Kl=$deplacementfinal['constantes'];
+         $Dpl=$deplacementfinal['densitemesure'];
+         $Dsl=$deplacementfinal['densiteTableHydrostatique'];
         
         // $Kl=$deplacementfinal['constantes'];
         $OTHERSl=$deplacementfinal['others'];
@@ -249,29 +302,7 @@ function viewTable()
             $this->Cell(30, 10,'   '.$tEmtdf, 1);
             $this->Cell(30, 10,'   '.$tEartbf, 1);
             $this->Ln();
-            // $this->Cell(90,8,utf8_decode('FWD TEavbd :'.'   '.$tEavbd),1,0,'C');
-            // $this->Cell(10, 10, '', 0); // Cellule vide pour l'espace
-            // $this->Cell(90,8,utf8_decode('FWD TEavbd :'.'   '.$tEavbdf),1,0,'C');
-            // $this->ln();
-            // $this->Cell(90,8,utf8_decode('FWD TEavtd :'.'   '.$tEavtd),1,0,'C');
-            // $this->Cell(10, 10, '', 0); // Cellule vide pour l'espace
-            // $this->Cell(90,8,utf8_decode('FWD TEavtd :'.'   '.$tEavtdf),1,0,'C');
-            // $this->Ln();
-            // $this->Cell(90,8,utf8_decode('MID TEMbd :'.'   '.$tEmbd),1,0,'C');
-            // $this->Cell(10, 10, '', 0); // Cellule vide pour l'espace
-            // $this->Cell(90,8,utf8_decode('MID TEMbd :'.'   '.$tEmbdf),1,0,'C');
-            // $this->Ln();
-            // $this->Cell(90,8,utf8_decode('MID TEMtd :'.'   '.$tEmtd),1,0,'C');
-            // $this->Cell(10, 10, '', 0); // Cellule vide pour l'espace
-            // $this->Cell(90,8,utf8_decode('MID TEMtd :'.'   '.$tEmtdf),1,0,'C');
-            // $this->ln();
-            // $this->Cell(90,8,utf8_decode('AFT TEarbd :'.'   '.$tEarbd),1,0,'C');
-            // $this->Cell(10, 10, '', 0); // Cellule vide pour l'espace
-            // $this->Cell(90,8,utf8_decode('AFT TEarbd :'.'   '.$tEarbdf),1,0,'C');
-            // $this->Ln();
-            // $this->Cell(90,8,utf8_decode('AFT TEartd :'.'   '.$tEartb),1,0,'C');
-            // $this->Cell(10, 10, '', 0); // Cellule vide pour l'espace
-            // $this->Cell(90,8,utf8_decode('AFT TEartd :'.'   '.$tEartbf),1,0,'C');
+            
             
             $this->Ln();
             $this->SetFont('Times','B',12);
@@ -281,23 +312,23 @@ function viewTable()
             $this->Ln();
             $this->Cell(63.5, 10, 'LBP', 1);
             $this->Cell(63.5, 10, '   '.$LBP, 1);
-            $this->Cell(63.5, 10, 'FINALS', 1);
+            $this->Cell(63.5, 10, '   '.$LBPf, 1);
             $this->Ln();
             $this->Cell(63.5, 10, 'LBM', 1);
             $this->Cell(63.5, 10, '   '.$LBM, 1);
-            $this->Cell(63.5, 10, 'FINALS', 1);
+            $this->Cell(63.5, 10, '   '.$LBMf, 1);
             $this->Ln();
             $this->Cell(63.5, 10, 'La', 1);
             $this->Cell(63.5, 10, '   '.$La, 1);
-            $this->Cell(63.5, 10, 'FINALS', 1);
+            $this->Cell(63.5, 10, '   '.$Laf, 1);
             $this->Ln();
             $this->Cell(63.5, 10, 'Lm', 1);
             $this->Cell(63.5, 10, '   '.$Lm, 1);
-            $this->Cell(63.5, 10, 'FINALS', 1);
+            $this->Cell(63.5, 10, '   '.$Lmf, 1);
             $this->Ln();
             $this->Cell(63.5, 10, 'Lf', 1);
             $this->Cell(63.5, 10, '   '.$Lf, 1);
-            $this->Cell(63.5, 10, 'FINALS', 1);
+            $this->Cell(63.5, 10, '   '.$Lff, 1);
             $this->Ln();
             $this->Cell(63.5, 10, 'FO', 1);
             $this->Cell(63.5, 10, '   '.$FO, 1);
@@ -317,23 +348,23 @@ function viewTable()
             $this->Ln();
             $this->Cell(63.5, 10, 'LS', 1);
             $this->Cell(63.5, 10, '   '.$LS, 1);
-            $this->Cell(63.5, 10, 'FINALS', 1);
+            $this->Cell(63.5, 10, '   '.$LSl, 1);
             $this->Ln();
             $this->Cell(63.5, 10, 'K', 1);
             $this->Cell(63.5, 10, '   '.$K, 1);
-            $this->Cell(63.5, 10, 'FINALS', 1);
+            $this->Cell(63.5, 10, '   '.$Kl, 1);
             $this->Ln();
             $this->Cell(63.5, 10, 'KEEL', 1);
             $this->Cell(63.5, 10, '   '.$keel, 1);
-            $this->Cell(63.5, 10, 'FINALS', 1);
+            $this->Cell(63.5, 10, ' ', 1);
             $this->Ln();
             $this->Cell(63.5, 10, 'Dp', 1);
             $this->Cell(63.5, 10, '   '.$Dp, 1);
-            $this->Cell(63.5, 10, 'FINALS', 1);
+            $this->Cell(63.5, 10, '   '.$Dpl, 1);
             $this->Ln();
             $this->Cell(63.5, 10, 'Ds', 1);
             $this->Cell(63.5, 10, '   '.$Ds, 1);
-            $this->Cell(63.5, 10, 'FINALS', 1);
+            $this->Cell(63.5, 10, '   '.$Dsl, 1);
             $this->Ln();
             $this->Cell(63.5, 10, 'OTHERS', 1);
             $this->Cell(63.5, 10, '   '.$OTHERS, 1);
@@ -341,66 +372,22 @@ function viewTable()
             $this->Ln();
             $this->Cell(63.5, 10, 'DISP(TM)', 1);
             $this->Cell(63.5, 10, '   '.$disp, 1);
-            $this->Cell(63.5, 10, 'FINALS', 1);
+            $this->Cell(63.5, 10, '   '.$disp, 1);
             $this->Ln();
             $this->Cell(63.5, 10, 'Cargo(TM)', 1);
+            $this->Cell(63.5, 10, '   ', 1);
             $this->Cell(63.5, 10, '   '.$cargo, 1);
-            $this->Cell(63.5, 10, 'FINALS', 1);
             $this->Ln();
             
-            // $this->Cell(90,8,utf8_decode('LBP :'.'   '.$LBP),1,0,'C');
-            // $this->Ln();
-            // $this->Cell(90,8,utf8_decode('LBM :'.'   '.$LBM),1,0,'C');
-            // $this->Ln();
-            // $this->Cell(90,8,utf8_decode('La :'.'   '.$La),1,0,'C');           
-            // $this->Cell(90,8,utf8_decode('La :'.'   '),1,0,'C');
-            // $this->Ln();
-            // $this->Cell(90,8,utf8_decode('Lm :'.'   '.$Lm),1,0,'C');           
-            // $this->Cell(90,8,utf8_decode('Lm :'.'   '),1,0,'C');
-            // $this->Ln();
-            // $this->Cell(90,8,utf8_decode('Lf :'.'   '.$Lf),1,0,'C');           
-            // $this->Cell(90,8,utf8_decode('Lf :'.'   '),1,0,'C');
-            // $this->Ln();
-            // $this->Cell(90,8,utf8_decode('FO :'.'   '.$FO),1,0,'C');           
-            // $this->Cell(90,8,utf8_decode('FO :'.'   '.$FOl),1,0,'C');
-            // $this->Ln();
-            // $this->Cell(90,8,utf8_decode('DO :'.'   '.$DO),1,0,'C');           
-            // $this->Cell(90,8,utf8_decode('DO :'.'   '.$DOl),1,0,'C');
-            // $this->Ln();
-            // $this->Cell(90,8,utf8_decode('LO :'.'   '.$LO),1,0,'C');           
-            // $this->Cell(90,8,utf8_decode('LO :'.'   '.$LOl),1,0,'C');
-            // $this->Ln();
-            // $this->Cell(90,8,utf8_decode('FW :'.'   '.$FW),1,0,'C');           
-            // $this->Cell(90,8,utf8_decode('FW :'.'   '.$FWl),1,0,'C');
-            // $this->Ln();
-            // $this->Cell(90,8,utf8_decode('BW :'.'   '.$BW),1,0,'C');           
-            // $this->Cell(90,8,utf8_decode('BW :'.'   '.$BWl),1,0,'C');
-            // $this->Ln();          
-            // $this->Cell(90,8,utf8_decode('LS :'.'   '.$LS),1,0,'C');
-            // $this->Ln();         
-            // $this->Cell(90,8,utf8_decode('K :'.'   '.$K),1,0,'C');
-            // $this->Ln();           
-            // $this->Cell(90,8,utf8_decode('KEEL :'.'   '.$keel),1,0,'C');
-            // $this->Ln();
-            // $this->Cell(90,8,utf8_decode('Ds :'.'   '.$Ds),1,0,'C');           
-            // $this->Ln();
-            // $this->Cell(90,8,utf8_decode('OTHERS :'.'   '.$OTHERS),1,0,'C');           
-            // $this->Cell(90,8,utf8_decode('OTHERS :'.'   '.$OTHERSl),1,0,'C');
-            // $this->Ln();
-            // $this->Cell(90,8,utf8_decode('Déplacement :'.'   '.$Dp),1,0,'C');           
-            // $this->Cell(90,8,utf8_decode('Déplacement :'.'   '.$Dpl),1,0,'C');
-            // $this->Ln();
-            // $this->Cell(90,8,utf8_decode(''));           
-            // $this->Cell(90,8,utf8_decode('Cargo :'.'   '.$cargo),1,0,'C');
-            // $this->Ln();
-            $this->SetFont('Times','BU',12);
             
-            $this->Cell(90,20,('Surveyor'));
-            $this->Cell(90,20,('Chief Officer'));
+            $this->SetFont('Times','B',12);
+            
+            $this->Cell(130,20,('Surveyor MMG'));
+            $this->Cell(90,20,("Ship's Chief Officer"));
             $this->SetFont('Times','',12);
             $this->Ln();
-            $this->Cell(90,8,($inspecteurMinier));
-            $this->Cell(90,8,(''));
+            $this->Cell(130,8,($inspecteurMinier));
+            $this->Cell(90,8,($nomCapitaine));
             
 
 

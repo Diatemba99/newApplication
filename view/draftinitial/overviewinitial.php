@@ -162,7 +162,7 @@ require_once './model/draftinitial.php';
 								
 								<div class="input-group">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Lbp</font></font></span>
-										<input type="number" readonly name="lbp" class="form-control border-start-0" id="lbp" value="<?= $result['	lbp'] ?>" />
+										<input type="number" readonly name="lbp" class="form-control border-start-0" id="lbp" value="<?= $result['lbp'] ?>" />
 									</div>
 							</div>
 							<div class="col-md-6 mt-3">
@@ -246,7 +246,7 @@ require_once './model/draftinitial.php';
 								
 								<div class="input-group">
 									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Midship To Mid Draft Mark</font></font></span>
-										<input type="number" readonly name="midship" class="form-control border-start-0" id="midship" value="<?= $result['midship_to_mid_draft_mark	'] ?>" />
+										<input type="number" readonly name="midship" class="form-control border-start-0" id="midship" value="<?= $result['midship_to_mid_draft_mark'] ?>" />
 									</div>
 							</div>
 							<div class="col-md-6 mt-3">

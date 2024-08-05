@@ -58,21 +58,21 @@ if (count($result1) == 0) {
 				
 				<div class="card-body border">
 					<div class="row">
-					<div class="col-4">
+					<div class="col-md-4">
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x1</font></font></span>
-							<input type="number" onkeyup="calculerdeplacementMAD();calculerdeplacementMADkeel();" step="any" name="x1" class="form-control border-start-0" id="x1" placeholder="" />
+							<input type="number" onkeyup="calculerdeplacementMAD();" step="any" name="x1" class="form-control border-start-0" id="x1" placeholder="" />
 						</div>
 					</div>
-					<div class="col-4">
+					<div class="col-md-4">
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x2</font></font></span>
-							<input type="number" onkeyup="calculerdeplacementMAD();calculerdeplacementMADkeel();" step="any" name="x2" class="form-control border-start-0" id="x2" placeholder="" />
+							<input type="number" onkeyup="calculerdeplacementMAD();" step="any" name="x2" class="form-control border-start-0" id="x2" placeholder="" />
 						</div>
 					</div>
-					<div class="col-4">
+					<div class="col-md-4">
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MAD</font></font></span>
@@ -86,14 +86,14 @@ if (count($result1) == 0) {
 					<h5 class="mb-0 text-primary">Calcul déplacement correspondant à Keel=0</h5>
 					<div class="card-body border mt-3">
 						<div class="row">
-							<div class="col-4">
+							<div class="col-md-4">
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y1</font></font></span>
 							<input type="number" onkeyup="calculerdeplacementMAD();" step="any" name="y1" class="form-control border-start-0" id="y1" placeholder="" />
 						</div>
 					</div>
-					<div class="col-4">
+					<div class="col-md-4">
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y2</font></font></span>
@@ -111,9 +111,9 @@ if (count($result1) == 0) {
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-4"></div>
-					<div class="col-4"></div>
-					<div class="col-4">
+					<div class="col-md-4"></div>
+					<div class="col-md-4"></div>
+					<div class="col-md-4">
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Déplacement MAD</font></font></span>
 							<input type="number" readonly step="any" name="deplacementMad" class="form-control border-start-0" id="deplacementMad" placeholder="" />&nbsp; m
@@ -124,25 +124,32 @@ if (count($result1) == 0) {
 					<h5 class="mb-0 text-primary">Calcul déplacement correspondant à Keel≠0</h5>
 					<div class="card-body border mt-3">
 						<div class="row">
-							<div class="col-3">
+							<div class="col-md-3">
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y1</font></font></span>
 							<input type="number" onkeyup="calculerdeplacementMADkeel();" step="any" name="y1keel" class="form-control border-start-0" id="y1keel" placeholder="" />
 						</div>
 					</div>
-					<div class="col-3">
+					<div class="col-md-3">
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y2</font></font></span>
 							<input type="number" onkeyup="calculerdeplacementMADkeel();" step="any" name="y2keel" class="form-control border-start-0" id="y2keel" placeholder="" />
 						</div>
 					</div>
-					<div class="col-2">
+					<div class="col-md-2">
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Keel</font></font></span>
-							<input type="number" onkeyup="calculerdeplacementMADkeel();" step="any" name="keel" class="form-control border-start-0" id="keel" placeholder="" />
+							<input type="number" step="any" name="keel" class="form-control border-start-0" id="keel" placeholder="" />
+						</div>
+						
+					</div>
+					<div class="col-md-2">
+						<div class="form-check mt-4">
+							<input class="form-check-input" onclick="calculerMADkeel();" type="radio" name="keeldif" id="keeldif" value="">
+							<label class="form-check-label" for="lcf1">Keel ≠ 0</label>
 						</div>
 					</div>
 					<!-- <div class="col-4">
@@ -160,7 +167,7 @@ if (count($result1) == 0) {
 					<h5 class="mb-0 text-primary">Calcul du LCF</h5>
 					<div class="card-body border mt-3">
 						<div class="row">
-							<div class="col-3">
+							<div class="col-md-3">
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y1</font></font></span>
@@ -190,7 +197,7 @@ if (count($result1) == 0) {
 						
 										
 					</div> -->
-					<div class="col-5">
+					<div class="col-md-5">
 						<div>
 											
 											<div class="form-check">
@@ -220,7 +227,7 @@ if (count($result1) == 0) {
 										</div>
 					</div>
 
-					<div class="col-2">
+					<div class="col-md-2">
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LCF</font></font></span>
@@ -229,13 +236,13 @@ if (count($result1) == 0) {
 					</div>
 					<div class="row">
 						<h5 class="mb-0 text-primary">Cas où LCA est données</h5>
-						<div class="col-3">
+						<div class="col-md-3">
 							<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LCA 1</font></font></span>
 							<input type="number" step="any" onkeyup="calculey1();" name="lca1" class="form-control border-start-0" id="lca1" placeholder="" />
 							</div>
 						</div>
-						<div class="col-3">
+						<div class="col-md-3">
 							<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LCA 2</font></font></span>
 							<input type="number" step="any" onkeyup="calculey2();" name="lca2" class="form-control border-start-0" id="lca2" placeholder="" />
@@ -248,21 +255,21 @@ if (count($result1) == 0) {
 				<h5 class="mb-0 text-primary">Calcul du TPC pour MAD</h5>
 				<div class="card-body border">
 					<div class="row">
-					<div class="col-4">
+					<div class="col-md-4">
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y1</font></font></span>
 							<input type="number" required onkeyup="calculeTPCMAD();calculefirsttrimcorr();" step="any" name="y1tpcmad" class="form-control border-start-0" id="y1tpcmad" placeholder="" />
 						</div>
 					</div>
-					<div class="col-4">
+					<div class="col-md-4">
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">y2</font></font></span>
 							<input type="number" required onkeyup="calculeTPCMAD();calculefirsttrimcorr();" step="any" name="y2tpcmad" class="form-control border-start-0" id="y2tpcmad" placeholder="" />
 						</div>
 					</div>
-					<div class="col-4">
+					<div class="col-md-4">
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TPC</font></font></span>
@@ -274,10 +281,10 @@ if (count($result1) == 0) {
 				<h5 class="mb-0 text-primary">Calcul First Trim Correction</h5>
 				<div class="card-body border">
 					<div class="row">
-					<div class="col-8">
+					<div class="col-md-8">
 
 					</div>
-					<div class="col-4">
+					<div class="col-md-4">
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">First Trim Correction</font></font></span>
@@ -290,13 +297,13 @@ if (count($result1) == 0) {
 					<h5 class="mb-0 text-primary">Calcul des MAD + 0,5 et MAD - 0,5</h5>
 					<div class="card-body border mt-3">
 						<div class="row">
-							<div class="col-4">
+							<div class="col-md-4">
 
 					</div>
-					<div class="col-4">
+					<div class="col-md-4">
 
 					</div>
-					<div class="col-4">
+					<div class="col-md-4">
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">t1</font></font></span>
@@ -308,7 +315,7 @@ if (count($result1) == 0) {
 							<input type="number" readonly step="any" value="<?= $t2 ?>" name="t2" class="form-control border-start-0" id="t2" placeholder="" />
 						</div>
 					</div>
-					<div class="col-4">
+					<div class="col-md-4">
 
 					</div>
 						</div>
@@ -318,7 +325,7 @@ if (count($result1) == 0) {
 
 				<div class="card-body border">
 					<div class="row">
-					<div class="col-4">
+					<div class="col-md-4">
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x1</font></font></span>
@@ -340,7 +347,7 @@ if (count($result1) == 0) {
 							<input type="number" step="any" onkeyup="calculeMTC1();" name="y2secondtrim" class="form-control border-start-0" id="y2secondtrim" placeholder="" />
 						</div>
 					</div>
-					<div class="col-4">
+					<div class="col-md-4">
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MTC1</font></font></span>
@@ -352,7 +359,7 @@ if (count($result1) == 0) {
 
 				<div class="card-body border">
 					<div class="row">
-					<div class="col-4">
+					<div class="col-md-4">
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">x1</font></font></span>
@@ -374,7 +381,7 @@ if (count($result1) == 0) {
 							<input type="number" required step="any" onkeyup="calculeMTC2();" name="y2secondtrim2" class="form-control border-start-0" id="y2secondtrim2" placeholder="" />
 						</div>
 					</div>
-					<div class="col-4">
+					<div class="col-md-4">
 						
 						<div class="input-group mt-3">
 						<div class="input-group ">
@@ -386,10 +393,10 @@ if (count($result1) == 0) {
 				</div>
 				</div>
 				<div class="row">
-					<div class="col-8">
+					<div class="col-md-8">
 
 					</div>
-					<div class="col-4">
+					<div class="col-md-4">
 						
 						<div class="input-group mt-3">
 							<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Second Trim Correction</font></font></span>
@@ -446,6 +453,20 @@ if (count($result1) == 0) {
 			var keel = Number(document.getElementById('keel').value);
 			var deplacementMAD = Math.round(Number(((MAD-keel) - x1) / (x2 - x1) * (y2keel - y1keel) + y1keel)*1000)/1000;
 			document.getElementById('deplacementMad').value = deplacementMAD;
+		};
+		// Fonction pour calculer MAD si keel différent de 0
+		function calculerMADkeel() {
+			var mMAD = Number(document.getElementById('mad').value);
+			var mt1 = Number(document.getElementById('t1').value);
+			var mt2 = Number(document.getElementById('t2').value);			
+			var keel = Number(document.getElementById('keel').value);
+			var mMAD = Math.round((Number(mMAD-keel))*1000000000000)/1000000000000;
+			document.getElementById('mad').value = mMAD;
+			var mt1 = Math.round((Number(mt1-keel))*1000000000000)/1000000000000;
+			var mt2 = Math.round((Number(mt2-keel))*1000000000000)/1000000000000;
+			document.getElementById('t1').value = mt1;
+			document.getElementById('t2').value = mt2;
+			//Math.round(Number((L / 2) - lca1)*1000)/1000;
 		};
 		// Fonction pour calcule LCF
 		function calculeLCF() {

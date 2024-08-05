@@ -148,7 +148,8 @@ require_once './model/deplacementfinal.php';
 							var freshWater=Number(document.getElementById('freshWater').value);
 							var ballastWater=Number(document.getElementById('ballastWater').value);
 							var lsLightship=Number(document.getElementById('lsLightship').value);
-							var constantes=Math.round(Number(deplacementInitial-(fuelOil+dieselOil+lubrifiantOil+freshWater+ballastWater+lsLightship))*1000)/1000;
+							var others=Number(document.getElementById('others').value);
+							var constantes=Math.round(Number(deplacementInitial-(fuelOil+dieselOil+lubrifiantOil+freshWater+ballastWater+lsLightship+others))*1000)/1000;
 							document.getElementById('constantes').value=constantes;
 						}
 
