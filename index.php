@@ -95,6 +95,14 @@ if(isset($_GET['page'])){
         case 'overviewfinal':
                 require_once './view/draftfinal/overviewfinal.php';
             break;
+
+            // case 'rapporttrimestriel':
+            //     require_once './view/draftfinal/rapporttrimestriel.php';
+            // break;
+
+            // case 'rapportannuelle':
+            //     require_once './view/draftfinal/rapportannuelle.php';
+            // break;
         
         case 'connexion':
         require_once 'view/personnel/connexion.php';

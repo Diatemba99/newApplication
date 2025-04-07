@@ -116,7 +116,21 @@ $profile=$_SESSION["CURRENT_user"]['first_name'].' '.$_SESSION["CURRENT_user"]['
 					</ul>
 				</li>
 				
-
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class="lni lni-library"></i>
+						</div>
+						<div class="menu-title">Rapport</div>
+					</a>
+					<ul>
+						
+						<li> <a href="./view/draftfinal/Bulletin.pdf"><i class="bx bx-right-arrow-alt"></i>Rapport Trimestriel</a>
+						</li>
+						<li> <a href="./view/draftfinal/Bulletin.pdf"><i class="bx bx-right-arrow-alt"></i>Rapport Annuelle</a>
+						</li>
+						
+					</ul>
+				</li>
 				
 				<li>
 					<a class="has-arrow" href="javascript:;">
