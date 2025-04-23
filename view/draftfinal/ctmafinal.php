@@ -348,14 +348,14 @@ foreach ($result as $key => $valeur) {
 						function calculerTEav(){
 							var teavbd =Number(document.getElementById('teavbd').value);
 							var teavtb =Number(document.getElementById('teavtb').value);
-							var tEav =Math.round(Number((teavbd + teavtb)/2)*1000)/1000;
+							var tEav =Math.round(Number((teavbd + teavtb)/2)*100)/100;
 							document.getElementById("teav").value = tEav;
 						};
 						// Fonction pour calculer TEar
 						function calculerTEar(){
 							var tearbd =Number(document.getElementById('tearbd').value);
 							var teartb =Number(document.getElementById('teartb').value);
-							var tEar =Math.round(Number((tearbd + teartb)/2)*1000)/1000;
+							var tEar =Math.round(Number((tearbd + teartb)/2)*100)/100;
 							document.getElementById("tear").value = tEar;
 						};
 						// Fonction pour calculer TEM et apparent trim
@@ -364,9 +364,9 @@ foreach ($result as $key => $valeur) {
 							var tEar=Number(document.getElementById('tear').value);
 							var tembd =Number(document.getElementById('tembd').value);
 							var temtb =Number(document.getElementById('temtb').value);
-							var tEM =Math.round(Number((tembd + temtb)/2)*1000)/1000;
+							var tEM =Math.round(Number((tembd + temtb)/2)*100)/100;
 							document.getElementById("tem").value = tEM;
-							var apparentTrim = Math.round(Number(tEar-tEav)*1000)/1000;
+							var apparentTrim = Math.round(Number(tEar-tEav)*100)/100;
 							document.getElementById("apparentTrim").value = apparentTrim;
 							
 							// if (document.getElementById('fwdp').checked){
@@ -389,16 +389,16 @@ foreach ($result as $key => $valeur) {
 						
 							// document.getElementById("lL").value = lL;
 							if (document.getElementById('fwdtofwd').checked){
-								var lL = Math.round(Number(L-(l1 + l2))*1000)/1000;
+								var lL = Math.round(Number(L-(l1 + l2))*100)/100;
 								document.getElementById('lL').value = lL;
 							} else if (document.getElementById('fwdtoaft').checked){
-								var lL = Math.round(Number(L-(l1 - l2))*1000)/1000;
+								var lL = Math.round(Number(L-(l1 - l2))*100)/100;
 								document.getElementById('lL').value = lL;
 							}else if (document.getElementById('afttofwd').checked){
-								var lL = Math.round(Number(L-(l2 - l1))*1000)/1000;
+								var lL = Math.round(Number(L-(l2 - l1))*100)/100;
 								document.getElementById('lL').value = lL;
 							}else if (document.getElementById('afttoaft').checked){
-								var lL = Math.round(Number(L+(l2 + l1))*1000)/1000;
+								var lL = Math.round(Number(L+(l2 + l1))*100)/100;
 								document.getElementById('lL').value = lL;
 							}
 						
@@ -425,46 +425,46 @@ foreach ($result as $key => $valeur) {
 
 							if (apparentTrim>0) {
 								if (document.getElementById('aftcorrav').checked){
-									var corrAv =Math.round(Number(-(apparentTrim*l2)/lL)*1000)/1000;
+									var corrAv =Math.round(Number(-(apparentTrim*l2)/lL)*100)/100;
 									document.getElementById("corrAv").value = corrAv;
 								}else if (document.getElementById('fwdcorrav').checked){
-									var corrAv =Math.round(Number((apparentTrim*l2)/lL)*1000)/1000;
+									var corrAv =Math.round(Number((apparentTrim*l2)/lL)*100)/100;
 									document.getElementById("corrAv").value = corrAv;
 								}
 								if (document.getElementById('aftcorrar').checked){
-									var corrAr =Math.round(Number(-(apparentTrim*l1)/lL)*1000)/1000;
+									var corrAr =Math.round(Number(-(apparentTrim*l1)/lL)*100)/100;
 									document.getElementById("corrAr").value = corrAr;
 								}else if (document.getElementById('fwdcorrar').checked){
-									var corrAr =Math.round(Number((apparentTrim*l1)/lL)*1000)/1000;
+									var corrAr =Math.round(Number((apparentTrim*l1)/lL)*100)/100;
 									document.getElementById("corrAr").value = corrAr;
 								}
 								if (document.getElementById('aftcorrM').checked){
-									var corrM =Math.round(Number(-(apparentTrim*l3)/lL)*1000)/1000;
+									var corrM =Math.round(Number(-(apparentTrim*l3)/lL)*100)/100;
 									document.getElementById("corrM").value = corrM;
 								}else if (document.getElementById('fwdcorrM').checked){
-									var corrM =Math.round(Number((apparentTrim*l3)/lL)*1000)/1000;
+									var corrM =Math.round(Number((apparentTrim*l3)/lL)*100)/100;
 									document.getElementById("corrM").value = corrM;
 								}
 							} else if (apparentTrim<0){
 								if (document.getElementById('aftcorrav').checked){
-									var corrAv =Math.round(Number((apparentTrim*l2)/lL)*1000)/1000;
+									var corrAv =Math.round(Number((apparentTrim*l2)/lL)*100)/100;
 									document.getElementById("corrAv").value = corrAv;
 								}else if (document.getElementById('fwdcorrav').checked){
-									var corrAv =Math.round(Number(-(apparentTrim*l2)/lL)*1000)/1000;
+									var corrAv =Math.round(Number(-(apparentTrim*l2)/lL)*100)/100;
 									document.getElementById("corrAv").value = corrAv;
 								}
 								if (document.getElementById('aftcorrar').checked){
-									var corrAr =Math.round(Number((apparentTrim*l1)/lL)*1000)/1000;
+									var corrAr =Math.round(Number((apparentTrim*l1)/lL)*100)/100;
 									document.getElementById("corrAr").value = corrAr;
 								}else if (document.getElementById('fwdcorrar').checked){
-									var corrAr =Math.round(Number(-(apparentTrim*l1)/lL)*1000)/1000;
+									var corrAr =Math.round(Number(-(apparentTrim*l1)/lL)*100)/100;
 									document.getElementById("corrAr").value = corrAr;
 								}
 								if (document.getElementById('aftcorrM').checked){
-									var corrM =Math.round(Number((apparentTrim*l3)/lL)*1000)/1000;
+									var corrM =Math.round(Number((apparentTrim*l3)/lL)*100)/100;
 									document.getElementById("corrM").value = corrM;
 								}else if (document.getElementById('fwdcorrM').checked){
-									var corrM =Math.round(Number(-(apparentTrim*l3)/lL)*1000)/1000;
+									var corrM =Math.round(Number(-(apparentTrim*l3)/lL)*100)/100;
 									document.getElementById("corrM").value = corrM;
 								}                                                                                                                     
 							}
@@ -478,10 +478,10 @@ foreach ($result as $key => $valeur) {
 							var corrAr=Number(document.getElementById('corrAr').value);
 							var corrM=Number(document.getElementById('corrM').value);
 						
-							var tAv =Math.round(Number(tEav+corrAv)*1000)/1000;
-							var tAr =Math.round(Number(tEar+corrAr)*1000)/1000;
-							var tM =Math.round(Number(tEM+corrM)*1000)/1000;
-							var trueTrim =Math.round(Number(tAr-tAv)*1000)/1000;
+							var tAv =Math.round(Number(tEav+corrAv)*100)/100;
+							var tAr =Math.round(Number(tEar+corrAr)*100)/100;
+							var tM =Math.round(Number(tEM+corrM)*100)/100;
+							var trueTrim =Math.round(Number(tAr-tAv)*100)/100;
 						
 							document.getElementById("tAv").value = tAv;
 							document.getElementById("tAr").value = tAr;

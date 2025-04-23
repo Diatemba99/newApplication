@@ -3,14 +3,16 @@
 require_once './Composant/navigation.php';
 require_once './model/draftinitial.php';
 require_once './model/infodraftinitial.php';
+require_once './model/ports.php';
+require_once './model/navires.php';
 $profile=$_SESSION["CURRENT_user"]['id'];
 ?>
- 
+
 <!-- Button trigger modal -->
 <?php
 if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_user"]['type']==='Enqueteur'){
 	?>
-	<button type="button" class="btn btn-primary radius-30" data-bs-toggle="modal" data-bs-target="#AjouterUtilisateur"><i class="fa-duotone fa-plus"></i>AJOUTER NOUVEAU DRAFT</button>
+	<button type="button" class="btn btn-primary radius-30" data-bs-toggle="modal" data-bs-target="#NouveauDraft"><i class="fa-duotone fa-plus"></i>AJOUTER NOUVEAU DRAFT</button>
 	<?php
 }
 ?>
@@ -27,6 +29,7 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 		<table id="example2" class="table table-striped table-bordered">
 			<thead>
 				<tr>
+					<th>Port</th>
 					<th>Nom Navire</th>
 					<th>Call Sign</th>
 					<th>Official N°</th>
@@ -43,6 +46,7 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 				foreach ($all_draft as $draft) {
 				?>
 					<tr>
+						<td><?= $draft['port'] ?></td>
 						<td><?= $draft['nomNavire'] ?></td>
 						<td><?= $draft['callSign'] ?></td>
 						<td><?= $draft['officialNo'] ?></td>
@@ -94,6 +98,7 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 		<table id="example2" class="table table-striped table-bordered">
 			<thead>
 				<tr>
+					<th>Port</th>
 					<th>Nom Navire</th>
 					<th>Call Sign</th>
 					<th>Official N°</th>
@@ -110,6 +115,7 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 				foreach ($all_draft as $draft) {
 				?>
 					<tr>
+						<td><?= $draft['port'] ?></td>
 						<td><?= $draft['nomNavire'] ?></td>
 						<td><?= $draft['callSign'] ?></td>
 						<td><?= $draft['officialNo'] ?></td>
@@ -148,6 +154,7 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 		<table id="example2" class="table table-striped table-bordered">
 			<thead>
 				<tr>
+					<th>Port</th>
 					<th>Nom Navire</th>
 					<th>Call Sign</th>
 					<th>Official N°</th>
@@ -164,6 +171,7 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 				foreach ($all_draft as $draft) {
 				?>
 					<tr>
+						<td><?= $draft['port'] ?></td>
 						<td><?= $draft['nomNavire'] ?></td>
 						<td><?= $draft['callSign'] ?></td>
 						<td><?= $draft['officialNo'] ?></td>
@@ -202,7 +210,7 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 
 
 	<!-- Modal d'ajout -->
-	<div class="modal fade" id="AjouterUtilisateur" tabindex="-1" aria-hidden="true">
+	<div class="modal fade" id="NouveauDraft" tabindex="-1" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-scrollable modal-xl">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -222,12 +230,33 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 							<form class="row g-3" method="POST" action="./controller/draftinitial.php">
 								
 								<input type="text" hidden name="idUser" value="<?=$profile?>" class="form-control border-start-0" id="idUser" placeholder="" />
-							<div class="col-md-6">
+								<!-- Sélecteur Port -->
+								 <div class="col-md-6">
+									<div class="input-group ">
+								<span class="input-group-text">Port</span>
+								<select name="port" id="port" class="form-select">
+									<option disabled selected>Sélectionner un port</option>
+									<?php
+									$obj_port = new Ports();
+									$ports = $obj_port->getPort();
+									foreach ($ports as $port) {
+									?>
+									<option value="<?= $port['id'] ?>" data-nom="<?= $port['nom'] ?>"><?= $port['nom'] ?></option>
+									<?php } ?>
+								</select>
+								<input type="hidden" name="port_nom" id="port_nom">
+								</div>
+								 </div>
 								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nom du Navire</font></font></span>
-										<input type="text" required name="nomNavire" class="form-control border-start-0" id="nomNavire" placeholder="Nom du Navire" />
-									</div>
+
+							<!-- Sélecteur Navire -->
+							<div class="col-md-6">
+								<div class="input-group ">
+									<span class="input-group-text">Navire</span>
+								<select id="nomNavire" name="nomNavire" class="form-select">
+									<option value="">Sélectionner un navire</option>
+								</select>
+								</div>
 							</div>
 							<div class="col-md-6">
 								
@@ -243,13 +272,7 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 										<input type="text" required name="officialN" class="form-control border-start-0" id="officialN" placeholder="Official N°" />
 									</div>
 							</div>
-							<!-- <div class="col-md-6">
-								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ship Management</font></font></span>
-										<input type="text" required name="shipManagement" class="form-control border-start-0" id="shipManagement" placeholder="Ship Management" />
-									</div>
-							</div> -->
+							
 							<div class="col-md-6">
 								
 								<div class="input-group">
@@ -257,104 +280,7 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 										<input type="text" required name="operators" class="form-control border-start-0" id="operators" placeholder="Operators" />
 									</div>
 							</div>
-							<!-- <div class="col-md-6">
-								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Registered Owners</font></font></span>
-										<input type="text" required name="registeredOwners" class="form-control border-start-0" id="registeredOwners" placeholder="Registered Owners" />
-									</div>
-							</div>
-							<div class="col-md-6">
-								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Vsa/Cso</font></font></span>
-										<input type="text" required name="vsa" class="form-control border-start-0" id="vsa" placeholder="VSA/CCSO" />
-									</div>
-							</div>
-							<div class="col-md-6">
-								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Seo</font></font></span>
-										<input type="text" required name="seo" class="form-control border-start-0" id="seo" placeholder="SEO" />
-									</div>
-							</div> -->
-							<!-- <div class="col-md-6">
-								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Flag</font></font></span>
-										<input type="text" required name="flag" class="form-control border-start-0" id="flag" placeholder="Flag" />
-									</div>
-							</div>
-							<div class="col-md-6">
-								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Port Of Reg</font></font></span>
-										<input type="text" required name="portOfReg" class="form-control border-start-0" id="portOfReg" placeholder="Port Of Reg" />
-									</div>
-							</div> -->
-							<!-- <div class="col-md-6">
-								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Builders</font></font></span>
-										<input type="text" required name="builders" class="form-control border-start-0" id="builders" placeholder="Builders" />
-									</div>
-							</div>
-							<div class="col-md-6">
-								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Hull N°</font></font></span>
-										<input type="number" required name="hull" class="form-control border-start-0" id="hull" placeholder="Hull N°" />
-									</div>
-							</div> -->
-							<!-- <div class="col-md-6">
-								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Type</font></font></span>
-										<input type="text" required name="type" class="form-control border-start-0" id="type" placeholder="Type" />
-									</div>
-							</div> -->
-							<!-- <div class="col-md-6">
-								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Keel Laid</font></font></span>
-										<input type="text" required name="keelLaid" class="form-control border-start-0" id="keelLaid" placeholder="Keel Laid" />
-									</div>
-							</div> -->
-							<!-- <div class="col-md-6">
-								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Delivered</font></font></span>
-										<input type="text" required name="delivered" class="form-control border-start-0" id="delivered" placeholder="Delivered" />
-									</div>
-							</div>
-							<div class="col-md-6">
-								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Class Society</font></font></span>
-										<input type="text" required name="class" class="form-control border-start-0" id="class" placeholder="Class Society" />
-									</div>
-							</div> -->
-							<!-- <div class="col-md-6">
-								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">H&M Underwrirers</font></font></span>
-										<input type="text" required name="hm" class="form-control border-start-0" id="hm" placeholder="H&M Underwrirers " />
-									</div>
-							</div>
-							<div class="col-md-6">
-								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">P&I Club</font></font></span>
-										<input type="text" required name="piclub" class="form-control border-start-0" id="piclub" placeholder="P&I Club" />
-									</div>
-							</div> -->
-							<!-- <div class="col-md-6">
-								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Loa</font></font></span>
-										<input type="number" required name="loa" class="form-control border-start-0" id="loa" placeholder="LOA" />
-									</div>
-							</div> -->
+							
 							<div class="col-md-6">
 								
 								<div class="input-group">
@@ -362,27 +288,7 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 										<input type="number" step="any" required name="lbp" class="form-control border-start-0" id="lbp" placeholder="LBP" />
 									</div>
 							</div>
-							<!-- <div class="col-md-6">
-								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Breadth (moulded)</font></font></span>
-										<input type="number" step="any" required name="breadth" class="form-control border-start-0" id="breadth" placeholder="Breadth (moulded)" />
-									</div>
-							</div>
-							<div class="col-md-6">
-								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Depth (moulded)</font></font></span>
-										<input type="number" step="any" required name="depthMoulded" class="form-control border-start-0" id="depthMoulded" placeholder="Depth (moulded)" />
-									</div>
-							</div> -->
-							<!-- <div class="col-md-6">
-								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Depth (extreme)</font></font></span>
-										<input type="number" required name="depthExterne" class="form-control border-start-0" id="depthExterne" placeholder="Depth (extreme)" />
-									</div>
-							</div> -->
+							
 							<div class="col-md-6">
 								
 								<div class="input-group">
@@ -390,13 +296,7 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 										<input type="number" step="any" required name="keelPlate" class="form-control border-start-0" id="keelPlate" placeholder="Keel plate" />
 									</div>
 							</div>
-							<!-- <div class="col-md-6">
-								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dwt</font></font></span>
-										<input type="number" required name="dwt" class="form-control border-start-0" id="dwt" placeholder="DWT" />
-									</div>
-							</div> -->
+							
 							<div class="col-md-6">
 								
 								<div class="input-group">
@@ -404,55 +304,7 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 										<input type="number" step="any" required name="disp" class="form-control border-start-0" id="disp" placeholder="DISP" />
 									</div>
 							</div>
-							<!-- <div class="col-md-6">
-								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Lightship</font></font></span>
-										<input type="number" required name="lightship" class="form-control border-start-0" id="lightship" placeholder="LIGHTSHIP" />
-									</div>
-							</div> -->
-							<!-- <div class="col-md-6">
-								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Draft (MOULDED)</font></font></span>
-										<input type="number" required name="draftMoulded" class="form-control border-start-0" id="draftMoulded" placeholder="DRAFT (MOULDED)" />
-									</div>
-							</div> -->
-							<!-- <div class="col-md-6">
-								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Draft (EXTREME)</font></font></span>
-										<input type="number" required name="draftExtreme" class="form-control border-start-0" id="draftExtreme" placeholder="DRAFT (EXTREME)" />
-									</div>
-							</div> -->
-							<!-- <div class="col-md-6">
-								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">FP To Fore Draft Mark</font></font></span>
-										<input type="number" step="any" required name="fp" class="form-control border-start-0" id="fp" placeholder="FP TO FORE DRAFT MARK" />
-									</div>
-							</div>
-							<div class="col-md-6">
-								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">AP To Aft Draft Mark</font></font></span>
-										<input type="number" required name="ap" class="form-control border-start-0" id="ap" placeholder="AP TO AFT DRAFT MARK" />
-									</div>
-							</div>
-							<div class="col-md-6">
-								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Midship To Mid Draft Mark</font></font></span>
-										<input type="number" step="any" required name="midship" class="form-control border-start-0" id="midship" placeholder="MIDSHIP TO MID DRAFT MARK" />
-									</div>
-							</div>
-							<div class="col-md-6">
-								
-								<div class="input-group">
-									<span class="input-group-text" id="basic-addon3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Between Draft Marks</font></font></span>
-										<input type="number" step="any" required name="between" class="form-control border-start-0" id="between" placeholder="BETWEEN DRAFT MARKS" />
-									</div>
-							</div> -->
+							
 								
 							
 								<div >
@@ -552,8 +404,35 @@ if ($_SESSION["CURRENT_user"]['type']==='Administrateur' or $_SESSION["CURRENT_u
 		</div>
 	</div>
 <!-- Fin Modal Modifier Utilisateur -->
+
+<!-- Script AJAX -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- Script récupération des valeurs pour une  modification -->
 <script>
+	
+    $('#port').on('change', function () {
+    const idPort = $(this).val(); // Pour charger les navires
+  const nomPort = $('#port option:selected').data('nom'); // Pour stocker le nom
+  $('#port_nom').val(nomPort); // Remplit le champ caché
+
+  // Charger les navires en fonction de l’ID du port
+
+    $.ajax({
+      url: 'controller/draftinitial.php',
+      method: 'POST',
+      data: {
+        action: 'getNavires',
+        idPort: idPort
+      },
+      success: function (response) {
+        $('#nomNavire').html(response);
+      },
+      error: function () {
+        alert("Erreur lors du chargement des navires.");
+      }
+    });
+  });
+  
   function recupererValeur(idUser,typeUser,prenomUser,nomUser,email) {
     document.getElementById("idUser_modif").value = idUser;
     document.getElementById("prenom_modif").value = prenomUser;

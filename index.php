@@ -96,6 +96,18 @@ if(isset($_GET['page'])){
                 require_once './view/draftfinal/overviewfinal.php';
             break;
 
+        case 'zones':
+                require_once './view/ports/zones.php';
+            break;
+
+        case 'ports':
+                require_once './view/ports/ports.php';
+            break;
+
+        case 'navires':
+                require_once './view/ports/navires.php';
+            break;
+
             // case 'rapporttrimestriel':
             //     require_once './view/draftfinal/rapporttrimestriel.php';
             // break;

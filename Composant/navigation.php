@@ -87,6 +87,24 @@ $profile=$_SESSION["CURRENT_user"]['first_name'].' '.$_SESSION["CURRENT_user"]['
 						</div>
 						<div class="menu-title">Tableau de Bord</div>
 					</a>
+
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class="lni lni-empty-file"></i>
+						</div>
+						<div class="menu-title">Gestion Portuaire</div>
+					</a>
+					<ul>
+						
+						<li> <a href="?page=zones"><i class="bx bx-right-arrow-alt"></i>Liste Des Zones</a>
+						</li>
+						<li> <a href="?page=ports"><i class="bx bx-right-arrow-alt"></i>Liste Des Ports</a>
+						</li>
+						<li> <a href="?page=navires"><i class="bx bx-right-arrow-alt"></i>Liste Des Navires</a>
+						</li>
+						
+					</ul>
+				</li>
 					 
 				
 				<li>
@@ -156,6 +174,17 @@ $profile=$_SESSION["CURRENT_user"]['first_name'].' '.$_SESSION["CURRENT_user"]['
 						</div>
 						<div class="menu-title">Tableau de Bord</div>
 					</a>
+
+				<ul>
+						
+						<li> <a href="?page=zones"><i class="bx bx-right-arrow-alt"></i>Liste Des Zones</a>
+						</li>
+						<li> <a href="?page=ports"><i class="bx bx-right-arrow-alt"></i>Liste Des Ports</a>
+						</li>
+						<li> <a href="?page=navires"><i class="bx bx-right-arrow-alt"></i>Liste Des Navires</a>
+						</li>
+						
+					</ul></ul>
 					 
 				
 				<li>

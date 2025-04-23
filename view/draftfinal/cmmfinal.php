@@ -442,7 +442,7 @@ require_once './model/tpcfinal.php';
 							var y1keel = Number(document.getElementById('y1keel').value);
 							var y2keel = Number(document.getElementById('y2keel').value);
 							var keel = Number(document.getElementById('keel').value);
-							var deplacementMAD = Math.round(Number(((MAD-keel) - x1) / (x2 - x1) * (y2keel - y1keel) + y1keel)*1000)/1000;
+							var deplacementMAD = Math.round(Number(((MAD-keel) - x1) / (x2 - x1) * (y2keel - y1keel) + y1keel)*100)/100;
 							document.getElementById('deplacementMad').value = deplacementMAD;
 						};
 						// Fonction pour calculer MAD si keel différent de 0
@@ -478,7 +478,7 @@ require_once './model/tpcfinal.php';
 							// 	var LCF =Math.round(Number(((MAD-x1)/(x2-x1)*(y2LCF-y1LCF)+y1)-L/2)*1000)/1000;
 							// 	document.getElementById('lcfto').value=LCF;
 							// 	}
-								var LCFA = Math.round(Number((MAD - x1) / (x2 - x1) * (y2LCF - y1LCF) + y1LCF)*1000)/1000;
+								var LCFA = Math.round(Number((MAD - x1) / (x2 - x1) * (y2LCF - y1LCF) + y1LCF)*100)/100;
 								// document.getElementById('lcfto').value = LCFA;
 							if (document.getElementById('lcffrommidship').checked) {
 								// var LCF = Math.round(Number((L / 2) + LCF)*1000)/1000;
@@ -490,19 +490,19 @@ require_once './model/tpcfinal.php';
 								document.getElementById('lcfto').value = LCF;
 							} else if (document.getElementById('lcffromap').checked) {
 								// var LCF = Math.round(Number((L / 2) + LCF)*1000)/1000;
-								var LCF = Math.round(Number((L / 2) - LCFA)*1000)/1000;
+								var LCF = Math.round(Number((L / 2) - LCFA)*100)/100;
 								document.getElementById('lcfto').value = LCF;
 							} else if (document.getElementById('lcftoap').checked) {
 								// var LCF = Math.round(Number((L / 2) - LCF)*1000)/1000;
-								var LCF = Math.round(Number(LCFA-(L / 2))*1000)/1000;
+								var LCF = Math.round(Number(LCFA-(L / 2))*100)/100;
 								document.getElementById('lcfto').value = LCF;
 							} else if (document.getElementById('lcffromfp').checked) {
 								// var LCF = Math.round(Number((L / 2) - LCF)*1000)/1000;
-								var LCF = Math.round(Number(LCFA-(L / 2))*1000)/1000;
+								var LCF = Math.round(Number(LCFA-(L / 2))*100)/100;
 								document.getElementById('lcfto').value = LCF;
 							} else if (document.getElementById('lcftofp').checked) {
 								// var LCF = Math.round(Number((L / 2) + LCF)*1000)/1000;
-								var LCF = Math.round(Number((L / 2) - LCFA)*1000)/1000;
+								var LCF = Math.round(Number((L / 2) - LCFA)*100)/100;
 								document.getElementById('lcfto').value = LCF;
 							}
 						}
@@ -510,14 +510,14 @@ require_once './model/tpcfinal.php';
 						function calculey1(){
 							var L = Number(document.getElementById('l').value);
 							var lca1 = Number(document.getElementById('lca1').value);
-							var y1LCF = Math.round(Number((L / 2) - lca1)*1000)/1000;
+							var y1LCF = Math.round(Number((L / 2) - lca1)*100)/100;
 							document.getElementById('y1LCF').value = y1LCF;
 						}
 						//Fonction pour calculer Y2
 						function calculey2(){
 							var L = Number(document.getElementById('l').value);
 							var lca2 = Number(document.getElementById('lca2').value);
-							var y1LCF = Math.round(Number((L / 2) - lca2)*1000)/1000;
+							var y1LCF = Math.round(Number((L / 2) - lca2)*100)/100;
 							document.getElementById('y2LCF').value = y1LCF;
 						}
 						// Fonction pour calcule du TPC pour MAD
@@ -528,7 +528,7 @@ require_once './model/tpcfinal.php';
 							var y1tpcmad =Number(document.getElementById('y1tpcmad').value);
 							var y2tpcmad =Number(document.getElementById('y2tpcmad').value);
 							var y1 =Number(document.getElementById('y1').value);
-							var TPCMAD=Math.round(Number(((MAD-x1)/(x2-x1))*(y2tpcmad-y1tpcmad)+y1tpcmad)*1000)/1000;
+							var TPCMAD=Math.round(Number(((MAD-x1)/(x2-x1))*(y2tpcmad-y1tpcmad)+y1tpcmad)*100)/100;
 							document.getElementById('tpcmad').value=TPCMAD;
 						}
 						// Fonction pour calcule First Trim Correction
@@ -538,7 +538,7 @@ require_once './model/tpcfinal.php';
 							var truetrim=Number(document.getElementById('truetrim').value);
 							var L =Number(document.getElementById('l').value);
 							var TPCMAD=Number(document.getElementById('tpcmad').value);
-							var FirstTrimCorr=Math.round(Number((LCF*TPCMAD*truetrim*100)/L)*1000)/1000;
+							var FirstTrimCorr=Math.round(Number((LCF*TPCMAD*truetrim*100)/L)*100)/100;
 							document.getElementById('firstTrimCorrection').value=FirstTrimCorr;
 						}
 						// Fonction calcule MTC1
@@ -550,7 +550,7 @@ require_once './model/tpcfinal.php';
 							var y1 =Number(document.getElementById('y1').value);
 							var t1 =Number(document.getElementById('t1').value);
 							var t2 =Number(document.getElementById('t2').value);
-							var MTC1= Math.round(Number(((t1-x1Mtc1)/(x2Mtc1-x1Mtc1))*(y2Mtc1-y1Mtc1)+y1Mtc1)*1000)/1000;
+							var MTC1= Math.round(Number(((t1-x1Mtc1)/(x2Mtc1-x1Mtc1))*(y2Mtc1-y1Mtc1)+y1Mtc1)*100)/100;
 							document.getElementById('mtc1').value=MTC1;
 						}
 						// Fonction calcule MTC2
@@ -562,13 +562,13 @@ require_once './model/tpcfinal.php';
 							var y1 =Number(document.getElementById('y1').value);
 							var t1 =Number(document.getElementById('t1').value);
 							var t2 =Number(document.getElementById('t2').value);
-							var MTC2= Math.round(Number(((t2-x1Mtc2)/(x2Mtc2-x1Mtc2))*(y2Mtc2-y1Mtc2)+y1Mtc2)*1000)/1000;
+							var MTC2= Math.round(Number(((t2-x1Mtc2)/(x2Mtc2-x1Mtc2))*(y2Mtc2-y1Mtc2)+y1Mtc2)*100)/100;
 							document.getElementById('mtc2').value=MTC2;
 
 							var truetrim=Number(document.getElementById('truetrim').value);
 							var L =Number(document.getElementById('l').value);
 							var MTC1=Number(document.getElementById('mtc1').value);
-							var secondTrimCorr=Math.round(Number(((truetrim*truetrim)*(MTC2-MTC1)*50)/L)*1000)/1000;
+							var secondTrimCorr=Math.round(Number(((truetrim*truetrim)*(MTC2-MTC1)*50)/L)*100)/100;
 							document.getElementById('secondTrimCorrection').value=secondTrimCorr;
 						}
 						// Fonction Calcul Second Trim Correction

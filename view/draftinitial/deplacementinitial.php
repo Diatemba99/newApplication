@@ -135,7 +135,7 @@ require_once './model/deplacementinitial.php';
 							var dCorr=Number(document.getElementById('dCorr').value);
 							var densiteTable=Number(document.getElementById('densiteTable').value);
 							var densiteMesure=Number(document.getElementById('densiteMesure').value);
-							var deplacementInitial=Math.round(Number((dCorr*densiteMesure)/densiteTable)*1000)/1000;
+							var deplacementInitial=Math.round(Number((dCorr*densiteMesure)/densiteTable)*10000)/10000;
 							document.getElementById('deplacementInitial').value=deplacementInitial;
 						}
 
@@ -149,7 +149,7 @@ require_once './model/deplacementinitial.php';
 							var ballastWater=Number(document.getElementById('ballastWater').value);
 							var lsLightship=Number(document.getElementById('lsLightship').value);
 							var others=Number(document.getElementById('others').value);
-							var constantes=Math.round(Number(deplacementInitial-(fuelOil+dieselOil+lubrifiantOil+freshWater+ballastWater+lsLightship+others))*1000)/1000;
+							var constantes=Math.round(Number(deplacementInitial-(fuelOil+dieselOil+lubrifiantOil+freshWater+ballastWater+lsLightship+others))*10000)/10000;
 							document.getElementById('constantes').value=constantes;
 						}
 

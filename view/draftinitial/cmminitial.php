@@ -440,7 +440,7 @@ if (count($result1) == 0) {
 			var y2 = Number(document.getElementById('y2').value);
 			var y1keel = Number(document.getElementById('y1keel').value);
 			var y2keel = Number(document.getElementById('y2keel').value);
-			var deplacementMAD = Math.round(Number((MAD - x1) / (x2 - x1) * (y2 - y1) + y1)*1000)/1000;
+			var deplacementMAD = Math.round(Number((MAD - x1) / (x2 - x1) * (y2 - y1) + y1)*100)/100;
 			document.getElementById('deplacementMad').value = deplacementMAD;
 		};
 		// Fonction pour calculer déplacement MAD Keel
@@ -451,14 +451,14 @@ if (count($result1) == 0) {
 			var y1keel = Number(document.getElementById('y1keel').value);
 			var y2keel = Number(document.getElementById('y2keel').value);
 			var keel = Number(document.getElementById('keel').value);
-			var deplacementMAD = Math.round(Number(((MAD-keel) - x1) / (x2 - x1) * (y2keel - y1keel) + y1keel)*1000)/1000;
+			var deplacementMAD = Math.round(Number(((MAD-keel) - x1) / (x2 - x1) * (y2keel - y1keel) + y1keel)*100)/100;
 			document.getElementById('deplacementMad').value = deplacementMAD;
 		};
 		// Fonction pour calculer MAD si keel différent de 0
 		function calculerMADkeel() {
 			var mMAD = Number(document.getElementById('mad').value);
 			var mt1 = Number(document.getElementById('t1').value);
-			var mt2 = Number(document.getElementById('t2').value);			
+			var mt2 = Number(document.getElementById('t2').value);
 			var keel = Number(document.getElementById('keel').value);
 			var mMAD = Math.round((Number(mMAD-keel))*1000000000000)/1000000000000;
 			document.getElementById('mad').value = mMAD;
@@ -538,7 +538,7 @@ if (count($result1) == 0) {
 			var y1tpcmad = Number(document.getElementById('y1tpcmad').value);
 			var y2tpcmad = Number(document.getElementById('y2tpcmad').value);
 			var y1 = Number(document.getElementById('y1').value);
-			var TPCMAD = Math.round(Number(((MAD - x1) / (x2 - x1)) * (y2tpcmad - y1tpcmad) + y1tpcmad)*1000)/1000;
+			var TPCMAD = Math.round(Number(((MAD - x1) / (x2 - x1)) * (y2tpcmad - y1tpcmad) + y1tpcmad)*100)/100;
 			document.getElementById('tpcmad').value = TPCMAD;
 		}
 		// Fonction pour calcule First Trim Correction
@@ -548,7 +548,7 @@ if (count($result1) == 0) {
 			var truetrim = Number(document.getElementById('truetrim').value);
 			var L = Number(document.getElementById('l').value);
 			var TPCMAD = Number(document.getElementById('tpcmad').value);
-			var FirstTrimCorr = Math.round(Number((LCF * TPCMAD * truetrim * 100) / L)*1000)/1000;
+			var FirstTrimCorr = Math.round(Number((LCF * TPCMAD * truetrim * 100) / L)*100)/100;
 			document.getElementById('firstTrimCorrection').value = FirstTrimCorr;
 		}
 		// Fonction calcule MTC1
@@ -560,7 +560,7 @@ if (count($result1) == 0) {
 			var y1 = Number(document.getElementById('y1').value);
 			var t1 = Number(document.getElementById('t1').value);
 			var t2 = Number(document.getElementById('t2').value);
-			var MTC1 = Math.round(Number(((t1 - x1Mtc1) / (x2Mtc1 - x1Mtc1)) * (y2Mtc1 - y1Mtc1) + y1Mtc1)*1000)/1000;
+			var MTC1 = Math.round(Number(((t1 - x1Mtc1) / (x2Mtc1 - x1Mtc1)) * (y2Mtc1 - y1Mtc1) + y1Mtc1)*100)/100;
 			document.getElementById('mtc1').value = MTC1;
 		}
 		// Fonction calcule MTC2
@@ -572,13 +572,13 @@ if (count($result1) == 0) {
 			var y1 = Number(document.getElementById('y1').value);
 			var t1 = Number(document.getElementById('t1').value);
 			var t2 = Number(document.getElementById('t2').value);
-			var MTC2 = Math.round((((t2 - x1Mtc2) / (x2Mtc2 - x1Mtc2)) * (y2Mtc2 - y1Mtc2) + y1Mtc2)*1000)/1000;
+			var MTC2 = Math.round((((t2 - x1Mtc2) / (x2Mtc2 - x1Mtc2)) * (y2Mtc2 - y1Mtc2) + y1Mtc2)*100)/100;
 			document.getElementById('mtc2').value = MTC2;
 
 			var truetrim = Number(document.getElementById('truetrim').value);
 			var L = Number(document.getElementById('l').value);
 			var MTC1 = Number(document.getElementById('mtc1').value);
-			var secondTrimCorr = Math.round(Number(((truetrim * truetrim) * (MTC2 - MTC1) * 50) / L)*1000)/1000;
+			var secondTrimCorr = Math.round(Number(((truetrim * truetrim) * (MTC2 - MTC1) * 50) / L)*100)/100;
 			document.getElementById('secondTrimCorrection').value = secondTrimCorr;
 		}
 	</script>

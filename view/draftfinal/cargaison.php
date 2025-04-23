@@ -129,7 +129,7 @@ require_once './model/cargaison.php';
                             var constantes=Number(document.getElementById('constantes').value);
 							var constantesf=Number(document.getElementById('constantesf').value);
 							// var pcargaisonMMG=Math.round(Number(deplacementFinal-(fuelOil+dieselOil+lubrifiantOil+freshWater+ballastWater+ls)-constantes-constantesf)*1000)/1000;
-							var pcargaisonMMG=Math.round(Number(constantesf-constantes)*1000)/1000;
+							var pcargaisonMMG=Math.round(Number(constantesf-constantes)*10000)/10000;
 							document.getElementById('pcargaisonMMG').value=pcargaisonMMG;
 						}
 						

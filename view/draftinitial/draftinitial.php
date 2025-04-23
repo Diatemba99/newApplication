@@ -25,6 +25,7 @@ require_once './model/draftinitial.php';
 				?>
 					
 		    <div class="row">
+							
                             <div class="col-md-6 mt-3">
 								
 								<div class="input-group">

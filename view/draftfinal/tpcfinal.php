@@ -180,7 +180,7 @@ require_once './model/tpcfinal.php';
 							var x2MTC1 = Number(document.getElementById('x2MTC1').value);
 							var y1MTC1 = Number(document.getElementById('y1MTC1').value);
 							var y2MTC1 = Number(document.getElementById('y2MTC1').value);
-							var TPCMbd = Math.round(Number((TEMbd-x1MTC1)/(x2MTC1-x1MTC1)*(y2MTC1-y1MTC1)+y1MTC1)*1000)/1000;
+							var TPCMbd = Math.round(Number((TEMbd-x1MTC1)/(x2MTC1-x1MTC1)*(y2MTC1-y1MTC1)+y1MTC1)*100)/100;
 							document.getElementById('mtc1').value=TPCMbd;
 						}
 
@@ -192,20 +192,20 @@ require_once './model/tpcfinal.php';
 							var x2MTC2 = Number(document.getElementById('x2MTC2').value);
 							var y1MTC2 = Number(document.getElementById('y1MTC2').value);
 							var y2MTC2 = Number(document.getElementById('y2MTC2').value);
-							var TPCMtd = Math.round(Number((TEMtd-x1MTC2)/(x2MTC2-x1MTC2)*(y2MTC2-y1MTC2)+y1MTC2)*1000)/1000;
+							var TPCMtd = Math.round(Number((TEMtd-x1MTC2)/(x2MTC2-x1MTC2)*(y2MTC2-y1MTC2)+y1MTC2)*100)/100;
 							document.getElementById('mtc2').value=TPCMtd;
 
 							var TPCMbd=Number(document.getElementById('mtc1').value);
 							var TPCMtd=Number(document.getElementById('mtc2').value);
 							var TEMbd=Number(document.getElementById('tEmbd').value);
-							var HellCorr=Math.round(Number((TEMbd-TEMtd)*(TPCMbd-TPCMtd)*6)*1000)/1000;
+							var HellCorr=Math.round(Number((TEMbd-TEMtd)*(TPCMbd-TPCMtd)*6)*100)/100;
 							document.getElementById('hellCorrection').value=HellCorr;
 
 							var dplMAD=Number(document.getElementById('dmad').value);
 							var firstTrimCorrection=Number(document.getElementById('firstTrimCorrection').value);
 							var secondTrimCorrection=Number(document.getElementById('secondTrimCorrection').value);
 							// var HellCorr=Number(document.getElementById('hellCorrection').value);
-							var deplCorr=Math.round(Number(dplMAD+firstTrimCorrection+secondTrimCorrection+HellCorr)*1000)/1000;
+							var deplCorr=Math.round(Number(dplMAD+firstTrimCorrection+secondTrimCorrection+HellCorr)*100)/100;
 							document.getElementById('deplCorrige').value=deplCorr;
 
 						}

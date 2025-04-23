@@ -2,6 +2,7 @@
 require_once 'db.php';
 class  Draft {
  public $idNavire;
+ public $port;
  public $nomNavire;
  public $callSign;
  public $officialNum;
@@ -73,8 +74,7 @@ class  Draft {
     }
 
     // fonction pour enregistrer un noubeau Draft
-    function saveInfoNavire($nomNavire,$callSign,$officialNum,$shipManagement,$operators,$registered,$vsa,$seo,$flag,$portOfReg,$builders,$hullNo,$type,$keelLaid,$delivered,$classSociety,$hmUnderwrirers,$piClub,$loa,$lbp,$breadth_moulded,$depthMoulded,$depthExtreme,$keelplate,$dwt,$disp,$lightship,$draftMoulded,$draftExtreme,$fp_to_fore_draft_mark,$ap_to_fore_draft_mark,$midship_to_mid_draft_mark,$between_draft_mark,$idUser
-): bool
+    function saveInfoNavire($port,$nomNavire,$callSign,$officialNum,$operators,$keelplate,$disp,$idUser): bool
     {
       $ob_connexion=new Connexion();
       $db=$ob_connexion->getDB();
@@ -82,43 +82,44 @@ class  Draft {
       if (!is_null($db))
        {
           $sql="INSERT INTO info_navire_survey
-          (nomNavire,callSign,officialNo,shipManagement,operators,registeredOwners,vsa_cso,seo,flag,portOfReg,builders,hullNo,type,keelLaid,delivered,classSociety,hmUnderwrirers,piClub,loa,lbp,breadth_moulded,depth_moulded,depth_extreme,keelplate,dwt,disp,lightship,draft_moulded,draft_extreme,fp_to_fore_draft_mark,ap_to_fore_draft_mark,midship_to_mid_draft_mark,between_draft_mark,idUser)values
-          (:nomNavire,:callSign,:officialNo,:shipManagement,:operators,:registeredOwners,:vsa_cso,:seo,:flag,:portOfReg,:builders,:hullNo,:type,:keelLaid,:delivered,:classSociety,:hmUnderwrirers,:piClub,:loa,:lbp,:breadth_moulded,:depth_moulded,:depth_extreme,:keelplate,:dwt,:disp,:lightship,:draft_moulded,:draft_extreme,:fp_to_fore_draft_mark,:ap_to_fore_draft_mark,:midship_to_mid_draft_mark,:between_draft_mark,:idUser)";
+          (port,nomNavire,callSign,officialNo,operators,keelplate,disp,idUser)values
+          (:port,:nomNavire,:callSign,:officialNo,:operators,:keelplate,:disp,:idUser)";
           $element=$db->prepare($sql);
           $element->execute(array(
+            ':port'=>$port,
             ':nomNavire'=>$nomNavire,
             ':callSign'=>$callSign,
             ':officialNo'=>$officialNum,
-            ':shipManagement'=>$shipManagement,
+            // ':shipManagement'=>$shipManagement,
             ':operators'=>$operators,
-            ':registeredOwners'=>$registered,
-            ':vsa_cso'=>$vsa,
-            ':seo'=>$seo,
-            ':flag'=>$flag,
-            ':portOfReg'=>$portOfReg,
-            ':builders'=>$builders,
-            ':hullNo'=>$hullNo,
-            ':type'=>$type,
-            ':keelLaid'=>$keelLaid,
-            ':delivered'=>$delivered,
-            ':classSociety'=>$classSociety,
-            ':hmUnderwrirers'=>$hmUnderwrirers,
-            ':piClub'=>$piClub,
-            ':loa'=>$loa,
-            ':lbp'=>$lbp,
-            ':breadth_moulded'=>$breadth_moulded,
-            ':depth_moulded'=>$depthMoulded,
-            ':depth_extreme'=>$depthExtreme,
+            // ':registeredOwners'=>$registered,
+            // ':vsa_cso'=>$vsa,
+            // ':seo'=>$seo,
+            // ':flag'=>$flag,
+            // ':portOfReg'=>$portOfReg,
+            // ':builders'=>$builders,
+            // ':hullNo'=>$hullNo,
+            // ':type'=>$type,
+            // ':keelLaid'=>$keelLaid,
+            // ':delivered'=>$delivered,
+            // ':classSociety'=>$classSociety,
+            // ':hmUnderwrirers'=>$hmUnderwrirers,
+            // ':piClub'=>$piClub,
+            // ':loa'=>$loa,
+            // ':lbp'=>$lbp,
+            // ':breadth_moulded'=>$breadth_moulded,
+            // ':depth_moulded'=>$depthMoulded,
+            // ':depth_extreme'=>$depthExtreme,
             ':keelplate'=>$keelplate,
-            ':dwt'=>$dwt,
+            // ':dwt'=>$dwt,
             ':disp'=>$disp,
-            ':lightship'=>$lightship,
-            ':draft_moulded'=>$draftMoulded,
-            ':draft_extreme'=>$draftExtreme,
-            ':fp_to_fore_draft_mark'=>$fp_to_fore_draft_mark,
-            ':ap_to_fore_draft_mark'=>$ap_to_fore_draft_mark,
-            ':midship_to_mid_draft_mark'=>$midship_to_mid_draft_mark,
-            ':between_draft_mark'=>$between_draft_mark,
+            // ':lightship'=>$lightship,
+            // ':draft_moulded'=>$draftMoulded,
+            // ':draft_extreme'=>$draftExtreme,
+            // ':fp_to_fore_draft_mark'=>$fp_to_fore_draft_mark,
+            // ':ap_to_fore_draft_mark'=>$ap_to_fore_draft_mark,
+            // ':midship_to_mid_draft_mark'=>$midship_to_mid_draft_mark,
+            // ':between_draft_mark'=>$between_draft_mark,
             ':idUser'=>$idUser,
              ));
           $ret=true;
